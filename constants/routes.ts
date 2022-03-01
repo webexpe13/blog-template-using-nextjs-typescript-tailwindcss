@@ -5,6 +5,6 @@ export const routes : IAllRoutes = {
         name: '',
         path: '',
         icon: '',
-        breakcrums: []
+        breadcrums: []
     }
 }

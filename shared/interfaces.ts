@@ -15,7 +15,7 @@ export interface IRoute {
     name: string;
     path: string;
     icon: string;
-    breakcrums: string[];
+    breadcrums: string[];
 }
 
 export interface IAllRoutes {

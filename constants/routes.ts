@@ -6,5 +6,11 @@ export const routes : IAllRoutes = {
         path: '',
         icon: '',
         breakcrums: []
-    }
+    },
+    about: {
+        name: '',
+        path: '',
+        icon: '',
+        breakcrums: ['/home', '/about']
+    },
 }

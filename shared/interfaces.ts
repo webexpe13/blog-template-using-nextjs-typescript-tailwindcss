@@ -19,5 +19,6 @@ export interface IRoute {
 }
 
 export interface IAllRoutes {
-    home: IRoute
+    home: IRoute;
+    about: IRoute;
 }

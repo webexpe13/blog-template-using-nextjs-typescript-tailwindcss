@@ -1,30 +1,24 @@
 import type { NextPage } from 'next'
-import styles from '../styles/Home.module.scss'
-import Link from 'next/link'
+import HomeLayout from '../layouts/HomeLayout';
+import classes from './index.module.scss';
+
+import articles from '../constants/articles';
+import ArticleCard from '../components/ArticleCard'
+import { ARTICLE_CARD_COLORS } from '../constants/appConstants';
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <div className={styles.grid}>
-          <Link href='/js'>
-            <a className={styles.card}>
-              <h2>JS &rarr;</h2>
-            </a>
-          </Link>
-
-          <Link href='/html-css-js'>
-            <a className={styles.card}>
-              <h2>HTML CSS JS &rarr;</h2>
-            </a>
-          </Link>
+    <HomeLayout>
+      <div className="">
+        <div className={classes.articles_wrap}>
+          {
+            articles.map((each, i) => (
+              <ArticleCard article={each} colors={ARTICLE_CARD_COLORS[Math.floor(Math.random() * ARTICLE_CARD_COLORS.length)]} key={i} />
+            ))
+          }
         </div>
-      </main>
-    </div>
+      </div>
+    </HomeLayout>
   )
 }
 

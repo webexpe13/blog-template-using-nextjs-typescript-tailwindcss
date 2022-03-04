@@ -1,0 +1,9 @@
+@import '../../styles/utils/mixins';
+
+.home_layout_wrapper{
+    padding-top: 100px;
+
+    @include mobile{
+        padding-top: 70px;
+    }
+}

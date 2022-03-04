@@ -1,0 +1,34 @@
+$navy: #051367;
+$darkNavy: #02142B;
+$blue: #5d8bf4;
+$lightBlue: #dff6ff;
+$dGray: #171717;
+$gray: #f0f0f0;
+$yellow: #f1d00a;
+$red: #fc4f4f;
+$black: #000;
+$black2: #191919;
+$white: #fff;
+$khromaBorder: #33517d;
+
+$colors: (
+    "navy": $navy,
+    "darkNavy": $darkNavy,
+    "blue": $blue,
+    "lightBlue": $lightBlue,
+    "gray": $gray,
+    "yellow": $yellow,
+    "red": $red,
+    "black": $black,
+    "black2": $black2,
+    "white": $white,
+    "dGray": $dGray,
+    "khromaBorder": $khromaBorder,
+);
+
+// backgrounds
+@each $name, $color in $colors {
+    .bg-#{$name} {
+        background: $color;
+    }
+}

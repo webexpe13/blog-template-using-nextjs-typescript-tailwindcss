@@ -7,6 +7,7 @@ import { SEO } from "../next-seo.config";
 import { DefaultSeo } from "next-seo";
 
 function MyApp({ Component, pageProps }: AppProps) {
+
   return (
     <>
       <DefaultSeo {...SEO} />

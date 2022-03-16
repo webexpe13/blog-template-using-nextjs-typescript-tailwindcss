@@ -46,3 +46,16 @@ export interface IArticleCardColor {
   bg: string;
   font: String;
 }
+
+export interface ITHEME {
+  light: {
+    bg: string;
+    navBg: string;
+    color: string;
+  };
+  dark: {
+    bg: string;
+    navBg: string;
+    color: string;
+  };
+}

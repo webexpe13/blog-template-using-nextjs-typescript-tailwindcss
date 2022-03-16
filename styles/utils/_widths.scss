@@ -17,7 +17,7 @@ $widths: 10, 15, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100
 }
 
 .container-large{
-    max-width: 1400px;
+    max-width: 1500px;
     width: 90%;
     margin: 0 auto;
 }
@@ -28,6 +28,10 @@ $widths: 10, 15, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100
             width: $width * 1%;
         }
     }
+
+    .container-large{
+        width: 100%;
+    }
 }
 
 @include tab{
@@ -36,6 +40,10 @@ $widths: 10, 15, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100
             width: $width * 1%;
         }
     }
+
+    .container-large{
+        width: 100%;
+    }
 }
 
 @include desktop{
@@ -43,5 +51,9 @@ $widths: 10, 15, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100
         .w-lg-#{$width} {
             width: $width * 1%;
         }
+    }
+
+    .container-large{
+        width: 100%;
     }
 }

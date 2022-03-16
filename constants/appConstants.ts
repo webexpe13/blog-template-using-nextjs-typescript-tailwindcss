@@ -1,5 +1,5 @@
 import { Authors } from "../shared/enums";
-import { IArticleCardColor, IAuthors } from "../shared/interfaces";
+import { IAuthors, ITHEME } from "../shared/interfaces";
 
 export const AUTHORS: IAuthors = {
   [Authors.RUPALI]: {
@@ -20,45 +20,56 @@ export const AUTHORS: IAuthors = {
   },
 };
 
-export const ARTICLE_CARD_COLORS: IArticleCardColor[] = [
-  {
-    bg: "208,232,102",
-    font: "9,48,222",
+export const THEME: ITHEME = {
+  "light": {
+    bg: "#F5F5F5",
+    navBg: "#FFFFFF",
+    color: "#000000",
   },
-  {
-    bg: "22,183,86",
-    font: "244,247,210",
+  "dark": {
+    bg: "#191A32",
+    navBg: "#24243B",
+    color: "#FFFFFF",
   },
-  {
-    bg: "217,0,58",
-    font: "234,242,87"
+};
+
+export const ARTICLE_CARD_THEME = {
+  "light": {
+    bg: "255, 255, 255",
+    textColor: "45, 55, 72",
   },
-  {
-    bg: "89,65,206",
-    font: "247,253,198"
+  "dark": {
+    bg: "35, 36, 59",
+    textColor: "255, 255, 255",
   },
-  {
-    bg: "18,4,99",
-    font: "246,246,91"
+};
+
+export const FEATURE_CARD_THEME = {
+  "light": {
+    bg: "255, 255, 255",
+    textColor: "45, 55, 72",
   },
-  {
-    bg: "23,70,189",
-    font: "73,231,94"
+  "dark": {
+    bg: "42, 43, 82",
+    textColor: "255, 255, 255",
   },
-  {
-    bg: "226,251,133",
-    font: "103,33,223"
+};
+
+export const THEME_ICONS = {
+  "light": {
+    search: "/svg/search-dark.svg",
+    insta: "/svg/instagram-dark.svg",
+    twitter: "/svg/twitter-dark.svg",
+    linkedin: "/svg/linkedin-dark.svg",
+    themeToggle: "/svg/theme-toggle-light.svg",
+    github: "/svg/github-dark.svg",
   },
-  {
-    bg: "59,14,110",
-    font: "26,195,246"
+  "dark": {
+    search: "/svg/search-light.svg",
+    insta: "/svg/instagram-light.svg",
+    twitter: "/svg/twitter-light.svg",
+    linkedin: "/svg/linkedin-light.svg",
+    themeToggle: "/svg/theme-toggle-dark.svg",
+    github: "/svg/github-light.svg",
   },
-  {
-    bg: "83,5,139",
-    font: "251,54,40"
-  },
-  {
-    bg: "16,19,125",
-    font: "101,225,82"
-  }
-];
+};

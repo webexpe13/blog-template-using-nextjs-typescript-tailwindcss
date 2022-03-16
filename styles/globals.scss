@@ -5,14 +5,15 @@
 @import './utils/text';
 @import './utils/widths';
 @import './utils/spacing';
+@import './utils/flexbox';
 
 html,
 body {
   padding: 0;
   margin: 0;
+  width: 100%;
+  height: 100%;
   font-family: "Poppins", sans-serif;
-  background: $black;
-  color: $white;
 }
 
 a {

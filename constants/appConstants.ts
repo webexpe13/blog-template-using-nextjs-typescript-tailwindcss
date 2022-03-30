@@ -1,24 +1,4 @@
-import { Authors } from "../shared/enums";
 import { IAuthors, ITHEME } from "../shared/interfaces";
-
-export const AUTHORS: IAuthors = {
-  [Authors.RUPALI]: {
-    name: "Rupali Yadav",
-    designation: "IT Analyst at TCS",
-    github: "",
-    linkedIn: "",
-    bio: "",
-    profilePic: "",
-  },
-  [Authors.MAYUR]: {
-    name: "Mayur Nalwala",
-    designation: "Software Engineer at Paytm",
-    github: "",
-    linkedIn: "",
-    bio: "",
-    profilePic: "",
-  },
-};
 
 export const THEME: ITHEME = {
   "light": {
@@ -30,28 +10,6 @@ export const THEME: ITHEME = {
     bg: "#191A32",
     navBg: "#24243B",
     color: "#FFFFFF",
-  },
-};
-
-export const ARTICLE_CARD_THEME = {
-  "light": {
-    bg: "255, 255, 255",
-    textColor: "45, 55, 72",
-  },
-  "dark": {
-    bg: "35, 36, 59",
-    textColor: "255, 255, 255",
-  },
-};
-
-export const FEATURE_CARD_THEME = {
-  "light": {
-    bg: "255, 255, 255",
-    textColor: "45, 55, 72",
-  },
-  "dark": {
-    bg: "42, 43, 82",
-    textColor: "255, 255, 255",
   },
 };
 

@@ -3,9 +3,10 @@ import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
 import { THEME } from "../../constants/appConstants";
 import { getTheme } from "../../shared/utils";
+import { THEMES } from "../../shared/enums";
 
 const HomeLayout = ({ children, container }: any) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(THEMES.LIGHT);
 
   useEffect(() => {
     getTheme(setTheme);

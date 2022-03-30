@@ -1,7 +1,7 @@
 import { Authors } from "../shared/enums";
 import { IArticle } from "../shared/interfaces";
 import { CATEGORY_A } from '../constants/categories';
-import { AUTHORS } from '../constants/appConstants';
+import { AUTHORS } from '../constants/BLOG_CONSTANTS';
 
 const articles: IArticle[] = [
   {

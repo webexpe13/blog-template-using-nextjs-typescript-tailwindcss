@@ -1,0 +1,23 @@
+@import "../../styles/utils/color";
+@import "../../styles/utils/mixins";
+
+.withSidebar_article_wrapper {
+    background: #f5f5f5;
+
+    .article_content {
+        min-height: 100vh;
+        border-left: solid 1px $blogBorder;
+        border-right: solid 1px $blogBorder;
+        max-width: 1000px;
+    }
+}
+
+.withSidebar_article_wrapper.dark {
+    background: $articleDarkBG;
+    color: $white;
+
+    .article_content {
+        border-left: solid 1px $blogBorder;
+        border-right: solid 1px $blogBorder;
+    }
+}

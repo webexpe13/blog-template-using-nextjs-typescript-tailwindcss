@@ -7,6 +7,8 @@ $weights: (
     "bold": 700,
 );
 
+$textAligns: left, right, center;
+
 /*
 font styles that will be generated as follows
 
@@ -42,6 +44,13 @@ tab -
 @each $name, $color in $colors {
     .font-#{$name} {
         color: $color;
+    }
+}
+
+// text align
+@each $align in $textAligns {
+    .text-#{$align}   {
+        text-align: $align;
     }
 }
 

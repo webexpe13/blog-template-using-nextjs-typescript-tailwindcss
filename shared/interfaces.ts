@@ -59,3 +59,11 @@ export interface ITHEME {
     color: string;
   };
 }
+
+export interface ISocialLinks {
+  linkedIn?: string;
+  facebook?: string;
+  github?: string;
+  twitter?: string;
+  instagram?: string;
+}

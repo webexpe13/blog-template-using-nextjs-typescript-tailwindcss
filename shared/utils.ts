@@ -1,10 +1,12 @@
+import { THEMES } from "./enums";
+
 export const combineClasses = function (...classes: any): string {
   return classes.filter((item: any) => !!item).join(" ");
 };
 
 export const getTheme = (setThemeState: any) => {
   const lsTheme = localStorage.getItem("theme");
-  setThemeState(lsTheme ? lsTheme : "light");
+  setThemeState(lsTheme ? lsTheme : THEMES.LIGHT);
 };
 
 export const setPath = (path: string, title: string): string => {

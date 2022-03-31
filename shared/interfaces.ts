@@ -1,4 +1,3 @@
-import { Authors } from "./enums";
 export interface IAuthor {
   name: string;
   designation: string;

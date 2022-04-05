@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { IArticle } from "../../shared/interfaces";
 import classes from "./ArticleCard.module.scss";
-import { combineClasses, getTheme, setPath } from "../../shared/utils";
+import { combineClasses, getTheme, setPath } from "../../utils/utils";
 import Link from "next/link";
 
 interface IProp {

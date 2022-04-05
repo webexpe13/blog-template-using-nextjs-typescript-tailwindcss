@@ -2,7 +2,7 @@ import classes from "./Navbar.module.scss";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { THEME_ICONS } from "../../constants/appConstants";
-import { combineClasses, getTheme } from "../../shared/utils";
+import { combineClasses, getTheme } from "../../utils/utils";
 import { ContainerWidths, THEMES } from "../../shared/enums";
 
 const SimpleNavbar = ({ container = ContainerWidths.DEFAULT, openSearch }: any) => {

@@ -5,8 +5,28 @@ import classes from './index.module.scss';
 import articles from '../constants/articles';
 import ArticleCard from '../components/ArticleCards/ArticleCard';
 import FeaturedArticle from '../components/ArticleCards/FeaturedArticle';
+import dynamic from 'next/dynamic';
+import SimpleBurgerMenuUsingCSS from './blog/simple-burger-menu-using-css';
+
+const ARTICLES: string[] = [
+  'simple-burger-menu-using-css',
+  'understand-and-implement-redux-store'
+]
 
 const Home: NextPage = () => {
+
+  const createArticlesArray = (ARTICLES: string[]) => {
+    let res: any = []
+    ARTICLES.forEach((article: any) => {
+      res.push(dynamic(() => import(`./blog/${article}`), {
+        ssr: false
+      }))
+    });
+    return res
+  }
+
+  console.log(createArticlesArray(ARTICLES));
+
   return (
     <HomeLayout>
       <div className="container">

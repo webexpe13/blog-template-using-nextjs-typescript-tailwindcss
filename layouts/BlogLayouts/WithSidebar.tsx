@@ -1,7 +1,7 @@
 import classes from './BlogLayout.module.scss';
 import Navbar from '../../components/Navbar/SimpleNavbar';
 import { ContainerWidths, THEMES } from '../../shared/enums';
-import { combineClasses, getTheme } from '../../shared/utils';
+import { combineClasses, getTheme } from '../../utils/utils';
 import { useEffect, useState } from 'react';
 
 const WithSidebar = ({ children }: any) => {

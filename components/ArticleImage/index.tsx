@@ -1,6 +1,6 @@
 import classes from './Images.module.scss';
 import { ArticleImageWidths } from "../../shared/enums"
-import { combineClasses } from '../../shared/utils';
+import { combineClasses } from '../../utils/utils';
 
 interface IArticleImage {
     src: string,

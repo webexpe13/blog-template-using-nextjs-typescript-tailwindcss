@@ -1,5 +1,10 @@
-import { THEMES } from "./enums";
+import { THEMES } from "../shared/enums";
 
+/**
+ * 
+ * @param classes string
+ * @returns string
+ */
 export const combineClasses = function (...classes: any): string {
   return classes.filter((item: any) => !!item).join(" ");
 };

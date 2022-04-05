@@ -1,10 +1,13 @@
 export interface IAuthor {
-  name: string;
-  designation: string;
-  github: string;
-  linkedIn: string;
-  bio?: string;
   profilePic?: string;
+  name: string;
+  designation?: string;
+  bio?: string;
+  github?: string;
+  linkedIn?: string;
+  facebook?: string,
+  twitter?: string,
+  instagram?: string,
 }
 
 export interface IAuthors {

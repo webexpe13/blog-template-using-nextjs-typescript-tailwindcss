@@ -1,11 +1,11 @@
 import { Authors } from "../shared/enums";
 import { IArticle } from "../shared/interfaces";
 import { CATEGORY_A } from '../constants/categories';
-import { AUTHORS } from '../constants/BLOG_CONSTANTS';
+import { MAYUR, RUPALI } from '../constants/BLOG_CONSTANTS';
 
 const articles: IArticle[] = [
   {
-    author: AUTHORS.mayur,
+    author: MAYUR,
     thumbnail: "https://picsum.photos/300/200",
     tags: ["css", "css animations", "css tricks"],
     date: "March 03 2022",
@@ -14,7 +14,7 @@ const articles: IArticle[] = [
     path: "",
   },
   {
-    author: AUTHORS.rupali,
+    author: RUPALI,
     category: CATEGORY_A,
     thumbnail: "https://picsum.photos/300/200",
     tags: ["react js", "react redux store", "redux"],
@@ -24,7 +24,7 @@ const articles: IArticle[] = [
     path: "",
   },
   {
-    author: AUTHORS.rupali,
+    author: MAYUR,
     category: CATEGORY_A,
     thumbnail: "https://picsum.photos/300/200",
     tags: ["react js", "react redux store", "redux"],

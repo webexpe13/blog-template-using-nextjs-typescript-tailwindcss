@@ -2,7 +2,7 @@ import classes from "./HomeLayout.module.scss";
 import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
 import { THEME } from "../../constants/appConstants";
-import { getTheme } from "../../shared/utils";
+import { getTheme } from "../../utils/utils";
 import { THEMES } from "../../shared/enums";
 
 const HomeLayout = ({ children, container }: any) => {

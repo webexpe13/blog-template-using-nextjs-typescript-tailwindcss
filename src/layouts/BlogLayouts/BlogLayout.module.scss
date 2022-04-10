@@ -6,18 +6,18 @@
 
     .article_content {
         min-height: 100vh;
-        border-left: solid 1px $blogBorder;
-        border-right: solid 1px $blogBorder;
+        border-left: solid 1px $gray;
+        border-right: solid 1px $gray;
         max-width: 1000px;
     }
 }
 
 .withSidebar_article_wrapper.dark {
-    background: $articleDarkBG;
+    background: $darkBlue1;
     color: $white;
 
     .article_content {
-        border-left: solid 1px $blogBorder;
-        border-right: solid 1px $blogBorder;
+        border-left: solid 1px $gray;
+        border-right: solid 1px $gray;
     }
 }

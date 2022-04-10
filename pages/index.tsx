@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
-import HomeLayout from '../layouts/HomeLayout';
+import HomeLayout from '../src/layouts/HomeLayout';
 import classes from './index.module.scss';
 
-import articles from '../constants/articles';
-import ArticleCard from '../components/ArticleCards/ArticleCard';
-import FeaturedArticle from '../components/ArticleCards/FeaturedArticle';
+import articles from '../src/constants/articles';
+import ArticleCard from '../src/components/ArticleCards/ArticleCard';
+import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
 import dynamic from 'next/dynamic';
 import SimpleBurgerMenuUsingCSS from './blog/simple-burger-menu-using-css';
 
@@ -18,9 +18,10 @@ const Home: NextPage = () => {
   const createArticlesArray = (ARTICLES: string[]) => {
     let res: any = []
     ARTICLES.forEach((article: any) => {
-      res.push(dynamic(() => import(`./blog/${article}`), {
-        ssr: false
-      }))
+      res.push(dynamic(
+        () => import(`./blog/${article}`),
+        { ssr: false }
+      ))
     });
     return res
   }

@@ -1,0 +1,34 @@
+$white: #fff;
+$offWhite: #F5F5F5;
+$gray: #C4C4C4;
+$darkGray: #5F5F5F;
+$black: #000;
+$spaceGray: #718096;
+$darkSpaceGray: #2D3748;
+$lightBlue: #2B60E7;
+$blue: #2A2B52;
+$darkBlue: #191A32;
+$darkBlue1: #23243B;
+$darkBlue2: #24243B;
+
+$colors: (
+    "white": $white,
+    "offWhite": $offWhite,
+    "gray": $gray,
+    "darkGray": $darkGray,
+    "black": $black,
+    "spaceGray": $spaceGray,
+    "darkSpaceGray": $darkSpaceGray,
+    "blue": $blue,
+    "darkBlue": $darkBlue,
+    "darkBlue2": $darkBlue2,
+    "darkBlue1": $darkBlue1,
+    "lightBlue": $lightBlue
+);
+
+// backgrounds
+@each $name, $color in $colors {
+    .bg-#{$name} {
+        background: $color;
+    }
+}

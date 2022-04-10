@@ -1,8 +1,8 @@
 /**These are necessary imports / components for the page */
-import BlogLayout from "../../layouts/BlogLayouts";
-import { ArticleImageWidths, BlogLayouts } from "../../shared/enums";
-import ArticleImage from "../../components/ArticleImage";
-import { MAYUR } from "../../constants/BLOG_CONSTANTS";
+import BlogLayout from "../../src/layouts/BlogLayouts";
+import { ArticleImageWidths, BlogLayouts } from "../../src/shared/enums";
+import ArticleImage from "../../src/components/ArticleImage";
+import { MAYUR } from "../../src/constants/BLOG_CONSTANTS";
 /**These are necessary imports / components for the page */
 
 const PAGE_SEO = {

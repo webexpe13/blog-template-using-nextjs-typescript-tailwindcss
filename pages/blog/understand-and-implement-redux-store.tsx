@@ -1,8 +1,8 @@
-import ArticleImage from "../../components/ArticleImage";
-import { RUPALI } from "../../constants/BLOG_CONSTANTS";
-import { CATEGORY_A } from "../../constants/categories";
-import BlogLayout from "../../layouts/BlogLayouts";
-import { ArticleImageWidths, BlogLayouts } from "../../shared/enums";
+import ArticleImage from "../../src/components/ArticleImage";
+import { RUPALI } from "../../src/constants/BLOG_CONSTANTS";
+import { CATEGORY_A } from "../../src/constants/categories";
+import BlogLayout from "../../src/layouts/BlogLayouts";
+import { ArticleImageWidths, BlogLayouts } from "../../src/shared/enums";
 
 const UnderstandReduxStore = () => {
     return (

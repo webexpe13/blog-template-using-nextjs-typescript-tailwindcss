@@ -6,10 +6,11 @@ import Link from "next/link";
 
 interface IProp {
     article: IArticle;
+    path: string;
 }
 
 
-const FeaturedArticle = ({ article }: IProp) => {
+const FeaturedArticle = ({ article, path }: IProp) => {
     const [theme, setTheme] = useState('');
     useEffect(() => {
         getTheme(setTheme);
@@ -17,7 +18,7 @@ const FeaturedArticle = ({ article }: IProp) => {
 
     return (
         <div className={combineClasses(classes.featured_article, theme === 'dark' ? classes.dark : null)}>
-            <Link href={setPath(article.path, article.articleTitle)}>
+            <Link href={setPath(path)}>
                 <div className={classes.featured_article__content}>
                     <div className={combineClasses(classes.featured_article_footer, "mt-0 mb-10")}>
                         <div className={classes.author}>

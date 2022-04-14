@@ -6,9 +6,10 @@ import classes from "./ArticleCard.module.scss";
 
 interface IProp {
   article: IArticle;
+  path: string;
 }
 
-const ArticleCard = ({ article }: IProp) => {
+const ArticleCard = ({ article, path }: IProp) => {
   const [theme, setTheme] = useState('');
   useEffect(() => {
     getTheme(setTheme);
@@ -20,7 +21,7 @@ const ArticleCard = ({ article }: IProp) => {
         <div className={classes.article_card__image}>
           <img src={article.thumbnail} alt="" width="100%" />
         </div>
-        <Link href={setPath(article.path, article.articleTitle)}>
+        <Link href={setPath(path)}>
           <div className={classes.article_card__content}>
             <p className={combineClasses(classes.article_card__date, "font-regular font-12 mt-10 mb-5")}>{article.date}</p>
             <h1 className={combineClasses(classes.article_card__title, "font-22 font-bold my-0")} >

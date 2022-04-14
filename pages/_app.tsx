@@ -1,14 +1,11 @@
-import '../styles/globals.scss'
+import '../src/styles/globals.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
 
 import { SEO } from "../next-seo.config";
 import { DefaultSeo } from "next-seo";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  console.log({Component, pageProps});
-  
   return (
     <>
       <DefaultSeo {...SEO} />

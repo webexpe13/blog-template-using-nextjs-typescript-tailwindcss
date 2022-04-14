@@ -34,7 +34,6 @@ export interface IArticle {
   shortIntro: string;
   tags: string[];
   thumbnail: string;
-  path: string;
 }
 
 export interface ICategory {

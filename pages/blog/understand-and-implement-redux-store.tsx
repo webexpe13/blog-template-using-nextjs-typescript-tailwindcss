@@ -4,7 +4,7 @@ import { CATEGORY_A } from "../../src/constants/categories";
 import BlogLayout from "../../src/layouts/BlogLayouts";
 import { ArticleImageWidths, BlogLayouts } from "../../src/shared/enums";
 
-const UnderstandReduxStore = () => {
+const Article = () => {
     return (
         <BlogLayout layout={BlogLayouts.WITH_SIDEBAR}>
             <ArticleImage src="/images/dummy-banner-img.jpg" alt="dummy image alt text" caption="dummy caption" size={ArticleImageWidths.DEFAULT} />
@@ -13,7 +13,7 @@ const UnderstandReduxStore = () => {
     )
 }
 
-UnderstandReduxStore.preview = {
+Article.preview = {
     author: RUPALI,
     category: CATEGORY_A,
     thumbnail: "https://picsum.photos/300/200",
@@ -22,4 +22,4 @@ UnderstandReduxStore.preview = {
     articleTitle: "Understand and implement redux store",
     shortIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
 }
-export default UnderstandReduxStore;
+export default Article;

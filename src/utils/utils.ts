@@ -1,7 +1,7 @@
 import { THEMES } from "../shared/enums";
 
 /**
- * 
+ *
  * @param classes string
  * @returns string
  */
@@ -14,10 +14,6 @@ export const getTheme = (setThemeState: any) => {
   setThemeState(lsTheme ? lsTheme : THEMES.LIGHT);
 };
 
-export const setPath = (path: string, title: string): string => {
-  if (path) {
-    return path;
-  } else {
-    return "/blog/" + title.toLocaleLowerCase().split(" ").join("-");
-  }
+export const setPath = (path: string): string => {
+  return path.substring(1);
 };

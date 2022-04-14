@@ -1,9 +1,10 @@
-$displays: flex, inline-flex;
+$displays: flex, inline-flex, block, inline, inline-block;
 $directions: row, column, row-r, column-r;
-$justifys: start, end, center, between, around, evenly;
+$justifys: start, end, center, space-between, space-around, evenly;
 $aligns: start, end, center, baseline, stretch;
 
 // display flex
+// d-flex, d-inline-flex, d-block
 @each $each in $displays {
     .d-#{$each} {
         display: $each;
@@ -28,7 +29,7 @@ $aligns: start, end, center, baseline, stretch;
     }
 }
 
-// justify content
+// align content
 @each $each in $aligns {
     .align-#{$each} {
         align-items: $each;
@@ -65,7 +66,7 @@ $aligns: start, end, center, baseline, stretch;
         }
     }
 
-    // justify content
+    // align content
     @each $each in $aligns {
         .align-sm-#{$each} {
             align-items: $each;

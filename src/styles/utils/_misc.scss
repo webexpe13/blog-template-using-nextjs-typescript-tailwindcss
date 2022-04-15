@@ -1,5 +1,12 @@
 .line-clamp {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.display-sm-none {
+  display: block;
+  @include mobile {
+    display: none;
   }
+}

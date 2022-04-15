@@ -30,34 +30,21 @@
     }
 }
 
-.search_wrapper {
+.search_icon_wrapper {
     width: auto;
-    display: inline-flex;
+    display: flex;
     position: relative;
+    align-items: center;
     cursor: pointer;
-    input {
-        height: 40px;
-        width: 100%;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        border-radius: 4px;
-        box-sizing: border-box;
-        font-size: 16px;
-        padding: 0px 40px 0px 5px;
-    }
     button {
-        height: 100%;
+        height: auto;
         width: 25px;
         background: none;
         box-sizing: border-box;
         box-shadow: none;
         border: none;
         padding: 3px;
-        position: absolute;
         cursor: pointer;
-        z-index: 5;
-        right: 5px;
     }
 }
 
@@ -74,7 +61,7 @@
         height: 35px;
     }
 
-    .search_wrapper {
+    .search_icon_wrapper {
         width: auto;
         input {
             height: 35px;
@@ -85,7 +72,14 @@
 .navbar.dark {
     background: $darkBlue;
 
-    .search_wrapper {
+    .search_icon_wrapper {
         color: $white;
+    }
+}
+
+.hideNav {
+    @include mobile {
+        transition: all 0.5s ease;
+        transform: translateY(-110%);
     }
 }

@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
 import { THEME } from "../../constants/appConstants";
 import { getTheme } from "../../utils/utils";
-import { THEMES } from "../../shared/enums";
+import { NavbarLayouts, THEMES } from "../../shared/enums";
 
 const HomeLayout = ({ children, container }: any) => {
   const [theme, setTheme] = useState(THEMES.LIGHT);
@@ -14,7 +14,7 @@ const HomeLayout = ({ children, container }: any) => {
 
   return (
     <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
-      <Navbar container={container} />
+      <Navbar container={container} type={NavbarLayouts.CENTERED} />
       {children}
     </div>
   );

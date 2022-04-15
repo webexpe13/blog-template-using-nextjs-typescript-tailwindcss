@@ -17,3 +17,34 @@ export const getTheme = (setThemeState: any) => {
 export const setPath = (path: string): string => {
   return path.substring(1);
 };
+
+export const getDeviceType = () => {
+  const ua = navigator.userAgent;
+  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+    return "tablet";
+  }
+  if (
+    /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+      ua
+    )
+  ) {
+    return "mobile";
+  }
+  return "desktop";
+};
+
+export const isDesktopDevice = () => {
+  if (getDeviceType() === "desktop") {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+export const isMobileDevice = () => {
+  if (getDeviceType() === "mobile") {
+    return true;
+  } else {
+    return false;
+  }
+};

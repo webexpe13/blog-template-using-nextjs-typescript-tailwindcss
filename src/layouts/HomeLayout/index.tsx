@@ -6,24 +6,24 @@ import { getTheme } from "../../utils/utils";
 import { THEMES } from "../../shared/enums";
 import Search from "../../components/Search";
 
-const HomeLayout = ({ children, container }: any) => {
+
+const HomeLayout = ({ children, container}: any) => {
   const [theme, setTheme] = useState(THEMES.LIGHT);
-  const [searchStr, setSearchStr] = useState();
-  const [searchResults, setSearchResults] = useState([]);
+  const [showSearch, setShowSearch] = useState();
   useEffect(() => {
     getTheme(setTheme);
   }, [theme]);
 
   return (
     <>
-      {!searchStr && (
+      {!showSearch && (
         <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
-          <Navbar container={container} setsearchStr={setSearchStr} />
+          <Navbar container={container} setShowSearch={setShowSearch} />
           {children}
         </div>
       )}
       {
-        searchStr && <Search searchStr={searchStr} setSearchStr={setSearchStr} />
+        showSearch && <Search />
       }
     </>
   );

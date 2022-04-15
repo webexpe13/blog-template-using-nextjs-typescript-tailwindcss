@@ -6,17 +6,17 @@ interface iNavbar {
     type?: NavbarLayouts;
     showSocialMedia?: boolean
     container?: ContainerWidths;
-    setsearchStr?: any
+    setShowSearch?: any
 }
 
 const Navbar = ({ type = NavbarLayouts.DEFAULT,
     showSocialMedia = true,
     container = ContainerWidths.DEFAULT,
-    setsearchStr
+    setShowSearch
 }: iNavbar) => {
 
     const openSearch = () => {
-        setsearchStr && setsearchStr(true);
+        setShowSearch && setShowSearch(true);
     }
 
     return (

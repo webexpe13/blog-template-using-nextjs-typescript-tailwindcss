@@ -12,6 +12,7 @@
     height: 50px;
     border-radius: 50%;
     background: $black;
+    display: block;
 }
 
 .navbar {
@@ -36,6 +37,7 @@
     position: relative;
     align-items: center;
     cursor: pointer;
+
     button {
         height: auto;
         width: 25px;
@@ -57,12 +59,13 @@
 
 @include mobile {
     .logo {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
 
     .search_icon_wrapper {
         width: auto;
+
         input {
             height: 35px;
         }
@@ -81,5 +84,60 @@
     @include mobile {
         transition: all 0.5s ease;
         transform: translateY(-110%);
+    }
+}
+
+.mobileBurgerToggle {
+    display: none;
+
+    @include mobile {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        padding: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: $black;
+            position: relative;
+            top: -3px;
+            transition: all 0.5s ease-in-out;
+
+            &::before {
+                transition: all 0.5s ease-in-out;
+                content: '';
+                position: absolute;
+                width: 75%;
+                height: 2px;
+                background: $black;
+                left: 0;
+                display: block;
+            }
+
+            &::before {
+                top: 7px;
+            }
+        }
+
+        &__close {
+            span {
+                transform: rotate(135Deg);
+                transform-origin: center center;
+                top: 2px;
+
+                &::before {
+                    transform: rotate(-270Deg);
+                    transform-origin: center center;
+                    top: 0px;
+                    width: 100%;
+                }
+            }
+        }
     }
 }

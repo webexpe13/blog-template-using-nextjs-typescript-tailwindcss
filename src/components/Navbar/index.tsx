@@ -13,6 +13,9 @@ interface iNavbar {
 const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, container = ContainerWidths.DEFAULT }: iNavbar) => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
     const [isMobile, setIsMobile] = useState(false);
+    const [openSidebar, setOpenSidebar] = useState(false);
+
+
     useEffect(() => {
         getTheme(setTheme);
     }, [theme]);
@@ -52,6 +55,10 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
         console.log('open search');
     }
 
+    const toggleSideMenu = () => {
+        setOpenSidebar(!openSidebar)
+    }
+
     return (
         <>
             {
@@ -62,6 +69,8 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
                     scrolled={scrolled}
                     theme={theme}
                     changeTheme={changeTheme}
+                    toggleSideMenu={toggleSideMenu}
+                    openSidebar={openSidebar}
                 /> :
                     (() => {
                         switch (type) {
@@ -74,6 +83,8 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
                                         scrolled={scrolled}
                                         theme={theme}
                                         changeTheme={changeTheme}
+                                        toggleSideMenu={toggleSideMenu}
+                                        openSidebar={openSidebar}
                                     />);
                             case NavbarLayouts.CENTERED:
                                 return (
@@ -94,6 +105,8 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
                                         scrolled={scrolled}
                                         theme={theme}
                                         changeTheme={changeTheme}
+                                        toggleSideMenu={toggleSideMenu}
+                                        openSidebar={openSidebar}
                                     />
                                 );
                         }

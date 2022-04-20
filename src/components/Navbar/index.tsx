@@ -12,6 +12,11 @@ interface iNavbar {
     setsearchStr?: any
 }
 
+// const Navbar = ({ type = NavbarLayouts.DEFAULT,
+//     showSocialMedia = true,
+//     container = ContainerWidths.DEFAULT,
+//     setsearchStr
+// }: iNavbar) => {
 const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, container = ContainerWidths.DEFAULT, setsearchStr }: iNavbar) => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
     const [isMobile, setIsMobile] = useState(false);
@@ -52,11 +57,6 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
             setScrolled(false);
         };
     }, []);
-    // const Navbar = ({ type = NavbarLayouts.DEFAULT,
-    //     showSocialMedia = true,
-    //     container = ContainerWidths.DEFAULT,
-    //     setsearchStr
-    // }: iNavbar) => {
 
     const openSearch = () => {
         setsearchStr && setsearchStr(true);

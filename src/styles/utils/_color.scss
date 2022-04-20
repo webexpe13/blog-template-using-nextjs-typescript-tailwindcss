@@ -27,6 +27,9 @@ $colors: (
 );
 
 // backgrounds
+/**
+.bg-white, .bg-offWhite ..
+**/
 @each $name, $color in $colors {
     .bg-#{$name} {
         background: $color;

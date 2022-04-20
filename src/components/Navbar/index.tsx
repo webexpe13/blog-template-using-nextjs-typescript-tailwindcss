@@ -9,9 +9,10 @@ interface iNavbar {
     type?: NavbarLayouts;
     showSocialMedia?: boolean
     container?: ContainerWidths;
+    setsearchStr?: any
 }
 
-const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, container = ContainerWidths.DEFAULT }: iNavbar) => {
+const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, container = ContainerWidths.DEFAULT, setsearchStr }: iNavbar) => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
     const [isMobile, setIsMobile] = useState(false);
     const [openSidebar, setOpenSidebar] = useState(false);
@@ -51,9 +52,14 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
             setScrolled(false);
         };
     }, []);
+    // const Navbar = ({ type = NavbarLayouts.DEFAULT,
+    //     showSocialMedia = true,
+    //     container = ContainerWidths.DEFAULT,
+    //     setsearchStr
+    // }: iNavbar) => {
 
     const openSearch = () => {
-        console.log('open search');
+        setsearchStr && setsearchStr(true);
     }
 
     const toggleSideMenu = () => {

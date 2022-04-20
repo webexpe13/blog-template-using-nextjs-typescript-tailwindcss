@@ -3,6 +3,7 @@ import SimpleNavbar from './SimpleNavbar';
 import CenteredNavbar from './Centered';
 import { useEffect, useState } from "react";
 import { getTheme, isMobileDevice } from "../../utils/utils";
+import NavSidebar from './NavSideBar';
 
 interface iNavbar {
     type?: NavbarLayouts;
@@ -112,6 +113,8 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
                         }
                     })()
             }
+
+            <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} />
         </>
     )
 }

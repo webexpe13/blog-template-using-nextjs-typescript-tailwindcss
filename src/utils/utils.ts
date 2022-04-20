@@ -48,3 +48,14 @@ export const isMobileDevice = () => {
     return false;
   }
 };
+
+export const addBodyNoScroll = () => {
+  document.body.className += "no-scroll";
+};
+
+export const removeBodyNoScroll = () => {
+  document.body.className = document.body.className.replace(
+    "no-scroll",
+    ""
+  );
+};

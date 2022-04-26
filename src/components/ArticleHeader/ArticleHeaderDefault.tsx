@@ -1,7 +1,11 @@
 const ArticleHeaderDefault = () => {
+    
+    const HeaderData = {
+        
+    } 
     return (
         <>
-            Article header
+            Article header Default
         </>
     )
 }

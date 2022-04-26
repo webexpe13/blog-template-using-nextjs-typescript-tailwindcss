@@ -34,3 +34,8 @@ export enum DeviceTypes {
   MOBILE = "mobile",
   TABLET = "tablet"
 }
+
+export enum ArticleHeaderLayouts {
+  DEFAULT = "default",
+  CENTERED = "centered"
+}

@@ -1,13 +1,14 @@
+import { useEffect, useState } from "react";
 import classes from "./HomeLayout.module.scss";
 import Navbar from "../../components/Navbar";
-import { useEffect, useState } from "react";
 import { THEME } from "../../constants/appConstants";
 import { getTheme } from "../../utils/utils";
 import { NavbarLayouts, THEMES } from "../../shared/enums";
 
 const HomeLayout = ({ children, container }: any) => {
   const [theme, setTheme] = useState(THEMES.LIGHT);
-
+  const [searchStr, setSearchStr] = useState();
+  const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
     getTheme(setTheme);
   }, [theme]);
@@ -17,6 +18,17 @@ const HomeLayout = ({ children, container }: any) => {
       <Navbar container={container} type={NavbarLayouts.CENTERED} />
       {children}
     </div>
+    // <>
+    //   {!searchStr && (
+    //     <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
+    //       <Navbar container={container} setsearchStr={setSearchStr} />
+    //       {children}
+    //     </div>
+    //   )}
+    //   {
+    //     searchStr && <Search searchStr={searchStr} setSearchStr={setSearchStr} />
+    //   }
+    // </>
   );
 };
 

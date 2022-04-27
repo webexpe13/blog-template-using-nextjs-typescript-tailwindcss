@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react"
 import { ArticleHeaderLayouts, THEMES } from "../../shared/enums"
+import { IArticleHeaderData } from "../../shared/interfaces"
 import { getTheme } from "../../utils/utils"
 import ArticleHeaderCenter from "./ArticleHeaderCentered"
 import ArticleHeaderDefault from "./ArticleHeaderDefault"
 
 interface IArticleHeader {
-    type: ArticleHeaderLayouts
+    type: ArticleHeaderLayouts,
+    headerData: IArticleHeaderData
 }
-const ArticleHeader = ({ type = ArticleHeaderLayouts.DEFAULT }: IArticleHeader) => {
+const ArticleHeader = ({ type = ArticleHeaderLayouts.DEFAULT, headerData }: IArticleHeader) => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
 
     useEffect(() => {
@@ -19,13 +21,13 @@ const ArticleHeader = ({ type = ArticleHeaderLayouts.DEFAULT }: IArticleHeader) 
             switch (type) {
                 case ArticleHeaderLayouts.DEFAULT:
                     return (
-                        <ArticleHeaderDefault />);
+                        <ArticleHeaderDefault headerData={headerData} />);
                 case ArticleHeaderLayouts.CENTERED:
                     return (
-                        <ArticleHeaderCenter />);
+                        <ArticleHeaderCenter headerData={headerData} />);
                 default:
                     return (
-                        <ArticleHeaderDefault />
+                        <ArticleHeaderDefault headerData={headerData} />
                     );
             }
         })()

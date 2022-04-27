@@ -10,7 +10,7 @@ interface IArticleImage {
 }
 const ArticleImage = ({ src, caption, size = ArticleImageWidths.DEFAULT, alt }: IArticleImage) => {
     return (
-        <div className={combineClasses(classes.article_image, classes.article_image__wrapper, "py-15")}>
+        <div className={combineClasses(classes.article_image, classes.article_image__wrapper)}>
             <img src={src} alt={alt} width="100%" className={classes[size]} />
             {
                 caption &&

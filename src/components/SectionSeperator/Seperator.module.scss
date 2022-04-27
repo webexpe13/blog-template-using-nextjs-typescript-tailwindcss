@@ -1,0 +1,32 @@
+@import "../../styles/utils/color";
+
+.section_seperator_line{
+    width: 50%;
+    max-width: 350px;
+    margin: 40px auto;
+    border-top: solid 2px #000;
+    opacity: 0.5;
+
+    &.dark{
+        border-top: solid 2px #fff;
+    }
+}
+
+.section_seperator_dots{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px auto;
+
+    span{
+        background: #000;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+    }
+
+    &.dark span{
+        background: #fff;
+    }
+}

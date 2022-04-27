@@ -1,0 +1,37 @@
+@import "../../styles/utils/mixins";
+@import "../../styles/utils/color";
+
+.article_header_author {
+    &_img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+        background-color: $lightBlue;
+        -webkit-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.35);
+        -moz-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.35);
+        box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.35);
+    }
+}
+
+.articleTitle{
+    font-size: 40px;
+    line-height: 48px;
+
+    @include mobile{
+        font-size: 22px;
+        line-height: 28px;
+    }
+}
+
+.centered_article_header_author{
+    width: 70%;
+    border-top: solid 2px $spaceGray;
+    padding: 10px 0px;
+    margin: 10px auto;
+
+    @include mobile{
+        width: 100%;
+        font-size: 12px;
+    }
+}

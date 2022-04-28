@@ -3,7 +3,7 @@ import classes from "./HomeLayout.module.scss";
 import Navbar from "../../components/Navbar";
 import { THEME } from "../../constants/appConstants";
 import { getTheme } from "../../utils/utils";
-import { THEMES } from "../../shared/enums";
+import { NavbarLayouts, THEMES } from "../../shared/enums";
 import Search from "../../components/Search";
 
 const HomeLayout = ({ children, container }: any) => {
@@ -15,7 +15,12 @@ const HomeLayout = ({ children, container }: any) => {
   }, [theme]);
 
   return (
+
     <>
+      <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
+        <Navbar container={container} type={NavbarLayouts.CENTERED} />
+        {children}
+      </div>
       {!searchStr && (
         <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
           <Navbar container={container} setsearchStr={setSearchStr} />

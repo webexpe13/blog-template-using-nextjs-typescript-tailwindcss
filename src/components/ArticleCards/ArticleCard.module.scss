@@ -5,7 +5,7 @@
     width: 33%;
     // max-width: 350px;
     padding: 0px 10px;
-    margin-bottom: 30px;
+    margin: 0 auto 30px auto;
 
     @include mobile {
         width: 100%;

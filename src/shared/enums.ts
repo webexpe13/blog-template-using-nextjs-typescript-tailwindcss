@@ -26,4 +26,11 @@ export enum ArticleImageWidths {
 
 export enum NavbarLayouts {
   DEFAULT = "default",
+  CENTERED = "centered"
+}
+
+export enum DeviceTypes {
+  DESKTOP = "desktop",
+  MOBILE = "mobile",
+  TABLET = "tablet"
 }

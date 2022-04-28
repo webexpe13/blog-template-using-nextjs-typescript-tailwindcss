@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import { THEME } from "../../constants/appConstants";
 import { getTheme } from "../../utils/utils";
 import { NavbarLayouts, THEMES } from "../../shared/enums";
+import Search from "../../components/Search";
 
 const HomeLayout = ({ children, container }: any) => {
   const [theme, setTheme] = useState(THEMES.LIGHT);

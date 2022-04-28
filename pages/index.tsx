@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import classes from './index.module.scss';
+import classes from './index.module.scss'; // --> need to know about this
 import ArticleCard from '../src/components/ArticleCards/ArticleCard';
 import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
 import ARTICLES_LIST from './_ARTICLES_LIST';

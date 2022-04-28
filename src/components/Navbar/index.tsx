@@ -12,6 +12,11 @@ interface iNavbar {
     setsearchStr?: any
 }
 
+// const Navbar = ({ type = NavbarLayouts.DEFAULT,
+//     showSocialMedia = true,
+//     container = ContainerWidths.DEFAULT,
+//     setsearchStr
+// }: iNavbar) => {
 const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, container = ContainerWidths.DEFAULT, setsearchStr }: iNavbar) => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
     const [isMobile, setIsMobile] = useState(false);

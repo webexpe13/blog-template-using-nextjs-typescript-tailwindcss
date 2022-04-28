@@ -3,8 +3,10 @@
 
 .article_card_wrap {
     width: 33%;
-    // max-width: 350px;
+    width: calc(100% / 3);
     padding: 0px 10px;
+    // margin: 0 auto 30px auto;
+    // max-width: 350px;
     margin-bottom: 30px;
 
     @include mobile {

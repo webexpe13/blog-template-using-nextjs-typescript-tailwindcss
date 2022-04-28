@@ -12,6 +12,7 @@
     height: 50px;
     border-radius: 50%;
     background: $black;
+    display: block;
 }
 
 .navbar {
@@ -30,34 +31,22 @@
     }
 }
 
-.search_wrapper {
+.search_icon_wrapper {
     width: auto;
-    display: inline-flex;
+    display: flex;
     position: relative;
+    align-items: center;
     cursor: pointer;
-    input {
-        height: 40px;
-        width: 100%;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        border-radius: 4px;
-        box-sizing: border-box;
-        font-size: 16px;
-        padding: 0px 40px 0px 5px;
-    }
+
     button {
-        height: 100%;
+        height: auto;
         width: 25px;
         background: none;
         box-sizing: border-box;
         box-shadow: none;
         border: none;
         padding: 3px;
-        position: absolute;
         cursor: pointer;
-        z-index: 5;
-        right: 5px;
     }
 }
 
@@ -70,12 +59,13 @@
 
 @include mobile {
     .logo {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
 
-    .search_wrapper {
+    .search_icon_wrapper {
         width: auto;
+
         input {
             height: 35px;
         }
@@ -85,7 +75,140 @@
 .navbar.dark {
     background: $darkBlue;
 
-    .search_wrapper {
+    .search_icon_wrapper {
         color: $white;
+    }
+
+    .mobileBurgerToggle {
+        span,
+        span::before {
+            background: $white;
+        }
+    }
+}
+
+.hideNav {
+    @include mobile {
+        transition: all 0.5s ease;
+        transform: translateY(-110%);
+    }
+}
+
+.mobileBurgerToggle {
+    display: none;
+
+    @include mobile {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        padding: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: $black;
+            position: relative;
+            top: -3px;
+            transition: all 0.5s ease-in-out;
+
+            &::before {
+                transition: all 0.5s ease-in-out;
+                content: "";
+                position: absolute;
+                width: 75%;
+                height: 2px;
+                background: $black;
+                left: 0;
+                display: block;
+            }
+
+            &::before {
+                top: 7px;
+            }
+        }
+
+        &__close {
+            span {
+                transform: rotate(135deg);
+                transform-origin: center center;
+                top: 2px;
+
+                &::before {
+                    transform: rotate(-270deg);
+                    transform-origin: center center;
+                    top: 0px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// nav sidebar
+.nav_sidebar_wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    max-width: 380px;
+    background-color: $white;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(-110%);
+    z-index: 13;
+    color: $black;
+    padding: 10px 15px;
+
+    &.open {
+        transform: translateX(0%);
+    }
+
+    .navSidebarHeader{
+        border-bottom: solid 1px $spaceGray;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .sideNavCloseIcon {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            position: relative;
+            width: 100%;
+            height: 2px;
+            background: $darkSpaceGray;
+            transform: rotate(45deg);
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background: $darkSpaceGray;
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &.dark {
+        background-color: $darkBlue2;
+        color: $white;
+
+        .sideNavCloseIcon {
+            span, span::after {
+                background-color: $white;
+            }
+        }
     }
 }

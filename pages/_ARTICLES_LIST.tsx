@@ -8,6 +8,12 @@ const ARTICLES = [
     },{
         path: './blog/understand-and-implement-redux-store',
         component: UnderstandRedux
+    },{
+        path: './blog/simple-burger-menu-using-css',
+        component: SimpleBurgerMenu
+    },{
+        path: './blog/understand-and-implement-redux-store',
+        component: UnderstandRedux
     }
 ]
 

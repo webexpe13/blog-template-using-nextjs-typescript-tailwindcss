@@ -3,7 +3,7 @@ import classes from "./HomeLayout.module.scss";
 import Navbar from "../../components/Navbar";
 import { THEME } from "../../constants/appConstants";
 import { getTheme } from "../../utils/utils";
-import { THEMES } from "../../shared/enums";
+import { NavbarLayouts, THEMES } from "../../shared/enums";
 import Search from "../../components/Search";
 
 
@@ -15,17 +15,21 @@ const HomeLayout = ({ children, container}: any) => {
   }, [theme]);
 
   return (
-    <>
-      {!showSearch && (
-        <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
-          <Navbar container={container} setShowSearch={setShowSearch} />
-          {children}
-        </div>
-      )}
-      {
-        showSearch && <Search />
-      }
-    </>
+    <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
+      <Navbar container={container} type={NavbarLayouts.CENTERED} />
+      {children}
+    </div>
+    // <>
+    //   {!searchStr && (
+    //     <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
+    //       <Navbar container={container} setsearchStr={setSearchStr} />
+    //       {children}
+    //     </div>
+    //   )}
+    //   {
+    //     searchStr && <Search searchStr={searchStr} setSearchStr={setSearchStr} />
+    //   }
+    // </>
   );
 };
 

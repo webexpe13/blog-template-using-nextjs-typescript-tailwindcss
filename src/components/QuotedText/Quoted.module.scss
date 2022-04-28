@@ -1,0 +1,17 @@
+@import "../../styles/utils/color";
+@import "../../styles/utils/mixins";
+
+.quoted_text{
+    font-style: italic;
+    font-weight: 500;
+    width: 80%;
+    opacity: 0.8;
+    margin: 30px auto;
+
+    @include mobile{
+        margin: 0px;
+        width: 100%;
+        padding: 0px 15px;
+        margin-bottom: 30px;
+    }
+}

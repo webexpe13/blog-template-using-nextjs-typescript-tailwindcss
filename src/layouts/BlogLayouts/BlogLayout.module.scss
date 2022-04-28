@@ -10,6 +10,12 @@
         border-right: solid 1px $gray;
         max-width: 1000px;
     }
+
+    @include mobile {
+        .article_content{
+            border: none;
+        }
+    }
 }
 
 .withSidebar_article_wrapper.dark {

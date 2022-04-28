@@ -5,9 +5,9 @@ export interface IAuthor {
   bio?: string;
   github?: string;
   linkedIn?: string;
-  facebook?: string,
-  twitter?: string,
-  instagram?: string,
+  facebook?: string;
+  twitter?: string;
+  instagram?: string;
 }
 
 export interface IAuthors {
@@ -67,4 +67,13 @@ export interface ISocialLinks {
   github?: string;
   twitter?: string;
   instagram?: string;
+}
+
+export interface IArticleHeaderData {
+  author: IAuthor;
+  date: string;
+  articleTitle: string;
+  tags: string[];
+  thumbnail: string;
+  shortIntro: string;
 }

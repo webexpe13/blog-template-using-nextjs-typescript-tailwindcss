@@ -26,11 +26,21 @@ export enum ArticleImageWidths {
 
 export enum NavbarLayouts {
   DEFAULT = "default",
-  CENTERED = "centered"
+  CENTERED = "centered",
 }
 
 export enum DeviceTypes {
   DESKTOP = "desktop",
   MOBILE = "mobile",
-  TABLET = "tablet"
+  TABLET = "tablet",
+}
+
+export enum ArticleHeaderLayouts {
+  DEFAULT = "default",
+  CENTERED = "centered",
+}
+
+export enum SectionSeperatorTypes {
+  LINE = "line",
+  DOTS = "dots",
 }

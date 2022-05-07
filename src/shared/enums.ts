@@ -1,8 +1,3 @@
-export enum Authors {
-  MAYUR = "mayur",
-  RUPALI = "rupali",
-}
-
 export enum BlogLayouts {
   WITH_SIDEBAR = "WithSidebar",
   CENTERED = "Centered",
@@ -43,4 +38,11 @@ export enum ArticleHeaderLayouts {
 export enum SectionSeperatorTypes {
   LINE = "line",
   DOTS = "dots",
+}
+
+export enum TextAlign {
+  CENTER = "center",
+  LEFT = "left",
+  RIGHT = "right",
+  JUSTIFY = "justify"
 }

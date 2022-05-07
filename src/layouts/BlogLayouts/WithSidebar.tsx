@@ -14,11 +14,11 @@ const WithSidebar = ({ children }: any) => {
     return (
         <section className={combineClasses(classes.withSidebar_article_wrapper, theme === THEMES.DARK ? classes.dark : null)}>
             <Navbar container={ContainerWidths.LARGE} />
-            <div className="container-large px-15 px-sm-0">
+            <div className="container-large px-15 px-sm-0 d-lg-flex">
                 <article className={combineClasses(classes.article_content, 'pt-100 px-15')}>
                     {children}
                 </article>
-                <div>
+                <div className={classes.article_sidebar_wrapper}>
                     sidebar
                 </div>
             </div>

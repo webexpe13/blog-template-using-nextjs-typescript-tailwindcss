@@ -3,9 +3,18 @@
     border: none;
     border-bottom: 1px solid #718096;
     padding: 10px 0 10px;
-
+    background: transparent;
 }
 
 .articles_cont{
     padding: 40px 0 0;
+}
+
+.search_container{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 15;
+    top: 0;
+    left: 0;
 }

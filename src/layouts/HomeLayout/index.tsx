@@ -7,7 +7,7 @@ import { NavbarLayouts, THEMES } from "../../shared/enums";
 import Search from "../../components/Search";
 
 
-const HomeLayout = ({ children, container}: any) => {
+const HomeLayout = ({ children, container }: any) => {
   const [theme, setTheme] = useState(THEMES.LIGHT);
   const [showSearch, setShowSearch] = useState();
   useEffect(() => {
@@ -15,21 +15,28 @@ const HomeLayout = ({ children, container}: any) => {
   }, [theme]);
 
   return (
-    <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
-      <Navbar container={container} type={NavbarLayouts.CENTERED} />
-      {children}
-    </div>
-    // <>
-    //   {!searchStr && (
-    //     <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
-    //       <Navbar container={container} setsearchStr={setSearchStr} />
-    //       {children}
-    //     </div>
-    //   )}
-    //   {
-    //     searchStr && <Search searchStr={searchStr} setSearchStr={setSearchStr} />
-    //   }
-    // </>
+    <>
+      <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
+        <Navbar container={container} type={NavbarLayouts.CENTERED} />
+        {children}
+      </div>
+
+      {!showSearch && (
+        <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
+          <Navbar
+            container={container}
+          // setsearchStr={setSearchStr} 
+          />
+          {children}
+        </div>
+      )}
+      {
+        showSearch && <Search
+        // searchStr={searchStr}
+        //  setSearchStr={setSearchStr}
+        />
+      }
+    </>
   );
 };
 

@@ -11,7 +11,6 @@ import Navbar from '../src/components/Navbar';
 
 const Home: NextPage = () => {
   const [theme, setTheme] = useState(THEMES.LIGHT);
-
   useEffect(() => {
     getTheme(setTheme);
   }, [theme]);
@@ -20,13 +19,13 @@ const Home: NextPage = () => {
     <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
       <Navbar container={ContainerWidths.DEFAULT} type={NavbarLayouts.DEFAULT} />
       <div className="container">
-        <FeaturedArticle article={ARTICLES_LIST[0].component.preview} path={ARTICLES_LIST[0].path} /> 
+        <FeaturedArticle article={ARTICLES_LIST[0].preview} path={ARTICLES_LIST[0].path} />
         {/* main article  taking full width*/}
         {/* list of rest of the articles below it, one beside the other */}
         <div className={classes.articles_wrap}>
           {
             ARTICLES_LIST.map((each, i) => (
-              <ArticleCard article={each.component.preview} path={each.path} key={i} />
+              <ArticleCard article={each.preview} path={each.path} key={i} />
             ))
           }
         </div>

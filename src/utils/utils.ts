@@ -1,4 +1,6 @@
 import { THEMES } from "../shared/enums";
+import { useRouter } from 'next/router';
+import ARTICLES from '../../pages/_ARTICLES_LIST';
 
 /**
  *
@@ -59,3 +61,9 @@ export const removeBodyNoScroll = () => {
     ""
   );
 };
+
+export const getArticleDetails = () => {
+  const router = useRouter()
+  const articlePath = router.pathname;
+  return ARTICLES.filter(each => each.path === articlePath)[0]
+}

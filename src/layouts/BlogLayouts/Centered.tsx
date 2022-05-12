@@ -12,8 +12,8 @@ const Centered = ({ children }: any) => {
     return (
         <section className={combineClasses(classes.centered_article_wrapper, theme === THEMES.DARK ? classes.dark : null)}>
             <Navbar container={ContainerWidths.LARGE} />
-            <div className="container-large px-15 px-sm-0">
-                <article className={combineClasses(classes.article_content, 'pt-100 px-15')}>
+            <div className="container-large px-15 px-sm-0 pt-100 pb-50">
+                <article className={combineClasses(classes.article_content, 'pb-20 px-15')}>
                     {children}
                 </article>
             </div>

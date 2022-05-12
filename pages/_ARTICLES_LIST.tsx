@@ -1,6 +1,17 @@
-import { MAYUR, RUPALI } from '../src/constants/BLOG_CONSTANTS'
+import { MAYUR, RUPALI } from '../src/constants/BLOG_CONSTANTS';
+import { IArticleHeaderData } from '../src/shared/interfaces';
 
-const ARTICLES = [
+interface iArticle {
+    path: string;
+    preview: IArticleHeaderData,
+    seo: {
+        title: string;
+        description: string;
+        additionalMetaTags: any[]
+    }
+}
+
+const ARTICLES: iArticle[] = [
     {
         path: '/blog/simple-burger-menu-using-css',
         preview: {

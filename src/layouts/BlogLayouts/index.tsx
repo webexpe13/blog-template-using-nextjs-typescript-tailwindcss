@@ -1,4 +1,4 @@
-import { DefaultSeo } from 'next-seo';
+import { DefaultSeo, NextSeo } from 'next-seo';
 import { BlogLayouts } from '../../shared/enums';
 import { getArticleDetails } from '../../utils/utils';
 import Centered from './Centered';

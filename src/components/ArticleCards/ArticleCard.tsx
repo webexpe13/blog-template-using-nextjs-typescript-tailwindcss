@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { IArticleCardColor, IArticle } from "../../shared/interfaces";
+import { IArticleHeaderData } from "../../shared/interfaces";
 import { combineClasses, getTheme, setPath } from "../../utils/utils";
 import classes from "./ArticleCard.module.scss";
 
 interface IProp {
-  article: IArticle;
+  article: IArticleHeaderData;
   path: string;
 }
 

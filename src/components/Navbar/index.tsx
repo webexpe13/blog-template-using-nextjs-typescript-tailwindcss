@@ -2,30 +2,37 @@ import { NavbarLayouts, ContainerWidths, THEMES } from "../../shared/enums";
 import SimpleNavbar from './SimpleNavbar';
 import CenteredNavbar from './Centered';
 import { useEffect, useState } from "react";
-import { getTheme, isMobileDevice } from "../../utils/utils";
+import { addBodyNoScroll, getTheme, isMobileDevice, removeBodyNoScroll } from "../../utils/utils";
 import NavSidebar from './NavSideBar';
+import Search from "../Search";
 
 interface iNavbar {
     type?: NavbarLayouts;
     showSocialMedia?: boolean
     container?: ContainerWidths;
-    setsearchStr?: any
+    // setShowSearch?: any
 }
 
-// const Navbar = ({ type = NavbarLayouts.DEFAULT,
-//     showSocialMedia = true,
-//     container = ContainerWidths.DEFAULT,
-//     setsearchStr
-// }: iNavbar) => {
-const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, container = ContainerWidths.DEFAULT, setsearchStr }: iNavbar) => {
+const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, container = ContainerWidths.DEFAULT }: iNavbar) => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
     const [isMobile, setIsMobile] = useState(false);
     const [openSidebar, setOpenSidebar] = useState(false);
-
+    const [showSearch, setShowSearch] = useState(false);
 
     useEffect(() => {
         getTheme(setTheme);
     }, [theme]);
+
+    useEffect(() => {
+        showSearch
+            ? addBodyNoScroll()
+            : () => {
+                return;
+            };
+        return () => {
+            removeBodyNoScroll();
+        };
+    }, [showSearch]);
 
     const changeTheme = () => {
         localStorage.setItem("theme", theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT);
@@ -44,11 +51,6 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
                 setScrolled(false);
             }
             lastScrollTop = st <= 0 ? 0 : st;
-            // if (scrollYDistance > 50) {
-            //     setScrolled(true);
-            // } else {
-            //     setScrolled(false);
-            // }
         };
 
         setIsMobile(isMobileDevice());
@@ -59,7 +61,7 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
     }, []);
 
     const openSearch = () => {
-        setsearchStr && setsearchStr(true);
+     setShowSearch(true);
     }
 
     const toggleSideMenu = () => {
@@ -121,6 +123,7 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
             }
 
             <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} />
+            {showSearch && <Search setShowSearch={setShowSearch} />}
         </>
     )
 }

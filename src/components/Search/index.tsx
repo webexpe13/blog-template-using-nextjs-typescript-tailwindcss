@@ -1,29 +1,31 @@
-import { Dispatch, SetStateAction, useState } from "react";
-import { combineClasses } from "../../utils/utils";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { combineClasses, getTheme } from "../../utils/utils";
 import classes from './Search.module.scss';
 import Article from "../ArticleCards/SearchArticleCard";
 import ARTICLES_LIST from '../../../pages/_ARTICLES_LIST';
-
+import { THEMES } from "../../shared/enums";
 
 interface ISearch {
     setShowSearch: Dispatch<SetStateAction<boolean>>
 }
 const Search = ({ setShowSearch }: ISearch) => {
-    // console.log('hello');
     const [searchStr, setSearchStr] = useState('');
     const [searchResults, setSearchResults] = useState<any[]>([]);
     const handleSearch = () => {
-        console.log(searchStr);
         const data = [...ARTICLES_LIST];
         const results = data.filter((article) => (article.preview.tags.join().indexOf(searchStr) >= 0
             || article.preview.articleTitle.indexOf(searchStr) >= 0)
         );
-        console.log(results);
-
         setSearchResults(results)
     }
+
+    const [theme, setTheme] = useState(THEMES.LIGHT);
+    useEffect(() => {
+        getTheme(setTheme);
+    }, [theme]);
+
     return (
-        <div className={combineClasses('bg-offWhite', classes?.search_container)}>
+        <div className={combineClasses('bg-offWhite', classes?.search_container, theme === THEMES.DARK ? classes.dark : null)}>
             <div className="container">
                 <div className={combineClasses('d-flex justify-space-between align-center px-10')}>
                     <h1 className={'font-45'}>Search</h1>
@@ -42,7 +44,7 @@ const Search = ({ setShowSearch }: ISearch) => {
                 {searchResults?.length > 0 && <div className='articles_cont d-flex'>
                     {
                         searchResults?.length > 0 && searchResults?.map((article, i) => (
-                            <Article article={article.preview} key={i} />
+                            <Article article={article.preview} key={i} theme={theme} />
                         ))
                     }
                 </div>}

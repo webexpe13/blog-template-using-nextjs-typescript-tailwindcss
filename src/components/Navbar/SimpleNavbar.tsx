@@ -30,9 +30,6 @@ const SimpleNavbar = ({
 
         <div className="d-flex align-center">
           <div className={classes.search_icon_wrapper} onClick={() => openSearch()}>
-            <p className="m-0 font-14 pr-10 display-sm-none">
-              Search ...
-            </p>
             <button>
               <img src={(THEME_ICONS as any)[theme].search} width="100%" alt="" />
             </button>

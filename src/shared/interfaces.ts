@@ -26,16 +26,6 @@ export interface IAllRoutes {
   home: IRoute;
 }
 
-export interface IArticle {
-  author: IAuthor;
-  category?: ICategory;
-  date: string;
-  articleTitle: string;
-  shortIntro: string;
-  tags: string[];
-  thumbnail: string;
-}
-
 export interface ICategory {
   name: string;
   label: string;
@@ -76,4 +66,5 @@ export interface IArticleHeaderData {
   tags: string[];
   thumbnail: string;
   shortIntro: string;
+  category?: ICategory;
 }

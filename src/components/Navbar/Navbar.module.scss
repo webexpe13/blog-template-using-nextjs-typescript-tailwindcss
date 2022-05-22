@@ -95,58 +95,55 @@
 }
 
 .mobileBurgerToggle {
-    display: none;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 
-    @include mobile {
+    span {
         display: block;
-        position: relative;
         width: 30px;
-        height: 30px;
-        padding: 2px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 2px;
+        background: $black;
+        position: relative;
+        top: -3px;
+        transition: all 0.5s ease-in-out;
 
-        span {
-            display: block;
-            width: 30px;
+        &::before {
+            transition: all 0.5s ease-in-out;
+            content: "";
+            position: absolute;
+            width: 75%;
             height: 2px;
             background: $black;
-            position: relative;
-            top: -3px;
-            transition: all 0.5s ease-in-out;
-
-            &::before {
-                transition: all 0.5s ease-in-out;
-                content: "";
-                position: absolute;
-                width: 75%;
-                height: 2px;
-                background: $black;
-                left: 0;
-                display: block;
-            }
-
-            &::before {
-                top: 7px;
-            }
+            left: 0;
+            display: block;
         }
 
-        &__close {
-            span {
-                transform: rotate(135deg);
-                transform-origin: center center;
-                top: 2px;
-
-                &::before {
-                    transform: rotate(-270deg);
-                    transform-origin: center center;
-                    top: 0px;
-                    width: 100%;
-                }
-            }
+        &::before {
+            top: 7px;
         }
     }
+
+    // &__close {
+    //     span {
+    //         transform: rotate(135deg);
+    //         transform-origin: center center;
+    //         top: 2px;
+
+    //         &::before {
+    //             transform: rotate(-270deg);
+    //             transform-origin: center center;
+    //             top: 0px;
+    //             width: 100%;
+    //         }
+    //     }
+    // }
 }
 
 // nav sidebar
@@ -168,7 +165,7 @@
         transform: translateX(0%);
     }
 
-    .navSidebarHeader{
+    .navSidebarHeader {
         border-bottom: solid 1px $spaceGray;
         padding-bottom: 10px;
         margin-bottom: 10px;
@@ -206,7 +203,8 @@
         color: $white;
 
         .sideNavCloseIcon {
-            span, span::after {
+            span,
+            span::after {
                 background-color: $white;
             }
         }

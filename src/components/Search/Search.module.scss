@@ -1,8 +1,10 @@
+@import '../../styles/utils/color';
+
 .search_input {
     width: 100%;
     border: none;
     border-bottom: 1px solid #718096;
-    padding: 10px 0 10px;
+    padding: 10px;
     background: transparent;
 }
 
@@ -17,4 +19,15 @@
     z-index: 15;
     top: 0;
     left: 0;
+    background: $offWhite;
+    color: $black;
+
+    &.dark{
+        background: $darkBlue;
+        color: $white;
+
+        .search_input{
+            color: $white;
+        }
+    }
 }

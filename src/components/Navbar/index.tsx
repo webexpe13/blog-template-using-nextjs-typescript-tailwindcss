@@ -104,6 +104,8 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
                                         scrolled={scrolled}
                                         theme={theme}
                                         changeTheme={changeTheme}
+                                        toggleSideMenu={toggleSideMenu}
+                                        openSidebar={openSidebar}
                                     />);
                             default:
                                 return (

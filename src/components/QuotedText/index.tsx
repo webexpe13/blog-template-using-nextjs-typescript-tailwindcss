@@ -11,7 +11,7 @@ interface IProps {
 
 const QuotedText = ({ children, size = 18, color, textAlign = TextAlign.LEFT }: IProps) => {
     return (
-        <blockquote className={combineClasses(`font-${size}`, classes.quoted_text)} style={{ color: color, textAlign: textAlign }}>
+        <blockquote className={combineClasses(classes.quoted_text)} style={{ color: color, textAlign: textAlign, fontSize: size+'px' }}>
            <q>{children}</q>
         </blockquote>
     )

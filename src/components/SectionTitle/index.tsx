@@ -8,7 +8,7 @@ interface IProps {
 
 const SectionTitle = ({ children, size = 20, color, textAlign = TextAlign.LEFT }: IProps) => {
     return (
-        <h3 className={`font-${size} font-bold mt-40 mb-15`} style={{ color: color, textAlign: textAlign }}>
+        <h3 className={`font-bold mt-40 mb-15`} style={{ color: color, textAlign: textAlign, fontSize: size+'px' }}>
             {children}
         </h3>
     )

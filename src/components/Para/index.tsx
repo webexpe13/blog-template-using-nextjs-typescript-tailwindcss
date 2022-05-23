@@ -10,7 +10,7 @@ interface IProps {
 
 const Para = ({ children, size = 16, color, textAlign = TextAlign.LEFT }: IProps) => {
     return (
-        <p className={combineClasses(`font-${size} font-light`)} style={{ color: color, textAlign: textAlign }}>
+        <p className={combineClasses(`font-light`)} style={{ color: color, textAlign: textAlign, fontSize: size+'px' }}>
             {children}
         </p>
     )

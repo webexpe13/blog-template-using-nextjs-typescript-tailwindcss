@@ -29,7 +29,7 @@ const Search = ({ setShowSearch }: ISearch) => {
             <div className="container">
                 <div className={combineClasses('d-flex justify-space-between align-center px-10')}>
                     <h1 className={'font-45'}>Search</h1>
-                    <button type="button" onClick={() => setShowSearch(false)}>X</button>
+                    <button type="button" className={classes.search_close_icon} onClick={() => setShowSearch(false)}><span></span></button>
                 </div>
                 <div className="px-10 mb-40">
                     <input

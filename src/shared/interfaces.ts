@@ -8,6 +8,7 @@ export interface IAuthor {
   facebook?: string;
   twitter?: string;
   instagram?: string;
+  social?:any;
 }
 
 export interface IAuthors {

@@ -1,5 +1,6 @@
-import { MAYUR, RUPALI } from '../src/constants/BLOG_CONSTANTS';
+
 import { IArticleHeaderData } from '../src/shared/interfaces';
+import { MAYUR, RUPALI } from './_BLOG_SETUP';
 
 interface iArticle {
     path: string;
@@ -59,7 +60,7 @@ const ARTICLES: iArticle[] = [
         }
     },
     {
-        path: '/blog/simple-burger-menu-using-css',
+        path: '/blog/understand-and-implement-redux-store',
         preview: {
             author: MAYUR,
             date: "March 03 2022",
@@ -105,7 +106,7 @@ const ARTICLES: iArticle[] = [
         }
     },
     {
-        path: '/blog/simple-burger-menu-using-css',
+        path: '/blog/understand-and-implement-redux-store',
         preview: {
             author: MAYUR,
             date: "March 03 2022",

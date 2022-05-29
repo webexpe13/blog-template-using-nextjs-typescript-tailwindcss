@@ -4,9 +4,8 @@ import ArticleCard from '../src/components/ArticleCards/ArticleCard';
 import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
 import ARTICLES_LIST from './_ARTICLES_LIST';
 import { useEffect, useState } from 'react';
-import { getTheme } from '../src/utils/utils';
+import { combineClasses, getTheme } from '../src/utils/utils';
 import { ContainerWidths, NavbarLayouts, THEMES } from '../src/shared/enums';
-import { THEME } from '../src/constants/appConstants';
 import Navbar from '../src/components/Navbar';
 
 const Home: NextPage = () => {
@@ -16,7 +15,7 @@ const Home: NextPage = () => {
   }, [theme]);
 
   return (
-    <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
+    <div className={combineClasses(classes.home_layout_wrapper, theme === THEMES.DARK ? "bg-darkBlue font-spaceGray" : "bg-offWhite font-spaceGray")}>
       <Navbar container={ContainerWidths.DEFAULT} type={NavbarLayouts.DEFAULT} />
       <div className="container">
         <FeaturedArticle article={ARTICLES_LIST[0].preview} path={ARTICLES_LIST[0].path} />

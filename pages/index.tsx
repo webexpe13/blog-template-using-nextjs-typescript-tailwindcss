@@ -16,7 +16,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={combineClasses(classes.home_layout_wrapper, theme === THEMES.DARK ? "bg-darkBlue font-spaceGray" : "bg-offWhite font-spaceGray")}>
-      <Navbar container={ContainerWidths.DEFAULT} type={NavbarLayouts.DEFAULT} />
+      <Navbar />
       <div className="container">
         <FeaturedArticle article={ARTICLES_LIST[0].preview} path={ARTICLES_LIST[0].path} />
         {/* main article  taking full width*/}

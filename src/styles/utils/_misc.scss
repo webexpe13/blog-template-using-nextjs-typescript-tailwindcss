@@ -27,6 +27,12 @@
   z-index: 12;
 }
 
+hr{
+  background: none;
+  border: none;
+  border-top: solid 1px $spaceGray;
+}
+
 @-webkit-keyframes fadeIn {
   0% {
       opacity: 0;
@@ -42,4 +48,8 @@
   100% {
       opacity: 0.4;
   }
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

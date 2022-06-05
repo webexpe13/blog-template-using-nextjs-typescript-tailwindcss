@@ -5,15 +5,14 @@ import { useEffect, useState } from "react";
 import { addBodyNoScroll, getTheme, isMobileDevice, removeBodyNoScroll } from "../../utils/utils";
 import NavSidebar from './NavSideBar';
 import Search from "../Search";
+import { PRIMARY_NAV } from "../../../pages/_BLOG_SETUP"
 
 interface iNavbar {
-    type?: NavbarLayouts;
-    showSocialMedia?: boolean
-    container?: ContainerWidths;
-    // setShowSearch?: any
+    showSocialMedia?: boolean;
+    container?:ContainerWidths;
 }
 
-const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, container = ContainerWidths.DEFAULT }: iNavbar) => {
+const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }: iNavbar) => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
     const [isMobile, setIsMobile] = useState(false);
     const [openSidebar, setOpenSidebar] = useState(false);
@@ -72,7 +71,7 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
         <>
             {
                 isMobile ? <SimpleNavbar
-                    container={container}
+                    container={ContainerWidths.DEFAULT}
                     showSocial={showSocialMedia}
                     openSearch={openSearch}
                     scrolled={scrolled}
@@ -82,11 +81,11 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
                     openSidebar={openSidebar}
                 /> :
                     (() => {
-                        switch (type) {
+                        switch (PRIMARY_NAV.type) {
                             case NavbarLayouts.DEFAULT:
                                 return (
                                     <SimpleNavbar
-                                        container={container}
+                                        container={container || PRIMARY_NAV.width}
                                         showSocial={showSocialMedia}
                                         openSearch={openSearch}
                                         scrolled={scrolled}
@@ -98,7 +97,7 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
                             case NavbarLayouts.CENTERED:
                                 return (
                                     <CenteredNavbar
-                                        container={container}
+                                        container={container || PRIMARY_NAV.width}
                                         showSocial={showSocialMedia}
                                         openSearch={openSearch}
                                         scrolled={scrolled}
@@ -110,7 +109,7 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
                             default:
                                 return (
                                     <SimpleNavbar
-                                        container={container}
+                                        container={container || PRIMARY_NAV.width}
                                         showSocial={showSocialMedia}
                                         openSearch={openSearch}
                                         scrolled={scrolled}
@@ -124,7 +123,7 @@ const Navbar = ({ type = NavbarLayouts.DEFAULT, showSocialMedia = true, containe
                     })()
             }
 
-            <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} />
+            <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} navSetup={PRIMARY_NAV} />
             {showSearch && <Search setShowSearch={setShowSearch} />}
         </>
     )

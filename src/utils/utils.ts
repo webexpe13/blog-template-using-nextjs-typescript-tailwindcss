@@ -67,3 +67,15 @@ export const getArticleDetails = () => {
   const articlePath = router.pathname;
   return ARTICLES.filter(each => each.path === articlePath)[0]
 }
+
+export const getCategories = (): string[] => {
+  let categories:string[] = [];
+  const splits = ARTICLES.map(each => each.path.split('/'));
+  splits.forEach(each => {
+    const lastItem = each.length;
+    if(each.indexOf('blog') + 1 !== lastItem - 1){
+      categories.push(each[each.indexOf('blog') + 1])
+    }
+  })
+  return categories
+}

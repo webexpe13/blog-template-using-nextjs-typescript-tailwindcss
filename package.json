@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "start": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start-prod": "next start",
     "lint": "next lint",
     "export": "next export",
     "storybook": "start-storybook -p 6006",

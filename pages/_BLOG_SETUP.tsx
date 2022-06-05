@@ -21,11 +21,11 @@ export const RUPALI: IAuthor = {
 export const PRIMARY_NAV = {
     // max size 40x40px for default and max width 80px for centered or text
     logo: '',
-    type: NavbarLayouts.DEFAULT,
+    type: NavbarLayouts.CENTERED,
     width: ContainerWidths.DEFAULT,
     showThemeSwitch: true,
     showSearch: true,
-    links: [
+    navLinks: [
         {
             label: 'Home',
             path: '/'
@@ -35,27 +35,27 @@ export const PRIMARY_NAV = {
             path: '/'
         },
         {
-            label: 'Contact',
-            path: '/'
-        },
-        {
             // for categoriest dont add path and add type: dropdown
             label: 'Categories',
             type: 'dropdown'
         },
+        {
+            label: 'Contact',
+            path: '/'
+        },
     ],
-    socials: [
+    social: [
         {
-            link: '',
-            type: ''
+            link: '/',
+            icon: 'a'
         },
         {
-            link: '',
-            type: ''
+            link: '/',
+            icon: 'b'
         },
         {
-            link: '',
-            type: ''
+            link: '/',
+            icon: 'c'
         },
     ]
 }

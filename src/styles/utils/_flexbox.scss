@@ -19,6 +19,10 @@ $wraps: wrap, no-wrap;
     }
 }
 
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
 // direction
 @each $each in $directions {
     .flex-#{$each} {

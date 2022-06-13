@@ -11,6 +11,10 @@ $aligns: start, end, center, baseline, stretch;
     }
 }
 
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
 // direction
 @each $each in $directions {
     .flex-#{$each} {

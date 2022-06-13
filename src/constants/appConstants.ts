@@ -1,7 +1,7 @@
 import { IAuthors, ITHEME } from "../shared/interfaces";
 
 export const THEME_ICONS = {
-  "light": {
+  light: {
     search: "/svg/search-dark.svg",
     insta: "/svg/instagram-dark.svg",
     twitter: "/svg/twitter-dark.svg",
@@ -9,7 +9,7 @@ export const THEME_ICONS = {
     themeToggle: "/svg/theme-toggle-light.svg",
     github: "/svg/github-dark.svg",
   },
-  "dark": {
+  dark: {
     search: "/svg/search-light.svg",
     insta: "/svg/instagram-light.svg",
     twitter: "/svg/twitter-light.svg",
@@ -18,3 +18,76 @@ export const THEME_ICONS = {
     github: "/svg/github-light.svg",
   },
 };
+
+const letters = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  0,
+];
+let iconsArrayTemp = [];
+for (let i = 0; i < letters.length; i++) {
+  iconsArrayTemp.push("icon-" + letters[i]);
+  if (typeof (letters[i]) !== "number") {
+    iconsArrayTemp.push("icon-2-" + letters[i]);
+  }
+}
+export const iconsArray = iconsArrayTemp;

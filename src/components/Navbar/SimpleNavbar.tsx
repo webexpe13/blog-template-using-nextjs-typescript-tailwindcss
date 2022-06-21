@@ -2,7 +2,7 @@ import classes from "./Navbar.module.scss";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { THEME_ICONS } from "../../constants/appConstants";
-import { combineClasses, getTheme } from "../../utils/utils";
+import { combineClasses, getCategories, getTheme } from "../../utils/utils";
 import { ContainerWidths, THEMES } from "../../shared/enums";
 
 const SimpleNavbar = ({
@@ -16,6 +16,9 @@ const SimpleNavbar = ({
   navSetup
 }: any) => {
   const { navLinks, showSearch, socials, width } = navSetup;
+
+  const CATEGORIES = getCategories();
+  const [openDD, setOpenDD] = useState(false)
 
   return (
     <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-10")}>
@@ -39,9 +42,29 @@ const SimpleNavbar = ({
                   <Link href={each.path} key={i}>
                     <a className='d-block mx-15 my-0'>{each.label}</a>
                   </Link>
-                ) : <p className='my-0 mx-15' key={i}>
-                  {each.label}
-                </p>
+                ) : <div className={classes.sidebarCategoryDD_wrapper}>
+                  <div className='d-flex align-center cursor-pointer mx-10' key={i} onClick={() => setOpenDD(!openDD)}>
+                    <p className='my-0'>
+                      {each.label}
+                    </p>
+                    <i className='icofont-caret-down'></i>
+                  </div>
+                  {
+                    openDD &&
+                    <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating)}>
+                      <Link href={'/blog'}>
+                        <a className='font-14 d-block'>All Articles</a>
+                      </Link>
+                      {
+                        CATEGORIES.map(each => (
+                          <Link href={'/blog/' + each} key={each}>
+                            <a className='font-14 d-block' style={{ textTransform: 'capitalize' }}>{each}</a>
+                          </Link>
+                        ))
+                      }
+                    </div>
+                  }
+                </div>
               ))
             }
             <div className="ml-15">

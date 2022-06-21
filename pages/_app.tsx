@@ -1,4 +1,5 @@
 import '../src/styles/globals.scss'
+import '../src/assets/fontCss/icofont.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 

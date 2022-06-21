@@ -43,23 +43,25 @@ const WithSidebar = ({ children }: any) => {
                             </div>
                             <p className='font-16 font-light'>{author.bio}</p>
                         </div>
-                        <div className={classes.more_from_author}>
-                            <p>More from  Author</p>
-
-                            {
-                                relatedArticles.map((each, i) =>
-                                    <Link href={each.path} key={i}>
-                                        <div className={classes.more_from_author__articles} key={each.path}>
-                                            <div className={classes.article_image} style={{ background: `url(${each.preview.thumbnail})` }}>
+                        {
+                            relatedArticles.length &&
+                            <div className={classes.more_from_author}>
+                                <p>More from  Author</p>
+                                {
+                                    relatedArticles.map((each, i) =>
+                                        <Link href={each.path} key={i}>
+                                            <div className={classes.more_from_author__articles} key={each.path}>
+                                                <div className={classes.article_image} style={{ background: `url(${each.preview.thumbnail})` }}>
+                                                </div>
+                                                <div className={classes.article_title}>
+                                                    {each.preview.articleTitle}
+                                                </div>
                                             </div>
-                                            <div className={classes.article_title}>
-                                                {each.preview.articleTitle}
-                                            </div>
-                                        </div>
-                                    </Link>
-                                )
-                            }
-                        </div>
+                                        </Link>
+                                    )
+                                }
+                            </div>
+                        }
                     </div>
                 </div>
             </section>

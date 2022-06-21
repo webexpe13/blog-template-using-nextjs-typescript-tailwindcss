@@ -1,8 +1,28 @@
+@import "../../styles/utils/mixins";
+
 .article_image__wrapper {
-    img {
+    img{
+        display: block;
+    }
+    img.size_default {
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    img.size_full {
         margin-left: -15px;
         margin-right: -15px;
         width: calc(100% + 30px);
         width: 1000px;
+    }
+
+    img.size_small {
+        width: 50%;
+        margin: 0 auto;
+
+        @include mobile{
+            width: 80%;
+        }
     }
 }

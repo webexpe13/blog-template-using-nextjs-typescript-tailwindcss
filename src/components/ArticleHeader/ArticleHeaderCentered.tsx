@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { IArticleHeaderData } from "../../shared/interfaces"
 import { combineClasses } from "../../utils/utils"
 import classes from './ArticleHeader.module.scss'
@@ -14,7 +15,13 @@ const ArticleHeaderCenter = ({ headerData }: IProps) => {
                 <p className={'my-0'}>
                     {headerData.author.name}
                 </p>
-                <p className="my-0">Category</p>
+                {
+                    headerData.category && <p className="my-0">
+                        <Link href={'/blog/' + headerData.category}>
+                            <a>{headerData.category}</a>
+                        </Link>
+                    </p>
+                }
                 <p className="my-0">{headerData.date}</p>
             </div>
             <div className="text-center">

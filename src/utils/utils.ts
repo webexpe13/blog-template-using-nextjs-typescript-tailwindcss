@@ -70,12 +70,17 @@ export const getArticleDetails = () => {
 
 export const getCategories = (): string[] => {
   let categories:string[] = [];
-  const splits = ARTICLES.map(each => each.path.split('/'));
-  splits.forEach(each => {
-    const lastItem = each.length;
-    if(each.indexOf('blog') + 1 !== lastItem - 1){
-      categories.push(each[each.indexOf('blog') + 1])
+  // const splits = ARTICLES.map(each => each.path.split('/'));
+  // splits.forEach(each => {
+  //   const lastItem = each.length;
+  //   if(each.indexOf('blog') + 1 !== lastItem - 1){
+  //     categories.push(each[each.indexOf('blog') + 1])
+  //   }
+  // })
+  ARTICLES.forEach(each => {
+    if(each.preview.category && !categories.includes(each.preview.category)){
+      categories.push(each.preview.category)
     }
-  })
+  });
   return categories
 }

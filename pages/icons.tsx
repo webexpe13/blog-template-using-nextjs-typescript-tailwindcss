@@ -1,18 +1,10 @@
-import { useEffect, useState } from "react";
-import Navbar from "../src/components/Navbar";
 import { iconsArray } from "../src/constants/appConstants";
-import { THEMES } from "../src/shared/enums";
-import { combineClasses, getTheme } from "../src/utils/utils";
-import classes from './index.module.scss';
+import HomeLayout from "../src/layouts/HomeLayout";
+import { combineClasses } from "../src/utils/utils";
 
 const Icons = () => {
-    const [theme, setTheme] = useState(THEMES.LIGHT);
-    useEffect(() => {
-        getTheme(setTheme);
-    }, [theme]);
     return (
-        <div className={combineClasses(classes.home_layout_wrapper, theme === THEMES.DARK ? "bg-darkBlue font-offWhite" : "bg-offWhite font-black")}>
-            <Navbar />
+        <HomeLayout>
             <div className="container">
                 <div className="px-15">
                     <h1 className="font-light mb-0">
@@ -41,7 +33,7 @@ const Icons = () => {
                     }
                 </div>
             </div>
-        </div>
+        </HomeLayout>
     )
 }
 

@@ -11,8 +11,6 @@ export const MAYUR: IAuthor = {
 export const RUPALI: IAuthor = {
     name: "Rupali Yadav",
     designation: "IT Analyst at TCS",
-    github: "",
-    linkedIn: "",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     profilePic: "",
 }

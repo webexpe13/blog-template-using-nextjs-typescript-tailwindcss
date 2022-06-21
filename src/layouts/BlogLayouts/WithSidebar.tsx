@@ -1,10 +1,11 @@
 import classes from './BlogLayout.module.scss';
 import Navbar from '../../components/Navbar';
-import { ContainerWidths, THEMES } from '../../shared/enums';
+import { ContainerWidths, NavbarType, THEMES } from '../../shared/enums';
 import { combineClasses, getArticleDetails, getTheme } from '../../utils/utils';
 import { useEffect, useState } from 'react';
-import ARTICLES from '../../../pages/_ARTICLES_LIST';
+import ARTICLES from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import Link from 'next/link';
+import { PRIMARY_NAV } from '../../../BLOG_CONSTANTS/_BLOG_SETUP';
 
 const WithSidebar = ({ children }: any) => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
@@ -22,7 +23,9 @@ const WithSidebar = ({ children }: any) => {
     return (
         <>
             <Navbar container={ContainerWidths.LARGE} />
-            <section className={combineClasses(classes.withSidebar_article_wrapper, theme === THEMES.DARK ? classes.dark : null)}>
+            <section
+                className={combineClasses(classes.withSidebar_article_wrapper, theme === THEMES.DARK ? classes.dark : null)}
+                style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '0px' : '50px' }}>
                 <div className="container-large px-15 px-sm-0 d-lg-flex pb-50 pt-100">
                     <article className={combineClasses(classes.article_content, 'pb-20 px-15')}>
                         {children}
@@ -45,8 +48,8 @@ const WithSidebar = ({ children }: any) => {
 
                             {
                                 relatedArticles.map((each, i) =>
-                                    <Link href={each.path}>
-                                        <div className={classes.more_from_author__articles} key={i}>
+                                    <Link href={each.path} key={i}>
+                                        <div className={classes.more_from_author__articles} key={each.path}>
                                             <div className={classes.article_image} style={{ background: `url(${each.preview.thumbnail})` }}>
                                             </div>
                                             <div className={classes.article_title}>

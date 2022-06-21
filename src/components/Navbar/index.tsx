@@ -1,15 +1,15 @@
-import { NavbarLayouts, ContainerWidths, THEMES } from "../../shared/enums";
+import { NavbarType, ContainerWidths, THEMES } from "../../shared/enums";
 import SimpleNavbar from './SimpleNavbar';
 import CenteredNavbar from './Centered';
 import { useEffect, useState } from "react";
 import { addBodyNoScroll, getTheme, isMobileDevice, removeBodyNoScroll } from "../../utils/utils";
 import NavSidebar from './NavSideBar';
 import Search from "../Search";
-import { PRIMARY_NAV } from "../../../pages/_BLOG_SETUP"
+import { PRIMARY_NAV } from "../../../BLOG_CONSTANTS/_BLOG_SETUP"
 
 interface iNavbar {
     showSocialMedia?: boolean;
-    container?:ContainerWidths;
+    container?: ContainerWidths;
 }
 
 const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }: iNavbar) => {
@@ -60,7 +60,7 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
     }, []);
 
     const openSearch = () => {
-     setShowSearch(true);
+        setShowSearch(true);
     }
 
     const toggleSideMenu = () => {
@@ -79,10 +79,11 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                     changeTheme={changeTheme}
                     toggleSideMenu={toggleSideMenu}
                     openSidebar={openSidebar}
+                    navSetup={PRIMARY_NAV}
                 /> :
                     (() => {
                         switch (PRIMARY_NAV.type) {
-                            case NavbarLayouts.DEFAULT:
+                            case NavbarType.DEFAULT:
                                 return (
                                     <SimpleNavbar
                                         container={container || PRIMARY_NAV.width}
@@ -93,8 +94,9 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                                         changeTheme={changeTheme}
                                         toggleSideMenu={toggleSideMenu}
                                         openSidebar={openSidebar}
+                                        navSetup={PRIMARY_NAV}
                                     />);
-                            case NavbarLayouts.CENTERED:
+                            case NavbarType.CENTERED:
                                 return (
                                     <CenteredNavbar
                                         container={container || PRIMARY_NAV.width}
@@ -105,6 +107,7 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                                         changeTheme={changeTheme}
                                         toggleSideMenu={toggleSideMenu}
                                         openSidebar={openSidebar}
+                                        navSetup={PRIMARY_NAV}
                                     />);
                             default:
                                 return (
@@ -117,13 +120,14 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                                         changeTheme={changeTheme}
                                         toggleSideMenu={toggleSideMenu}
                                         openSidebar={openSidebar}
+                                        navSetup={PRIMARY_NAV}
                                     />
                                 );
                         }
                     })()
             }
 
-            <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} navSetup={PRIMARY_NAV} />
+            <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} navSetup={PRIMARY_NAV} changeTheme={changeTheme}/>
             {showSearch && <Search setShowSearch={setShowSearch} />}
         </>
     )

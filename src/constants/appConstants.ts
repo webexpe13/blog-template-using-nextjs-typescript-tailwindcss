@@ -1,5 +1,3 @@
-import { IAuthors, ITHEME } from "../shared/interfaces";
-
 export const THEME_ICONS = {
   light: {
     search: "/svg/search-dark.svg",

@@ -27,29 +27,9 @@ export interface IAllRoutes {
   home: IRoute;
 }
 
-export interface ICategory {
-  name: string;
-  label: string;
-  path: string;
-  icon?: string;
-}
-
 export interface IArticleCardColor {
   bg: string;
   font: String;
-}
-
-export interface ITHEME {
-  light: {
-    bg: string;
-    navBg: string;
-    color: string;
-  };
-  dark: {
-    bg: string;
-    navBg: string;
-    color: string;
-  };
 }
 
 export interface ISocialLinks {
@@ -67,5 +47,5 @@ export interface IArticleHeaderData {
   tags: string[];
   thumbnail: string;
   shortIntro: string;
-  category?: ICategory;
+  category?: string;
 }

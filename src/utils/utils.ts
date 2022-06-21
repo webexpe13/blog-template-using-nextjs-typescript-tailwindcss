@@ -1,6 +1,6 @@
 import { THEMES } from "../shared/enums";
 import { useRouter } from 'next/router';
-import ARTICLES from '../../pages/_ARTICLES_LIST';
+import ARTICLES from '../../BLOG_CONSTANTS/_ARTICLES_LIST';
 
 /**
  *

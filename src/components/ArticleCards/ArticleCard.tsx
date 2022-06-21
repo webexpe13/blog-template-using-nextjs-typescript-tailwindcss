@@ -21,40 +21,45 @@ const ArticleCard = ({ article, path }: IProp) => {
         <div className={classes.article_card__image}>
           <img src={article.thumbnail} alt="" width="100%" />
         </div>
-        <Link href={path}>
-          <div className={classes.article_card__content}>
-            <p className={combineClasses(classes.article_card__date, "font-regular font-12 mt-10 mb-5")}>{article.date}</p>
+
+        <div className={classes.article_card__content}>
+          <p className={combineClasses(classes.article_card__date, "font-regular font-12 mt-10 mb-5")}>{article.date}</p>
+          <Link href={path}>
             <h1 className={combineClasses(classes.article_card__title, "font-22 font-bold my-0")} >
               {article.articleTitle}
             </h1>
-            <p className={combineClasses(classes.article_card__intro, "font-14 font-regular mt-5 mb-5")}>
-              {article.shortIntro.slice(0, 100)} ...
-            </p>
+          </Link>
+          <p className={combineClasses(classes.article_card__intro, "font-14 font-regular mt-5 mb-5")}>
+            {article.shortIntro.slice(0, 100)} ...
+          </p>
 
-            <div className={classes.article_card__tags}>
-              {
-                article.tags.map((each, i) => (
-                  <span key={i} className="font-12 font-regular mr-10" >#{each}</span>
-                ))
-              }
-            </div>
-
-            <div className={combineClasses(classes.article_card_footer, "mb-10")}>
-              <div className={classes.author}>
-                <div className={classes.author_img}></div>
-                <p className={combineClasses(classes.author_name, 'font-12 font-medium')}>
-                  {article.author.name}
-                </p>
-              </div>
-              {
-                article.category && <>
-                  <p className="font-12 px-5">in</p>
-                  <p className="font-medium font-12">{article.category?.label}</p>
-                </>
-              }
-            </div>
+          <div className={classes.article_card__tags}>
+            {
+              article.tags.map((each, i) => (
+                <span key={i} className="font-12 font-regular mr-10" >#{each}</span>
+              ))
+            }
           </div>
-        </Link>
+
+          <div className={combineClasses(classes.article_card_footer, "mb-10")}>
+            <div className={classes.author}>
+              <div className={classes.author_img}></div>
+              <p className={combineClasses(classes.author_name, 'font-12 font-medium')}>
+                {article.author.name}
+              </p>
+            </div>
+            {
+              article.category && <>
+                <p className="font-12 px-5">in</p>
+                <p className={combineClasses(classes.article_card__category, "font-medium font-12")}>
+                  <Link href={"/blog/" + article.category}>
+                    {article.category}
+                  </Link>
+                </p>
+              </>
+            }
+          </div>
+        </div>
       </div>
     </div>
   );

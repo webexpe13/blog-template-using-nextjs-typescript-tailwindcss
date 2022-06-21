@@ -34,13 +34,16 @@
     &__content {
         display: block;
         padding: 0px 15px;
-        cursor: pointer;
     }
 
-    &__title {
+    &__title, &__category {
         // min-height: 100px;
         letter-spacing: 1px;
         // line-height: 40px;
+        cursor: pointer;
+        &:hover{
+            color: $lightBlue;
+        }
     }
 
     &_footer {

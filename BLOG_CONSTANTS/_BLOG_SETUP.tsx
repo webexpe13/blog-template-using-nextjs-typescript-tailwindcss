@@ -43,7 +43,7 @@ export const PRIMARY_NAV = {
             path: '/'
         },
         {
-            // for categoriest dont add path and add type: dropdown
+            // for categories dont add path and add type: dropdown
             label: 'Blog',
             type: 'dropdown'
         },
@@ -62,7 +62,7 @@ export const PRIMARY_NAV = {
             path: '/'
         },
         {
-            // for categoriest dont add path and add type: dropdown
+            // for categories dont add path and add type: dropdown
             label: 'Blog',
             type: 'dropdown'
         },

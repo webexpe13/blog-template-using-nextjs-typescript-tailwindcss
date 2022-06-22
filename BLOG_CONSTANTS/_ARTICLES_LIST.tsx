@@ -13,18 +13,17 @@ interface iArticle {
 }
 
 export const FEATURE_ARTICLE: iArticle = {
-    path: '/blog/demo-article-default-layout',
+    path: '/blog/tutorial/how-to-setup-blog',
     preview: {
         author: MAYUR,
         date: "March 03 2022",
-        articleTitle: "Demo Article with default layout (with sidebar)",
-        tags: "demo, with sidebar, default layout",
-        // you have to save image in pubic -> images folder
+        articleTitle: "How to setup this plog template",
+        tags: "demo, blog setup",
         thumbnail: "/images/demo-image.jpg",
-        shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
+        shortIntro: "These are the steps to setup your blog",
     },
     seo: {
-        title: "Demo Article with default sidebar layout",
+        title: "These are the steps to setup your blog",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
         additionalMetaTags: [
@@ -38,6 +37,29 @@ export const FEATURE_ARTICLE: iArticle = {
 }
 
 export const ARTICLES_LIST: iArticle[] = [
+    {
+        path: '/blog/tutorial/how-to-setup-blog',
+        preview: {
+            author: MAYUR,
+            date: "March 03 2022",
+            articleTitle: "How to setup this plog template",
+            tags: "demo, blog setup",
+            thumbnail: "/images/demo-image.jpg",
+            shortIntro: "These are the steps to setup your blog",
+        },
+        seo: {
+            title: "These are the steps to setup your blog",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+            additionalMetaTags: [
+                {
+                    property: "keywords",
+                    content:
+                        "Blog, learn web development, learn javascript, learn css, learn html css js, responsive web development, responsive website",
+                },
+            ],
+        }
+    },
     {
         path: '/blog/demo-article-default-layout',
         preview: {

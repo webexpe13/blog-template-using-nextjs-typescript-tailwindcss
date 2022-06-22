@@ -1,8 +1,10 @@
 export const THEME_ICONS = {
   light: {
+    search: "/svg/search-dark.svg",
     themeToggle: "/svg/sun.svg",
   },
   dark: {
+    search: "/svg/search-light.svg",
     themeToggle: "/svg/moon.svg",
   },
 };

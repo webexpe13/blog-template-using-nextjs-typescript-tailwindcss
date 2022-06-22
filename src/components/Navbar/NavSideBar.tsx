@@ -95,10 +95,10 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                             <Link href='/blog/demo-article-with-category'>
                                 <a className='font-16 font-medium d-block my-15'>Demo Article With category</a>
                             </Link>
-                            <Link href='/blog/blog-setup'>
+                            <Link href='/blog/tutorial/how-to-setup-blog'>
                                 <a className='font-16 font-medium d-block my-15'>How to setup your blog</a>
                             </Link>
-                            <Link href='/blog/blog-deployment'>
+                            <Link href='/blog/tutorial/how-to-deploy-blog'>
                                 <a className='font-16 font-medium d-block my-15'>How to deploy your blog</a>
                             </Link>
                             </>

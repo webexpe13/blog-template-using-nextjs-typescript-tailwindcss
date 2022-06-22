@@ -12,20 +12,44 @@ interface iArticle {
     }
 }
 
-const ARTICLES: iArticle[] = [
+export const FEATURE_ARTICLE: iArticle = {
+    path: '/blog/demo-article-default-layout',
+    preview: {
+        author: MAYUR,
+        date: "March 03 2022",
+        articleTitle: "Demo Article with default layout (with sidebar)",
+        tags: "demo, with sidebar, default layout",
+        // you have to save image in pubic -> images folder
+        thumbnail: "/images/demo-image.jpg",
+        shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
+    },
+    seo: {
+        title: "Demo Article with default sidebar layout",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        additionalMetaTags: [
+            {
+                property: "keywords",
+                content:
+                    "Blog, learn web development, learn javascript, learn css, learn html css js, responsive web development, responsive website",
+            },
+        ],
+    }
+}
+
+export const ARTICLES_LIST: iArticle[] = [
     {
-        path: '/blog/simple-burger-menu-using-css',
+        path: '/blog/demo-article-default-layout',
         preview: {
             author: MAYUR,
             date: "March 03 2022",
-            articleTitle: "Article Title Lorem ipsum dolor sit amet, consectetur",
-            tags: ["css", "css animations", "css tricks"],
-            thumbnail: "https://picsum.photos/300/200",
-            shortIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            category: 'javascript'
+            articleTitle: "Demo Article with default layout (with sidebar)",
+            tags: "demo, with sidebar, default layout",
+            thumbnail: "/images/demo-image.jpg",
+            shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
         },
         seo: {
-            title: "Lalalalal",
+            title: "Demo Article with default sidebar layout",
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
             additionalMetaTags: [
@@ -38,42 +62,17 @@ const ARTICLES: iArticle[] = [
         }
     },
     {
-        path: '/blog/understand-and-implement-redux-store',
-        preview: {
-            author: RUPALI,
-            thumbnail: "https://picsum.photos/300/200",
-            tags: ["react js", "react redux store", "redux"],
-            date: "March 03 2022",
-            articleTitle: "Understand and implement redux store",
-            shortIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
-            category: 'javascript'
-        },
-        seo: {
-            title: "understand-and-implement-redux-store",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-            additionalMetaTags: [
-                {
-                    property: "keywords",
-                    content:
-                        "Blog, learn web development, learn javascript, learn css, learn html css js, responsive web development, responsive website",
-                },
-            ],
-        }
-    },
-    {
-        path: '/blog/understand-and-implement-redux-store',
+        path: '/blog/demo-article-centered-layout',
         preview: {
             author: MAYUR,
             date: "March 03 2022",
-            articleTitle: "Article Title CSS Lorem ipsum dolor sit amet, consectetur",
-            tags: ["css", "css animations", "css tricks"],
-            thumbnail: "https://picsum.photos/300/200",
-            shortIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            category: 'css'
+            articleTitle: "Demo Article with centered layout",
+            tags: "demo,centered, centered layout",
+            thumbnail: "/images/demo-image.jpg",
+            shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
         },
         seo: {
-            title: "Our Blog",
+            title: "Demo Article with default centered layout",
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
             additionalMetaTags: [
@@ -86,40 +85,21 @@ const ARTICLES: iArticle[] = [
         }
     },
     {
-        path: '/blog/understand-and-implement-redux-store',
-        preview: {
-            author: RUPALI,
-            thumbnail: "https://picsum.photos/300/200",
-            tags: ["react js", "react redux store", "redux"],
-            date: "March 03 2022",
-            articleTitle: "Understand and implement redux store",
-            shortIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-        },
-        seo: {
-            title: "Our Blog",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-            additionalMetaTags: [
-                {
-                    property: "keywords",
-                    content:
-                        "Blog, learn web development, learn javascript, learn css, learn html css js, responsive web development, responsive website",
-                },
-            ],
-        }
-    },
-    {
-        path: '/blog/understand-and-implement-redux-store',
+        // for article inside a category the path will also change
+        // /blog/{category}/{filename}
+        path: '/blog/tutorial/demo-article-with-category',
         preview: {
             author: MAYUR,
             date: "March 03 2022",
-            articleTitle: "Article Title Lorem ipsum dolor sit amet, consectetur",
-            tags: ["css", "css animations", "css tricks"],
-            thumbnail: "https://picsum.photos/300/200",
-            shortIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            articleTitle: "Demo Article with category",
+            tags: "demo, with category",
+            thumbnail: "/images/demo-image.jpg",
+            shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
+            // create a folder of you category example "food-recipies" or "travel" etc and put that exact same name in category
+            category: 'tutorial'
         },
         seo: {
-            title: "Our Blog",
+            title: "Demo Article with category",
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
             additionalMetaTags: [
@@ -132,5 +112,3 @@ const ARTICLES: iArticle[] = [
         }
     },
 ]
-
-export default ARTICLES

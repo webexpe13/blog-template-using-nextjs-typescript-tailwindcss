@@ -3,14 +3,17 @@ export interface IAuthor {
   name: string;
   designation?: string;
   bio?: string;
-  social?:any;
+  social?: {
+    icon: any;
+    link: string;
+  }[];
 }
 
 export interface IArticleHeaderData {
   author: IAuthor;
   date: string;
   articleTitle: string;
-  tags: string[];
+  tags: string;
   thumbnail: string;
   shortIntro: string;
   category?: string;

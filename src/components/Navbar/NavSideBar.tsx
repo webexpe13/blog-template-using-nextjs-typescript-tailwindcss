@@ -46,12 +46,15 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 <hr />
                 <div className='my-15'>
                     {
-                        navSetup.navLinks.map((each: any, i: any) => (
-                            each.type !== 'dropdown' ? (
+                        navSetup.sideNavLinks.map((each: any, i: any) => (
+                            each.type !== 'dropdown' ? !each.newTab ?
                                 <Link href={each.path} key={i}>
                                     <a className='font-16 font-medium d-block my-15'>{each.label}</a>
-                                </Link>
-                            ) :
+                                </Link> :
+                                <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='font-16 font-medium d-inline-block mr-20 flex-wrap'>
+                                    {each.label}
+                                </a>
+                                :
                                 <div className={classes.sidebarCategoryDD_wrapper} key={i} >
                                     <div className='d-flex justify-space-between align-center cursor-pointer' onClick={() => setOpenDD(!openDD)}>
                                         <p className='font-16 font-medium my-0'>
@@ -59,7 +62,7 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                         </p>
                                         <i className='icofont-caret-down'></i>
                                     </div>
-                                    <div className={classes.sidebarCategoryDD} style={{height: openDD ? '150px': '0px', padding: openDD ? '10px': '0px' }}>
+                                    <div className={classes.sidebarCategoryDD} style={{ height: openDD ? '150px' : '0px', padding: openDD ? '10px' : '0px' }}>
                                         <Link href={'/blog'}>
                                             <a className='font-14 d-block'>All Articles</a>
                                         </Link>
@@ -75,9 +78,31 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                         ))
                     }
                     {
-                        env === 'development' ? <Link href='/icons'>
-                            <a className='font-16 font-medium d-block my-15'>Icons</a>
-                        </Link> : null
+                        env === 'development' ?
+                            <>                        
+                            <Link href='/icons'>
+                                <a className='font-16 font-medium d-block my-15'>Icons</a>
+                            </Link>
+                            <Link href='/styles'>
+                                <a className='font-16 font-medium d-block my-15'>Styles Doc</a>
+                            </Link>
+                            <Link href='/blog/demo-article-default-layout'>
+                                <a className='font-16 font-medium d-block my-15'>Demo Article Default Layout</a>
+                            </Link>
+                            <Link href='/blog/demo-article-centered-layout'>
+                                <a className='font-16 font-medium d-block my-15'>Demo Article Centered Layout</a>
+                            </Link>
+                            <Link href='/blog/demo-article-with-category'>
+                                <a className='font-16 font-medium d-block my-15'>Demo Article With category</a>
+                            </Link>
+                            <Link href='/blog/blog-setup'>
+                                <a className='font-16 font-medium d-block my-15'>How to setup your blog</a>
+                            </Link>
+                            <Link href='/blog/blog-deployment'>
+                                <a className='font-16 font-medium d-block my-15'>How to deploy your blog</a>
+                            </Link>
+                            </>
+                            : null
                     }
 
                 </div>

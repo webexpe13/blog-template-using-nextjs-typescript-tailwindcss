@@ -1,13 +1,13 @@
 import ArticleCard from '../src/components/ArticleCards/ArticleCard';
 import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
-import ARTICLES_LIST from '../BLOG_CONSTANTS/_ARTICLES_LIST';
+import { ARTICLES_LIST, FEATURE_ARTICLE } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
 import HomeLayout from '../src/layouts/HomeLayout';
 
 const Home = () => {
   return (
     <HomeLayout>
       <div className={"container"}>
-        <FeaturedArticle article={ARTICLES_LIST[0].preview} path={ARTICLES_LIST[0].path} />
+        <FeaturedArticle article={FEATURE_ARTICLE.preview} path={FEATURE_ARTICLE.path} />
         {/* main article  taking full width*/}
         {/* list of rest of the articles below it, one beside the other */}
         <div className={'d-flex flex-wrap'}>

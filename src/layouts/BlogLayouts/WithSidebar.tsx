@@ -3,7 +3,7 @@ import Navbar from '../../components/Navbar';
 import { ContainerWidths, NavbarType, THEMES } from '../../shared/enums';
 import { combineClasses, getArticleDetails, getTheme } from '../../utils/utils';
 import { useEffect, useState } from 'react';
-import ARTICLES from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
+import {ARTICLES_LIST} from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import Link from 'next/link';
 import { PRIMARY_NAV } from '../../../BLOG_CONSTANTS/_BLOG_SETUP';
 
@@ -17,7 +17,7 @@ const WithSidebar = ({ children }: any) => {
     const ARTICLE_DETAILS = getArticleDetails();
     const author = ARTICLE_DETAILS.preview.author;
 
-    const relatedArticles = ARTICLES.filter((each) => each.preview.author === author);
+    const relatedArticles = ARTICLES_LIST.filter((each) => each.preview.author === author);
 
 
     return (
@@ -41,7 +41,18 @@ const WithSidebar = ({ children }: any) => {
                                     <p className='font-12 mt-0 mb-0'>{author.designation}</p>
                                 </div>
                             </div>
-                            <p className='font-16 font-light'>{author.bio}</p>
+                            <p className='font-16 font-light mb-0'>{author.bio}</p>
+                            {
+                                author.social?.length &&
+                                <div className='mb-10 d-flex align-center flex-wrap'>
+                                    {
+                                        author.social.map((each, i) =>
+                                            <a href={each.link} key={i} target="_blank" className='mr-15'
+                                                rel="noopener noreferrer">{each.icon}</a>
+                                        )
+                                    }
+                                </div>
+                            }
                         </div>
                         {
                             relatedArticles.length &&

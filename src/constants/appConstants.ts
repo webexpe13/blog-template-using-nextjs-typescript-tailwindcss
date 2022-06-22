@@ -1,19 +1,9 @@
 export const THEME_ICONS = {
   light: {
-    search: "/svg/search-dark.svg",
-    insta: "/svg/instagram-dark.svg",
-    twitter: "/svg/twitter-dark.svg",
-    linkedin: "/svg/linkedin-dark.svg",
     themeToggle: "/svg/sun.svg",
-    github: "/svg/github-dark.svg",
   },
   dark: {
-    search: "/svg/search-light.svg",
-    insta: "/svg/instagram-light.svg",
-    twitter: "/svg/twitter-light.svg",
-    linkedin: "/svg/linkedin-light.svg",
     themeToggle: "/svg/moon.svg",
-    github: "/svg/github-light.svg",
   },
 };
 
@@ -81,11 +71,27 @@ const letters = [
   9,
   0,
 ];
+
+const icofontIcons = [
+  'caret-down',
+  'caret-left',
+  'caret-up',
+  'rounded-down',
+  'rounded-up',
+  'rounded-right',
+  'thin-down',
+  'thin-left',
+  'thin-right',
+  'thin-up',
+]
 let iconsArrayTemp = [];
 for (let i = 0; i < letters.length; i++) {
   iconsArrayTemp.push("icon-" + letters[i]);
   if (typeof (letters[i]) !== "number") {
     iconsArrayTemp.push("icon-2-" + letters[i]);
   }
+}
+for (let i = 0; i < icofontIcons.length; i++) {
+  iconsArrayTemp.push("icofont-" + icofontIcons[i]);
 }
 export const iconsArray = iconsArrayTemp;

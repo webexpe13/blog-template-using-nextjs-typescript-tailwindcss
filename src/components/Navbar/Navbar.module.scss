@@ -168,6 +168,7 @@
     z-index: 13;
     color: $black;
     padding: 20px 15px 10px;
+    overflow-y: auto;
 
     &.open {
         transform: translateX(0%);

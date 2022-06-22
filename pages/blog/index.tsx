@@ -4,7 +4,7 @@ import Navbar from "../../src/components/Navbar";
 import { NavbarType, THEMES } from "../../src/shared/enums";
 import { combineClasses, getTheme } from "../../src/utils/utils";
 import classes from '../index.module.scss';
-import ARTICLES_LIST from '../../BLOG_CONSTANTS/_ARTICLES_LIST';
+import { ARTICLES_LIST } from '../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import { PRIMARY_NAV } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
 
 const Categories = () => {

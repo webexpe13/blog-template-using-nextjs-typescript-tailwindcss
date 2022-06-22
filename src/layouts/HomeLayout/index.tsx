@@ -12,7 +12,7 @@ const HomeLayout = ({ children }: any) => {
     }, [theme]);
 
     return (
-        <div className={combineClasses(classes.home_layout_wrapper, theme === THEMES.DARK ? "bg-darkBlue font-white" : "bg-offWhite font-black")} style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '100px' : '150px' }}>
+        <div className={combineClasses(classes.home_layout_wrapper, theme === THEMES.DARK ? "bg-darkBlue font-white" : "bg-offWhite font-black", 'pb-20')} style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '100px' : '150px' }}>
             <Navbar />
             {children}
         </div>

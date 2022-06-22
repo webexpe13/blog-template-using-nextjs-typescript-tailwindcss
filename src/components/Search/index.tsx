@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { combineClasses, getTheme } from "../../utils/utils";
 import classes from './Search.module.scss';
-import Article from "../ArticleCards/SearchArticleCard";
-import ARTICLES_LIST from '../../../pages/_ARTICLES_LIST';
+import SearchArticleCard from "../ArticleCards/SearchArticleCard";
+import ARTICLES_LIST from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import { THEMES } from "../../shared/enums";
 
 interface ISearch {
@@ -17,6 +17,8 @@ const Search = ({ setShowSearch }: ISearch) => {
             || article.preview.articleTitle.indexOf(searchStr) >= 0)
         );
         setSearchResults(results)
+        console.log(searchResults);
+        
     }
 
     const [theme, setTheme] = useState(THEMES.LIGHT);
@@ -44,7 +46,7 @@ const Search = ({ setShowSearch }: ISearch) => {
                 {searchResults?.length > 0 && <div className='articles_cont d-flex'>
                     {
                         searchResults?.length > 0 && searchResults?.map((article, i) => (
-                            <Article article={article.preview} key={i} theme={theme} />
+                            <SearchArticleCard article={article.preview} key={i} theme={theme} path={article.path} />
                         ))
                     }
                 </div>}

@@ -11,7 +11,7 @@ interface IArticleImage {
 const ArticleImage = ({ src, caption, size = ArticleImageWidths.DEFAULT, alt }: IArticleImage) => {
     return (
         <div className={combineClasses(classes.article_image, classes.article_image__wrapper)}>
-            <img src={src} alt={alt} width="100%" className={classes[size]} />
+            <img src={src} alt={alt} width="100%" className={classes['size_'+ size]} />
             {
                 caption &&
                 <p className={combineClasses(classes.article_image__caption, "my-0 font-12 w-100 text-center")}>{caption}</p>

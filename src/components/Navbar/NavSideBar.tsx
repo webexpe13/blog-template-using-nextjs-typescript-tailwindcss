@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { THEME_ICONS } from '../../constants/appConstants';
 import { THEMES } from '../../shared/enums';
-import { addBodyNoScroll, combineClasses, removeBodyNoScroll } from '../../utils/utils';
+import { addBodyNoScroll, combineClasses, getCategories, removeBodyNoScroll } from '../../utils/utils';
 import classes from './Navbar.module.scss';
 
 interface IProps {
@@ -9,9 +10,10 @@ interface IProps {
     theme: THEMES;
     closeNavSidebar: () => void;
     navSetup: any;
+    changeTheme: () => void;
 }
 
-const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar, navSetup }: IProps) => {
+const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar, navSetup, changeTheme }: IProps) => {
 
     useEffect(() => {
         openSidebar
@@ -24,7 +26,10 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
         };
     }, [openSidebar]);
 
-    // const CATEGORIES = getCategories();
+    const env = process.env.NODE_ENV;
+
+    const CATEGORIES = getCategories();
+    const [openDD, setOpenDD] = useState(false)
 
 
     return (
@@ -41,25 +46,56 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 <hr />
                 <div className='my-15'>
                     {
-                        navSetup.navLinks.map((each: any) => (
+                        navSetup.navLinks.map((each: any, i: any) => (
                             each.type !== 'dropdown' ? (
-                                <Link href={each.path}>
+                                <Link href={each.path} key={i}>
                                     <a className='font-16 font-medium d-block my-15'>{each.label}</a>
                                 </Link>
-                            ) : <p className='font-16 font-medium'>
-                                {each.label}
-                            </p>
+                            ) :
+                                <div className={classes.sidebarCategoryDD_wrapper} key={i} >
+                                    <div className='d-flex justify-space-between align-center cursor-pointer' onClick={() => setOpenDD(!openDD)}>
+                                        <p className='font-16 font-medium my-0'>
+                                            {each.label}
+                                        </p>
+                                        <i className='icofont-caret-down'></i>
+                                    </div>
+                                    <div className={classes.sidebarCategoryDD} style={{height: openDD ? '150px': '0px', padding: openDD ? '10px': '0px' }}>
+                                        <Link href={'/blog'}>
+                                            <a className='font-14 d-block'>All Articles</a>
+                                        </Link>
+                                        {
+                                            CATEGORIES.map(each => (
+                                                <Link href={'/blog/' + each} key={each}>
+                                                    <a className='font-14 d-block' style={{ textTransform: 'capitalize' }}>{each}</a>
+                                                </Link>
+                                            ))
+                                        }
+                                    </div>
+                                </div>
                         ))
                     }
+                    {
+                        env === 'development' ? <Link href='/icons'>
+                            <a className='font-16 font-medium d-block my-15'>Icons</a>
+                        </Link> : null
+                    }
+
                 </div>
                 <hr />
                 <div className='my-15'>
                     <p className='mb-10 font-light'>Follow us : </p>
                     {
-                        navSetup.social.map((each: any) => (
-                            <a href={each.link} target="_blank" rel="noopener noreferrer" className='font-16 font-medium d-inline-block mr-20 flex-wrap'>{each.icon}</a>
+                        navSetup.socials.map((each: any) => (
+                            <a href={each.link} key={each.link} target="_blank" rel="noopener noreferrer" className='font-16 font-medium d-inline-block mr-20 flex-wrap'>{each.icon}</a>
                         ))
                     }
+                </div>
+                <hr />
+                <div className='my-15'>
+                    <p className='mb-10 font-light'>Switch To {theme === THEMES.LIGHT ? 'Dark' : 'Light'} Theme :</p>
+                    <button className={combineClasses(classes.theme_switch, "pl-0 pr-0")} onClick={() => changeTheme()}>
+                        <img src={(THEME_ICONS as any)[theme].themeToggle} width="100%" alt="" />
+                    </button>
                 </div>
                 <hr />
                 <div className='my-15'>

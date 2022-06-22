@@ -1,15 +1,18 @@
+import Link from "next/link";
 import { THEMES } from "../../shared/enums";
 import { IArticleHeaderData } from "../../shared/interfaces"
 import { combineClasses } from "../../utils/utils";
 import classes from './ArticleCard.module.scss';
 
-const Article = ({ article, theme = THEMES.LIGHT }: { article: IArticleHeaderData, theme: THEMES }) => (
+const SerachArticleCard = ({ article, theme = THEMES.LIGHT, path }: { article: IArticleHeaderData, theme: THEMES, path: string }) => (
   <div className={combineClasses(classes.article_card_wrap)}>
     <div className={combineClasses(classes.article_card, "px-15 py-10", theme === THEMES.DARK ? classes.dark : null)}>
       <p className={combineClasses(classes.article_card__date, "font-regular font-12 mt-10 mb-5")}>{article.date}</p>
-      <h1 className={combineClasses(classes.article_card__title, "font-22 font-bold my-0")} >
-        {article.articleTitle}
-      </h1>
+      <Link href={path}>
+        <h1 className={combineClasses(classes.article_card__title, "font-22 font-bold my-0")} >
+          {article.articleTitle}
+        </h1>
+      </Link>
       <div className={classes.article_card__tags}>
         {
           article.tags.map((each, i) => (
@@ -27,12 +30,15 @@ const Article = ({ article, theme = THEMES.LIGHT }: { article: IArticleHeaderDat
         {
           article.category && <>
             <p className="font-12 px-5">in</p>
-            <p className="font-medium font-12">{article.category?.label}</p>
+            <p className={combineClasses(classes.article_card__category, "font-medium font-12")}>
+              <Link href={"/blog/" + article.category}>
+                {article.category}
+              </Link>
+            </p>
           </>
         }
       </div>
     </div>
   </div>
 )
-
-export default Article
+export default SerachArticleCard

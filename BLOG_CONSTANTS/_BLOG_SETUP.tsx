@@ -1,4 +1,4 @@
-import { ContainerWidths, NavbarLayouts } from "../src/shared/enums";
+import { ContainerWidths, NavbarType } from "../src/shared/enums";
 import { IAuthor } from "../src/shared/interfaces";
 
 export const MAYUR: IAuthor = {
@@ -11,8 +11,6 @@ export const MAYUR: IAuthor = {
 export const RUPALI: IAuthor = {
     name: "Rupali Yadav",
     designation: "IT Analyst at TCS",
-    github: "",
-    linkedIn: "",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     profilePic: "",
 }
@@ -21,7 +19,7 @@ export const RUPALI: IAuthor = {
 export const PRIMARY_NAV = {
     // max size 40x40px for default and max width 80px for centered or text
     logo: '',
-    type: NavbarLayouts.CENTERED,
+    type: NavbarType.DEFAULT,
     width: ContainerWidths.DEFAULT,
     showThemeSwitch: true,
     showSearch: true,
@@ -36,7 +34,7 @@ export const PRIMARY_NAV = {
         },
         {
             // for categoriest dont add path and add type: dropdown
-            label: 'Categories',
+            label: 'Blog',
             type: 'dropdown'
         },
         {
@@ -44,18 +42,18 @@ export const PRIMARY_NAV = {
             path: '/'
         },
     ],
-    social: [
+    socials: [
         {
-            link: '/',
-            icon: 'a'
+            link: 'https://www.facebook.com/',
+            icon: <i className="icon-F font-24" />
         },
         {
-            link: '/',
-            icon: 'b'
+            link: 'https://www.instagram.com/',
+            icon: <i className="icon-2-I font-24" />
         },
         {
-            link: '/',
-            icon: 'c'
+            link: 'https://twitter.com/',
+            icon: <i className="icon-L font-24" />
         },
     ]
 }

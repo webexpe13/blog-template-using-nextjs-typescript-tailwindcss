@@ -19,7 +19,7 @@ export enum ArticleImageWidths {
   SMALL = "small",
 }
 
-export enum NavbarLayouts {
+export enum NavbarType {
   DEFAULT = "default",
   CENTERED = "centered",
 }

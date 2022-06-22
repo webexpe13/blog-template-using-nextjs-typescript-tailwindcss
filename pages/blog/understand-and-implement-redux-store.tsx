@@ -13,7 +13,7 @@ const Article = () => {
     
     return (
         <BlogLayout layout={BlogLayouts.CENTERED}>
-            <ArticleImage src="/images/dummy-banner-img.jpg" alt="dummy image alt text" size={ArticleImageWidths.DEFAULT} />
+            <ArticleImage src="/images/dummy-banner-img.jpg" alt="dummy image alt text" size={ArticleImageWidths.FUll} />
             <ArticleHeader type={ArticleHeaderLayouts.CENTERED} headerData={ARTICLE_DETAILS.preview} />
             <Para textAlign={TextAlign.RIGHT}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

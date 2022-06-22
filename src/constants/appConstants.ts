@@ -1,12 +1,10 @@
-import { IAuthors, ITHEME } from "../shared/interfaces";
-
 export const THEME_ICONS = {
   light: {
     search: "/svg/search-dark.svg",
     insta: "/svg/instagram-dark.svg",
     twitter: "/svg/twitter-dark.svg",
     linkedin: "/svg/linkedin-dark.svg",
-    themeToggle: "/svg/theme-toggle-light.svg",
+    themeToggle: "/svg/sun.svg",
     github: "/svg/github-dark.svg",
   },
   dark: {
@@ -14,7 +12,7 @@ export const THEME_ICONS = {
     insta: "/svg/instagram-light.svg",
     twitter: "/svg/twitter-light.svg",
     linkedin: "/svg/linkedin-light.svg",
-    themeToggle: "/svg/theme-toggle-dark.svg",
+    themeToggle: "/svg/moon.svg",
     github: "/svg/github-light.svg",
   },
 };

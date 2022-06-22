@@ -1,5 +1,5 @@
+import { MAYUR } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
 import ArticleHeader from "../components/ArticleHeader";
-import { MAYUR } from "../constants/BLOG_CONSTANTS";
 import { ArticleHeaderLayouts } from "../shared/enums";
 // import '../styles/global.scss'
 

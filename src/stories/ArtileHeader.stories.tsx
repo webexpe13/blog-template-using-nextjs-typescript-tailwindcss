@@ -12,7 +12,7 @@ const ArticleHeaderData = {
     author: MAYUR,
     date: "March 03 2022",
     articleTitle: "Article Title Lorem ipsum dolor sit amet, consectetur",
-    tags: ["css", "css animations", "css tricks"],
+    tags: "css, css animations, css tricks",
     thumbnail: "https://picsum.photos/300/200",
     shortIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 }

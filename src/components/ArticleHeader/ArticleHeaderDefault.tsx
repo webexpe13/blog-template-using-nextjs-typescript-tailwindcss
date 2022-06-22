@@ -34,7 +34,7 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
             </h1>
             <div>
                 {
-                    headerData.tags.map((each, i) => (
+                    headerData.tags.split(',').map((each, i) => (
                         <span key={i} className="font-12 font-regular font-spaceGray mr-10" >#{each}</span>
                     ))
                 }

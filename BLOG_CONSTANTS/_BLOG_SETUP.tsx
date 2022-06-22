@@ -6,6 +6,16 @@ export const MAYUR: IAuthor = {
     designation: "Software Engineer at Paytm",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     profilePic: "",
+    social: [
+        {
+            icon: <i className="icon-2-Z font-32" />,
+            link: 'https://github.com/'
+        },
+        {
+            icon: <i className="icon-I font-36" />,
+            link: 'https://www.linkedin.com/'
+        },
+    ]
 }
 
 export const RUPALI: IAuthor = {
@@ -33,13 +43,37 @@ export const PRIMARY_NAV = {
             path: '/'
         },
         {
-            // for categoriest dont add path and add type: dropdown
+            // for categories dont add path and add type: dropdown
             label: 'Blog',
             type: 'dropdown'
         },
         {
             label: 'Contact',
             path: '/'
+        },
+    ],
+    sideNavLinks: [
+        {
+            label: 'Home',
+            path: '/'
+        },
+        {
+            label: 'About',
+            path: '/'
+        },
+        {
+            // for categories dont add path and add type: dropdown
+            label: 'Blog',
+            type: 'dropdown'
+        },
+        {
+            label: 'Contact',
+            path: '/'
+        },
+        {
+            label: 'Support Us',
+            path: '/',
+            newTab: true
         },
     ],
     socials: [

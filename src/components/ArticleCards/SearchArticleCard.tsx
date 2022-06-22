@@ -15,7 +15,7 @@ const SerachArticleCard = ({ article, theme = THEMES.LIGHT, path }: { article: I
       </Link>
       <div className={classes.article_card__tags}>
         {
-          article.tags.map((each, i) => (
+          article.tags.split(',').map((each, i) => (
             <span key={i} className="font-12 font-regular mr-10" >#{each}</span>
           ))
         }

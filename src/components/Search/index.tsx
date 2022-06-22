@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { combineClasses, getTheme } from "../../utils/utils";
 import classes from './Search.module.scss';
 import SearchArticleCard from "../ArticleCards/SearchArticleCard";
-import ARTICLES_LIST from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
+import { ARTICLES_LIST } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import { THEMES } from "../../shared/enums";
 
 interface ISearch {
@@ -13,12 +13,12 @@ const Search = ({ setShowSearch }: ISearch) => {
     const [searchResults, setSearchResults] = useState<any[]>([]);
     const handleSearch = () => {
         const data = [...ARTICLES_LIST];
-        const results = data.filter((article) => (article.preview.tags.join().indexOf(searchStr) >= 0
+        const results = data.filter((article) => (article.preview.tags.split(',').join().indexOf(searchStr) >= 0
             || article.preview.articleTitle.indexOf(searchStr) >= 0)
         );
         setSearchResults(results)
         console.log(searchResults);
-        
+
     }
 
     const [theme, setTheme] = useState(THEMES.LIGHT);

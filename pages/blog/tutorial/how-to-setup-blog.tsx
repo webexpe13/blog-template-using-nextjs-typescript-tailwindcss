@@ -1,12 +1,7 @@
 /**These are necessary imports / components for the page */
-import BlogLayout from "../../../src/layouts/BlogLayouts";
-import { ArticleHeaderLayouts, ArticleImageWidths, BlogLayouts, SectionSeperatorTypes, TextAlign } from "../../../src/shared/enums";
+import { ArticleImageWidths } from "../../../src/shared/enums";
 import ArticleImage from "../../../src/components/ArticleImage";
-import ArticleHeader from "../../../src/components/ArticleHeader";
-import Para from "../../../src/components/Para";
-import SectionTitle from "../../../src/components/SectionTitle";
 import SectionSeperator from "../../../src/components/SectionSeperator";
-import QuotedText from "../../../src/components/QuotedText";
 import HomeLayout from "../../../src/layouts/HomeLayout";
 import Link from "next/link";
 /**These are necessary imports / components for the page */
@@ -119,7 +114,7 @@ const BlogSetup = () => {
                     <li className="mb-20">
                         <b>socials</b><br />
                         These are for teh social media icons. please make sure you are following the example format. <br />
-                        You can get the icons from <b><Link href="/icons">Icons</Link></b>
+                        You can get the icons from <b><Link href="/icons" passHref={true}>Icons</Link></b>
                     </li>
                 </ol>
                 <SectionSeperator />

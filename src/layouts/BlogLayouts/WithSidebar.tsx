@@ -60,7 +60,7 @@ const WithSidebar = ({ children }: any) => {
                                 <p>More from  Author</p>
                                 {
                                     relatedArticles.map((each, i) =>
-                                        <Link href={each.path} key={i}>
+                                        <Link href={each.path} key={i} passHref>
                                             <div className={classes.more_from_author__articles} key={each.path}>
                                                 <div className={classes.article_image} style={{ background: `url(${each.preview.thumbnail})` }}>
                                                 </div>

@@ -48,7 +48,7 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                     {
                         navSetup.sideNavLinks.map((each: any, i: any) => (
                             each.type !== 'dropdown' ? !each.newTab ?
-                                <Link href={each.path} key={i}>
+                                <Link href={each.path} key={i} passHref>
                                     <a className='font-16 font-medium d-block my-15'>{each.label}</a>
                                 </Link> :
                                 <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='font-16 font-medium d-inline-block mr-20 flex-wrap'>
@@ -63,12 +63,12 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                         <i className='icofont-caret-down'></i>
                                     </div>
                                     <div className={classes.sidebarCategoryDD} style={{ height: openDD ? '150px' : '0px', padding: openDD ? '10px' : '0px' }}>
-                                        <Link href={'/blog'}>
+                                        <Link href={'/blog'} passHref>
                                             <a className='font-14 d-block'>All Articles</a>
                                         </Link>
                                         {
                                             CATEGORIES.map(each => (
-                                                <Link href={'/blog/' + each} key={each}>
+                                                <Link href={'/blog/' + each} key={each} passHref>
                                                     <a className='font-14 d-block' style={{ textTransform: 'capitalize' }}>{each}</a>
                                                 </Link>
                                             ))
@@ -79,28 +79,28 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                     }
                     {
                         env === 'development' ?
-                            <>                        
-                            <Link href='/icons'>
-                                <a className='font-16 font-medium d-block my-15'>Icons</a>
-                            </Link>
-                            <Link href='/styles'>
-                                <a className='font-16 font-medium d-block my-15'>Styles Doc</a>
-                            </Link>
-                            <Link href='/blog/demo-article-default-layout'>
-                                <a className='font-16 font-medium d-block my-15'>Demo Article Default Layout</a>
-                            </Link>
-                            <Link href='/blog/demo-article-centered-layout'>
-                                <a className='font-16 font-medium d-block my-15'>Demo Article Centered Layout</a>
-                            </Link>
-                            <Link href='/blog/demo-article-with-category'>
-                                <a className='font-16 font-medium d-block my-15'>Demo Article With category</a>
-                            </Link>
-                            <Link href='/blog/tutorial/how-to-setup-blog'>
-                                <a className='font-16 font-medium d-block my-15'>How to setup your blog</a>
-                            </Link>
-                            <Link href='/blog/tutorial/how-to-deploy-blog'>
-                                <a className='font-16 font-medium d-block my-15'>How to deploy your blog</a>
-                            </Link>
+                            <>
+                                <Link href='/icons' passHref>
+                                    <a className='font-16 font-medium d-block my-15'>Icons</a>
+                                </Link>
+                                <Link href='/styles' passHref>
+                                    <a className='font-16 font-medium d-block my-15'>Styles Doc</a>
+                                </Link>
+                                <Link href='/blog/demo-article-default-layout' passHref>
+                                    <a className='font-16 font-medium d-block my-15'>Demo Article Default Layout</a>
+                                </Link>
+                                <Link href='/blog/demo-article-centered-layout' passHref>
+                                    <a className='font-16 font-medium d-block my-15'>Demo Article Centered Layout</a>
+                                </Link>
+                                <Link href='/blog/demo-article-with-category' passHref>
+                                    <a className='font-16 font-medium d-block my-15'>Demo Article With category</a>
+                                </Link>
+                                <Link href='/blog/tutorial/how-to-setup-blog' passHref>
+                                    <a className='font-16 font-medium d-block my-15'>How to setup your blog</a>
+                                </Link>
+                                <Link href='/blog/tutorial/how-to-deploy-blog' passHref>
+                                    <a className='font-16 font-medium d-block my-15'>How to export the blog</a>
+                                </Link>
                             </>
                             : null
                     }
@@ -125,10 +125,10 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 <hr />
                 <div className='my-15'>
                     <p className='font-14 font-light font-spaceGray mb-5'>Copyright © 2022</p>
-                    <Link href="">
+                    <Link href="/privacy-policy" passHref>
                         <a className='font-14 font-light font-spaceGray pr-10'>Privacy Policy</a>
                     </Link>
-                    <Link href="">
+                    <Link href="/terms-and-condition" passHref>
                         <a className='font-14 font-light font-spaceGray'>Terms and Conditions</a>
                     </Link>
                 </div>

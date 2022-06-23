@@ -85,7 +85,7 @@ export const ARTICLES_LIST: iArticle[] = [
     {
         path: '/blog/demo-article-centered-layout',
         preview: {
-            author: MAYUR,
+            author: RUPALI,
             date: "March 03 2022",
             articleTitle: "Demo Article with centered layout",
             tags: "demo,centered, centered layout",
@@ -121,6 +121,31 @@ export const ARTICLES_LIST: iArticle[] = [
         },
         seo: {
             title: "Demo Article with category",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+            additionalMetaTags: [
+                {
+                    property: "keywords",
+                    content:
+                        "Blog, learn web development, learn javascript, learn css, learn html css js, responsive web development, responsive website",
+                },
+            ],
+        }
+    },
+    {
+        path: '/blog/tutorial/how-to-deploy-blog',
+        featureArticle: true,
+        preview: {
+            author: RUPALI,
+            date: "March 03 2022",
+            articleTitle: "How to export the blog",
+            tags: "demo, deploy blog",
+            thumbnail: "/images/demo-image.jpg",
+            shortIntro: "In this article you will see how to export blog files and what folder to deploy on your hosting.",
+            category: 'tutorial'
+        },
+        seo: {
+            title: "How to export the blog",
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
             additionalMetaTags: [

@@ -36,7 +36,7 @@ const CenteredNavbar = ({
                         </div>
                     </div>
 
-                    <Link href="/">
+                    <Link href="/" passHref={true}>
                         <a className={combineClasses(classes.logo, 'd-mob-none')}></a>
                     </Link>
 
@@ -57,7 +57,7 @@ const CenteredNavbar = ({
                     {
                         navLinks.map((each: any, i: any) => (
                             each.type !== 'dropdown' ? !each.newTab ?
-                                <Link href={each.path} key={i}>
+                                <Link href={each.path} key={i} passHref={true}>
                                     <a className='mx-10'>{each.label}</a>
                                 </Link> :
                                 <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='d-block mx-10 flex-wrap'>
@@ -73,12 +73,12 @@ const CenteredNavbar = ({
                                     {
                                         openDD &&
                                         <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating)}>
-                                            <Link href={'/blog'}>
+                                            <Link href={'/blog'} passHref={true}>
                                                 <a className='font-14 d-block'>All Articles</a>
                                             </Link>
                                             {
                                                 CATEGORIES.map(each => (
-                                                    <Link href={'/blog/' + each} key={each}>
+                                                    <Link href={'/blog/' + each} key={each} passHref={true}>
                                                         <a className='font-14 d-block' style={{ textTransform: 'capitalize' }}>{each}</a>
                                                     </Link>
                                                 ))

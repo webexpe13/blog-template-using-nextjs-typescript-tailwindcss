@@ -85,6 +85,14 @@
             background: $white;
         }
     }
+
+    .sidebarCategoryDD__floating{
+        background: $darkBlue2;
+
+        a{
+            border-bottom-color: $blue;
+        }
+    }
 }
 
 .hideNav {
@@ -95,58 +103,55 @@
 }
 
 .mobileBurgerToggle {
-    display: none;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 
-    @include mobile {
+    span {
         display: block;
-        position: relative;
         width: 30px;
-        height: 30px;
-        padding: 2px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 2px;
+        background: $black;
+        position: relative;
+        top: -3px;
+        transition: all 0.5s ease-in-out;
 
-        span {
-            display: block;
-            width: 30px;
+        &::before {
+            transition: all 0.5s ease-in-out;
+            content: "";
+            position: absolute;
+            width: 75%;
             height: 2px;
             background: $black;
-            position: relative;
-            top: -3px;
-            transition: all 0.5s ease-in-out;
-
-            &::before {
-                transition: all 0.5s ease-in-out;
-                content: "";
-                position: absolute;
-                width: 75%;
-                height: 2px;
-                background: $black;
-                left: 0;
-                display: block;
-            }
-
-            &::before {
-                top: 7px;
-            }
+            left: 0;
+            display: block;
         }
 
-        &__close {
-            span {
-                transform: rotate(135deg);
-                transform-origin: center center;
-                top: 2px;
-
-                &::before {
-                    transform: rotate(-270deg);
-                    transform-origin: center center;
-                    top: 0px;
-                    width: 100%;
-                }
-            }
+        &::before {
+            top: 7px;
         }
     }
+
+    // &__close {
+    //     span {
+    //         transform: rotate(135deg);
+    //         transform-origin: center center;
+    //         top: 2px;
+
+    //         &::before {
+    //             transform: rotate(-270deg);
+    //             transform-origin: center center;
+    //             top: 0px;
+    //             width: 100%;
+    //         }
+    //     }
+    // }
 }
 
 // nav sidebar
@@ -156,20 +161,20 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    max-width: 380px;
+    max-width: 300px;
     background-color: $white;
     transition: all 0.5s ease-in-out;
     transform: translateX(-110%);
     z-index: 13;
     color: $black;
-    padding: 10px 15px;
+    padding: 20px 15px 10px;
+    overflow-y: auto;
 
     &.open {
         transform: translateX(0%);
     }
 
-    .navSidebarHeader{
-        border-bottom: solid 1px $spaceGray;
+    .navSidebarHeader {
         padding-bottom: 10px;
         margin-bottom: 10px;
     }
@@ -206,9 +211,41 @@
         color: $white;
 
         .sideNavCloseIcon {
-            span, span::after {
+            span,
+            span::after {
                 background-color: $white;
             }
+        }
+    }
+
+    @include mobile {
+        max-width: 380px;
+    }
+}
+
+.sidebarCategoryDD_wrapper {
+    position: relative;
+
+    .sidebarCategoryDD {
+        overflow: auto;
+        border-radius: 4px;
+        // transition: all 0.2s ease-in-out;
+
+        a {
+            border-bottom: solid 1px $gray;
+            padding: 10px 10px;
+        }
+
+        &__floating {
+            position: absolute;
+            background: $white;
+            width: 180px;
+            z-index: 20;
+            top: 35px;
+            border-radius: 4px;
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
         }
     }
 }

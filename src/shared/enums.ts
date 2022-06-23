@@ -24,7 +24,7 @@ export enum ArticleImageWidths {
   SMALL = "small",
 }
 
-export enum NavbarLayouts {
+export enum NavbarType {
   DEFAULT = "default",
   CENTERED = "centered",
 }
@@ -43,4 +43,11 @@ export enum ArticleHeaderLayouts {
 export enum SectionSeperatorTypes {
   LINE = "line",
   DOTS = "dots",
+}
+
+export enum TextAlign {
+  LEFT = "left",
+  RIGHT = "right",
+  CENTER = "center",
+  JUSTIFY = "justify",
 }

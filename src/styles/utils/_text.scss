@@ -1,4 +1,4 @@
-$sizes: 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 40, 42, 45, 48, 64;
+$sizes: 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 40, 42, 45, 48, 64, 66, 68, 70, 72, 76, 80;
 $weights: (
     "light": 300,
     "regular": 400,
@@ -7,7 +7,7 @@ $weights: (
     "bold": 700,
 );
 
-$textAligns: left, right, center;
+$textAligns: left, right, center, justify;
 
 /*
 font styles that will be generated as follows
@@ -49,7 +49,7 @@ tab -
 
 // text align
 @each $align in $textAligns {
-    .text-#{$align}   {
+    .text-#{$align} {
         text-align: $align;
     }
 }

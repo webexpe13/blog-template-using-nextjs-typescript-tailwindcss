@@ -1,37 +1,24 @@
-import type { NextPage } from 'next';
-import classes from './index.module.scss'; // --> need to know about this
 import ArticleCard from '../src/components/ArticleCards/ArticleCard';
 import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
-import ARTICLES_LIST from './_ARTICLES_LIST';
-import { useEffect, useState } from 'react';
-import { getTheme } from '../src/utils/utils';
-import { ContainerWidths, NavbarLayouts, THEMES } from '../src/shared/enums';
-import { THEME } from '../src/constants/appConstants';
-import Navbar from '../src/components/Navbar';
+import { ARTICLES_LIST } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
+import HomeLayout from '../src/layouts/HomeLayout';
 
-const Home: NextPage = () => {
-  const [theme, setTheme] = useState(THEMES.LIGHT);
-
-  useEffect(() => {
-    getTheme(setTheme);
-  }, [theme]);
-
+const Home = () => {
   return (
-    <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
-      <Navbar container={ContainerWidths.DEFAULT} type={NavbarLayouts.DEFAULT} />
-      <div className="container">
-        <FeaturedArticle article={ARTICLES_LIST[0].component.preview} path={ARTICLES_LIST[0].path} /> 
-        {/* main article  taking full width*/}
+    <HomeLayout>
+      <div className={"container"}>
         {/* list of rest of the articles below it, one beside the other */}
-        <div className={classes.articles_wrap}>
+        <div className={'d-flex flex-wrap'}>
           {
             ARTICLES_LIST.map((each, i) => (
-              <ArticleCard article={each.component.preview} path={each.path} key={i} />
+              each.featureArticle ?
+                <FeaturedArticle article={each.preview} path={each.path} key={each.path + i} /> :
+                <ArticleCard article={each.preview} path={each.path} key={i} />
             ))
           }
         </div>
       </div>
-    </div>
+    </HomeLayout>
   )
 }
 

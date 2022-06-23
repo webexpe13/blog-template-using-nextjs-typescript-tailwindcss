@@ -1,7 +1,15 @@
-$displays: flex, inline-flex, block, inline, inline-block;
+$displays: flex, inline-flex, block, inline, inline-block, none;
 $directions: row, column, row-r, column-r;
 $justifys: start, end, center, space-between, space-around, space-evenly;
 $aligns: start, end, center, baseline, stretch;
+$wraps: wrap, no-wrap;
+
+// flex wraps
+@each $each in $wraps {
+    .flex-#{$each} {
+        flex-wrap: $each;
+    }
+}
 
 // display flex
 // d-flex, d-inline-flex, d-block
@@ -9,6 +17,10 @@ $aligns: start, end, center, baseline, stretch;
     .d-#{$each} {
         display: $each;
     }
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
 }
 
 // direction

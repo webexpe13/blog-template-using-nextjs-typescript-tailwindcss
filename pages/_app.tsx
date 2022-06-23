@@ -1,9 +1,11 @@
 import '../src/styles/globals.scss'
+import '../src/assets/fontCss/icofont.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import { SEO } from "../next-seo.config";
 import { DefaultSeo } from "next-seo";
+import Footer from '../src/components/Footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -20,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="google" content="notranslate" />
       </Head>
       <Component {...pageProps} />
+      <Footer />
     </>
   )
 

@@ -11,6 +11,12 @@
 # next.js
 /.next/
 /out/
+/package-lock.json
+
+# firebase
+/firebase.json
+/.firebaserc
+/.firebase/
 
 # production
 /build

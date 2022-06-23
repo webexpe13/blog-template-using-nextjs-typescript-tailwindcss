@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { IArticleHeaderData } from "../../shared/interfaces"
 import { combineClasses } from "../../utils/utils"
 import classes from './ArticleHeader.module.scss'
@@ -14,8 +15,16 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
                         <p className={combineClasses(classes.article_header_author_name, 'font-medium my-0')}>
                             {headerData.author.name}
                         </p>
-                        <p className="px-5 font-spaceGray my-0">in</p>
-                        <p className="font-medium my-0">Category</p>
+                        {
+                            headerData.category && <>
+                                <p className="px-5 font-spaceGray my-0">in</p>
+                                <p className="font-medium my-0">
+                                    <Link href={'/blog/' + headerData.category} passHref={true}>
+                                        <a>{headerData.category}</a>
+                                    </Link>
+                                </p>
+                            </>
+                        }
                     </div>
                     <p className="font-12 font-spaceGray my-0">{headerData.date}</p>
                 </div>
@@ -25,7 +34,7 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
             </h1>
             <div>
                 {
-                    headerData.tags.map((each, i) => (
+                    headerData.tags.split(',').map((each, i) => (
                         <span key={i} className="font-12 font-regular font-spaceGray mr-10" >#{each}</span>
                     ))
                 }

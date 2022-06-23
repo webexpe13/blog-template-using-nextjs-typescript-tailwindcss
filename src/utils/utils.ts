@@ -1,4 +1,6 @@
 import { THEMES } from "../shared/enums";
+import { useRouter } from "next/router";
+import { ARTICLES_LIST } from "../../BLOG_CONSTANTS/_ARTICLES_LIST";
 
 /**
  *
@@ -54,8 +56,28 @@ export const addBodyNoScroll = () => {
 };
 
 export const removeBodyNoScroll = () => {
-  document.body.className = document.body.className.replace(
-    "no-scroll",
-    ""
-  );
+  document.body.className = document.body.className.replace("no-scroll", "");
+};
+
+export const getArticleDetails = () => {
+  const router = useRouter();
+  const articlePath = router.pathname;
+  return ARTICLES_LIST.filter((each) => each.path === articlePath)[0];
+};
+
+export const getCategories = (): string[] => {
+  let categories: string[] = [];
+  // const splits = ARTICLES_LIST.map(each => each.path.split('/'));
+  // splits.forEach(each => {
+  //   const lastItem = each.length;
+  //   if(each.indexOf('blog') + 1 !== lastItem - 1 && !categories.includes(each[each.indexOf('blog') + 1])){
+  //     categories.push(each[each.indexOf('blog') + 1])
+  //   }
+  // })
+  ARTICLES_LIST.forEach((each) => {
+    if (each.preview.category && !categories.includes(each.preview.category)) {
+      categories.push(each.preview.category);
+    }
+  });
+  return categories;
 };

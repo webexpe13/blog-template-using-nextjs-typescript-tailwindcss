@@ -1,33 +1,99 @@
-import { IAuthors, ITHEME } from "../shared/interfaces";
-
-export const THEME: ITHEME = {
-  "light": {
-    bg: "#F5F5F5",
-    navBg: "#FFFFFF",
-    color: "#000000",
-  },
-  "dark": {
-    bg: "#191A32",
-    navBg: "#24243B",
-    color: "#FFFFFF",
-  },
-};
-
 export const THEME_ICONS = {
-  "light": {
+  light: {
     search: "/svg/search-dark.svg",
-    insta: "/svg/instagram-dark.svg",
-    twitter: "/svg/twitter-dark.svg",
-    linkedin: "/svg/linkedin-dark.svg",
-    themeToggle: "/svg/theme-toggle-light.svg",
-    github: "/svg/github-dark.svg",
+    themeToggle: "/svg/sun.svg",
   },
-  "dark": {
+  dark: {
     search: "/svg/search-light.svg",
-    insta: "/svg/instagram-light.svg",
-    twitter: "/svg/twitter-light.svg",
-    linkedin: "/svg/linkedin-light.svg",
-    themeToggle: "/svg/theme-toggle-dark.svg",
-    github: "/svg/github-light.svg",
+    themeToggle: "/svg/moon.svg",
   },
 };
+
+const letters = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  0,
+];
+
+const icofontIcons = [
+  'caret-down',
+  'caret-left',
+  'caret-up',
+  'rounded-down',
+  'rounded-up',
+  'rounded-right',
+  'thin-down',
+  'thin-left',
+  'thin-right',
+  'thin-up',
+]
+let iconsArrayTemp = [];
+for (let i = 0; i < letters.length; i++) {
+  iconsArrayTemp.push("icon-" + letters[i]);
+  if (typeof (letters[i]) !== "number") {
+    iconsArrayTemp.push("icon-2-" + letters[i]);
+  }
+}
+for (let i = 0; i < icofontIcons.length; i++) {
+  iconsArrayTemp.push("icofont-" + icofontIcons[i]);
+}
+export const iconsArray = iconsArrayTemp;

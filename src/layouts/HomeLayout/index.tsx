@@ -1,36 +1,22 @@
-import { useEffect, useState } from "react";
-import classes from "./HomeLayout.module.scss";
-import Navbar from "../../components/Navbar";
-import { THEME } from "../../constants/appConstants";
-import { getTheme } from "../../utils/utils";
-import { NavbarLayouts, THEMES } from "../../shared/enums";
-import Search from "../../components/Search";
+import { useState, useEffect } from 'react';
+import { PRIMARY_NAV } from '../../../BLOG_CONSTANTS/_BLOG_SETUP';
+import Navbar from '../../components/Navbar';
+import { NavbarType, THEMES } from '../../shared/enums';
+import { combineClasses, getTheme } from '../../utils/utils';
+import classes from './HomeLayout.module.scss';
 
-const HomeLayout = ({ children, container }: any) => {
-  const [theme, setTheme] = useState(THEMES.LIGHT);
-  const [searchStr, setSearchStr] = useState();
-  const [searchResults, setSearchResults] = useState([]);
-  useEffect(() => {
-    getTheme(setTheme);
-  }, [theme]);
+const HomeLayout = ({ children }: any) => {
+    const [theme, setTheme] = useState(THEMES.LIGHT);
+    useEffect(() => {
+        getTheme(setTheme);
+    }, [theme]);
 
-  return (
-    <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
-      <Navbar container={container} type={NavbarLayouts.CENTERED} />
-      {children}
-    </div>
-    // <>
-    //   {!searchStr && (
-    //     <div className={classes.home_layout_wrapper} style={{ background: (THEME as any)[theme].bg }}>
-    //       <Navbar container={container} setsearchStr={setSearchStr} />
-    //       {children}
-    //     </div>
-    //   )}
-    //   {
-    //     searchStr && <Search searchStr={searchStr} setSearchStr={setSearchStr} />
-    //   }
-    // </>
-  );
-};
+    return (
+        <div className={combineClasses(classes.home_layout_wrapper, theme === THEMES.DARK ? "bg-darkBlue font-white" : "bg-offWhite font-black", 'pb-20')} style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '100px' : '150px' }}>
+            <Navbar />
+            {children}
+        </div>
+    )
+}
 
-export default HomeLayout;
+export default HomeLayout

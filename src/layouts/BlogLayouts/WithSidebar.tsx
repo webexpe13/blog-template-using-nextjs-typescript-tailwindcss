@@ -3,9 +3,10 @@ import Navbar from '../../components/Navbar';
 import { ContainerWidths, NavbarType, THEMES } from '../../shared/enums';
 import { combineClasses, getArticleDetails, getTheme } from '../../utils/utils';
 import { useEffect, useState } from 'react';
-import {ARTICLES_LIST} from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
+import { ARTICLES_LIST } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import Link from 'next/link';
 import { PRIMARY_NAV } from '../../../BLOG_CONSTANTS/_BLOG_SETUP';
+import { generateRandomAvtar } from '../../constants/appConstants';
 
 const WithSidebar = ({ children }: any) => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
@@ -33,7 +34,9 @@ const WithSidebar = ({ children }: any) => {
                     <div className={classes.article_sidebar_wrapper}>
                         <div className={classes.sidebar_author_details}>
                             <div className={classes.author}>
-                                <div className={classes.author_img}></div>
+                                <div className={classes.author_img}>
+                                    {author.profilePic ? <img src={author.profilePic} alt={author.name} /> : <img src={generateRandomAvtar()} alt={author.name} />}
+                                </div>
                                 <div>
                                     <p className={'font-20 font-semi mb-0 mt-0'}>
                                         {author.name}

@@ -11,7 +11,7 @@ const HowToDeployBlog = () => {
         <HomeLayout>
             <div className='container px-15 pb-20'>
                 <h1 className="mt-15 font-40 font-sm-22">
-                    How to Export the blog
+                    How to Export and deploy blog
                 </h1>
                 <hr />
                 <h2 className="mt-30">

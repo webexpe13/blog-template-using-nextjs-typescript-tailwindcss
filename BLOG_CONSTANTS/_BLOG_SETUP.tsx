@@ -56,7 +56,7 @@ export const PRIMARY_NAV = {
     // max size 40x40px for default and 40x80px for centered or text
     type: NavbarType.DEFAULT,
     width: ContainerWidths.DEFAULT,
-    logo: '',
+    logo: 'Next Blog',
     showThemeSwitch: true,
     showSearch: true,
     // navLinks are the main navbar links that apper on top of every page
@@ -66,21 +66,13 @@ export const PRIMARY_NAV = {
             path: '/'
         },
         {
-            label: 'About',
-            path: '/'
-        },
-        {
             // for categories dont add path and add type: dropdown
             label: 'Blog',
             type: 'dropdown'
         },
         {
-            label: 'Contact',
-            path: '/'
-        },
-        {
             label: 'Support Us',
-            path: '/',
+            path: 'https://www.buymeacoffee.com/webexpe13z',
             newTab: true
         },
     ],
@@ -91,21 +83,13 @@ export const PRIMARY_NAV = {
             path: '/'
         },
         {
-            label: 'About',
-            path: '/'
-        },
-        {
             // for categories dont add path and add type: dropdown
             label: 'Blog',
             type: 'dropdown'
         },
         {
-            label: 'Contact',
-            path: '/'
-        },
-        {
             label: 'Support Us',
-            path: '/',
+            path: 'https://www.buymeacoffee.com/webexpe13z',
             newTab: true
         },
     ],

@@ -117,9 +117,13 @@
     }
 
     .author_img {
-        -webkit-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.35);
-        -moz-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.35);
-        box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.35);
+        -webkit-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
+        -moz-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
+        box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
     }
 }
 
@@ -136,10 +140,14 @@
         height: 30px;
         border-radius: 50%;
         margin-right: 10px;
-        background-color: $lightBlue;
-        -webkit-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.35);
-        -moz-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.35);
-        box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.35);
+        background-color: $grey;
+        -webkit-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
+        -moz-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
+        box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
     }
 }
 
@@ -147,5 +155,10 @@
     .author_img {
         width: 45px;
         height: 45px;
+        overflow: hidden;
+
+        img{
+            width: 100%;
+        }
     }
 }

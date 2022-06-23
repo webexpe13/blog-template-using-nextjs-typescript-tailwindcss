@@ -3,6 +3,7 @@ import { IArticleHeaderData } from "../../shared/interfaces";
 import classes from "./ArticleCard.module.scss";
 import { combineClasses, getTheme, setPath } from "../../utils/utils";
 import Link from "next/link";
+import { generateRandomAvtar } from "../../constants/appConstants";
 
 interface IProp {
     article: IArticleHeaderData;
@@ -21,7 +22,9 @@ const FeaturedArticle = ({ article, path }: IProp) => {
             <div className={classes.featured_article__content}>
                 <div className={combineClasses(classes.featured_article_footer, "mt-0 mb-10")}>
                     <div className={classes.author}>
-                        <div className={classes.author_img}></div>
+                        <div className={classes.author_img}>
+                            {article.author.profilePic ? <img src={article.author.profilePic} alt={article.author.name} /> : <img src={generateRandomAvtar()} alt={article.author.name} />}
+                        </div>
                         <p className={combineClasses(classes.author_name, 'font-16 font-sm-14 my-0 font-medium')}>
                             {article.author.name}
                         </p>

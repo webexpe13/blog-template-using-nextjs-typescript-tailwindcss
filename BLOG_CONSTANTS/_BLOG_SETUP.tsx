@@ -75,6 +75,11 @@ export const PRIMARY_NAV = {
             path: 'https://www.buymeacoffee.com/webexpe13z',
             newTab: true
         },
+        {
+            label: 'Github',
+            path: 'https://github.com/nmayur/nextjs-simple-blog-template',
+            newTab: true
+        },
     ],
     // sideNavLinks are the links which appear when you open the side menu after clicking the burger meny icon.
     sideNavLinks: [
@@ -90,6 +95,11 @@ export const PRIMARY_NAV = {
         {
             label: 'Support Us',
             path: 'https://www.buymeacoffee.com/webexpe13z',
+            newTab: true
+        },
+        {
+            label: 'Github',
+            path: 'https://github.com/nmayur/nextjs-simple-blog-template',
             newTab: true
         },
     ],

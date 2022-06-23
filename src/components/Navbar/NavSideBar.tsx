@@ -51,7 +51,7 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                 <Link href={each.path} key={i} passHref>
                                     <a className='font-16 font-medium d-block my-15'>{each.label}</a>
                                 </Link> :
-                                <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='font-16 font-medium d-inline-block mt-15 flex-wrap'>
+                                <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='font-16 font-medium d-block my-15 flex-wrap'>
                                     {each.label}
                                 </a>
                                 :

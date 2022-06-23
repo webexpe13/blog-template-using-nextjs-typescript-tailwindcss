@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { generateRandomAvtar } from "../../constants/appConstants";
 import { IArticleHeaderData } from "../../shared/interfaces";
 import { combineClasses, getTheme, setPath } from "../../utils/utils";
 import classes from "./ArticleCard.module.scss";
@@ -45,7 +46,9 @@ const ArticleCard = ({ article, path }: IProp) => {
 
           <div className={combineClasses(classes.article_card_footer, "mb-10")}>
             <div className={classes.author}>
-              <div className={classes.author_img}></div>
+              <div className={classes.author_img}>
+                {article.author.profilePic ? <img src={article.author.profilePic} alt={article.author.name} /> : <img src={generateRandomAvtar()} alt={article.author.name} /> }
+              </div>
               <p className={combineClasses(classes.author_name, 'font-12 font-medium')}>
                 {article.author.name}
               </p>

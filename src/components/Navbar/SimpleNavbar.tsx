@@ -15,7 +15,7 @@ const SimpleNavbar = ({
   openSidebar = false,
   navSetup
 }: any) => {
-  const { navLinks, showSearch, socials, width } = navSetup;
+  const { navLinks, showSearch, socials, width, logo } = navSetup;
 
   const CATEGORIES = getCategories();
   const [openDD, setOpenDD] = useState(false)
@@ -30,7 +30,9 @@ const SimpleNavbar = ({
             <span></span>
           </div>
           <Link href="/" passHref>
-            <a className={classes.logo}></a>
+            {
+              logo ? <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22')}>{logo}</a> : <a className={classes.logo}></a>
+            }
           </Link>
         </div>
 

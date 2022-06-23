@@ -42,7 +42,7 @@ export const ARTICLES_LIST: iArticle[] = [
             date: "March 03 2022",
             articleTitle: "How to setup this blog template",
             tags: "demo, blog setup",
-            thumbnail: "/images/demo-image.jpg",
+            thumbnail: "/images/blog-setup.jpg",
             shortIntro: "These are the steps to setup your blog",
             category: 'tutorial'
         },
@@ -66,7 +66,7 @@ export const ARTICLES_LIST: iArticle[] = [
             date: "March 03 2022",
             articleTitle: "Demo Article with default layout (with sidebar)",
             tags: "demo, with sidebar, default layout",
-            thumbnail: "/images/demo-image.jpg",
+            thumbnail: "/images/default-layout-thumb.jpg",
             shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
         },
         seo: {
@@ -89,11 +89,11 @@ export const ARTICLES_LIST: iArticle[] = [
             date: "March 03 2022",
             articleTitle: "Demo Article with centered layout",
             tags: "demo,centered, centered layout",
-            thumbnail: "/images/demo-image.jpg",
+            thumbnail: "/images/centered-layout-thumb.png",
             shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
         },
         seo: {
-            title: "Demo Article with default centered layout",
+            title: "Demo Article with centered layout",
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
             additionalMetaTags: [
@@ -114,7 +114,7 @@ export const ARTICLES_LIST: iArticle[] = [
             date: "March 03 2022",
             articleTitle: "Demo Article with category",
             tags: "demo, with category",
-            thumbnail: "/images/demo-image.jpg",
+            thumbnail: "/images/category-thumb.png",
             shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
             // create a folder of you category example "food-recipies" or "travel" etc and put that exact same name in category
             category: 'tutorial'
@@ -138,14 +138,14 @@ export const ARTICLES_LIST: iArticle[] = [
         preview: {
             author: RUPALI,
             date: "March 03 2022",
-            articleTitle: "How to export the blog",
+            articleTitle: " How to Export and deploy blog",
             tags: "demo, deploy blog",
-            thumbnail: "/images/demo-image.jpg",
+            thumbnail: "/images/deploy.png",
             shortIntro: "In this article you will see how to export blog files and what folder to deploy on your hosting.",
             category: 'tutorial'
         },
         seo: {
-            title: "How to export the blog",
+            title: " How to Export and deploy blog",
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
             additionalMetaTags: [

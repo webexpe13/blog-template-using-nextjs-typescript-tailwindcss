@@ -67,10 +67,10 @@ export const getArticleDetails = () => {
 
 export const getCategories = (): string[] => {
   let categories: string[] = [];
-  // const splits = ARTICLES.map(each => each.path.split('/'));
+  // const splits = ARTICLES_LIST.map(each => each.path.split('/'));
   // splits.forEach(each => {
   //   const lastItem = each.length;
-  //   if(each.indexOf('blog') + 1 !== lastItem - 1){
+  //   if(each.indexOf('blog') + 1 !== lastItem - 1 && !categories.includes(each[each.indexOf('blog') + 1])){
   //     categories.push(each[each.indexOf('blog') + 1])
   //   }
   // })

@@ -55,34 +55,37 @@ const CenteredNavbar = ({
                 </div>
                 <div className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', "d-flex justify-center align-center font-regular font-14 d-sm-none mt-15")}>
                     {
-                        navLinks.map((each: any, i:any) => (
-                            each.type !== 'dropdown' ? (
-                                <Link href={each.path} key={each.label}>
-                                    <a className='mx-20'>{each.label}</a>
-                                </Link>
-                            ) : <div className={classes.sidebarCategoryDD_wrapper} key={each.label}>
-                                <div className='d-flex align-center cursor-pointer mx-10' key={each.label} onClick={() => setOpenDD(!openDD)}>
-                                    <p className='my-0 '>
-                                        {each.label}
-                                    </p>
-                                    <i className='icofont-caret-down'></i>
-                                </div>
-                                {
-                                    openDD &&
-                                    <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating)}>
-                                        <Link href={'/blog'}>
-                                            <a className='font-14 d-block'>All Articles</a>
-                                        </Link>
-                                        {
-                                            CATEGORIES.map(each => (
-                                                <Link href={'/blog/' + each} key={each}>
-                                                    <a className='font-14 d-block' style={{ textTransform: 'capitalize' }}>{each}</a>
-                                                </Link>
-                                            ))
-                                        }
+                        navLinks.map((each: any, i: any) => (
+                            each.type !== 'dropdown' ? !each.newTab ?
+                                <Link href={each.path} key={i}>
+                                    <a className='mx-10'>{each.label}</a>
+                                </Link> :
+                                <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='d-block mx-10 flex-wrap'>
+                                    {each.label}
+                                </a>
+                                : <div className={classes.sidebarCategoryDD_wrapper} key={each.label}>
+                                    <div className='d-flex align-center cursor-pointer mx-10' key={each.label} onClick={() => setOpenDD(!openDD)}>
+                                        <p className='my-0 '>
+                                            {each.label}
+                                        </p>
+                                        <i className='icofont-caret-down'></i>
                                     </div>
-                                }
-                            </div>
+                                    {
+                                        openDD &&
+                                        <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating)}>
+                                            <Link href={'/blog'}>
+                                                <a className='font-14 d-block'>All Articles</a>
+                                            </Link>
+                                            {
+                                                CATEGORIES.map(each => (
+                                                    <Link href={'/blog/' + each} key={each}>
+                                                        <a className='font-14 d-block' style={{ textTransform: 'capitalize' }}>{each}</a>
+                                                    </Link>
+                                                ))
+                                            }
+                                        </div>
+                                    }
+                                </div>
                         ))
                     }
                 </div>

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { generateRandomAvtar } from "../../constants/appConstants"
 import { IArticleHeaderData } from "../../shared/interfaces"
 import { combineClasses } from "../../utils/utils"
 import classes from './ArticleHeader.module.scss'
@@ -9,7 +10,9 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
     return (
         <div className="mb-30">
             <div className={combineClasses("mb-10 d-flex align-center mt-15")}>
-                <div className={classes.article_header_author_img}></div>
+                <div className={classes.article_header_author_img}>
+                {headerData.author.profilePic ? <img src={headerData.author.profilePic} alt={headerData.author.name} /> : <img src={generateRandomAvtar()} alt={headerData.author.name} /> }
+                </div>
                 <div>
                     <div className="d-flex font-16 font-sm-14">
                         <p className={combineClasses(classes.article_header_author_name, 'font-medium my-0')}>

@@ -42,8 +42,8 @@ const ArticleDefaultLayout = () => {
             */}
             <Para size={18} color="#3543EA" textAlign={TextAlign.CENTER}>
                 <b>{'<Para size={18} color="#3543EA" textAlign={TextAlign.CENTER}></Para>'}</b> <br /><br />
-                This will display a paragraph, tags and other article header imformation <br />
-                you can pass <br />
+                This will display a paragraph<br />
+                you can pass :
                 font size of any number: size={10} <br />
                 color : color="#3543EA" <br />
                 textAlign: TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY <br />

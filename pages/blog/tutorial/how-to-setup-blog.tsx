@@ -15,12 +15,12 @@ const BlogSetup = () => {
                 </h1>
                 <hr />
                 <h2 className="mt-30">
-                    1.  Installing Node, VS Code and downloading the project on you computer.
+                    1.  Installing Node, VS Code and downloading the project on your computer.
                 </h2>
                 <ol>
                     <li className="mb-20">
                         You will need <b>node js</b> installed in your computer <br />
-                        You can install node via <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/download/</a> or you can look up any tutorial to install node js on you computer.
+                        You can install node via <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/download/</a> or you can look up any tutorial to install node js on your computer.
                     </li>
 
                     <li className="mb-20">
@@ -29,7 +29,7 @@ const BlogSetup = () => {
                     </li>
 
                     <li className="mb-20">
-                        Download / clone the blog template from our github page to a folder on you computer.
+                        Download / clone the blog template from our github page to a folder on your computer.
                         <a href="https://github.com/nmayur/nextjs-simple-blog-template" className="pl-10" target="_blank" rel="noopener noreferrer">
                             https://github.com/nmayur/nextjs-simple-blog-template
                         </a>
@@ -38,22 +38,22 @@ const BlogSetup = () => {
                         <ArticleImage className="mt-20" src="/images/download-code.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
                     </li>
                     <li className="mb-20">
-                        Open the blog project in VS code. <br /> Open terminal in VS code using ther <b>Terminal button</b> on tool bar of the VS Code window or press <b>ctrl + ~</b> br <b>cmd + ~</b>.
+                        Open the blog project in VS code. <br /> Open terminal in VS code using ther <b>Terminal button</b> on tool bar of the VS Code window or press <b>ctrl + ~</b> or <b>cmd + ~</b>.
                     </li>
                     <li className="mb-20">
                         In Terminal run <b>npm install</b>. This will install all the required packages.
                         <ArticleImage className="my-20" src="/images/project-install.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
 
-                        After the project is isntalled run <b>npm start</b> in the terminal, it will start your project on http://localhost:3000/.
+                        After the installation is done run <b>npm start</b> in the terminal, it will start your project on http://localhost:3000/.
 
                         <br />
-                        If facing any difficulty write a comment on our discussion board <b><i><a href="https://github.com/nmayur/nextjs-simple-blog-template/discussions/6" target="_blank" rel="noopener noreferrer">LINK</a></i></b>
+                        If you are facing any difficulty, write a comment on our discussion board <b><i><a href="https://github.com/nmayur/nextjs-simple-blog-template/discussions/6" target="_blank" rel="noopener noreferrer">LINK</a></i></b>
 
                         <br />
                         or write to us at <a href="mailto:webexpe13@gmail.com">webexpe13@gmail.com</a>
                     </li>
                     <li className="mb-20">
-                        If everything goes well you will see a demo blog with few demo articles which will walk you thru simple tutorials on how to use layouts and different components to write articles.
+                        If everything goes well you will see a demo blog with few demo articles which will walk you through simple tutorials on how to use layouts and different components to write articles.
                     </li>
                 </ol>
                 <SectionSeperator />
@@ -83,11 +83,11 @@ const BlogSetup = () => {
                     </li>
                     <li className="mb-20">
                         <b>width</b><br />
-                        We have two with option, <span className="bg-grey font-black">ContainerWidths.DEFAULT | ContainerWidths.LARGE</span>
+                        We have two options, <span className="bg-grey font-black">ContainerWidths.DEFAULT | ContainerWidths.LARGE</span>
                     </li>
                     <li className="mb-20">
                         <b>logo</b><br />
-                        It can be a text or image. If you are using image make sure its of <b>40 x 40 px</b> for default type and max <b>40 x 80 px or 40 x 40px</b> for centered type
+                        Image should be the size of <b>40 x 40 px</b> for default type and max <b>40 x 80 px or 40 x 40px</b> for centered type
                     </li>
                     <li className="mb-20">
                         <b>showThemeSwitch</b><br />
@@ -113,8 +113,8 @@ const BlogSetup = () => {
                     </li>
                     <li className="mb-20">
                         <b>socials</b><br />
-                        These are for teh social media icons. please make sure you are following the example format. <br />
-                        You can get the icons from <b><Link href="/icons" passHref={true}>Icons</Link></b>
+                        These are for the social media icons. please make sure you are following the example format. <br />
+                        You can get the icons from <b><Link href="/icons" passHref={true}><a>Icons</a></Link></b>
                     </li>
                 </ol>
                 <SectionSeperator />
@@ -122,11 +122,11 @@ const BlogSetup = () => {
                     4.  Writing First Article.
                 </h2>
                 <i>
-                    *note: All the files you will create or interact with are <br />
+                    *note: All the files you will create or interact with are in <br />
                 </i>
                 <ul>
                     <li className="mb-20"><b>BLOG_CONSTANTS Folder and its files</b></li>
-                    <li className="mb-20"><b>blog Folder inside pages</b> you will create all the article files in this folder <br /></li>
+                    <li className="mb-20"><b>blog Folder inside pages folder</b> - you will create all the article files in this folder <br /></li>
                     <li className="mb-20">You will add all the images to use in <b>public - images folder</b></li>
                 </ul>
                 <hr />
@@ -146,8 +146,9 @@ const BlogSetup = () => {
                     </li>
                     <li className="mb-20">
                         <b>featureArticle</b><br />
-                        You can pass <b>true or false or you can not add this in the object too</b>
-                        If true the article card will be of full width.
+                        You can pass <b>true or false</b> <br />
+                        If true the article card will be of full width. <br />
+                        <i>* adding featureArticle property is optional</i>
                         <ArticleImage className="my-20" src="/images/feature-article-example.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
                     </li>
                     <li className="mb-20">
@@ -173,11 +174,11 @@ const BlogSetup = () => {
                             </li>
                             <li>
                                 <b>thumbnail</b><br />
-                                Save the image file in public-images folder and paste the image path.
+                                Save the image file in public-images folder and paste the image path.  This will be displayed in article cards on home page
                             </li>
                             <li>
-                                <b>thumbnail</b><br />
-                                Save the image file in public-images folder and paste the image path. This will be displayed in article cards on home page.
+                                <b>shortIntro</b><br />
+                                A short intro for your article that will be shown on article cards.
                             </li>
                             <li>
                                 <b>category</b><br />
@@ -195,6 +196,10 @@ const BlogSetup = () => {
                         <a href="https://www.garymeehan.ie/blog/seo-in-nextjs-with-next-seo" target="_blank" rel="noopener noreferrer">https://www.garymeehan.ie/blog/seo-in-nextjs-with-next-seo</a>
                     </li>
                 </ol>
+                <SectionSeperator />
+                <p>
+                    And thats it, you are ready with the basic setup required to kick start your blog.
+                </p>
             </div>
         </HomeLayout >
     )

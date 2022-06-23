@@ -19,7 +19,7 @@ const HowToDeployBlog = () => {
                 </h2>
                 <ol>
                     <li className="mb-20">
-                        <b>Stop the local server</b><br />
+                        <b>Stop the local server</b> (if running)<br />
                         Open terminal and press <b>ctrl + C</b> to stop the server.
                         <ArticleImage className="mt-20" src="/images/stop-server.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
                     </li>
@@ -46,8 +46,6 @@ const HowToDeployBlog = () => {
                     </li>
                     <li>
                         <b>Create a project</b><br />
-                        If you have a gmail account, goto firebase <a href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer">https://firebase.google.com/</a> and goto firebase console.
-
                         <ArticleImage className="my-20" src="/images/firebase-create-proj.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
 
                         Enter project name
@@ -56,7 +54,7 @@ const HowToDeployBlog = () => {
                     </li>
                     <li>
                         <b>Firebase Dashboard</b><br />
-                        Click on <b>Hosting</b> under <b>Build</b>
+                        Click on <b>Hosting</b> inside <b>Build</b>
                         <ArticleImage className="my-20" src="/images/select-hosting.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.SMALL} />
                         <ArticleImage className="my-20" src="/images/hosting-gs.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
                     </li>
@@ -77,7 +75,7 @@ const HowToDeployBlog = () => {
                         it will ask the following:
                         <ul>
                             <li>
-                                <b>What do you want to use as your public directory?</b> here enter <b>out</b>
+                                <b>What do you want to use as your public directory?</b> here write <b>out</b>
                                 <ArticleImage className="my-20" src="/images/select-dir.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
                             </li>
                             <li>
@@ -97,7 +95,7 @@ const HowToDeployBlog = () => {
                     </li>
                     <li>
                         <b>* note</b><br />
-                        This setup is only to be done once for each project. next time when you create any new article file just run <b>npm run export</b> and after successfull export run <b>firebase deploy</b> to deploy updated and new files/articles to hosting.
+                        This setup is only to be done once for each project. next time when you create any new article file just run <b>npm run out</b> and after successful export run <b>firebase deploy</b> to deploy updated and new files/articles to hosting.
                     </li>
                 </ol>
             </div>

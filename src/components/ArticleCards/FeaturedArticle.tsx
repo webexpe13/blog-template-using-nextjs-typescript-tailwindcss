@@ -38,9 +38,11 @@ const FeaturedArticle = ({ article, path }: IProp) => {
                     }
                 </div>
                 <Link href={path}>
-                    <h1 className={combineClasses(classes.featured_article__title, "font-24 font-bold mt-0 mb-10")} >
-                        {article.articleTitle}
-                    </h1>
+                    <a>
+                        <h1 className={combineClasses(classes.featured_article__title, "font-24 font-bold mt-0 mb-10")} >
+                            {article.articleTitle}
+                        </h1>
+                    </a>
                 </Link>
                 <p className={combineClasses(classes.featured_article__intro, "font-14 font-regular mt-0 mb-10")}>
                     {article.shortIntro.slice(0, 150)} ...

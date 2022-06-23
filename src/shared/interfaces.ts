@@ -18,3 +18,14 @@ export interface IArticleHeaderData {
   shortIntro: string;
   category?: string;
 }
+
+export interface iArticle {
+  path: string;
+  featureArticle?: boolean;
+  preview: IArticleHeaderData,
+  seo: {
+      title: string;
+      description: string;
+      additionalMetaTags: any[]
+  }
+}

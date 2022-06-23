@@ -14,10 +14,10 @@ const Footer = () => {
         <div className={theme === THEMES.DARK ? "bg-darkBlue font-spaceGray" : "bg-offWhite font-spaceGray"}>
             <div className="container d-flex align-items-center justify-center font-14 font-sm-12 py-15">
                 <p className="my-0 mr-20">Copyright © {year}</p>
-                <Link href="/privacy-policy">
+                <Link href="/privacy-policy" passHref={true}>
                     <a className="pr-10">Privacy Policy</a>
                 </Link>
-                <Link href="/terms-and-condition">
+                <Link href="/terms-and-condition" passHref={true}>
                     <a>Terms and Conditions</a>
                 </Link>
             </div>

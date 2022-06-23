@@ -8,10 +8,12 @@ const SerachArticleCard = ({ article, theme = THEMES.LIGHT, path }: { article: I
   <div className={combineClasses(classes.article_card_wrap)}>
     <div className={combineClasses(classes.article_card, "px-15 py-10", theme === THEMES.DARK ? classes.dark : null)}>
       <p className={combineClasses(classes.article_card__date, "font-regular font-12 mt-10 mb-5")}>{article.date}</p>
-      <Link href={path}>
-        <h1 className={combineClasses(classes.article_card__title, "font-22 font-bold my-0")} >
-          {article.articleTitle}
-        </h1>
+      <Link href={path} passHref={true}>
+        <a>
+          <h1 className={combineClasses(classes.article_card__title, "font-22 font-bold my-0")} >
+            {article.articleTitle}
+          </h1>
+        </a>
       </Link>
       <div className={classes.article_card__tags}>
         {
@@ -31,7 +33,7 @@ const SerachArticleCard = ({ article, theme = THEMES.LIGHT, path }: { article: I
           article.category && <>
             <p className="font-12 px-5">in</p>
             <p className={combineClasses(classes.article_card__category, "font-medium font-12")}>
-              <Link href={"/blog/" + article.category}>
+              <Link href={"/blog/" + article.category} passHref={true}>
                 {article.category}
               </Link>
             </p>

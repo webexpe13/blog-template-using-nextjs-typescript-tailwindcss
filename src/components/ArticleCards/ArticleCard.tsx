@@ -25,9 +25,11 @@ const ArticleCard = ({ article, path }: IProp) => {
         <div className={classes.article_card__content}>
           <p className={combineClasses(classes.article_card__date, "font-regular font-12 mt-10 mb-5")}>{article.date}</p>
           <Link href={path}>
-            <h1 className={combineClasses(classes.article_card__title, "font-22 font-bold my-0")} >
-              {article.articleTitle}
-            </h1>
+            <a>
+              <h1 className={combineClasses(classes.article_card__title, "font-22 font-bold my-0")} >
+                {article.articleTitle}
+              </h1>
+            </a>
           </Link>
           <p className={combineClasses(classes.article_card__intro, "font-14 font-regular mt-5 mb-5")}>
             {article.shortIntro.slice(0, 100)} ...
@@ -52,7 +54,7 @@ const ArticleCard = ({ article, path }: IProp) => {
               article.category && <>
                 <p className="font-12 px-5">in</p>
                 <p className={combineClasses(classes.article_card__category, "font-medium font-12")}>
-                  <Link href={"/blog/" + article.category}>
+                  <Link href={"/blog/" + article.category} passHref={true}>
                     {article.category}
                   </Link>
                 </p>

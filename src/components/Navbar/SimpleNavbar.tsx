@@ -29,7 +29,7 @@ const SimpleNavbar = ({
             onClick={() => toggleSideMenu()}>
             <span></span>
           </div>
-          <Link href="/">
+          <Link href="/" passHref>
             <a className={classes.logo}></a>
           </Link>
         </div>
@@ -38,33 +38,36 @@ const SimpleNavbar = ({
           <div className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-14 font-regular d-flex align-center d-sm-none')}>
             {
               navLinks.map((each: any, i: any) => (
-                each.type !== 'dropdown' ? (
-                  <Link href={each.path} key={i}>
-                    <a className='d-block mx-15 my-0'>{each.label}</a>
-                  </Link>
-                ) : <div className={classes.sidebarCategoryDD_wrapper}>
-                  <div className='d-flex align-center cursor-pointer mx-10' key={i} onClick={() => setOpenDD(!openDD)}>
-                    <p className='my-0'>
-                      {each.label}
-                    </p>
-                    <i className='icofont-caret-down'></i>
-                  </div>
-                  {
-                    openDD &&
-                    <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating)}>
-                      <Link href={'/blog'}>
-                        <a className='font-14 d-block'>All Articles</a>
-                      </Link>
-                      {
-                        CATEGORIES.map(each => (
-                          <Link href={'/blog/' + each} key={each}>
-                            <a className='font-14 d-block' style={{ textTransform: 'capitalize' }}>{each}</a>
-                          </Link>
-                        ))
-                      }
+                each.type !== 'dropdown' ? !each.newTab ?
+                  <Link href={each.path} key={i} passHref>
+                    <a className='mx-10'>{each.label}</a>
+                  </Link> :
+                  <a href={each.path} key={each.path + 1} target="_blank" rel="noopener noreferrer" className='d-block mx-10 flex-wrap'>
+                    {each.label}
+                  </a>
+                  : <div className={classes.sidebarCategoryDD_wrapper} key={i}>
+                    <div className='d-flex align-center cursor-pointer mx-10' onClick={() => setOpenDD(!openDD)}>
+                      <p className='my-0'>
+                        {each.label}
+                      </p>
+                      <i className='icofont-caret-down'></i>
                     </div>
-                  }
-                </div>
+                    {
+                      openDD &&
+                      <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating)}>
+                        <Link href={'/blog'} passHref>
+                          <a className='font-14 d-block'>All Articles</a>
+                        </Link>
+                        {
+                          CATEGORIES.map(each => (
+                            <Link href={'/blog/' + each} key={each} passHref>
+                              <a className='font-14 d-block' style={{ textTransform: 'capitalize' }}>{each}</a>
+                            </Link>
+                          ))
+                        }
+                      </div>
+                    }
+                  </div>
               ))
             }
             <div className="ml-15">

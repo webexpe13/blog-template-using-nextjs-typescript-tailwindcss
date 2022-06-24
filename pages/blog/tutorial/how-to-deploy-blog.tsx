@@ -69,6 +69,7 @@ const HowToDeployBlog = () => {
                     <li>
                         <b>Init Firebase and Deploy</b><br />
                         Run <b>firebase init</b> in terminal, move the selection to hosting using arrow keys and select Hosting by hitting space, and then press enter.
+                        <ArticleImage className="my-20" src="/images/select-hosting-terminal.png" alt="nextjs-simple-blog-template" caption="Select Hosting" size={ArticleImageWidths.DEFAULT} />
                         <ArticleImage className="my-20" src="/images/use-exi.png" alt="nextjs-simple-blog-template" caption="Select Use an Existing Project" size={ArticleImageWidths.DEFAULT} />
                         After you select <b>Use an Existing Project</b> you will see list of all projects in your firebase account, including the one we created now.
                         <ArticleImage className="my-20" src="/images/select-proj.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />

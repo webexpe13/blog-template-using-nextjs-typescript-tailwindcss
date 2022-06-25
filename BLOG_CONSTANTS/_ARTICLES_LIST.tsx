@@ -47,9 +47,9 @@ export const ARTICLES_LIST: iArticle[] = [
             category: 'tutorial'
         },
         seo: {
-            title: "These are the steps to setup your blog",
+            title: "How To Setup Blog | Next js simple blog template",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                "Next js simple blog template setup guide. These are the steps to setup your blog",
             additionalMetaTags: [
                 {
                     property: "keywords",
@@ -64,15 +64,15 @@ export const ARTICLES_LIST: iArticle[] = [
         preview: {
             author: MAYUR,
             date: "March 03 2022",
-            articleTitle: "Demo Article with default layout (with sidebar)",
+            articleTitle: "|Demo Article with default layout (with sidebar)",
             tags: "demo, with sidebar, default layout",
             thumbnail: "/images/default-layout-thumb.jpg",
             shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
         },
         seo: {
-            title: "Demo Article with default sidebar layout",
+            title: "Demo Article with default sidebar layout | Next js simple blog template",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                "Next js simple blog template Default Layout Example.",
             additionalMetaTags: [
                 {
                     property: "keywords",
@@ -93,9 +93,9 @@ export const ARTICLES_LIST: iArticle[] = [
             shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
         },
         seo: {
-            title: "Demo Article with centered layout",
+            title: "Demo Article with centered layout | Next js simple blog template",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                "Next js simple blog template Centered Layout Example.",
             additionalMetaTags: [
                 {
                     property: "keywords",
@@ -120,9 +120,9 @@ export const ARTICLES_LIST: iArticle[] = [
             category: 'tutorial'
         },
         seo: {
-            title: "Demo Article with category",
+            title: "Demo Article with category  | Next js simple blog template",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                "Next js simple blog template, article example with category",
             additionalMetaTags: [
                 {
                     property: "keywords",
@@ -145,9 +145,9 @@ export const ARTICLES_LIST: iArticle[] = [
             category: 'tutorial'
         },
         seo: {
-            title: " How to Export and deploy blog",
+            title: " How to Export and deploy blog | Next js simple blog template",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                "Next js simple blog template, article will show you how to export your blog and deploy",
             additionalMetaTags: [
                 {
                     property: "keywords",

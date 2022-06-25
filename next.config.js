@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
+  basePath: '/gh-pages',
 }
 
 module.exports = nextConfig

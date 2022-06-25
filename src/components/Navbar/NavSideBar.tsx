@@ -108,14 +108,17 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 </div>
                 <hr />
                 <div className='my-15'>
-                    <p className='mb-10 font-light'>Follow us : </p>
                     {
-                        navSetup.socials.map((each: any) => (
-                            <a href={each.link} key={each.link} target="_blank" rel="noopener noreferrer" className='font-16 font-medium d-inline-block mr-20 flex-wrap'>{each.icon}</a>
-                        ))
+                        navSetup.socials && <>
+                            <p className='mb-10 font-light'>Follow us : </p> {
+                                navSetup.socials.map((each: any) => (
+                                    <a href={each.link} key={each.link} target="_blank" rel="noopener noreferrer" className='font-16 font-medium d-inline-block mr-20 flex-wrap'>{each.icon}</a>
+                                ))
+                            }
+                            <hr />
+                        </>
                     }
                 </div>
-                <hr />
                 <div className='my-15'>
                     <p className='mb-10 font-light'>Switch To {theme === THEMES.LIGHT ? 'Dark' : 'Light'} Theme :</p>
                     <button className={combineClasses(classes.theme_switch, "pl-0 pr-0")} onClick={() => changeTheme()}>

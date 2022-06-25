@@ -23,9 +23,5 @@ export interface iArticle {
   path: string;
   featureArticle?: boolean;
   preview: IArticleHeaderData,
-  seo: {
-      title: string;
-      description: string;
-      additionalMetaTags: any[]
-  }
+  seo?: any
 }

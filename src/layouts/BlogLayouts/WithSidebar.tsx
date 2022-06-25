@@ -23,7 +23,7 @@ const WithSidebar = ({ children }: any) => {
 
     return (
         <>
-            <Navbar container={ContainerWidths.LARGE} />
+            <Navbar container={ContainerWidths.DEFAULT} />
             <section
                 className={combineClasses(classes.withSidebar_article_wrapper, theme === THEMES.DARK ? classes.dark : null)}
                 style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '0px' : '50px' }}>

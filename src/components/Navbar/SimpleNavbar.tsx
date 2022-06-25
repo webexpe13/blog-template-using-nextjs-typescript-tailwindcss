@@ -72,13 +72,16 @@ const SimpleNavbar = ({
                   </div>
               ))
             }
-            <div className="ml-15">
-              {
-                socials.map((each: any, i: any) => (
-                  <a href={each.link} key={i} target="_blank" rel="noopener noreferrer" className='font-12 d-inline-block mr-20'>{each.icon}</a>
-                ))
-              }
-            </div>
+            {
+              socials &&
+              <div className="ml-15">
+                {
+                  socials.map((each: any, i: any) => (
+                    <a href={each.link} key={i} target="_blank" rel="noopener noreferrer" className='font-12 d-inline-block mr-20'>{each.icon}</a>
+                  ))
+                }
+              </div>
+            }
           </div>
 
           {

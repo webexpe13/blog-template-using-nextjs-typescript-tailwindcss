@@ -27,7 +27,7 @@ const WithSidebar = ({ children }: any) => {
             <section
                 className={combineClasses(classes.withSidebar_article_wrapper, theme === THEMES.DARK ? classes.dark : null)}
                 style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '0px' : '50px' }}>
-                <div className="container-large px-15 px-sm-0 d-lg-flex pb-50 pt-100">
+                <div className="container px-15 px-sm-0 d-lg-flex pb-50 pt-100">
                     <article className={combineClasses(classes.article_content, 'pb-20 px-15')}>
                         {children}
                     </article>

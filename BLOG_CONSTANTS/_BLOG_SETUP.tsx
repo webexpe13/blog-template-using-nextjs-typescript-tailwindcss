@@ -119,8 +119,10 @@ export const PRIMARY_NAV = {
     ]
 }
 
+export const WEBSITE_NAME = 'Website Name'
+
 export const DEFAULT_SEO = {
-    title: "Nextjs simple blog template",
+    title: "Nextjs simple blog template | " + WEBSITE_NAME,
     description:
         "A simple blog template using NextJS and Typescript.",
     additionalMetaTags: [

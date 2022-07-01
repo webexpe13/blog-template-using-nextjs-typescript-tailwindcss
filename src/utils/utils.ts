@@ -1,6 +1,8 @@
 import { THEMES } from "../shared/enums";
 import { useRouter } from "next/router";
 import { ARTICLES_LIST } from "../../BLOG_CONSTANTS/_ARTICLES_LIST";
+import { iArticle } from "../shared/interfaces";
+import { WEBSITE_NAME } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
 
 /**
  *
@@ -67,17 +69,40 @@ export const getArticleDetails = () => {
 
 export const getCategories = (): string[] => {
   let categories: string[] = [];
-  // const splits = ARTICLES_LIST.map(each => each.path.split('/'));
-  // splits.forEach(each => {
-  //   const lastItem = each.length;
-  //   if(each.indexOf('blog') + 1 !== lastItem - 1 && !categories.includes(each[each.indexOf('blog') + 1])){
-  //     categories.push(each[each.indexOf('blog') + 1])
-  //   }
-  // })
   ARTICLES_LIST.forEach((each) => {
     if (each.preview.category && !categories.includes(each.preview.category)) {
       categories.push(each.preview.category);
     }
   });
   return categories;
+};
+
+export const CREATE_SEO_CONFIG = (ARTICLE_DETAILS: iArticle) => {
+  const { path, preview, seo } = ARTICLE_DETAILS;
+  let seo_config = {
+    title: seo.title ? seo.title : preview.articleTitle + " | " + WEBSITE_NAME,
+    description: seo.description || preview.shortIntro,
+    additionalMetaTags: [
+      {
+        property: "keywords",
+        content:
+          "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
+      },
+    ],
+    openGraph: {
+      type: "website",
+      locale: "en_IN",
+      url: `https://nextjs-simple-blog-template.web.app/${path ? path : null}`,
+      site_name: "nextjs-simple-blog-template",
+      images: [
+        {
+          url: `/images/og-image.jpg`,
+          width: 1200,
+          height: 630,
+          alt: "nextjs-simple-blog-template",
+        },
+      ],
+    },
+  };
+  return seo_config;
 };

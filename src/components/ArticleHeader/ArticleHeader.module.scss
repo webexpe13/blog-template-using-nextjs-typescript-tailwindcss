@@ -29,7 +29,10 @@
 }
 
 .centered_article_header_author{
+    display: flex;
     width: 70%;
+    align-items: center;
+    justify-content: space-around;
     border-top: solid 2px $spaceGray;
     padding: 10px 0px;
     margin: 10px auto;

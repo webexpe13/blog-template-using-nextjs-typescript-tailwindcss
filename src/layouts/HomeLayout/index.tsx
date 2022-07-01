@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { PRIMARY_NAV } from '../../../BLOG_CONSTANTS/_BLOG_SETUP';
 import Navbar from '../../components/Navbar';
 import { NavbarType, THEMES } from '../../shared/enums';
-import { combineClasses, getArticleDetails, getTheme } from '../../utils/utils';
+import { combineClasses, CREATE_SEO_CONFIG, getArticleDetails, getTheme } from '../../utils/utils';
 import classes from './HomeLayout.module.scss';
 
 const HomeLayout = ({ children }: any) => {
@@ -12,6 +12,9 @@ const HomeLayout = ({ children }: any) => {
         getTheme(setTheme);
     }, [theme]);
     const ARTICLE_DETAILS = getArticleDetails();
+
+    console.log(CREATE_SEO_CONFIG(ARTICLE_DETAILS));
+    
 
     return (
         <>

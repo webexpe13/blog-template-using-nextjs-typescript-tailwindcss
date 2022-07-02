@@ -55,7 +55,6 @@ export const RUPALI: IAuthor = {
 export const PRIMARY_NAV = {
     // max size 40x40px for default and 40x80px for centered or text
     type: NavbarType.DEFAULT,
-    width: ContainerWidths.DEFAULT,
     logo: 'Next Blog',
     showThemeSwitch: true,
     showSearch: true,
@@ -71,6 +70,7 @@ export const PRIMARY_NAV = {
             type: 'dropdown'
         },
         {
+            // to open a link in new tab pass newTab: true
             label: 'Support Us',
             path: 'https://www.buymeacoffee.com/webexpe13z',
             newTab: true

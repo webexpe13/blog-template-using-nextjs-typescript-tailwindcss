@@ -110,6 +110,8 @@ const Styling = () => {
                             <ul>
                                 <li>t - for classes that set margin-top or padding-top</li>
                                 <li>b - for classes that set margin-bottom or padding-bottom</li>
+                                <li>l - for classes that set margin-left or padding-left</li>
+                                <li>r - for classes that set margin-right or padding-right</li>
                                 <li>x - for classes that set both *-left and *-right</li>
                                 <li>y - for classes that set both *-top and *-bottom</li>
                             </ul>
@@ -140,7 +142,7 @@ const Styling = () => {
                 <div className="bg-grey font-black px-15 py-10">
                     <p>
 
-                        Example: <b>{'<div className="width-lg-50 with-sm-80">Hello</div>'}</b> <br />
+                        Example: <b>{'<div className="width-lg-50 width-sm-80">Hello</div>'}</b> <br />
                         This will give a div/element of width 50% on desktop devices and of width 80% on mobile.
                     </p>
                 </div>

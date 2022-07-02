@@ -81,10 +81,10 @@ const BlogSetup = () => {
                         <b>type</b><br />
                         We have two types, <span className="bg-grey font-black">NavbarType.DEFAULT | NavbarType.CENTERED</span>
                     </li>
-                    <li className="mb-20">
+                    {/* <li className="mb-20">
                         <b>width</b><br />
                         We have two options, <span className="bg-grey font-black">ContainerWidths.DEFAULT | ContainerWidths.LARGE</span>
-                    </li>
+                    </li> */}
                     <li className="mb-20">
                         <b>logo</b><br />
                         Image should be the size of <b>40 x 40 px</b> for default type and max <b>40 x 80 px or 40 x 40px</b> for centered type

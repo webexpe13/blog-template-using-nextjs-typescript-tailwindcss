@@ -6,7 +6,7 @@ import ArticleHeaderCenter from "./ArticleHeaderCentered"
 import ArticleHeaderDefault from "./ArticleHeaderDefault"
 
 interface IArticleHeader {
-    type: ArticleHeaderLayouts,
+    type?: ArticleHeaderLayouts,
 }
 const ArticleHeader = ({ type = ArticleHeaderLayouts.DEFAULT }: IArticleHeader) => {
     const [theme, setTheme] = useState(THEMES.LIGHT);

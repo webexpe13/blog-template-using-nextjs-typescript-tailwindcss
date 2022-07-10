@@ -4,13 +4,6 @@
   -webkit-box-orient: vertical;
 }
 
-.display-sm-none {
-  display: block;
-  @include mobile {
-    display: none;
-  }
-}
-
 .no-scroll{
   overflow: hidden;
 }
@@ -48,8 +41,4 @@ hr{
   100% {
       opacity: 0.4;
   }
-}
-
-.cursor-pointer {
-  cursor: pointer;
 }

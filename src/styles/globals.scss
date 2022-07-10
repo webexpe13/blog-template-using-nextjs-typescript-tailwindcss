@@ -1,11 +1,17 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 @import './utils/mixins';
 @import './utils/color';
 @import './utils/text';
 @import './utils/widths';
-@import './utils/spacing';
-@import './utils/flexbox';
+// @import './utils/spacing';
+// @import './utils/flexbox';
 @import './utils/misc';
 @import './utils//fonticons';
 

@@ -86,7 +86,6 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                             case NavbarType.DEFAULT:
                                 return (
                                     <SimpleNavbar
-                                        container={container || PRIMARY_NAV.width}
                                         showSocial={showSocialMedia}
                                         openSearch={openSearch}
                                         scrolled={scrolled}
@@ -99,7 +98,6 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                             case NavbarType.CENTERED:
                                 return (
                                     <CenteredNavbar
-                                        container={container || PRIMARY_NAV.width}
                                         showSocial={showSocialMedia}
                                         openSearch={openSearch}
                                         scrolled={scrolled}
@@ -112,7 +110,6 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                             default:
                                 return (
                                     <SimpleNavbar
-                                        container={container || PRIMARY_NAV.width}
                                         showSocial={showSocialMedia}
                                         openSearch={openSearch}
                                         scrolled={scrolled}

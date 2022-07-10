@@ -15,40 +15,40 @@ const SimpleNavbar = ({
   openSidebar = false,
   navSetup
 }: any) => {
-  const { navLinks, showSearch, socials, width, logo } = navSetup;
+  const { navLinks, showSearch, socials, logo } = navSetup;
 
   const CATEGORIES = getCategories();
   const [openDD, setOpenDD] = useState(false)
 
   return (
-    <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-10")}>
-      <div className={combineClasses(classes.navbar__container, container, "px-15")}>
-        <div className="d-flex align-center">
+    <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-3")}>
+      <div className={combineClasses(classes.navbar__container, container, "px-3 md:px-2")}>
+        <div className="flex items-center">
           <div
-            className={combineClasses(classes.mobileBurgerToggle, "mr-10", openSidebar ? classes.mobileBurgerToggle__close : ' ')}
+            className={combineClasses(classes.mobileBurgerToggle, "mr-5", openSidebar ? classes.mobileBurgerToggle__close : ' ')}
             onClick={() => toggleSideMenu()}>
             <span></span>
           </div>
           <Link href="/" passHref>
             {
-              logo ? <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22')}>{logo}</a> : <a className={classes.logo}></a>
+              logo ? <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22 font-medium')}>{logo}</a> : <a className={classes.logo}></a>
             }
           </Link>
         </div>
 
-        <div className="d-flex align-center">
-          <div className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-14 font-regular d-flex align-center d-sm-none')}>
+        <div className="flex items-center">
+          <div className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-14 font-regular items-center md:flex hidden')}>
             {
               navLinks.map((each: any, i: any) => (
                 each.type !== 'dropdown' ? !each.newTab ?
                   <Link href={each.path} key={i} passHref>
-                    <a className='mx-10'>{each.label}</a>
+                    <a className='mx-2'>{each.label}</a>
                   </Link> :
-                  <a href={each.path} key={each.path + 1} target="_blank" rel="noopener noreferrer" className='d-block mx-10 flex-wrap'>
+                  <a href={each.path} key={each.path + 1} target="_blank" rel="noopener noreferrer" className='d-block mx-2 flex-wrap'>
                     {each.label}
                   </a>
                   : <div className={classes.sidebarCategoryDD_wrapper} key={i}>
-                    <div className='d-flex align-center cursor-pointer mx-10' onClick={() => setOpenDD(!openDD)}>
+                    <div className='flex items-center cursor-pointer mx-2' onClick={() => setOpenDD(!openDD)}>
                       <p className='my-0'>
                         {each.label}
                       </p>
@@ -58,12 +58,12 @@ const SimpleNavbar = ({
                       openDD &&
                       <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating)}>
                         <Link href={'/blog'} passHref>
-                          <a className='font-14 d-block'>All Articles</a>
+                          <a className='font-14 block'>All Articles</a>
                         </Link>
                         {
                           CATEGORIES.map(each => (
                             <Link href={'/blog/' + each} key={each} passHref>
-                              <a className='font-14 d-block' style={{ textTransform: 'capitalize' }}>{each}</a>
+                              <a className='font-14 block' style={{ textTransform: 'capitalize' }}>{each}</a>
                             </Link>
                           ))
                         }
@@ -74,10 +74,10 @@ const SimpleNavbar = ({
             }
             {
               socials &&
-              <div className="ml-15">
+              <div className="ml-5">
                 {
                   socials.map((each: any, i: any) => (
-                    <a href={each.link} key={i} target="_blank" rel="noopener noreferrer" className='font-12 d-inline-block mr-20'>{each.icon}</a>
+                    <a href={each.link} key={i} target="_blank" rel="noopener noreferrer" className='font-12 inline-block mr-3'>{each.icon}</a>
                   ))
                 }
               </div>
@@ -86,7 +86,7 @@ const SimpleNavbar = ({
 
           {
             showSearch &&
-            <div className={combineClasses(classes.search_icon_wrapper, 'ml-10')} onClick={() => openSearch()}>
+            <div className={combineClasses(classes.search_icon_wrapper, 'ml-5')} onClick={() => openSearch()}>
               <button>
                 <img src={(THEME_ICONS as any)[theme].search} width="100%" alt="" />
               </button>
@@ -94,7 +94,7 @@ const SimpleNavbar = ({
           }
 
 
-          <button className={combineClasses(classes.theme_switch, "pl-10 pr-0")} onClick={() => changeTheme()}>
+          <button className={combineClasses(classes.theme_switch, "pl-3")} onClick={() => changeTheme()}>
             <img src={(THEME_ICONS as any)[theme].themeToggle} width="100%" alt="" />
           </button>
         </div>

@@ -1,4 +1,4 @@
-import { ContainerWidths, NavbarType } from "../src/shared/enums";
+import { ContainerWidths, LogoType, NavbarType } from "../src/shared/enums";
 import { IAuthor } from "../src/shared/interfaces";
 
 /**
@@ -55,7 +55,17 @@ export const RUPALI: IAuthor = {
 export const PRIMARY_NAV = {
     // max size 40x40px for default and 40x80px for centered or text
     type: NavbarType.DEFAULT,
-    logo: 'Next Blog',
+    // max logo image height 40px
+    // you can add logo light version if using image
+    // logo: {
+    //     type: LogoType.IMAGE,
+    //     logo: '/images/logo.png',
+    //     logoLight: '/images/logo-light.png'
+    // },
+    logo: {
+        type: LogoType.TEXT,
+        logo: 'Logo',
+    },
     showThemeSwitch: true,
     showSearch: true,
     // navLinks are the main navbar links that apper on top of every page

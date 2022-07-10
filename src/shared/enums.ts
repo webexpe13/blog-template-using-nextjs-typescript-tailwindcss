@@ -52,3 +52,8 @@ export enum TextAlign {
   CENTER = "center",
   JUSTIFY = "justify",
 }
+
+export enum LogoType {
+  TEXT = "text",
+  IMAGE = "image",
+}

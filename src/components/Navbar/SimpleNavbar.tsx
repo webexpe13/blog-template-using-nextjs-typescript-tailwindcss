@@ -3,10 +3,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { THEME_ICONS } from "../../constants/appConstants";
 import { combineClasses, getCategories, getTheme } from "../../utils/utils";
-import { ContainerWidths, THEMES } from "../../shared/enums";
+import { LogoType, THEMES } from "../../shared/enums";
 
 const SimpleNavbar = ({
-  container = ContainerWidths.DEFAULT,
   openSearch,
   scrolled = false,
   theme = THEMES.LIGHT,
@@ -15,14 +14,14 @@ const SimpleNavbar = ({
   openSidebar = false,
   navSetup
 }: any) => {
-  const { navLinks, showSearch, socials, width, logo } = navSetup;
+  const { navLinks, socials, logo } = navSetup;
 
   const CATEGORIES = getCategories();
   const [openDD, setOpenDD] = useState(false)
 
   return (
     <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-10")}>
-      <div className={combineClasses(classes.navbar__container, container, "px-15")}>
+      <div className={combineClasses(classes.navbar__container, 'container', "px-15")}>
         <div className="d-flex align-center">
           <div
             className={combineClasses(classes.mobileBurgerToggle, "mr-10", openSidebar ? classes.mobileBurgerToggle__close : ' ')}
@@ -31,7 +30,11 @@ const SimpleNavbar = ({
           </div>
           <Link href="/" passHref>
             {
-              logo ? <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22')}>{logo}</a> : <a className={classes.logo}></a>
+              logo ?
+                logo.type === LogoType.IMAGE ?
+                  <img src={theme === THEMES.DARK ? logo.logoLight : logo.logo} alt="WebExpe" width="100px" /> :
+                  <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22')}>{logo.logo}</a>
+                : <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22')}>Logo</a>
             }
           </Link>
         </div>
@@ -84,14 +87,12 @@ const SimpleNavbar = ({
             }
           </div>
 
-          {
-            showSearch &&
-            <div className={combineClasses(classes.search_icon_wrapper, 'ml-10')} onClick={() => openSearch()}>
-              <button>
-                <img src={(THEME_ICONS as any)[theme].search} width="100%" alt="" />
-              </button>
-            </div>
-          }
+
+          <div className={combineClasses(classes.search_icon_wrapper, 'ml-10')} onClick={() => openSearch()}>
+            <button>
+              <img src={(THEME_ICONS as any)[theme].search} width="100%" alt="" />
+            </button>
+          </div>
 
 
           <button className={combineClasses(classes.theme_switch, "pl-10 pr-0")} onClick={() => changeTheme()}>

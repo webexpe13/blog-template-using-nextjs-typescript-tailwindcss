@@ -1,16 +1,6 @@
-export enum Authors {
-  MAYUR = "mayur",
-  RUPALI = "rupali",
-}
-
 export enum BlogLayouts {
   WITH_SIDEBAR = "WithSidebar",
   CENTERED = "Centered",
-}
-
-export enum ContainerWidths {
-  DEFAULT = "container",
-  LARGE = "container-large",
 }
 
 export enum THEMES {
@@ -18,7 +8,7 @@ export enum THEMES {
   DARK = "dark",
 }
 
-export enum ArticleImageWidths {
+export enum ImageSize {
   DEFAULT = "default",
   FUll = "full",
   SMALL = "small",
@@ -28,12 +18,6 @@ export enum ArticleImageWidths {
 export enum NavbarType {
   DEFAULT = "default",
   CENTERED = "centered",
-}
-
-export enum DeviceTypes {
-  DESKTOP = "desktop",
-  MOBILE = "mobile",
-  TABLET = "tablet",
 }
 
 export enum ArticleHeaderLayouts {
@@ -56,4 +40,17 @@ export enum TextAlign {
 export enum LogoType {
   TEXT = "text",
   IMAGE = "image",
+}
+
+export enum TextAs {
+  p = "p",
+  h1 = 'h1',
+  h2 = 'h2',
+  h3 = 'h3',
+  h4 = 'h4',
+  h5 = 'h5',
+  h6 = 'h6',
+  title = "title",
+  quote = "quote",
+  span = "span"
 }

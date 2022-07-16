@@ -1,7 +1,7 @@
 /**These are necessary imports / components for the page */
 import BlogLayout from "../../src/layouts/BlogLayouts";
-import { ArticleHeaderLayouts, ArticleImageWidths, BlogLayouts, SectionSeperatorTypes, TextAlign } from "../../src/shared/enums";
-import ArticleImage from "../../src/components/ArticleImage";
+import { ArticleHeaderLayouts, BlogLayouts, ImageSize, SectionSeperatorTypes, TextAlign } from "../../src/shared/enums";
+import Image from "../../src/components/ArticleImage";
 import ArticleHeader from "../../src/components/ArticleHeader";
 import Para from "../../src/components/Para";
 import SectionTitle from "../../src/components/SectionTitle";
@@ -25,7 +25,7 @@ const ArticleDefaultLayout = () => {
                 if you cant to add alt text (good for SEO) -> alt="dummy image alt text"
                 we have three sizes :  ArticleImageWidths.FUll || ArticleImageWidths.SMALL || ArticleImageWidths.DEFAULT               
             */}
-            <ArticleImage src="/images/dummy-banner-img.jpg" caption="this is banner image example" alt="dummy image alt text" size={ArticleImageWidths.FUll} />
+            <Image src="/images/dummy-banner-img.jpg" caption="this is banner image example" alt="dummy image alt text" size={ImageSize.FUll} />
 
             {/* 
                 ArticleHeader will display the title, tags and other article header imformation 

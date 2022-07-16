@@ -1,4 +1,3 @@
-
 import { iArticle } from '../src/shared/interfaces';
 
 // Import author profiles, just type the name you have set in _BLOG_SETUP inside the curly brackets
@@ -64,7 +63,7 @@ export const ARTICLES_LIST: iArticle[] = [
         preview: {
             author: MAYUR,
             date: "March 03 2022",
-            articleTitle: "|Demo Article with default layout (with sidebar)",
+            articleTitle: "Demo Article with default layout (with sidebar)",
             tags: "demo, with sidebar, default layout",
             thumbnail: "/images/default-layout-thumb.jpg",
             shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
@@ -116,7 +115,7 @@ export const ARTICLES_LIST: iArticle[] = [
             tags: "demo, with category",
             thumbnail: "/images/category-thumb.png",
             shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
-            // create a folder of you category example "food-recipies" or "travel" etc and put that exact same name in category
+            // you can also create a folder of you category example "food-recipies" or "travel" etc and put that exact same name in category folder
             category: 'tutorial'
         },
         seo: {

@@ -63,7 +63,8 @@ export const removeBodyNoScroll = () => {
 
 export const getArticleDetails = () => {
   const router = useRouter();
-  const articlePath = router.pathname;
+  const articlePath = "/pages" + router.pathname;
+  console.log(router)
   return ARTICLES_LIST.filter((each) => each.path === articlePath)[0];
 };
 
@@ -106,3 +107,17 @@ export const CREATE_SEO_CONFIG = (ARTICLE_DETAILS: iArticle) => {
   };
   return seo_config;
 };
+
+export const transformPath = (path = '') => {
+  let newPath = path;
+  newPath = path.replace('/pages', '')
+
+  return newPath;
+}
+
+export const transformImagePaths = (path = '') => {
+  let newPath = path;
+  newPath = path.replace('/public', '')
+
+  return newPath;
+}

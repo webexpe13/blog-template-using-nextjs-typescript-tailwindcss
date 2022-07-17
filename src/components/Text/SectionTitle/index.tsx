@@ -1,4 +1,4 @@
-import { TextAlign } from "../../shared/enums";
+import { TextAlign } from "../../../shared/enums";
 interface IProps {
     children: any;
     size?: number;

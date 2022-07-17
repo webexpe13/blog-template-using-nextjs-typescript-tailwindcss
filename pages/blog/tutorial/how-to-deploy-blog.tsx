@@ -48,9 +48,7 @@ const HowToDeployBlog = () => {
                         <b>Create a project</b><br />
                         <Image className="my-20" src="/images/firebase-create-proj.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
 
-                        Enter project name
-                        <Image className="my-20" src="/images/fb-project-name.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
-                        Select Conitnue with analytics and enter the contry. and click create project.
+                        Enter project name and Select Conitnue with analytics and enter the contry. and click create project.
                     </li>
                     <li>
                         <b>Firebase Dashboard</b><br />

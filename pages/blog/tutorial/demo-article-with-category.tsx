@@ -3,10 +3,10 @@ import BlogLayout from "../../../src/layouts/BlogLayouts";
 import { ArticleHeaderLayouts, BlogLayouts, SectionSeperatorTypes, TextAlign, ImageSize } from "../../../src/shared/enums";
 import Image from "../../../src/components/ArticleImage";
 import ArticleHeader from "../../../src/components/ArticleHeader";
-import Para from "../../../src/components/Para";
-import SectionTitle from "../../../src/components/SectionTitle";
+import Para from "../../../src/components/Text/Para";
+import SectionTitle from "../../../src/components/Text/SectionTitle";
 import SectionSeperator from "../../../src/components/SectionSeperator";
-import QuotedText from "../../../src/components/QuotedText";
+import QuotedText from "../../../src/components/Text/QuotedText";
 /**These are necessary imports / components for the page */
 
 const ArticleDefaultLayout = () => {

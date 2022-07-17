@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { THEMES } from "../../shared/enums";
 import { IArticleHeaderData } from "../../shared/interfaces"
-import { combineClasses } from "../../utils/utils";
+import { combineClasses, transformPath } from "../../utils/utils";
 import classes from './ArticleCard.module.scss';
 
 const SerachArticleCard = ({ article, theme = THEMES.LIGHT, path }: { article: IArticleHeaderData, theme: THEMES, path: string }) => (
   <div className={combineClasses(classes.article_card_wrap)}>
     <div className={combineClasses(classes.article_card, "px-15 py-10", theme === THEMES.DARK ? classes.dark : null)}>
       <p className={combineClasses(classes.article_card__date, "font-regular font-12 mt-10 mb-5")}>{article.date}</p>
-      <Link href={path} passHref={true}>
+      <Link href={transformPath(path)} passHref={true}>
         <a>
           <h1 className={combineClasses(classes.article_card__title, "font-22 font-bold my-0")} >
             {article.articleTitle}

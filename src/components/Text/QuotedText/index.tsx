@@ -1,5 +1,5 @@
-import { TextAlign } from "../../shared/enums";
-import { combineClasses } from "../../utils/utils";
+import { TextAlign } from "../../../shared/enums";
+import { combineClasses } from "../../../utils/utils";
 import classes from './Quoted.module.scss'
 
 interface IProps {

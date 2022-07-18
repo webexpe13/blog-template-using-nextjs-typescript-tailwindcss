@@ -105,8 +105,6 @@ export const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        // for article inside a category the path will also change
-        // /blog/{category}/{filename}
         path: '/pages/blog/tutorial/demo-article-with-category',
         preview: {
             author: MAYUR,

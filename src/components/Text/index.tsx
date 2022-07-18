@@ -11,27 +11,27 @@ interface IProps {
     fontSize?: number;
 }
 
-const Text = ({ children, fontSize = 16, color="red", textAlign = TextAlign.LEFT, className, as = TextAs.p }: IProps) => {
+const Text = ({ children, fontSize = 16, color, textAlign = TextAlign.LEFT, className, as = TextAs.p }: IProps) => {
     const computeComponent = () => {
         let ui = <></>;
         switch (as) {
             case TextAs.p:
                 ui = (
-                    <p className={combineClasses(`font-regular`)} style={{ color: color, textAlign: textAlign, fontSize: fontSize + 'px' }}>
+                    <p className={combineClasses(`font-regular`, className)} style={{ color: color, textAlign: textAlign, fontSize: fontSize + 'px' }}>
                         {children}
                     </p>
                 )
                 break;
             case TextAs.title:
                 ui = (
-                    <h1 className={`font-bold mb-15 ${className}`} style={{ color: color, textAlign: textAlign, fontSize: fontSize ? fontSize + 'px' : 'auto' }}>
+                    <h1 className={`font-bold mb-15 ${className}`} style={{ color: color, textAlign: textAlign, fontSize: fontSize + 'px' }}>
                         {children}
                     </h1>
                 )
                 break;
             case TextAs.quote:
                 ui = (
-                    <blockquote className={combineClasses(classes.quoted_text)} style={{ color: color, textAlign: textAlign, fontSize: fontSize + 'px' }}>
+                    <blockquote className={combineClasses(classes.quoted_text, className)} style={{ color: color, textAlign: textAlign, fontSize: fontSize + 'px' }}>
                         <q>{children}</q>
                     </blockquote>
                 )

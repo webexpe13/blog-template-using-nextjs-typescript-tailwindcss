@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { generateRandomAvtar } from "../../constants/appConstants";
 import { IArticleHeaderData } from "../../shared/interfaces";
-import { combineClasses, getTheme, setPath } from "../../utils/utils";
+import { combineClasses, getTheme, setPath, transformImagePaths, transformPath } from "../../utils/utils";
 import classes from "./ArticleCard.module.scss";
 
 interface IProp {
@@ -20,12 +20,12 @@ const ArticleCard = ({ article, path }: IProp) => {
     <div className={classes.article_card_wrap}>
       <div className={combineClasses(classes.article_card, theme === 'dark' ? classes.dark : null)}>
         <div className={classes.article_card__image}>
-          <img src={article.thumbnail} alt="" width="100%" />
+          <img src={transformImagePaths(article.thumbnail)} alt="" width="100%" />
         </div>
 
         <div className={classes.article_card__content}>
           <p className={combineClasses(classes.article_card__date, "font-regular font-12 mt-10 mb-5")}>{article.date}</p>
-          <Link href={path}>
+          <Link href={transformPath(path)}>
             <a>
               <h1 className={combineClasses(classes.article_card__title, "font-22 font-bold my-0")} >
                 {article.articleTitle}

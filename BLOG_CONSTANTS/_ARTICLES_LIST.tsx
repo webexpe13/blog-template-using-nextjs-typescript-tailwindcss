@@ -1,4 +1,3 @@
-
 import { iArticle } from '../src/shared/interfaces';
 
 // Import author profiles, just type the name you have set in _BLOG_SETUP inside the curly brackets
@@ -8,7 +7,7 @@ import { MAYUR, RUPALI } from './_BLOG_SETUP';
 /**
  * Example article object
  * {
-        path: '/blog/tutorial/how-to-setup-blog',
+        path: '/pages/blog/tutorial/how-to-setup-blog',
         featureArticle: true,
         preview: {
             // the author object you created in _BLOG_SETUP file
@@ -35,14 +34,14 @@ import { MAYUR, RUPALI } from './_BLOG_SETUP';
  */
 export const ARTICLES_LIST: iArticle[] = [
     {
-        path: '/blog/tutorial/how-to-setup-blog',
+        path: '/pages/blog/tutorial/how-to-setup-blog',
         featureArticle: true,
         preview: {
             author: MAYUR,
             date: "March 03 2022",
             articleTitle: "How to setup this blog template",
             tags: "demo, blog setup",
-            thumbnail: "/images/blog-setup.jpg",
+            thumbnail: "/public/images/blog-setup.jpg",
             shortIntro: "These are the steps to setup your blog",
             category: 'tutorial'
         },
@@ -60,13 +59,13 @@ export const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/blog/demo-article-default-layout',
+        path: '/pages/blog/demo-article-default-layout',
         preview: {
             author: MAYUR,
             date: "March 03 2022",
-            articleTitle: "|Demo Article with default layout (with sidebar)",
+            articleTitle: "Demo Article with default layout (with sidebar)",
             tags: "demo, with sidebar, default layout",
-            thumbnail: "/images/default-layout-thumb.jpg",
+            thumbnail: "/public/images/default-layout-thumb.jpg",
             shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
         },
         seo: {
@@ -83,13 +82,13 @@ export const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/blog/demo-article-centered-layout',
+        path: '/pages/blog/demo-article-centered-layout',
         preview: {
             author: RUPALI,
             date: "March 03 2022",
             articleTitle: "Demo Article with centered layout",
             tags: "demo,centered, centered layout",
-            thumbnail: "/images/centered-layout-thumb.png",
+            thumbnail: "/public/images/centered-layout-thumb.png",
             shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
         },
         seo: {
@@ -106,17 +105,15 @@ export const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        // for article inside a category the path will also change
-        // /blog/{category}/{filename}
-        path: '/blog/tutorial/demo-article-with-category',
+        path: '/pages/blog/tutorial/demo-article-with-category',
         preview: {
             author: MAYUR,
             date: "March 03 2022",
             articleTitle: "Demo Article with category",
             tags: "demo, with category",
-            thumbnail: "/images/category-thumb.png",
+            thumbnail: "/public/images/category-thumb.png",
             shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
-            // create a folder of you category example "food-recipies" or "travel" etc and put that exact same name in category
+            // you can also create a folder of you category example "food-recipies" or "travel" etc and put that exact same name in category folder
             category: 'tutorial'
         },
         seo: {
@@ -133,14 +130,14 @@ export const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/blog/tutorial/how-to-deploy-blog',
+        path: '/pages/blog/tutorial/how-to-deploy-blog',
         featureArticle: true,
         preview: {
             author: RUPALI,
             date: "March 03 2022",
             articleTitle: " How to Export and deploy blog",
             tags: "demo, deploy blog",
-            thumbnail: "/images/deploy.png",
+            thumbnail: "/public/images/deploy.png",
             shortIntro: "In this article you will see how to export blog files and what folder to deploy on your hosting.",
             category: 'tutorial'
         },

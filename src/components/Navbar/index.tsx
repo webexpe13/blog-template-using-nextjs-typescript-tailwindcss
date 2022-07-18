@@ -1,4 +1,4 @@
-import { NavbarType, ContainerWidths, THEMES } from "../../shared/enums";
+import { NavbarType, THEMES } from "../../shared/enums";
 import SimpleNavbar from './SimpleNavbar';
 import CenteredNavbar from './Centered';
 import { useEffect, useState } from "react";
@@ -7,12 +7,7 @@ import NavSidebar from './NavSideBar';
 import Search from "../Search";
 import { PRIMARY_NAV } from "../../../BLOG_CONSTANTS/_BLOG_SETUP"
 
-interface iNavbar {
-    showSocialMedia?: boolean;
-    container?: ContainerWidths;
-}
-
-const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }: iNavbar) => {
+const Navbar = () => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
     const [isMobile, setIsMobile] = useState(false);
     const [openSidebar, setOpenSidebar] = useState(false);
@@ -71,8 +66,6 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
         <>
             {
                 isMobile ? <SimpleNavbar
-                    container={ContainerWidths.DEFAULT}
-                    showSocial={showSocialMedia}
                     openSearch={openSearch}
                     scrolled={scrolled}
                     theme={theme}
@@ -86,7 +79,6 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                             case NavbarType.DEFAULT:
                                 return (
                                     <SimpleNavbar
-                                        showSocial={showSocialMedia}
                                         openSearch={openSearch}
                                         scrolled={scrolled}
                                         theme={theme}
@@ -98,7 +90,6 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                             case NavbarType.CENTERED:
                                 return (
                                     <CenteredNavbar
-                                        showSocial={showSocialMedia}
                                         openSearch={openSearch}
                                         scrolled={scrolled}
                                         theme={theme}
@@ -110,7 +101,6 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                             default:
                                 return (
                                     <SimpleNavbar
-                                        showSocial={showSocialMedia}
                                         openSearch={openSearch}
                                         scrolled={scrolled}
                                         theme={theme}
@@ -130,4 +120,4 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
     )
 }
 
-export default Navbar
+export default Navbar 

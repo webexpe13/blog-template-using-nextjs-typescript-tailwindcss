@@ -3,10 +3,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { THEME_ICONS } from "../../constants/appConstants";
 import { combineClasses, getCategories, getTheme } from "../../utils/utils";
-import { ContainerWidths, THEMES } from "../../shared/enums";
+import { LogoType, THEMES } from "../../shared/enums";
 
 const CenteredNavbar = ({
-    container = ContainerWidths.DEFAULT,
     openSearch,
     scrolled,
     theme = THEMES.LIGHT,
@@ -14,16 +13,16 @@ const CenteredNavbar = ({
     toggleSideMenu,
     openSidebar = false,
     navSetup }: any) => {
-    const { navLinks, showSearch, socials, logo } = navSetup;
+    const { navLinks, socials, logo } = navSetup;
 
     const CATEGORIES = getCategories();
     const [openDD, setOpenDD] = useState(false)
 
     return (
-        <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-5")}>
-            <div className={container}>
-                <div className={combineClasses(classes.navbar__container, "px-3 md:px-2")}>
-                    <div className="flex" style={{ width: "120px" }}>
+        <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-10")}>
+            <div className={'container'}>
+                <div className={combineClasses(classes.navbar__container, "px-15")}>
+                    <div className="d-flex" style={{ width: "120px" }}>
                         <div
                             className={combineClasses(classes.mobileBurgerToggle, "mr-3", openSidebar ? classes.mobileBurgerToggle__close : ' ')}
                             onClick={() => toggleSideMenu()}>
@@ -38,12 +37,17 @@ const CenteredNavbar = ({
 
                     <Link href="/" passHref={true}>
                         {
-                            logo ? <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22')}>{logo}</a> : <a className={classes.logo}></a>
+                            logo ?
+                                logo.type === LogoType.IMAGE ?
+                                    <img src={theme === THEMES.DARK ? logo.logoLight : logo.logo} alt="WebExpe" width="100px" /> :
+                                    <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22')}>{logo.logo}</a>
+                                : <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22')}>Logo</a>
                         }
                     </Link>
 
                     <div className="flex justify-end" style={{ width: "120px" }}>
                         {
+                            socials &&
                             socials.map((each: any, i: any) => (
                                 <a href={each.link}
                                     target="_blank"

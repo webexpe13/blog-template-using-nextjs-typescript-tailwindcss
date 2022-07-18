@@ -1,4 +1,4 @@
-import { ContainerWidths, LogoType, NavbarType } from "../src/shared/enums";
+import { LogoType, NavbarType } from "../src/shared/enums";
 import { IAuthor } from "../src/shared/interfaces";
 
 /**
@@ -48,6 +48,9 @@ export const RUPALI: IAuthor = {
 }
 
 
+// This can your company name / your name etc for SEO purposes
+export const WEBSITE_NAME = 'Website Name';
+
 /**
  * This is the main navigation setup.
  * This includes the main navbar and the side drawer.
@@ -55,18 +58,16 @@ export const RUPALI: IAuthor = {
 export const PRIMARY_NAV = {
     type: NavbarType.DEFAULT,
     // max logo image height 40px
-    // you can add logo light version too
+    // you can add logo light version if using image
     // logo: {
     //     type: LogoType.IMAGE,
-    //     logo: '/images/webexpe.png',
-    //     logoLight: '/images/webexpe-light.png'
+    //     logo: '/images/logo.png',
+    //     logoLight: '/images/logo-light.png'
     // },
     logo: {
         type: LogoType.TEXT,
         logo: 'Logo',
     },
-    showThemeSwitch: true,
-    showSearch: true,
     // navLinks are the main navbar links that apper on top of every page
     navLinks: [
         {
@@ -74,7 +75,7 @@ export const PRIMARY_NAV = {
             path: '/'
         },
         {
-            // for categories dont add path and add type: dropdown
+            // for categories don't add path and add type: dropdown
             label: 'Blog',
             type: 'dropdown'
         },
@@ -85,12 +86,12 @@ export const PRIMARY_NAV = {
             newTab: true
         },
         {
-            label: 'Github',
+            label: 'Github Repo',
             path: 'https://github.com/nmayur/nextjs-simple-blog-template',
             newTab: true
         },
     ],
-    // sideNavLinks are the links which appear when you open the side menu after clicking the burger meny icon.
+    // sideNavLinks are the links which appear when you open the side menu after clicking the burger menu icon.
     sideNavLinks: [
         {
             label: 'Home',
@@ -107,7 +108,7 @@ export const PRIMARY_NAV = {
             newTab: true
         },
         {
-            label: 'Github',
+            label: 'Github Repo',
             path: 'https://github.com/nmayur/nextjs-simple-blog-template',
             newTab: true
         },
@@ -127,8 +128,6 @@ export const PRIMARY_NAV = {
         },
     ]
 }
-
-export const WEBSITE_NAME = 'Website Name'
 
 export const DEFAULT_SEO = {
     title: "Nextjs simple blog template | " + WEBSITE_NAME,

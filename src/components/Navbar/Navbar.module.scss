@@ -8,7 +8,7 @@
 }
 
 .logo {
-    width: 50px;
+    width: auto;
     height: 50px;
     border-radius: 50%;
     background: $black;
@@ -222,7 +222,6 @@
     .sidebarCategoryDD {
         overflow: auto;
         border-radius: 4px;
-        // transition: all 0.2s ease-in-out;
 
         a {
             border-bottom: solid 1px $gray;

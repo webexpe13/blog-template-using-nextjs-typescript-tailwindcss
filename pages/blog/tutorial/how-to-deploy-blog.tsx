@@ -1,6 +1,6 @@
 /**These are necessary imports / components for the page */
-import { ArticleImageWidths } from "../../../src/shared/enums";
-import ArticleImage from "../../../src/components/ArticleImage";
+import { ImageSize } from "../../../src/shared/enums";
+import Image from "../../../src/components/ArticleImage";
 import SectionSeperator from "../../../src/components/SectionSeperator";
 import HomeLayout from "../../../src/layouts/HomeLayout";
 import Link from "next/link";
@@ -21,17 +21,17 @@ const HowToDeployBlog = () => {
                     <li className="mb-20">
                         <b>Stop the local server</b> (if running)<br />
                         Open terminal and press <b>ctrl + C</b> to stop the server.
-                        <ArticleImage className="mt-20" src="/images/stop-server.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
+                        <Image className="mt-20" src="/images/stop-server.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     </li>
                     <li className="mb-20">
                         Run <b>npm run out</b><br />
                         In the terminal run <b>npm run out</b>.
-                        <ArticleImage className="mt-20" src="/images/npm-run-out.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
-                        <ArticleImage className="mt-20" src="/images/export-done.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
+                        <Image className="mt-20" src="/images/npm-run-out.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="mt-20" src="/images/export-done.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     </li>
                     <li className="mb-20">
                         After the export is successful. You will see a new folder created named <b>out</b> in you project directory .
-                        <ArticleImage className="my-20" src="/images/out-folder.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.SMALL} />
+                        <Image className="my-20" src="/images/out-folder.png" alt="nextjs-simple-blog-template" size={ImageSize.SMALL} />
                         This <b>out</b> is the folder you need to deploy on your hosting service.
                     </li>
                 </ol>
@@ -46,17 +46,15 @@ const HowToDeployBlog = () => {
                     </li>
                     <li>
                         <b>Create a project</b><br />
-                        <ArticleImage className="my-20" src="/images/firebase-create-proj.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
+                        <Image className="my-20" src="/images/firebase-create-proj.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
 
-                        Enter project name
-                        <ArticleImage className="my-20" src="/images/fb-project-name.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
-                        Select Conitnue with analytics and enter the contry. and click create project.
+                        Enter project name and Select Conitnue with analytics and enter the contry. and click create project.
                     </li>
                     <li>
                         <b>Firebase Dashboard</b><br />
                         Click on <b>Hosting</b> inside <b>Build</b>
-                        <ArticleImage className="my-20" src="/images/select-hosting.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.SMALL} />
-                        <ArticleImage className="my-20" src="/images/hosting-gs.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
+                        <Image className="my-20" src="/images/select-hosting.png" alt="nextjs-simple-blog-template" size={ImageSize.SMALL} />
+                        <Image className="my-20" src="/images/hosting-gs.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     </li>
                     <li>
                         <b>Install firebase</b><br />
@@ -69,14 +67,14 @@ const HowToDeployBlog = () => {
                     <li>
                         <b>Init Firebase and Deploy</b><br />
                         Run <b>firebase init</b> in terminal, move the selection to hosting using arrow keys and select Hosting by hitting space, and then press enter.
-                        <ArticleImage className="my-20" src="/images/use-exi.png" alt="nextjs-simple-blog-template" caption="Select Use an Existing Project" size={ArticleImageWidths.DEFAULT} />
+                        <Image className="my-20" src="/images/use-exi.png" alt="nextjs-simple-blog-template" caption="Select Use an Existing Project" size={ImageSize.DEFAULT} />
                         After you select <b>Use an Existing Project</b> you will see list of all projects in your firebase account, including the one we created now.
-                        <ArticleImage className="my-20" src="/images/select-proj.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
+                        <Image className="my-20" src="/images/select-proj.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                         it will ask the following:
                         <ul>
                             <li>
                                 <b>What do you want to use as your public directory?</b> here write <b>out</b>
-                                <ArticleImage className="my-20" src="/images/select-dir.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
+                                <Image className="my-20" src="/images/select-dir.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                             </li>
                             <li>
                                 <b>Configure as a single-page app (rewrite all urls to /index.html)</b> here enter <b>N</b> (decline it)
@@ -88,10 +86,10 @@ const HowToDeployBlog = () => {
                                 <b>File out/index.html already exists. Overwrite? (y/N)</b>  here enter <b>N</b> (decline it)
                             </li>
                         </ul>
-                        <ArticleImage className="my-20" src="/images/firebase-complete.png" alt="nextjs-simple-blog-template" caption="Firebase Setup Complete" size={ArticleImageWidths.DEFAULT} />
+                        <Image className="my-20" src="/images/firebase-complete.png" alt="nextjs-simple-blog-template" caption="Firebase Setup Complete" size={ImageSize.DEFAULT} />
 
                         Finally run <b>firebase deploy</b> and your peoject will be deployed on your firebase hosting.
-                        <ArticleImage className="my-20" src="/images/fb-deploy.png" alt="nextjs-simple-blog-template" caption="Firebase Deploy" size={ArticleImageWidths.DEFAULT} />
+                        <Image className="my-20" src="/images/fb-deploy.png" alt="nextjs-simple-blog-template" caption="Firebase Deploy" size={ImageSize.DEFAULT} />
                     </li>
                     <li>
                         <b>* note</b><br />

@@ -112,7 +112,7 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                         navSetup.socials && <>
                             <p className='font-light'>Follow us : </p> {
                                 navSetup.socials.map((each: any) => (
-                                    <a href={each.link} key={each.link} target="_blank" rel="noopener noreferrer" className='font-16 font-medium inline-block mr-10 flex-wrap'>{each.icon}</a>
+                                    <a href={each.link} key={each.link} target="_blank" rel="noopener noreferrer" className='text-[24px] font-medium inline-block mr-10 flex-wrap'>{each.icon}</a>
                                 ))
                             }
                             <hr className='mt-5' />

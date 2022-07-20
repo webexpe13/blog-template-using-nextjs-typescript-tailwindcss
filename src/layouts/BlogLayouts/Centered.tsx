@@ -16,8 +16,8 @@ const Centered = ({ children }: any) => {
             style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '0px' : '50px' }}
             >
             <Navbar />
-            <div className="container px-15 px-sm-0 pt-100 pb-50">
-                <article className={combineClasses(classes.article_content, 'pb-20 px-15')}>
+            <div className="container pt-[100px] pb-[50px]">
+                <article className={combineClasses(classes.article_content, 'pb-[30px] px-3')}>
                     {children}
                 </article>
             </div>

@@ -1,27 +1,17 @@
-@import "../../styles/utils/color";
 @import "../../styles/utils/mixins";
 
 .withSidebar_article_wrapper,
 .centered_article_wrapper {
-    background: $offWhite;
+    @apply bg-slate-100;
 
     .article_content {
         min-height: 100vh;
-        border-radius: 8px;
-        border: solid 1px $grey;
         max-width: 800px;
         overflow: hidden;
-        background: $white;
         -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
         -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
-    }
-
-    @include mobile {
-        .article_content {
-            border: none;
-            border-radius: 0px;
-        }
+        @apply md:border md:border-slate-200 bg-white border-0 rounded-none md:rounded-[8px];
     }
 }
 
@@ -34,12 +24,10 @@
 
 .withSidebar_article_wrapper.dark,
 .centered_article_wrapper.dark {
-    background: $darkBlue;
-    color: $white;
+    @apply bg-slate-800 text-white;
 
     .article_content {
-        border: solid 1px $darkBlue;
-        background: $darkBlue1;
+        @apply bg-slate-800 border border-slate-800;
     }
 }
 
@@ -53,7 +41,7 @@
     /* Safari */
     position: sticky;
     top: 100px;
-    padding: 0px 15px;
+    padding: 0px 10px;
     overflow: auto;
 
     &::-webkit-scrollbar {
@@ -73,6 +61,7 @@
         margin-top: 50px;
         padding: 0px;
         height: auto;
+        max-width: 100%;
 
         .more_from_author,
         .sidebar_author_details {
@@ -87,15 +76,13 @@
 
 .sidebar_author_details,
 .more_from_author {
-    background: $white;
-    border-radius: 8px;
-    overflow: hidden;
-    padding: 0px 15px;
-    border: solid 1px $grey;
+    // overflow: hidden;
+    // padding: 0px 15px;
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
+    @apply border border-slate-100 bg-white md:rounded-[8px] px-[15px] py-[10px] mb-[30px] overflow-hidden;
 }
 
 .sidebar_author_details {
@@ -109,11 +96,11 @@
         height: 70px;
         border-radius: 50%;
         margin-right: 10px;
-        background-color: $grey;
         -webkit-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.2);
         -moz-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.2);
         box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.2);
         overflow: hidden;
+        @apply bg-gray-500;
 
         img {
             width: 100%;
@@ -122,11 +109,6 @@
 }
 
 .more_from_author {
-    > p {
-        font-weight: 500;
-        padding-bottom: 10px;
-        border-bottom: solid 1px $gray;
-    }
     &__articles {
         display: flex;
         align-items: center;
@@ -136,12 +118,12 @@
         .article_image {
             width: 25%;
             aspect-ratio: 1;
-            background: $gray;
             margin-right: 10px;
             background-size: cover !important;
             border-radius: 8px;
             flex-shrink: 0;
             background-position: center !important;
+            @apply bg-gray-500
         }
 
         .article_title {
@@ -149,7 +131,7 @@
             font-weight: 500;
 
             &:hover {
-                color: $lightBlue;
+                @apply text-blue-500;
             }
         }
     }
@@ -158,7 +140,6 @@
 .withSidebar_article_wrapper.dark {
     .more_from_author,
     .sidebar_author_details {
-        border: solid 1px $darkBlue;
-        background: $darkBlue1;
+        @apply bg-slate-800 border border-slate-800;
     }
 }

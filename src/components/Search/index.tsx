@@ -27,23 +27,25 @@ const Search = ({ setShowSearch }: ISearch) => {
     }, [theme]);
 
     return (
-        <div className={combineClasses('bg-offWhite', classes?.search_container, theme === THEMES.DARK ? classes.dark : null)}>
-            <div className="container">
-                <div className={combineClasses('d-flex justify-space-between align-center px-10')}>
-                    <h1 className={'font-45'}>Search</h1>
-                    <button type="button" className={classes.search_close_icon} onClick={() => setShowSearch(false)}><span></span></button>
-                </div>
-                <div className="px-10 mb-40">
-                    <input
-                        className={combineClasses(classes?.search_input, 'font-20')}
-                        placeholder="Enter keywords and seperate with commas"
-                        value={searchStr}
-                        onChange={(e) => setSearchStr(e.target.value)}
-                        onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                    />
+        <div className={combineClasses('bg-slate-100', classes?.search_container, theme === THEMES.DARK ? classes.dark : null)}>
+            <div className="container mx-auto">
+                <div className="px-3">
+                    <div className={combineClasses('flex justify-between items-center')}>
+                        <h1 className={'text-[45px] font-bold pt-10'}>Search</h1>
+                        <button type="button" className={classes.search_close_icon} onClick={() => setShowSearch(false)}><span></span></button>
+                    </div>
+                    <div className="mb-[40px] mt-3">
+                        <input
+                            className={combineClasses('text-[20px] w-full bg-inherit border-b border-gray-400 p-2')}
+                            placeholder="Enter keywords and seperate with commas"
+                            value={searchStr}
+                            onChange={(e) => setSearchStr(e.target.value)}
+                            onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+                        />
+                    </div>
                 </div>
 
-                {searchResults?.length > 0 && <div className='articles_cont d-flex'>
+                {searchResults?.length > 0 && <div className='flex flex-wrap'>
                     {
                         searchResults?.length > 0 && searchResults?.map((article, i) => (
                             <SearchArticleCard article={article.preview} key={i} theme={theme} path={article.path} />

@@ -14,7 +14,7 @@ const tailwind = {
         md: '720px',
         lg: '960px',
         xl: '1140px',
-        '2xl': '1140px',
+        '2xl': '1200px',
       },
     },
     typography: (theme) => ({}),

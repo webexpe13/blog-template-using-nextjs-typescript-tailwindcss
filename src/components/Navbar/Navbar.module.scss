@@ -1,4 +1,3 @@
-@import "../../styles/utils/color";
 @import "../../styles//utils/mixins";
 
 .shadow {
@@ -11,8 +10,8 @@
     width: auto;
     height: 50px;
     border-radius: 50%;
-    background: $black;
     display: block;
+    @apply bg-black;
 }
 
 .navbar {
@@ -22,11 +21,7 @@
     transition: all 0.2s ease-in-out;
     width: 100%;
     z-index: 10;
-    background: $white;
-
-    &__container {
-        @apply flex items-center justify-between;
-    }
+    @apply bg-white;
 }
 
 .search_icon_wrapper {
@@ -86,10 +81,6 @@
 
     .sidebarCategoryDD__floating {
         @apply bg-slate-800;
-
-        a {
-            border-bottom-color: $blue;
-        }
     }
 }
 
@@ -115,7 +106,7 @@
         display: block;
         width: 30px;
         height: 2px;
-        background: $black;
+        @apply bg-black;
         position: relative;
         top: -3px;
         transition: all 0.5s ease-in-out;
@@ -126,7 +117,7 @@
             position: absolute;
             width: 75%;
             height: 2px;
-            background: $black;
+            @apply bg-black;
             left: 0;
             display: block;
         }
@@ -145,11 +136,10 @@
     width: 100%;
     height: 100vh;
     max-width: 300px;
-    background-color: $white;
+    @apply bg-white text-black;
     transition: all 0.5s ease-in-out;
     transform: translateX(-110%);
     z-index: 13;
-    color: $black;
     padding: 20px 15px 10px;
     overflow-y: auto;
 
@@ -183,7 +173,7 @@
             position: relative;
             width: 100%;
             height: 2px;
-            background: $darkSpaceGray;
+            @apply bg-slate-800;
             transform: rotate(45deg);
 
             &::after {
@@ -191,7 +181,7 @@
                 position: absolute;
                 width: 100%;
                 height: 2px;
-                background: $darkSpaceGray;
+                @apply bg-slate-800;
                 transform: rotate(90deg);
             }
         }
@@ -203,7 +193,7 @@
         .sideNavCloseIcon {
             span,
             span::after {
-                background-color: $white;
+                @apply bg-white;
             }
         }
     }
@@ -220,14 +210,12 @@
         overflow: auto;
         border-radius: 4px;
 
-        a {
-            border-bottom: solid 1px $gray;
-            padding: 10px 10px;
+        a{
+            @apply text-[14px] block p-[10px] border-b border-slate-300;
         }
 
         &__floating {
             position: absolute;
-            background: $white;
             width: 180px;
             z-index: 20;
             top: 35px;

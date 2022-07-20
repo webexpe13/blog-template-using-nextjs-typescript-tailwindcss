@@ -23,7 +23,8 @@
 hr{
   background: none;
   border: none;
-  border-top: solid 1px $spaceGray;
+  border-top: solid 1px;
+  @apply border-gray-300
 }
 
 @-webkit-keyframes fadeIn {

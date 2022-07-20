@@ -64,12 +64,12 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                     </div>
                                     <div className={classes.sidebarCategoryDD} style={{ height: openDD ? 'auto' : '0px', padding: openDD ? '10px' : '0px' }}>
                                         <Link href={'/blog'} passHref>
-                                            <a className='font-14 block'>All Articles</a>
+                                            <a className=''>All Articles</a>
                                         </Link>
                                         {
                                             CATEGORIES.map(each => (
                                                 <Link href={'/blog/' + each} key={each} passHref>
-                                                    <a className='text-[14px] block' style={{ textTransform: 'capitalize' }}>{each}</a>
+                                                    <a className='' style={{ textTransform: 'capitalize' }}>{each}</a>
                                                 </Link>
                                             ))
                                         }
@@ -83,9 +83,9 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                 <Link href='/icons' passHref>
                                     <a className='text-[16px] block my-3'>Icons</a>
                                 </Link>
-                                <Link href='/styles' passHref>
+                                {/* <Link href='/styles' passHref>
                                     <a className='text-[16px] block my-3'>Styles Doc</a>
-                                </Link>
+                                </Link> */}
                                 <Link href='/blog/demo-article-default-layout' passHref>
                                     <a className='text-[16px] block my-3'>Demo Article Default Layout</a>
                                 </Link>
@@ -127,12 +127,12 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 </div>
                 <hr />
                 <div className='my-5'>
-                    <p className='text-sm font-light font-spaceGray mb-1'>Copyright © 2022</p>
+                    <p className='text-sm font-light text-gray-500 mb-1'>Copyright © 2022</p>
                     <Link href="/privacy-policy" passHref>
-                        <a className='text-sm font-light font-spaceGray pr-3'>Privacy Policy</a>
+                        <a className='text-sm font-light text-gray-500 pr-3'>Privacy Policy</a>
                     </Link>
                     <Link href="/terms-and-condition" passHref>
-                        <a className='text-sm font-light font-spaceGray'>Terms and Conditions</a>
+                        <a className='text-sm font-light text-gray-500'>Terms and Conditions</a>
                     </Link>
                 </div>
             </aside>

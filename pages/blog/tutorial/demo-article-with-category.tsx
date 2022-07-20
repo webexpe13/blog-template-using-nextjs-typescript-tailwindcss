@@ -40,7 +40,6 @@ const ArticleDefaultLayout = () => {
             */}
             <Text fontSize={18}>
                 For category add <b>category: 'tutorial' in preview</b> in your article object in <b>ARTICLES_LIST</b>. (<i>*optional</i>)  You can also create a folder inside blog folder with you category name, like this article is under <b>tutorial</b> category, and created this article file inside the category folder.<br /><br />
-
                 <b>* please note if you are creating a subfolder inside blog the path will also change in the ARTICLE_LIST in _ARTICLE_LIST.tsx file <br /> * {'/blog/{category}/{filename}'}</b>
             </Text>
             {/* 

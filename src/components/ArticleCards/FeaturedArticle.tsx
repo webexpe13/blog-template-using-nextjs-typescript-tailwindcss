@@ -21,44 +21,47 @@ const FeaturedArticle = ({ article, path }: IProp) => {
         <>
             <div className={combineClasses(classes.featured_article, theme === 'dark' ? classes.dark : null)}>
                 <div className={classes.featured_article__content}>
-                    <div className={combineClasses(classes.featured_article_footer, "mt-0 mb-10")}>
+                    <div className={combineClasses(classes.featured_article_footer, "mt-0 mb-[10px]")}>
                         <div className={classes.author}>
                             <div className={classes.author_img}>
-                                {article.author.profilePic ? <img src={transformImagePaths(article.author.profilePic)} alt={article.author.name} /> : <img src={generateRandomAvtar()} alt={article.author.name} />}
+                                {article.author.profilePic ? <img src={article.author.profilePic} alt={article.author.name} /> : <img src={generateRandomAvtar()} alt={article.author.name} />}
                             </div>
-                            {
-                                article.category && <>
-                                    <p className="ms:text-sm text-sm px-5">in</p>
-                                    <p className={combineClasses(classes.article_card__category, "font-medium font-16 font-sm-14")}>
-                                        <Link href={"/blog/" + article.category}>
-                                            {article.category}
-                                        </Link>
-                                    </p>
-                                </>
-                            }
+                            <p className={combineClasses(classes.author_name, 'text-[14px] md:text-[16px] my-0 font-medium')}>
+                                {article.author.name}
+                            </p>
                         </div>
+                        {
+                            article.category && <>
+                                <p className="text-[14px] md:text-[16px] px-2 font-normal">in</p>
+                                <p className={combineClasses(classes.article_card__category, "font-medium text-[14px] md:text-[16px]")}>
+                                    <Link href={"/blog/" + article.category}>
+                                        {article.category}
+                                    </Link>
+                                </p>
+                            </>
+                        }
                     </div>
                     <Link href={transformPath(path)}>
                         <a>
-                            <h1 className={combineClasses(classes.featured_article__title, "font-24 font-bold mt-0 mb-10")} >
+                            <h1 className={combineClasses(classes.featured_article__title, "text-[24px] font-bold mt-0 mb-[10px]")} >
                                 {article.articleTitle}
                             </h1>
                         </a>
                     </Link>
-                    <p className={combineClasses(classes.featured_article__intro, "font-14 font-regular mt-0 mb-10")}>
+                    <p className={combineClasses(classes.featured_article__intro, "text-[14px] font-regular mt-0 mb-[10px]")}>
                         {article.shortIntro.slice(0, 150)} ...
                     </p>
 
                     <div className={classes.featured_article__tags}>
                         {
                             article.tags.split(',').map((each, i) => (
-                                <span key={i} className="font-12 font-regular mr-10" >#{each}</span>
+                                <span key={i} className="text-xs font-normal mr-3" >#{each}</span>
                             ))
                         }
                     </div>
-                    <p className={combineClasses(classes.featured_article__date, "font-regular font-12 mt-15 mb-0")}>{article.date}</p>
+                    <p className={combineClasses(classes.featured_article__date, "font-normal text-xs pt-3 mb-0")}>{article.date}</p>
                 </div>
-                <div className={classes.featured_article__image} style={{ background: `url(${article.thumbnail})` }}>
+                <div className={classes.featured_article__image} style={{ background: `url(${transformImagePaths(article.thumbnail)})` }}>
                     {/* <img src={article.thumbnail} alt={article.articleTitle} /> */}
                 </div>
             </div>

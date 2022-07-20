@@ -20,8 +20,8 @@ const SimpleNavbar = ({
   const [openDD, setOpenDD] = useState(false)
 
   return (
-    <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-4")}>
-      <div className={combineClasses(classes.navbar__container, 'container mx-auto', "px-15")}>
+    <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-3")}>
+      <div className={combineClasses(classes.navbar__container, 'container flex items-center justify-between', "px-2")}>
         <div className="flex items-center">
           <div
             className={combineClasses(classes.mobileBurgerToggle, "mr-5", openSidebar ? classes.mobileBurgerToggle__close : ' ')}
@@ -33,8 +33,8 @@ const SimpleNavbar = ({
               logo ?
                 logo.type === LogoType.IMAGE ?
                   <img src={theme === THEMES.DARK ? logo.logoLight : logo.logo} alt="WebExpe" width="100px" /> :
-                  <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'text-[22px]')}>{logo.logo}</a>
-                : <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'text-[22px]')}>Logo</a>
+                  <a className={combineClasses(theme === THEMES.DARK ? 'text-white' : 'text-black', 'text-[22px] font-semibold')}>{logo.logo}</a>
+                : <a className={combineClasses(theme === THEMES.DARK ? 'text-white' : 'text-black', 'text-[22px] font-semibold')}>Logo</a>
             }
           </Link>
         </div>
@@ -59,14 +59,14 @@ const SimpleNavbar = ({
                     </div>
                     {
                       openDD &&
-                      <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating)}>
+                      <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white')}>
                         <Link href={'/blog'} passHref>
-                          <a className='font-14 block'>All Articles</a>
+                          <a className=''>All Articles</a>
                         </Link>
                         {
                           CATEGORIES.map(each => (
                             <Link href={'/blog/' + each} key={each} passHref>
-                              <a className='font-14 block' style={{ textTransform: 'capitalize' }}>{each}</a>
+                              <a className='' style={{ textTransform: 'capitalize' }}>{each}</a>
                             </Link>
                           ))
                         }

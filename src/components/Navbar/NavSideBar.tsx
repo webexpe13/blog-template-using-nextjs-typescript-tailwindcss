@@ -49,27 +49,27 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                         navSetup.sideNavLinks.map((each: any, i: any) => (
                             each.type !== 'dropdown' ? !each.newTab ?
                                 <Link href={each.path} key={i} passHref>
-                                    <a className='font-16 font-medium block my-5'>{each.label}</a>
+                                    <a className='text-[16px] block my-3'>{each.label}</a>
                                 </Link> :
-                                <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='font-16 font-medium block my-5 flex-wrap'>
+                                <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='text-[16px] block my-3 flex-wrap'>
                                     {each.label}
                                 </a>
                                 :
                                 <div className={classes.sidebarCategoryDD_wrapper} key={i} >
                                     <div className='flex justify-between items-center cursor-pointer' onClick={() => setOpenDD(!openDD)}>
-                                        <p className='font-16 font-medium my-0'>
+                                        <p className='text-[16px] my-0'>
                                             {each.label}
                                         </p>
                                         <i className='icofont-caret-down'></i>
                                     </div>
-                                    <div className={classes.sidebarCategoryDD} style={{ height: openDD ? '150px' : '0px', padding: openDD ? '10px' : '0px' }}>
+                                    <div className={classes.sidebarCategoryDD} style={{ height: openDD ? 'auto' : '0px', padding: openDD ? '10px' : '0px' }}>
                                         <Link href={'/blog'} passHref>
                                             <a className='font-14 block'>All Articles</a>
                                         </Link>
                                         {
                                             CATEGORIES.map(each => (
                                                 <Link href={'/blog/' + each} key={each} passHref>
-                                                    <a className='font-14 block' style={{ textTransform: 'capitalize' }}>{each}</a>
+                                                    <a className='text-[14px] block' style={{ textTransform: 'capitalize' }}>{each}</a>
                                                 </Link>
                                             ))
                                         }
@@ -81,25 +81,25 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                         env === 'development' ?
                             <>
                                 <Link href='/icons' passHref>
-                                    <a className='font-16 font-medium block my-5'>Icons</a>
+                                    <a className='text-[16px] block my-3'>Icons</a>
                                 </Link>
                                 <Link href='/styles' passHref>
-                                    <a className='font-16 font-medium block my-5'>Styles Doc</a>
+                                    <a className='text-[16px] block my-3'>Styles Doc</a>
                                 </Link>
                                 <Link href='/blog/demo-article-default-layout' passHref>
-                                    <a className='font-16 font-medium block my-5'>Demo Article Default Layout</a>
+                                    <a className='text-[16px] block my-3'>Demo Article Default Layout</a>
                                 </Link>
                                 <Link href='/blog/demo-article-centered-layout' passHref>
-                                    <a className='font-16 font-medium block my-5'>Demo Article Centered Layout</a>
+                                    <a className='text-[16px] block my-3'>Demo Article Centered Layout</a>
                                 </Link>
                                 <Link href='/blog/demo-article-with-category' passHref>
-                                    <a className='font-16 font-medium block my-5'>Demo Article With category</a>
+                                    <a className='text-[16px] block my-3'>Demo Article With category</a>
                                 </Link>
                                 <Link href='/blog/tutorial/how-to-setup-blog' passHref>
-                                    <a className='font-16 font-medium block my-5'>How to setup your blog</a>
+                                    <a className='text-[16px] block my-3'>How to setup your blog</a>
                                 </Link>
                                 <Link href='/blog/tutorial/how-to-deploy-blog' passHref>
-                                    <a className='font-16 font-medium block my-5'>How to export the blog</a>
+                                    <a className='text-[16px] block my-3'>How to export the blog</a>
                                 </Link>
                             </>
                             : null
@@ -112,7 +112,7 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                         navSetup.socials && <>
                             <p className='font-light'>Follow us : </p> {
                                 navSetup.socials.map((each: any) => (
-                                    <a href={each.link} key={each.link} target="_blank" rel="noopener noreferrer" className='text-[24px] font-medium inline-block mr-10 flex-wrap'>{each.icon}</a>
+                                    <a href={each.link} key={each.link} target="_blank" rel="noopener noreferrer" className='text-[28px] inline-block mr-5 flex-wrap'>{each.icon}</a>
                                 ))
                             }
                             <hr className='mt-5' />
@@ -127,12 +127,12 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 </div>
                 <hr />
                 <div className='my-5'>
-                    <p className='font-12 font-light font-spaceGray mb-1'>Copyright © 2022</p>
+                    <p className='text-sm font-light font-spaceGray mb-1'>Copyright © 2022</p>
                     <Link href="/privacy-policy" passHref>
-                        <a className='font-12 font-light font-spaceGray pr-3'>Privacy Policy</a>
+                        <a className='text-sm font-light font-spaceGray pr-3'>Privacy Policy</a>
                     </Link>
                     <Link href="/terms-and-condition" passHref>
-                        <a className='font-12 font-light font-spaceGray'>Terms and Conditions</a>
+                        <a className='text-sm font-light font-spaceGray'>Terms and Conditions</a>
                     </Link>
                 </div>
             </aside>

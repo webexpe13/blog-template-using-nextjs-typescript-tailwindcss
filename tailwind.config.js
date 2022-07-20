@@ -7,9 +7,21 @@ const tailwind = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    container: {
+      center: true,
+      screens: {
+        sm: '540px',
+        md: '720px',
+        lg: '960px',
+        xl: '1140px',
+        '2xl': '1140px',
+      },
+    },
+    typography: (theme) => ({}),
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
+  darkMode: ['class', '[data-mode="dark"]'],
 }
 
 module.exports = tailwind

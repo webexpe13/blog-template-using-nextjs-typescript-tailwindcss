@@ -8,6 +8,7 @@ import { DefaultSeo } from "next-seo";
 import Footer from '../src/components/Footer';
 import Script from 'next/script';
 import * as gtag from '../google';
+import { ThemeProvider } from 'next-themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -51,7 +52,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             />
           </> : null
       }
-      <Component {...pageProps} />
+      <ThemeProvider attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
       <Footer />
     </>
   )

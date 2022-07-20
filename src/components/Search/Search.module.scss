@@ -54,8 +54,7 @@
     color: $black;
 
     &.dark {
-        background: $darkBlue;
-        color: $white;
+        @apply bg-slate-800 text-white;
 
         .search_input {
             color: $white;

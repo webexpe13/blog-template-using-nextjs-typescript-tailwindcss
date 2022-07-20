@@ -20,9 +20,9 @@ const SimpleNavbar = ({
   const [openDD, setOpenDD] = useState(false)
 
   return (
-    <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-10")}>
-      <div className={combineClasses(classes.navbar__container, 'container', "px-15")}>
-        <div className="d-flex align-center">
+    <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-4")}>
+      <div className={combineClasses(classes.navbar__container, 'container mx-auto', "px-15")}>
+        <div className="flex items-center">
           <div
             className={combineClasses(classes.mobileBurgerToggle, "mr-5", openSidebar ? classes.mobileBurgerToggle__close : ' ')}
             onClick={() => toggleSideMenu()}>
@@ -33,14 +33,14 @@ const SimpleNavbar = ({
               logo ?
                 logo.type === LogoType.IMAGE ?
                   <img src={theme === THEMES.DARK ? logo.logoLight : logo.logo} alt="WebExpe" width="100px" /> :
-                  <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22')}>{logo.logo}</a>
-                : <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22')}>Logo</a>
+                  <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'text-[22px]')}>{logo.logo}</a>
+                : <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'text-[22px]')}>Logo</a>
             }
           </Link>
         </div>
 
         <div className="flex items-center">
-          <div className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-14 font-regular items-center md:flex hidden')}>
+          <div className={combineClasses('text-[14px] font-normal items-center md:flex hidden')}>
             {
               navLinks.map((each: any, i: any) => (
                 each.type !== 'dropdown' ? !each.newTab ?
@@ -80,7 +80,7 @@ const SimpleNavbar = ({
               <div className="ml-5">
                 {
                   socials.map((each: any, i: any) => (
-                    <a href={each.link} key={i} target="_blank" rel="noopener noreferrer" className='font-12 inline-block mr-3'>{each.icon}</a>
+                    <a href={each.link} key={i} target="_blank" rel="noopener noreferrer" className='text-[22px] inline-block mr-4'>{each.icon}</a>
                   ))
                 }
               </div>
@@ -88,7 +88,7 @@ const SimpleNavbar = ({
           </div>
 
 
-          <div className={combineClasses(classes.search_icon_wrapper, 'ml-10')} onClick={() => openSearch()}>
+          <div className={combineClasses(classes.search_icon_wrapper, 'ml-5')} onClick={() => openSearch()}>
             <button>
               <img src={(THEME_ICONS as any)[theme].search} width="100%" alt="" />
             </button>

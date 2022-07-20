@@ -13,9 +13,37 @@ export const combineClasses = function (...classes: any): string {
   return classes.filter((item: any) => !!item).join(" ");
 };
 
+export const changeTheme = () => {
+  const lsTheme = localStorage.getItem("theme");
+  localStorage.setItem("theme", lsTheme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT);
+
+  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+
+  // Whenever the user explicitly chooses light mode
+  // localStorage.theme = 'light'
+
+  // // Whenever the user explicitly chooses dark mode
+  // localStorage.theme = 'dark'
+
+  // Whenever the user explicitly chooses to respect the OS preference
+  // localStorage.removeItem('theme');
+
+  location.reload();
+}
+
 export const getTheme = (setThemeState: any) => {
   const lsTheme = localStorage.getItem("theme");
   setThemeState(lsTheme ? lsTheme : THEMES.LIGHT);
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
 };
 
 export const setPath = (path: string): string => {

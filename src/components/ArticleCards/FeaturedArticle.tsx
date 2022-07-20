@@ -28,7 +28,7 @@ const FeaturedArticle = ({ article, path }: IProp) => {
                             </div>
                             {
                                 article.category && <>
-                                    <p className="font-16 font-sm-14 px-5">in</p>
+                                    <p className="ms:text-sm text-sm px-5">in</p>
                                     <p className={combineClasses(classes.article_card__category, "font-medium font-16 font-sm-14")}>
                                         <Link href={"/blog/" + article.category}>
                                             {article.category}
@@ -37,16 +37,6 @@ const FeaturedArticle = ({ article, path }: IProp) => {
                                 </>
                             }
                         </div>
-                        {
-                            article.category && <>
-                                <p className="font-16 font-sm-14 px-5">in</p>
-                                <p className={combineClasses(classes.article_card__category, "font-medium font-16 font-sm-14")}>
-                                    <Link href={"/blog/" + article.category}>
-                                        {article.category}
-                                    </Link>
-                                </p>
-                            </>
-                        }
                     </div>
                     <Link href={transformPath(path)}>
                         <a>

@@ -13,6 +13,7 @@ export enum ImageSize {
   FUll = "full",
   SMALL = "small",
   MEDIUM = "medium",
+  XS = 'xs'
 }
 
 export enum NavbarType {
@@ -46,4 +47,10 @@ export enum TextAs {
   p = "p",
   title = "title",
   quote = "quote"
+}
+
+export enum ListType {
+  bullet = "list-disc",
+  number = "list-decimal",
+  none = "list-none"
 }

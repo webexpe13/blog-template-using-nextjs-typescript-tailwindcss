@@ -4,7 +4,6 @@
     &.size_default {
         width: 100%;
         height: auto;
-        margin: 0 auto;
     }
 
     &.size_full {
@@ -15,7 +14,14 @@
 
     &.size_small {
         width: 50%;
-        margin: 0 auto;
+
+        @include mobile{
+            width: 80%;
+        }
+    }
+
+    &.size_xs {
+        width: 25%;
 
         @include mobile{
             width: 80%;
@@ -24,7 +30,6 @@
 
     &.size_medium{
         width: 70%;
-        margin: 0 auto;
 
         @include mobile{
             width: 80%;

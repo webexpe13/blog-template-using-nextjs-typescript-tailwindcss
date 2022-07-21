@@ -92,7 +92,7 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                 <Link href='/blog/demo-article-centered-layout' passHref>
                                     <a className='text-[16px] block my-3'>Demo Article Centered Layout</a>
                                 </Link>
-                                <Link href='/blog/demo-article-with-category' passHref>
+                                <Link href='/blog/tutorial/demo-article-with-category' passHref>
                                     <a className='text-[16px] block my-3'>Demo Article With category</a>
                                 </Link>
                                 <Link href='/blog/tutorial/how-to-setup-blog' passHref>

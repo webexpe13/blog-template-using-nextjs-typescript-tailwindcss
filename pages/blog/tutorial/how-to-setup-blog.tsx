@@ -1,48 +1,49 @@
 /**These are necessary imports / components for the page */
-import { ImageSize } from "../../../src/shared/enums";
+import { ImageSize, ListType, TextAs } from "../../../src/shared/enums";
 import Image from "../../../src/components/ArticleImage";
 import SectionSeperator from "../../../src/components/SectionSeperator";
 import HomeLayout from "../../../src/layouts/HomeLayout";
 import Link from "next/link";
+import Text from "../../../src/components/Text";
+import List from "../../../src/components/List";
 /**These are necessary imports / components for the page */
 
 const BlogSetup = () => {
     return (
         <HomeLayout>
-            <div className='container px-15 pb-20'>
-                <h1 className="mt-15 font-40 font-sm-22">
+            <div className='container px-3 pb-[20px]'>
+                <Text as={TextAs.title} className="md:text-3xl">
                     Blog Setup
-                </h1>
-                <hr />
-                <h2 className="mt-30">
+                </Text>
+                <hr className="mt-5" />
+                <Text as={TextAs.title} className="mt-10">
                     1.  Installing Node, VS Code and downloading the project on your computer.
-                </h2>
-                <ol>
-                    <li className="mb-20">
+                </Text>
+                <List type={ListType.bullet} className="mt-5">
+                    <li className="">
                         You will need <b>node js</b> installed in your computer <br />
                         You can install node via <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/download/</a> or you can look up any tutorial to install node js on your computer.
                     </li>
-
-                    <li className="mb-20">
+                    <li className="">
                         Next You will need a code editor like <b>VsCode / Sublime text</b> to write your blog articles. <br />
                         I will suggest using <b> <a href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer"> VS Code</a></b>.
                     </li>
 
-                    <li className="mb-20">
+                    <li className="">
                         Download / clone the blog template from our github page to a folder on your computer.
-                        <a href="https://github.com/nmayur/nextjs-simple-blog-template" className="pl-10" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/nmayur/nextjs-simple-blog-template" className="pl-2 font-semibold" target="_blank" rel="noopener noreferrer">
                             https://github.com/nmayur/nextjs-simple-blog-template
                         </a>
                         <br />
                         If you are using Git you can clone the code or click the <b>use template</b> button to generate your own repo.
-                        <Image className="mt-20" src="/images/download-code.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="mt-3" src="/images/download-code.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     </li>
-                    <li className="mb-20">
+                    <li className="">
                         Open the blog project in VS code. <br /> Open terminal in VS code using ther <b>Terminal button</b> on tool bar of the VS Code window or press <b>ctrl + ~</b> or <b>cmd + ~</b>.
                     </li>
                     <li className="mb-20">
                         In Terminal run <b>npm install</b>. This will install all the required packages.
-                        <Image className="my-20" src="/images/project-install.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="my-4" src="/images/project-install.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
 
                         After the installation is done run <b>npm start</b> in the terminal, it will start your project on http://localhost:3000/.
 
@@ -55,41 +56,54 @@ const BlogSetup = () => {
                     <li className="mb-20">
                         If everything goes well you will see a demo blog with few demo articles which will walk you through simple tutorials on how to use layouts and different components to write articles.
                     </li>
-                </ol>
+                </List>
                 <SectionSeperator />
-                <h2 className="mt-30">
+                <Text as={TextAs.title} className="mt-10">
                     2.  Setting up authors.
-                </h2>
+                </Text>
                 <p>
                     Before we start writing articles we need to setup authors and navbar so that it can be used throughtout the application.
                 </p>
                 <p>
                     Goto <b>_BLOG_SETUP.tsx</b> in <b>BLOG_CONSTANTS</b> folder. Here you will see some example authors you can refer. <br />
                     The <b>export const</b> is used to make the item/variable available throughtout the project. <br />
-                    <Image className="my-20" src="/images/author-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     You can add as many authors you want just make sure you keep the format as shown.
                 </p>
+                <Image className="my-5" src="/images/author-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                 <SectionSeperator />
-                <h2 className="mt-30">
+                <Text as={TextAs.title} className="mt-10">
                     3.  Setting up Main Navbar and Side Nav.
-                </h2>
+                </Text>
                 <p>
                     Goto <b>_BLOG_SETUP.tsx</b> in <b>BLOG_CONSTANTS</b> folder. Here you will see some example navbar you can refer. <br />
                 </p>
-                <ol>
-                    <li className="mb-20">
+                <List type={ListType.bullet} className="mt-5">
+                    <li>
                         <b>type</b><br />
                         We have two types, <span className="bg-grey font-black">NavbarType.DEFAULT | NavbarType.CENTERED</span>
                     </li>
-                    <li className="mb-20">
+                    <li>
                         <b>logo</b><br />
-                        Image should be the size of <b>40 x 40 px</b> for default type and max <b>40 x 80 px or 40 x 40px</b> for centered type
+                        You can pass image or text as logo, max logo image height 40px, <br />
+                        If the logo is text : <b> type: LogoType.Text</b> <br />
+                        If the logo is image : <b> type: LogoType.IMAGE</b> <br />
+                        <code>
+                            {
+                                `
+                            logo:{
+                                type: LogoType.TEXT,
+                                logo: 'Logo',
+                            }
+                            `
+                            }
+                        </code>
+
                     </li>
-                    <li className="mb-20">
+                    <li>
                         <b>navLinks</b><br />
                         These are the main nav links. please make sure you are following the example format.
                     </li>
-                    <li className="mb-20">
+                    <li>
                         <b>sideNavLinks</b><br />
                         These are the links that will be visible on the side menu. please make sure you are following the example format. <br /><br />
                         <i>* note: you can see some extra links like <b>Icons, Styles Doc, and some Demo Article links</b> these are only visible during development or when you run the project locally on your computer.</i>
@@ -99,32 +113,32 @@ const BlogSetup = () => {
                             These pages also include sample blog articles and the smaple components and how to use it. Open the demo article files in your code editor and you can see how many components are used with porper explanations.
                         </i>
                     </li>
-                    <li className="mb-20">
+                    <li>
                         <b>socials</b><br />
                         These are for the social media icons. please make sure you are following the example format. <br />
                         You can get the icons from <b><Link href="/icons" passHref={true}><a>Icons</a></Link></b>
                     </li>
-                </ol>
+                </List>
                 <SectionSeperator />
-                <h2 className="mt-30">
+                <Text as={TextAs.title} className="mt-10">
                     4.  Writing First Article.
-                </h2>
+                </Text>
                 <i>
                     *note: All the files you will create or interact with are in <br />
                 </i>
-                <ul>
-                    <li className="mb-20"><b>BLOG_CONSTANTS Folder and its files</b></li>
-                    <li className="mb-20"><b>blog Folder inside pages folder</b> - you will create all the article files in this folder <br /></li>
-                    <li className="mb-20">You will add all the images to use in <b>public - images folder</b></li>
-                </ul>
+                <List type={ListType.bullet} className="mt-5">
+                    <li><b>BLOG_CONSTANTS Folder and its files</b></li>
+                    <li><b>blog Folder inside pages folder</b> - you will create all the article files in this folder <br /></li>
+                    <li>You will add all the images to use in <b>public - images folder</b></li>
+                </List>
                 <hr />
-                <ol>
-                    <li className="mb-20">
+                <List type={ListType.number} className="mt-5">
+                    <li>
                         <b>Making entry in ARTICLES_LIST on _ARTICLES_LIST.tsx file</b>
-                        <Image className="my-20" src="/images/article-entry-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="my-5" src="/images/article-entry-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                         In the <b>ARTICLES_LIST</b> array copy paste the sample article object.
                     </li>
-                    <li className="mb-20">
+                    <li>
                         <b>path</b><br />
                         This is path of the article file. <br />
                         Copy a demo file example demo-article-default-layout in blog folder and rename the file to you article name. <br /> <i>* note: make sure all the words are in lowercase and seperated bt hyphen, this is good for google SEO. </i><br />
@@ -132,18 +146,18 @@ const BlogSetup = () => {
                             example: <b>how-to-make-cake.tsx</b> so the path will be <b>'/blog/how-to-make-cake'</b>
                         </span>
                     </li>
-                    <li className="mb-20">
+                    <li>
                         <b>featureArticle</b><br />
                         You can pass <b>true or false</b> <br />
                         If true the article card will be of full width. <br />
                         <i>* adding featureArticle property is optional</i>
-                        <Image className="my-20" src="/images/feature-article-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="my-5" src="/images/feature-article-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     </li>
-                    <li className="mb-20">
+                    <li>
                         <b>preview</b><br />
                         This will display the details in main home page and artcile header in article page <br />
 
-                        <ul>
+                        <List type={ListType.bullet} className="mt-5">
                             <li>
                                 <b>author</b><br />
                                 Paste the author variable imported from _BLOG_SETUP
@@ -172,10 +186,10 @@ const BlogSetup = () => {
                                 <b>category</b><br />
                                 If the article in under some category, write the category name.
                             </li>
-                        </ul>
+                        </List>
                     </li>
 
-                    <li className="mb-20">
+                    <li>
                         <b>seo</b><br />
                         SEO details for your article page.<br />
                         The example contains basic SEO setup, you can refer examples on <a href="https://github.com/garmeeh/next-seo#add-seo-to-page" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/next-seo</a> for more tags and info to add. <br />
@@ -183,7 +197,7 @@ const BlogSetup = () => {
                         <a href="https://blog.avneesh.tech/next-seo-a-better-way-to-manage-seo-for-nextjs" target="_blank" rel="noopener noreferrer">https://blog.avneesh.tech/next-seo-a-better-way-to-manage-seo-for-nextjs</a> <br />
                         <a href="https://www.garymeehan.ie/blog/seo-in-nextjs-with-next-seo" target="_blank" rel="noopener noreferrer">https://www.garymeehan.ie/blog/seo-in-nextjs-with-next-seo</a>
                     </li>
-                </ol>
+                </List>
                 <SectionSeperator />
                 <p>
                     And thats it, you are ready with the basic setup required to kick start your blog.

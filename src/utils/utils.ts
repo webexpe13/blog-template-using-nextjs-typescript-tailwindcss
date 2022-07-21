@@ -137,15 +137,9 @@ export const CREATE_SEO_CONFIG = (ARTICLE_DETAILS: iArticle) => {
 };
 
 export const transformPath = (path = '') => {
-  let newPath = path;
-  newPath = path.replace('/pages', '')
-
-  return newPath;
+  return path.replace('/pages', '').replace('.tsx', '');
 }
 
 export const transformImagePaths = (path = '') => {
-  let newPath = path;
-  newPath = path.replace('/public', '')
-
-  return newPath;
+  return path.replace('/public', '');
 }

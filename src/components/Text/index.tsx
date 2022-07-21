@@ -18,8 +18,8 @@ const Text = ({ children, fontSize, color, textAlign = TextAlign.LEFT, className
             case TextAs.p:
                 ui = (
                     <p 
-                        className={combineClasses(`font-regular`, className)} 
-                        style={{ color: color, textAlign: textAlign, fontSize: fontSize + 'px'}}>
+                        className={combineClasses(`font-regular mb-3 text-[${fontSize}px]`, className)} 
+                        style={{ color: color, textAlign: textAlign}}>
                         {children}
                     </p>
                 )
@@ -27,8 +27,8 @@ const Text = ({ children, fontSize, color, textAlign = TextAlign.LEFT, className
             case TextAs.title:
                 ui = (
                     <h1 
-                        className={`font-bold mb-[10px] text-xl ${className}`} 
-                        style={{ color: color, textAlign: textAlign, fontSize: fontSize + 'px' }}>
+                        className={`font-bold my-[10px] text-xl text-[${fontSize}px] ${className}`} 
+                        style={{ color: color, textAlign: textAlign }}>
                         {children}
                     </h1>
                 )
@@ -36,8 +36,8 @@ const Text = ({ children, fontSize, color, textAlign = TextAlign.LEFT, className
             case TextAs.quote:
                 ui = (
                     <blockquote 
-                        className={combineClasses(classes.quoted_text, className)} 
-                        style={{ color: color, textAlign: textAlign, fontSize: fontSize + 'px' }}>
+                        className={combineClasses(classes.quoted_text, className, `text-[${fontSize}px]`)} 
+                        style={{ color: color, textAlign: textAlign }}>
                         <q>{children}</q>
                     </blockquote>
                 )

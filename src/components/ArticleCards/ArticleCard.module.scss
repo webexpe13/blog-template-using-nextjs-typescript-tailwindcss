@@ -1,28 +1,12 @@
 @import "../../styles/utils/mixins";
-@import "../../styles/utils/color";
-
-.article_card_wrap {
-    width: 33%;
-    width: calc(100% / 3);
-    padding: 0px 10px;
-    margin-bottom: 30px;
-
-    @include mobile {
-        width: 100%;
-    }
-
-    @include tab {
-        width: 50%;
-    }
-}
 
 .article_card,
 .featured_article {
     border-radius: 4px;
     height: 100%;
     overflow: hidden;
-    background-color: $white;
-    color: $black;
+
+    @apply bg-white text-black;
 
     &__image {
         border-top-left-radius: 4px;
@@ -37,12 +21,10 @@
     }
 
     &__title, &__category {
-        // min-height: 100px;
         letter-spacing: 1px;
-        // line-height: 40px;
         cursor: pointer;
         &:hover{
-            color: $lightBlue;
+            @apply text-blue-600;
         }
     }
 
@@ -94,12 +76,7 @@
 
 .article_card.dark,
 .featured_article.dark {
-    background-color: $darkBlue1;
-    color: $white !important;
-
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
+    @apply bg-gray-800 text-white drop-shadow-lg;
 
     .article_card,
     .featured_article {
@@ -113,7 +90,7 @@
     &:active,
     &:focus,
     &:visited {
-        color: $white !important;
+        @apply text-white;
     }
 
     .author_img {
@@ -128,7 +105,7 @@
 }
 
 .featured_article.dark {
-    background-color: $blue;
+    @apply bg-gray-800;
 }
 
 .author {
@@ -140,11 +117,11 @@
         height: 30px;
         border-radius: 50%;
         margin-right: 10px;
-        background-color: $grey;
         -webkit-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
         -moz-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
         box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
         overflow: hidden;
+        @apply bg-gray-500;
         img{
             width: 100%;
         }

@@ -6,7 +6,7 @@ const Categories = () => {
     return (
         <HomeLayout>
             <div className={"container"}>
-                <div className='d-flex flex-wrap'>
+                <div className='flex flex-wrap'>
                     {
                         ARTICLES_LIST.map((each, i) => (
                             <ArticleCard article={each.preview} path={each.path} key={i} />

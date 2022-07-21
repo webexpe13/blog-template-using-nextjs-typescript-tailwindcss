@@ -2,7 +2,7 @@ import { NavbarType, THEMES } from "../../shared/enums";
 import SimpleNavbar from './SimpleNavbar';
 import CenteredNavbar from './Centered';
 import { useEffect, useState } from "react";
-import { addBodyNoScroll, getTheme, isMobileDevice, removeBodyNoScroll } from "../../utils/utils";
+import { addBodyNoScroll, changeTheme, getTheme, isMobileDevice, removeBodyNoScroll } from "../../utils/utils";
 import NavSidebar from './NavSideBar';
 import Search from "../Search";
 import { PRIMARY_NAV } from "../../../BLOG_CONSTANTS/_BLOG_SETUP"
@@ -27,11 +27,6 @@ const Navbar = () => {
             removeBodyNoScroll();
         };
     }, [showSearch]);
-
-    const changeTheme = () => {
-        localStorage.setItem("theme", theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT);
-        location.reload();
-    };
 
     const [scrolled, setScrolled] = useState(false);
     let lastScrollTop = 0;

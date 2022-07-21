@@ -19,16 +19,16 @@ const CenteredNavbar = ({
     const [openDD, setOpenDD] = useState(false)
 
     return (
-        <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-10")}>
+        <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-[10px]")}>
             <div className={'container'}>
-                <div className={combineClasses(classes.navbar__container, "px-15")}>
-                    <div className="d-flex" style={{ width: "120px" }}>
+                <div className={combineClasses("flex items-center justify-between px-3")}>
+                    <div className="flex" style={{ width: "120px" }}>
                         <div
-                            className={combineClasses(classes.mobileBurgerToggle, "mr-10", openSidebar ? classes.mobileBurgerToggle__close : ' ')}
+                            className={combineClasses(classes.mobileBurgerToggle, "mr-3", openSidebar ? classes.mobileBurgerToggle__close : ' ')}
                             onClick={() => toggleSideMenu()}>
                             <span></span>
                         </div>
-                        <div className={combineClasses(classes.search_icon_wrapper, 'pt-4')} onClick={() => openSearch()}>
+                        <div className={combineClasses(classes.search_icon_wrapper)} onClick={() => openSearch()}>
                             <button>
                                 <img src={(THEME_ICONS as any)[theme].search} width="100%" alt="" />
                             </button>
@@ -39,13 +39,13 @@ const CenteredNavbar = ({
                         {
                             logo ?
                                 logo.type === LogoType.IMAGE ?
-                                    <img src={theme === THEMES.DARK ? logo.logoLight : logo.logo} alt="WebExpe" width="100px" /> :
-                                    <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22')}>{logo.logo}</a>
-                                : <a className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-22')}>Logo</a>
+                                    <img src={theme === THEMES.DARK ? logo.logoLight : logo.logo} alt="WebExpe" className="cursor-pointer" width="100px" /> :
+                                    <a className={combineClasses(theme === THEMES.DARK ? 'text-white' : 'text-black', 'text-[22px]', 'cursor-pointer')}>{logo.logo}</a>
+                                : <a className={combineClasses(theme === THEMES.DARK ? 'text-white' : 'text-black', 'text-[22px]', 'cursor-pointer')}>Logo</a>
                         }
                     </Link>
 
-                    <div className="d-flex justify-end" style={{ width: "120px" }}>
+                    <div className="flex justify-end" style={{ width: "120px" }}>
                         {
                             socials &&
                             socials.map((each: any, i: any) => (
@@ -53,39 +53,39 @@ const CenteredNavbar = ({
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     key={each.link}
-                                    className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', 'font-12 d-inline-block', i === socials.length - 1 ? 'ml-10' : 'mx-10')}>{each.icon}
+                                    className={combineClasses(theme === THEMES.DARK ? 'text-white' : 'text-black', 'text-[24px] d-inline-block', i === socials.length - 1 ? 'ml-3' : 'mx-3')}>{each.icon}
                                 </a>
                             ))
                         }
                     </div>
                 </div>
-                <div className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', "d-flex justify-center align-center font-regular font-14 d-sm-none mt-15")}>
+                <div className={combineClasses(theme === THEMES.DARK ? 'font-white' : 'font-black', "flex justify-center items-center font-regular text-[14px] d-sm-none mt-3")}>
                     {
                         navLinks.map((each: any, i: any) => (
                             each.type !== 'dropdown' ? !each.newTab ?
                                 <Link href={each.path} key={i} passHref={true}>
-                                    <a className='mx-10'>{each.label}</a>
+                                    <a className='mx-2 font-light	'>{each.label}</a>
                                 </Link> :
-                                <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='d-block mx-10 flex-wrap'>
+                                <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='block mx-2 flex-wrap font-light	'>
                                     {each.label}
                                 </a>
                                 : <div className={classes.sidebarCategoryDD_wrapper} key={each.label}>
-                                    <div className='d-flex align-center cursor-pointer mx-10' key={each.label} onClick={() => setOpenDD(!openDD)}>
-                                        <p className='my-0 '>
+                                    <div className='flex items-center cursor-pointer mx-2' key={each.label} onClick={() => setOpenDD(!openDD)}>
+                                        <p className='my-0 font-light	'>
                                             {each.label}
                                         </p>
                                         <i className='icofont-caret-down'></i>
                                     </div>
                                     {
                                         openDD &&
-                                        <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating)}>
+                                        <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white')}>
                                             <Link href={'/blog'} passHref={true}>
-                                                <a className='font-14 d-block'>All Articles</a>
+                                                <a className='font-light'>All Articles</a>
                                             </Link>
                                             {
                                                 CATEGORIES.map(each => (
                                                     <Link href={'/blog/' + each} key={each} passHref={true}>
-                                                        <a className='font-14 d-block' style={{ textTransform: 'capitalize' }}>{each}</a>
+                                                        <a className='font-light' style={{ textTransform: 'capitalize' }}>{each}</a>
                                                     </Link>
                                                 ))
                                             }

@@ -7,16 +7,16 @@ const Home = () => {
 
   return (
     <HomeLayout>
-      <div className={"container"}>
+      <div className="container mx-auto">
         {/* list of rest of the articles below it, one beside the other */}
-        <div className={'d-flex flex-wrap'}>
+        <div className={'flex flex-wrap'}>
           {
             ARTICLES_LIST.map((each, i) => (
               each.featureArticle ?
                 <FeaturedArticle article={each.preview} path={each.path} key={each.path + i} /> : null
             ))
           }
-          <h2 className='px-10 w-100'>Checkout the below articles on how to use different layouts and components</h2>
+          <h1 className='px-3 w-full mb-5 text-xl font-medium'>Checkout the below articles on how to use different layouts and components</h1>
           {
             ARTICLES_LIST.map((each, i) => (
               !each.featureArticle ?

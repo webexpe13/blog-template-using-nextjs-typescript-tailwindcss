@@ -116,15 +116,15 @@ export const PRIMARY_NAV = {
     socials: [
         {
             link: 'https://www.facebook.com/',
-            icon: <i className="icon-F font-24" />
+            icon: <i className="icon-F" />
         },
         {
             link: 'https://www.instagram.com/',
-            icon: <i className="icon-2-I font-24" />
+            icon: <i className="icon-2-I" />
         },
         {
             link: 'https://twitter.com/',
-            icon: <i className="icon-L font-24" />
+            icon: <i className="icon-L" />
         },
     ]
 }

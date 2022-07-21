@@ -5,6 +5,7 @@ import Image from "../../../src/components/ArticleImage";
 import ArticleHeader from "../../../src/components/ArticleHeader";
 import SectionSeperator from "../../../src/components/SectionSeperator";
 import Text from "../../../src/components/Text";
+import Slider from "../../../src/components/Slider";
 /**These are necessary imports / components for the page */
 
 const ArticleDefaultLayout = () => {
@@ -17,31 +18,34 @@ const ArticleDefaultLayout = () => {
         // layout = BlogLayouts.WITH_SIDEBAR || BlogLayouts.CENTERED
         <BlogLayout layout={BlogLayouts.WITH_SIDEBAR}>
             {/* 
-                ArticleImage tag will display images, save images in public -> images folder
+                Image will display images, save images in public -> images folder
                 pass image path in src="path"
                 if you cant to add caption -> caption="caption text"
                 if you cant to add alt text (good for SEO) -> alt="dummy image alt text"
-                we have three sizes :  ArticleImageWidths.FUll || ArticleImageWidths.SMALL || ArticleImageWidths.DEFAULT               
+                we have three sizes :  ImageSize.FUll || ImageSize.SMALL || ImageSize.DEFAULT                      
             */}
             <Image src="/images/dummy-banner-img.jpg" caption="this is banner image example" alt="dummy image alt text" size={ImageSize.FUll} />
 
-            {/* 
+             {/* 
                 ArticleHeader will display the title, tags and other article header imformation 
                 it has two types = ArticleHeaderLayouts.DEFAULT || ArticleHeaderLayouts.CENTERED
             */}
             <ArticleHeader type={ArticleHeaderLayouts.DEFAULT} />
 
-            {/* 
-                Para will display a paragraph, tags and other article header imformation 
-                you can pass 
-                font size of any number: size={10}
+           {/* 
+                Text will display a paragraph, or title or quote as per the value passed
+                change text type by pass "as": as:{TextAs.p | TextAs.title | TextAs.quote}
+                font size of any number: fontSize={10}
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
-            <Text fontSize={18}>
-                For category add <b>category: 'tutorial' in preview</b> in your article object in <b>ARTICLES_LIST</b>. (<i>*optional</i>)  You can also create a folder inside blog folder with you category name, like this article is under <b>tutorial</b> category, and created this article file inside the category folder.<br /><br />
-
-                <b>* please note if you are creating a subfolder inside blog the path will also change in the ARTICLE_LIST in _ARTICLE_LIST.tsx file <br /> * {'/blog/{category}/{filename}'}</b>
+            <Text as={TextAs.p} fontSize={18}>
+                <b>{'<Text as={TextAs.p} fontSize={18}>'}</b>               This will display a paragraph<br />
+                you can pass :
+                type: as = {` TextAs.p | TextAs.title | TextAs.quote`} <br />
+                font size of any number: size={10} <br />
+                color : color="#3543EA" <br />
+                textAlign: = TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY <br />
             </Text>
             {/* 
                 This will display dots or line wrt the type passed
@@ -49,22 +53,27 @@ const ArticleDefaultLayout = () => {
             */}
             <SectionSeperator type={SectionSeperatorTypes.LINE} />
 
-            {/* 
-                SectionTitle will display a section title
+           {/* 
+                <Text as={TextAs.title}> will display a section title
                 you can pass 
                 font size of any number: size={10}
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
             <Text as={TextAs.title}>
-                Lorem ipsum dolor sit amet, consectetur elit, <br /> sed do eiusmod tempor
+                Section Title
             </Text>
             <Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <b>{'<Text as={TextAs.title}>'}</b> This will display a section title<br />
+                you can pass :
+                font size of any number: size={10} <br />
+                color : color="#3543EA" <br />
+                textAlign: = TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY <br />
+                Lorem ipsum dolor sit amet, consectetur elit, <br /> sed do eiusmod tempor
             </Text>
 
             {/* 
-                QuotedText will display a Quoted text
+                <Text as={TextAs.quote}> will display a Quoted text
                 you can pass 
                 font size {number}: size={10}
                 color : color="#3543EA"
@@ -74,7 +83,33 @@ const ArticleDefaultLayout = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Text>
             <Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <b>{'<Text as={TextAs.quote}>'}</b> will display a Quoted text <br />
+                you can pass 
+                font size of any number: size={10}
+                color : color="#3543EA"
+                textAlign: textAlign={'{TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}'}
+            </Text>
+
+            <SectionSeperator type={SectionSeperatorTypes.DOTS} />
+
+            <Text as={TextAs.title} className="mt-10">
+                Image Slider
+            </Text>
+            <Slider className="mt-2 mb-3" images={[
+                'https://picsum.photos/300/150',
+                'https://picsum.photos/300/150',
+                'https://picsum.photos/300/150',
+                'https://picsum.photos/300/150'
+            ]} />
+            <Text className="font-semibold">
+                {`
+                    <Slider className="mt-2" images={[
+                        'https://picsum.photos/300/150', 
+                        'https://picsum.photos/300/150', 
+                        'https://picsum.photos/300/150', 
+                        'https://picsum.photos/300/150' 
+                    ]} />
+                `}
             </Text>
         </BlogLayout>
     )

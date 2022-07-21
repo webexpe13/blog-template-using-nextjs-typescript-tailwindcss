@@ -1,5 +1,4 @@
 @import "../../styles/utils/mixins";
-@import "../../styles/utils/color";
 
 .article_header_author {
     &_img {
@@ -7,7 +6,7 @@
         height: 50px;
         border-radius: 50%;
         margin-right: 10px;
-        background-color: $grey;
+        @apply bg-slate-600;
         -webkit-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.35);
         -moz-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.35);
         box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.35);
@@ -33,7 +32,7 @@
     width: 70%;
     align-items: center;
     justify-content: space-around;
-    border-top: solid 2px $spaceGray;
+    @apply border-t-2 border-gray-300;
     padding: 10px 0px;
     margin: 10px auto;
 

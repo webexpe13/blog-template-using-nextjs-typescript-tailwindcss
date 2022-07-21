@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 @import './utils/mixins';
-@import './utils/color';
-@import './utils/text';
-@import './utils/widths';
-@import './utils/spacing';
-@import './utils/flexbox';
-@import './utils/misc';
 @import './utils//fonticons';
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
@@ -23,10 +22,56 @@ a {
   text-decoration: none;
 
   &:hover{
-    color: $lightBlue;
+    @apply text-blue-600;
   }
 }
 
 * {
   box-sizing: border-box;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.no-scroll{
+  overflow: hidden;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  -webkit-animation: fadeIn 0.3s forwards;
+  animation: fadeIn 0.3s forwards;
+  z-index: 12;
+}
+
+hr{
+  background: none;
+  border: none;
+  border-top: solid 1px;
+  @apply border-gray-300;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 0.4;
+  }
+}
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 0.4;
+  }
 }

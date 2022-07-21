@@ -1,6 +1,6 @@
 /**These are necessary imports / components for the page */
-import { ArticleImageWidths } from "../../../src/shared/enums";
-import ArticleImage from "../../../src/components/ArticleImage";
+import { ImageSize } from "../../../src/shared/enums";
+import Image from "../../../src/components/ArticleImage";
 import SectionSeperator from "../../../src/components/SectionSeperator";
 import HomeLayout from "../../../src/layouts/HomeLayout";
 import Link from "next/link";
@@ -35,14 +35,14 @@ const BlogSetup = () => {
                         </a>
                         <br />
                         If you are using Git you can clone the code or click the <b>use template</b> button to generate your own repo.
-                        <ArticleImage className="mt-20" src="/images/download-code.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
+                        <Image className="mt-20" src="/images/download-code.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     </li>
                     <li className="mb-20">
                         Open the blog project in VS code. <br /> Open terminal in VS code using ther <b>Terminal button</b> on tool bar of the VS Code window or press <b>ctrl + ~</b> or <b>cmd + ~</b>.
                     </li>
                     <li className="mb-20">
                         In Terminal run <b>npm install</b>. This will install all the required packages.
-                        <ArticleImage className="my-20" src="/images/project-install.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
+                        <Image className="my-20" src="/images/project-install.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
 
                         After the installation is done run <b>npm start</b> in the terminal, it will start your project on http://localhost:3000/.
 
@@ -66,7 +66,7 @@ const BlogSetup = () => {
                 <p>
                     Goto <b>_BLOG_SETUP.tsx</b> in <b>BLOG_CONSTANTS</b> folder. Here you will see some example authors you can refer. <br />
                     The <b>export const</b> is used to make the item/variable available throughtout the project. <br />
-                    <ArticleImage className="my-20" src="/images/author-example.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
+                    <Image className="my-20" src="/images/author-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     You can add as many authors you want just make sure you keep the format as shown.
                 </p>
                 <SectionSeperator />
@@ -81,21 +81,9 @@ const BlogSetup = () => {
                         <b>type</b><br />
                         We have two types, <span className="bg-grey font-black">NavbarType.DEFAULT | NavbarType.CENTERED</span>
                     </li>
-                    {/* <li className="mb-20">
-                        <b>width</b><br />
-                        We have two options, <span className="bg-grey font-black">ContainerWidths.DEFAULT | ContainerWidths.LARGE</span>
-                    </li> */}
                     <li className="mb-20">
                         <b>logo</b><br />
                         Image should be the size of <b>40 x 40 px</b> for default type and max <b>40 x 80 px or 40 x 40px</b> for centered type
-                    </li>
-                    <li className="mb-20">
-                        <b>showThemeSwitch</b><br />
-                        You can set it either <b>true</b> or <b>false</b>. This will show and hide the theme toggle button on the main top navbar.
-                    </li>
-                    <li className="mb-20">
-                        <b>showSearch</b><br />
-                        You can set it either <b>true</b> or <b>false</b>. This will show and hide the search button on the main top navbar.
                     </li>
                     <li className="mb-20">
                         <b>navLinks</b><br />
@@ -133,7 +121,7 @@ const BlogSetup = () => {
                 <ol>
                     <li className="mb-20">
                         <b>Making entry in ARTICLES_LIST on _ARTICLES_LIST.tsx file</b>
-                        <ArticleImage className="my-20" src="/images/article-entry-example.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
+                        <Image className="my-20" src="/images/article-entry-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                         In the <b>ARTICLES_LIST</b> array copy paste the sample article object.
                     </li>
                     <li className="mb-20">
@@ -149,7 +137,7 @@ const BlogSetup = () => {
                         You can pass <b>true or false</b> <br />
                         If true the article card will be of full width. <br />
                         <i>* adding featureArticle property is optional</i>
-                        <ArticleImage className="my-20" src="/images/feature-article-example.png" alt="nextjs-simple-blog-template" size={ArticleImageWidths.DEFAULT} />
+                        <Image className="my-20" src="/images/feature-article-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     </li>
                     <li className="mb-20">
                         <b>preview</b><br />

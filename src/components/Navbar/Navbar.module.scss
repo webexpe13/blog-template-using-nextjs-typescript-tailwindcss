@@ -8,7 +8,7 @@
 }
 
 .logo {
-    width: 50px;
+    width: auto;
     height: 50px;
     border-radius: 50%;
     background: $black;
@@ -137,21 +137,6 @@
             top: 7px;
         }
     }
-
-    // &__close {
-    //     span {
-    //         transform: rotate(135deg);
-    //         transform-origin: center center;
-    //         top: 2px;
-
-    //         &::before {
-    //             transform: rotate(-270deg);
-    //             transform-origin: center center;
-    //             top: 0px;
-    //             width: 100%;
-    //         }
-    //     }
-    // }
 }
 
 // nav sidebar
@@ -242,7 +227,6 @@
     .sidebarCategoryDD {
         overflow: auto;
         border-radius: 4px;
-        // transition: all 0.2s ease-in-out;
 
         a {
             border-bottom: solid 1px $gray;

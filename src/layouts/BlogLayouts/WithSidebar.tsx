@@ -1,6 +1,6 @@
 import classes from './BlogLayout.module.scss';
 import Navbar from '../../components/Navbar';
-import { ContainerWidths, NavbarType, THEMES } from '../../shared/enums';
+import { NavbarType, THEMES } from '../../shared/enums';
 import { combineClasses, getArticleDetails, getTheme } from '../../utils/utils';
 import { useEffect, useState } from 'react';
 import { ARTICLES_LIST } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
@@ -23,7 +23,7 @@ const WithSidebar = ({ children }: any) => {
 
     return (
         <>
-            <Navbar container={ContainerWidths.DEFAULT} />
+            <Navbar />
             <section
                 className={combineClasses(classes.withSidebar_article_wrapper, theme === THEMES.DARK ? classes.dark : null)}
                 style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '0px' : '50px' }}>
@@ -76,6 +76,31 @@ const WithSidebar = ({ children }: any) => {
                                 }
                             </div>
                         }
+
+                        <div className="d-flex flex-wrap">
+
+                            <div dangerouslySetInnerHTML={{
+                                __html: `<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=webexpestore-21&language=en_IN&marketplace=amazon&region=IN&placement=B09N3ZNHTY&asins=B09N3ZNHTY&linkId=c7ed1872e77f058de27c9274a3c008af&show_border=false&link_opens_in_new_window=true"></iframe>`
+                            }} />
+
+                            <div dangerouslySetInnerHTML={{
+                                __html: `<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=webexpestore-21&language=en_IN&marketplace=amazon&region=IN&placement=B08FN4Q6VZ&asins=B08FN4Q6VZ&linkId=10cf0c67665473cd37743f129cf50ad9&show_border=true&link_opens_in_new_window=true"></iframe>`
+                            }} />
+
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: `
+                                <script type="text/javascript" language="javascript">
+                                    var aax_size='300x250';
+                                    var aax_pubname = 'webexpestore-21';
+                                    var aax_src='302';
+                                    </script>
+                                    <script type="text/javascript" language="javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
+                            `,
+                                }}
+                            />
+
+                        </div>
                     </div>
                 </div>
             </section>

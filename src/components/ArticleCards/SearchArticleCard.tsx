@@ -36,7 +36,7 @@ const SerachArticleCard = ({ article, theme = THEMES.LIGHT, path }: { article: I
           article.category && <>
             <p className="text-sm px-[5px] font-normal">in</p>
             <p className={combineClasses(classes.article_card__category, "font-medium text-sm")}>
-              <Link href={"/blog/" + article.category} passHref={true}>
+              <Link href={"/blog?category=" + article.category} passHref={true}>
                 {article.category}
               </Link>
             </p>

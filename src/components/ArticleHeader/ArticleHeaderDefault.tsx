@@ -22,7 +22,7 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
                             headerData.category && <>
                                 <p className="px-2 text-gray-600 my-0">in</p>
                                 <p className="font-medium my-0">
-                                    <Link href={'/blog/' + headerData.category} passHref={true}>
+                                    <Link href={"/blog?category=" + headerData.category} passHref={true}>
                                         <a>{headerData.category}</a>
                                     </Link>
                                 </p>

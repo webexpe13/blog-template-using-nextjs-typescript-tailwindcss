@@ -68,7 +68,7 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                         </Link>
                                         {
                                             CATEGORIES.map(each => (
-                                                <Link href={'/blog/' + each} key={each} passHref>
+                                                <Link href={"/blog?category=" + each} key={each} passHref>
                                                     <a className='' style={{ textTransform: 'capitalize' }}>{each}</a>
                                                 </Link>
                                             ))

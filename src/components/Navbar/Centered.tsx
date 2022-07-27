@@ -84,7 +84,7 @@ const CenteredNavbar = ({
                                             </Link>
                                             {
                                                 CATEGORIES.map(each => (
-                                                    <Link href={'/blog/' + each} key={each} passHref={true}>
+                                                    <Link href={"/blog?category=" + each} key={each} passHref={true}>
                                                         <a className='font-light' style={{ textTransform: 'capitalize' }}>{each}</a>
                                                     </Link>
                                                 ))

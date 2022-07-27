@@ -34,7 +34,7 @@ const FeaturedArticle = ({ article, path }: IProp) => {
                             article.category && <>
                                 <p className="text-[14px] md:text-[16px] px-2 font-normal">in</p>
                                 <p className={combineClasses(classes.article_card__category, "font-medium text-[14px] md:text-[16px]")}>
-                                    <Link href={"/blog/" + article.category}>
+                                    <Link href={"/blog?category=" + article.category}>
                                         {article.category}
                                     </Link>
                                 </p>

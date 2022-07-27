@@ -92,7 +92,6 @@ export const removeBodyNoScroll = () => {
 export const getArticleDetails = () => {
   const router = useRouter();
   const articlePath = "/pages" + router.pathname;
-  console.log(router)
   return ARTICLES_LIST.filter((each) => each.path === articlePath)[0];
 };
 

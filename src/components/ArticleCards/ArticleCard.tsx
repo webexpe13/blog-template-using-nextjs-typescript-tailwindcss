@@ -57,7 +57,7 @@ const ArticleCard = ({ article, path }: IProp) => {
               article.category && <>
                 <p className="text-sm px-2 font-regumal">in</p>
                 <p className={combineClasses(classes.article_card__category, "font-medium text-sm")}>
-                  <Link href={"/blog/" + article.category} passHref={true}>
+                  <Link href={"/blog?category=" + article.category} passHref={true}>
                     {article.category}
                   </Link>
                 </p>

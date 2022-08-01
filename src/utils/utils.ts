@@ -36,7 +36,7 @@ export const changeTheme = () => {
   location.reload();
 }
 
-export const getTheme = (setThemeState: any) => {
+export const getTheme = (setThemeState?: any) => {
   const lsTheme = localStorage.getItem("theme");
   setThemeState(lsTheme ? lsTheme : THEMES.LIGHT);
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -44,7 +44,22 @@ export const getTheme = (setThemeState: any) => {
   } else {
     document.documentElement.classList.remove('dark')
   }
+
+  if(setThemeState){
+    setThemeState(lsTheme ? lsTheme : THEMES.LIGHT);
+  } else {
+    return lsTheme ? lsTheme : THEMES.LIGHT
+  }
 };
+
+export const isDarkTheme = () => {
+  const lsTheme = localStorage.getItem("theme");
+  if(lsTheme === 'dark'){
+    return true
+  } else {
+    return false
+  }
+}
 
 export const setPath = (path: string): string => {
   return path.substring(1);

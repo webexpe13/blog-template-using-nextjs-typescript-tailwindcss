@@ -31,18 +31,18 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     let lastScrollTop = 0;
     useEffect(() => {
+        setIsMobile(isMobileDevice());
+        
         window.onscroll = () => {
             const st = window.pageYOffset || document.documentElement.scrollTop;
             const scrollYDistance = window.scrollY;
-            if (scrollYDistance > 100 && st > lastScrollTop) {
+            if (scrollYDistance > 0 && st > lastScrollTop) {
                 setScrolled(true);
             } else if (scrollYDistance > 50 && st < lastScrollTop) {
                 setScrolled(false);
             }
             lastScrollTop = st <= 0 ? 0 : st;
         };
-
-        setIsMobile(isMobileDevice());
 
         return () => {
             setScrolled(false);
@@ -109,7 +109,7 @@ const Navbar = () => {
                     })()
             }
 
-            <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} navSetup={PRIMARY_NAV} changeTheme={changeTheme}/>
+            <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} navSetup={PRIMARY_NAV} changeTheme={changeTheme} />
             {showSearch && <Search setShowSearch={setShowSearch} />}
         </>
     )

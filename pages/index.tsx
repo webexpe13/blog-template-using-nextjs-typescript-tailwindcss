@@ -3,13 +3,26 @@ import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
 import { ARTICLES_LIST } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
 import HomeLayout from '../src/layouts/HomeLayout';
 import SectionSeperator from '../src/components/SectionSeperator';
+import { useEffect, useState } from 'react';
+import { combineClasses, getTheme, isDarkTheme } from '../src/utils/utils';
+import { THEMES } from '../src/shared/enums';
 
 const Home = () => {
+  const [isDark, setIsDark] = useState(false);
+  useEffect(() => {
+    setIsDark(isDarkTheme());
+  }, []);
 
   return (
-    <HomeLayout>
+    <HomeLayout className="md:pt-0">
+      <section className={combineClasses('w-full md:py-[100px] pt-[130px] pb-20 mb-10', isDark ? 'bg-slate-900' : 'bg-slate-200')}>
+        <div className="container">
+          <h1 className='text-3xl text-center font-bold'>
+            Simple blog template using Next Js, Typescript and Taildwind CSS
+          </h1>
+        </div>
+      </section>
       <div className="container mx-auto">
-        {/* list of rest of the articles below it, one beside the other */}
         <div className={'flex flex-wrap'}>
           {
             ARTICLES_LIST.map((each, i) => (

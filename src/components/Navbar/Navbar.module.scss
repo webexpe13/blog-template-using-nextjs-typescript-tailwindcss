@@ -15,13 +15,19 @@
 }
 
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
     transition: all 0.2s ease-in-out;
     width: 100%;
     z-index: 10;
     @apply bg-white;
+
+    @include mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateY(0%);
+    }
 }
 
 .search_icon_wrapper {
@@ -84,7 +90,7 @@
     }
 }
 
-.hideNav {
+.scrolled {
     @include mobile {
         transition: all 0.5s ease;
         transform: translateY(-110%);

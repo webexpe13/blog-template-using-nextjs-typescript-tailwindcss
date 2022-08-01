@@ -20,7 +20,7 @@ const SimpleNavbar = ({
   const [openDD, setOpenDD] = useState(false)
 
   return (
-    <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.hideNav : " ", theme === THEMES.DARK ? classes.dark : null, "py-3")}>
+    <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.scrolled : " ", theme === THEMES.DARK ? classes.dark : null, "py-3")}>
       <div className={combineClasses(classes.navbar__container, 'container flex items-center justify-between', "px-2")}>
         <div className="flex items-center">
           <div

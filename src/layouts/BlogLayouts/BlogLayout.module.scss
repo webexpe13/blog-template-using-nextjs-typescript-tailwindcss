@@ -24,10 +24,10 @@
 
 .withSidebar_article_wrapper.dark,
 .centered_article_wrapper.dark {
-    @apply bg-slate-800 text-white;
+    @apply bg-slate-900 text-white;
 
     .article_content {
-        @apply bg-slate-800 border border-slate-800;
+        @apply bg-gray-900 border-none drop-shadow-lg;
     }
 }
 
@@ -40,7 +40,7 @@
     position: -webkit-sticky;
     /* Safari */
     position: sticky;
-    top: 100px;
+    top: 80px;
     padding: 0px 10px;
     overflow: auto;
 
@@ -140,6 +140,6 @@
 .withSidebar_article_wrapper.dark {
     .more_from_author,
     .sidebar_author_details {
-        @apply bg-slate-800 border border-slate-800;
+        @apply bg-gray-900 border-none drop-shadow-lg;
     }
 }

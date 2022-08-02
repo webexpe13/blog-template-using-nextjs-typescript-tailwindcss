@@ -18,10 +18,10 @@ const HomeLayout = ({ children, className }: any) => {
         <>
             <DefaultSeo {...ARTICLE_DETAILS?.seo} />
             <div
-                className={combineClasses(classes.home_layout_wrapper, theme === THEMES.DARK ? "bg-slate-800 text-white" : "bg-slate-100 text-black", 'pb-[20px]', className)}>
+                className={combineClasses( theme === THEMES.DARK ? "bg-slate-900 text-white" : "bg-slate-100 text-black", 'pb-[20px] min-h-screen transition-all', className)}>
                 {/* style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '100px' : '150px' }} */}
                 <Navbar />
-                <div className={combineClasses('md:pt-[30px] pt-20', className)}>
+                <div className={combineClasses(className)}>
                     {children}
                 </div>
             </div>

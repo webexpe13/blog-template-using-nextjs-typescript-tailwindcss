@@ -72,7 +72,7 @@
 }
 
 .navbar.dark {
-    @apply bg-slate-800;
+    @apply bg-slate-900;
 
     .search_icon_wrapper {
         @apply text-white;
@@ -194,7 +194,7 @@
     }
 
     &.dark {
-        @apply bg-slate-800 text-white;
+        @apply bg-slate-900 text-white;
 
         .sideNavCloseIcon {
             span,

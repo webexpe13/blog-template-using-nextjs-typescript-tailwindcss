@@ -27,7 +27,7 @@ const ArticleHeaderCenter = ({ headerData }: IProps) => {
             <div className="text-center">
                 {
                     headerData.tags.split(',').map((each, i) => (
-                        <span key={i} className="text-xs font-regular text-gray-700 mr-[10px]" >#{each}</span>
+                        <span key={i} className="text-xs font-regular text-gray-400 mr-[10px]" >#{each}</span>
                     ))
                 }
             </div>

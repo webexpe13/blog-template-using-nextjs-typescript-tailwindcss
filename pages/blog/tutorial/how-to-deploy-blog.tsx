@@ -10,7 +10,7 @@ import Text from "../../../src/components/Text";
 const HowToDeployBlog = () => {
     return (
         <HomeLayout>
-            <div className='container px-3 pb-5'>
+            <div className='container px-3 pb-5 mt-[50px]'>
                 <Text as={TextAs.title} className="md:text-3xl">
                     How to Export and deploy blog
                 </Text>

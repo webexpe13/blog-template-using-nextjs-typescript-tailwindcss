@@ -19,15 +19,15 @@ const ArticleCard = ({ article, path }: IProp) => {
   return (
     <div className={'w-full sm:w-1/3 px-[15px] mb-[30px]'}>
       <div className={combineClasses(classes.article_card, theme === 'dark' ? classes.dark : null)}>
-        <div className={classes.article_card__image}>
+        <div className={'rounded-t-[4px] overflow-hidden h-[200px]'}>
           <img src={transformImagePaths(article.thumbnail)} alt="" width="100%" />
         </div>
 
-        <div className={classes.article_card__content}>
-          <p className={combineClasses(classes.article_card__date, "font-normal text-xs pt-3 mb-0 md:mb-3")}>{article.date}</p>
+        <div className={'d-block px-[15px] py-0'}>
+          <p className={"font-normal text-xs pt-3 mb-0 md:mb-3"}>{article.date}</p>
           <Link href={transformPath(path)}>
             <a>
-              <h1 className={combineClasses(classes.article_card__title, "text-[22px] font-bold")} >
+              <h1 className={"text-[22px] font-bold cursor-pointer tracking-wide hover:text-blue-600"} >
                 {article.articleTitle}
               </h1>
             </a>
@@ -44,7 +44,7 @@ const ArticleCard = ({ article, path }: IProp) => {
             }
           </div>
 
-          <div className={combineClasses(classes.article_card_footer, "my-3")}>
+          <div className={combineClasses(classes.article_card_footer, "my-3 flex items-center")}>
             <div className={classes.author}>
               <div className={classes.author_img}>
                 {article.author.profilePic ? <img src={article.author.profilePic} alt={article.author.name} /> : <img src={generateRandomAvtar()} alt={article.author.name} /> }
@@ -56,7 +56,7 @@ const ArticleCard = ({ article, path }: IProp) => {
             {
               article.category && <>
                 <p className="text-sm px-2 font-regumal">in</p>
-                <p className={combineClasses(classes.article_card__category, "font-medium text-sm")}>
+                <p className={"font-medium text-sm cursor-pointer hover:text-blue-600"}>
                   <Link href={"/blog?category=" + article.category} passHref={true}>
                     {article.category}
                   </Link>

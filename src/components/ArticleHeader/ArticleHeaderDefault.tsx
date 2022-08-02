@@ -29,7 +29,7 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
                             </>
                         }
                     </div>
-                    <p className="text-xs text-gray-500 my-0">{headerData.date}</p>
+                    <p className="text-xs text-gray-400 my-0 mt-1">{headerData.date}</p>
                 </div>
             </div>
             <h1 className={combineClasses("text-2xl md:text-4xl font-semibold mt-[20px] mb-[5px]")}>
@@ -38,7 +38,7 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
             <div>
                 {
                     headerData.tags.split(',').map((each, i) => (
-                        <span key={i} className="text-xs font-regular text-gray-700 mr-[10px]" >#{each}</span>
+                        <span key={i} className="text-xs font-regular text-gray-400 mr-[10px]" >#{each}</span>
                     ))
                 }
             </div>

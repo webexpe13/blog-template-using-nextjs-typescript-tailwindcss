@@ -24,10 +24,8 @@ const WithSidebar = ({ children }: any) => {
     return (
         <>
             <Navbar />
-            <section
-                className={combineClasses(classes.withSidebar_article_wrapper, theme === THEMES.DARK ? classes.dark : null)}
-                style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '0px' : '50px' }}>
-                <div className="container px-0 md:px-3 md:flex pb-[50px] pt-[100px]">
+            <section className={combineClasses(classes.withSidebar_article_wrapper, theme === THEMES.DARK ? classes.dark : null)}>
+                <div className="container px-0 md:px-3 md:flex pb-[50px] pt-[50px]">
                     <article className={combineClasses(classes.article_content, 'pb-[20px] px-3')}>
                         {children}
                     </article>
@@ -60,7 +58,7 @@ const WithSidebar = ({ children }: any) => {
                         {
                             relatedArticles.length &&
                             <div className={classes.more_from_author}>
-                                <p className='border-b border-gray-300 pb-2 mb-2 font-medium'>More from  Author</p>
+                                <p className='border-b border-gray-300 pb-2 mb-3 font-medium'>More from  Author</p>
                                 {
                                     relatedArticles.map((each, i) =>
                                         <Link href={transformPath(each.path)} key={i} passHref>

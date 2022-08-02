@@ -12,11 +12,9 @@ const Centered = ({ children }: any) => {
     }, [theme]);
     return (
         <section 
-            className={combineClasses(classes.centered_article_wrapper, theme === THEMES.DARK ? classes.dark : null)}
-            style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '0px' : '50px' }}
-            >
+            className={combineClasses(classes.centered_article_wrapper, theme === THEMES.DARK ? classes.dark : null)}>
             <Navbar />
-            <div className="container pt-[100px] pb-[50px]">
+            <div className="container pt-[50px] pb-[50px]">
                 <article className={combineClasses(classes.article_content, 'pb-[30px] px-3')}>
                     {children}
                 </article>

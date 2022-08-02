@@ -20,8 +20,8 @@ const FeaturedArticle = ({ article, path }: IProp) => {
     return (
         <>
             <div className={combineClasses(classes.featured_article, theme === 'dark' ? classes.dark : null)}>
-                <div className={classes.featured_article__content}>
-                    <div className={combineClasses(classes.featured_article_footer, "mt-0 mb-[10px]")}>
+                <div className={'w-full md:w-[55%] px-[50px] py-[40px]'}>
+                    <div className={ "mt-0 mb-[10px] flex items-center"}>
                         <div className={classes.author}>
                             <div className={classes.author_img}>
                                 {article.author.profilePic ? <img src={article.author.profilePic} alt={article.author.name} /> : <img src={generateRandomAvtar()} alt={article.author.name} />}

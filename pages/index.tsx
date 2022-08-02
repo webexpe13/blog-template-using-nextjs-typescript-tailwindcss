@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <HomeLayout className="md:pt-0">
-      <section className={combineClasses('w-full md:py-[100px] pt-[130px] pb-20 mb-10', isDark ? 'bg-slate-900' : 'bg-slate-200')}>
+      <section className={combineClasses('w-full md:py-[100px] pt-[130px] pb-20 mb-10', isDark ? 'bg-slate-800' : 'bg-slate-200')}>
         <div className="container">
           <h1 className='text-3xl text-center font-bold'>
             Simple blog template using Next Js, Typescript and Taildwind CSS

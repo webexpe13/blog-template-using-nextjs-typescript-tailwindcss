@@ -66,7 +66,7 @@ export const PRIMARY_NAV = {
     // },
     logo: {
         type: LogoType.TEXT,
-        logo: 'Logo',
+        logo: 'Next Blog',
     },
     // navLinks are the main navbar links that apper on top of every page
     navLinks: [
@@ -78,6 +78,10 @@ export const PRIMARY_NAV = {
             // for categories don't add path and add type: dropdown
             label: 'Blog',
             type: 'dropdown'
+        },
+        {
+            label: 'About Us',
+            path: '/about-us'
         },
         {
             // to open a link in new tab pass newTab: true
@@ -101,6 +105,10 @@ export const PRIMARY_NAV = {
             // for categories dont add path and add type: dropdown
             label: 'Blog',
             type: 'dropdown'
+        },
+        {
+            label: 'About Us',
+            path: '/about-us'
         },
         {
             label: 'Support Us',

@@ -36,6 +36,7 @@ export enum TextAlign {
   RIGHT = "right",
   CENTER = "center",
   JUSTIFY = "justify",
+  NONE = "match-parent"
 }
 
 export enum LogoType {

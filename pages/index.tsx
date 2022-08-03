@@ -5,7 +5,9 @@ import HomeLayout from '../src/layouts/HomeLayout';
 import SectionSeperator from '../src/components/SectionSeperator';
 import { useEffect, useState } from 'react';
 import { combineClasses, getTheme, isDarkTheme } from '../src/utils/utils';
-import { THEMES } from '../src/shared/enums';
+import { TextAs, THEMES } from '../src/shared/enums';
+import Text from '../src/components/Text';
+import Link from 'next/link';
 
 const Home = () => {
   const [isDark, setIsDark] = useState(false);
@@ -15,11 +17,30 @@ const Home = () => {
 
   return (
     <HomeLayout className="md:pt-0">
-      <section className={combineClasses('w-full md:py-[100px] pt-[130px] pb-20 mb-10', isDark ? 'bg-slate-800' : 'bg-slate-200')}>
-        <div className="container">
-          <h1 className='text-3xl text-center font-bold'>
-            Simple blog template using Next Js, Typescript and Taildwind CSS
-          </h1>
+      <section className={combineClasses('w-full md:pt-[100px] md:pb-[50px] pt-[130px] pb-20 mb-10', isDark ? 'bg-slate-800' : 'bg-slate-200')}>
+        <div className="container text-center px-3">
+          <Text as={TextAs.title} className='text-3xl'>
+            Blog template using Next Js, Typescript and Taildwind CSS
+          </Text>
+
+          <Text as={TextAs.p} className="mt-3 text-xl">
+            This is a simple and static component based blog template made using Next.js.
+          </Text>
+
+          <div className='flex justify-center mt-5 flex-wrap '>
+            <a href="https://github.com/nmayur/nextjs-simple-blog-template" target="_blank" rel="noopener noreferrer" className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
+              <i className='icon-2-z text-[28px]' /> <span className='text-xl pl-2 pt-2 block'>Github</span>
+            </a>
+            <Link href="/about" passHref>
+              <a className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
+                <span className='text-xl pt-2 block'>About</span>
+              </a>
+            </Link>
+
+            <a href="https://www.buymeacoffee.com/webexpe13z" target="_blank" rel="noopener noreferrer" className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
+              <span className='text-xl pt-2 block'>Support Us</span>
+            </a>
+          </div>
         </div>
       </section>
       <div className="container mx-auto">

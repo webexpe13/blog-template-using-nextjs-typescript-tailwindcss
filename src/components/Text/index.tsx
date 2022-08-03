@@ -11,23 +11,23 @@ interface IProps {
     fontSize?: number;
 }
 
-const Text = ({ children, fontSize, color, textAlign = TextAlign.LEFT, className, as = TextAs.p }: IProps) => {
+const Text = ({ children, fontSize, color, textAlign = TextAlign.NONE, className, as = TextAs.p }: IProps) => {
     const computeComponent = () => {
         let ui = <></>;
         switch (as) {
             case TextAs.p:
                 ui = (
-                    <p 
-                        className={combineClasses(`font-regular mb-3 text-[${fontSize}px]`, className)} 
-                        style={{ color: color, textAlign: textAlign}}>
+                    <p
+                        className={combineClasses(`font-regular mb-3`, fontSize ? `text-[${fontSize}px]` : '', className)}
+                        style={{ color: color, textAlign: textAlign }}>
                         {children}
                     </p>
                 )
                 break;
             case TextAs.title:
                 ui = (
-                    <h1 
-                        className={`font-bold my-[10px] text-xl text-[${fontSize}px] ${className}`} 
+                    <h1
+                        className={combineClasses(`font-bold my-[10px]`, fontSize ? `text-[${fontSize}px]` : '', className)}
                         style={{ color: color, textAlign: textAlign }}>
                         {children}
                     </h1>
@@ -35,8 +35,8 @@ const Text = ({ children, fontSize, color, textAlign = TextAlign.LEFT, className
                 break;
             case TextAs.quote:
                 ui = (
-                    <blockquote 
-                        className={combineClasses(classes.quoted_text, className, `text-[${fontSize}px]`)} 
+                    <blockquote
+                        className={combineClasses(classes.quoted_text, fontSize ? `text-[${fontSize}px]` : '', className)}
                         style={{ color: color, textAlign: textAlign }}>
                         <q>{children}</q>
                     </blockquote>

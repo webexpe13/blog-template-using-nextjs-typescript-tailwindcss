@@ -27,7 +27,7 @@
     @apply bg-slate-900 text-white;
 
     .article_content {
-        @apply bg-gray-900 border-none drop-shadow-lg;
+        @apply bg-slate-800 border-none drop-shadow-lg;
     }
 }
 
@@ -140,6 +140,6 @@
 .withSidebar_article_wrapper.dark {
     .more_from_author,
     .sidebar_author_details {
-        @apply bg-gray-900 border-none drop-shadow-lg;
+        @apply bg-slate-800 border-none drop-shadow-lg;
     }
 }

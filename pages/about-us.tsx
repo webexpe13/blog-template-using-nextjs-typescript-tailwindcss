@@ -15,13 +15,13 @@ const AboutUs = () => {
                     <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="block rounded-lg w-[15%] overflow-hidden">
                         <Image src="/public/images/YT Logo.png" size={ImageSize.DEFAULT} alt="webexpe.com" />
                     </a>
-                    <Text as={TextAs.title} className='text-3xl font-normal mb-5 mt-10'>
+                    <Text as={TextAs.title} className='text-3xl mb-5 mt-10'>
                         Hi we are WebExpe and this blog template is an opensource project which can help you start a simple static blog.
                     </Text>
                     <Text as={TextAs.p} className='text-lg'>
-                        The idea was to start a blog or create a template with as little investment as possible, so with the use of Next.js SSG we create static HTML files which can be hosted on firebase or any static site hosting service. <br />
-                        There is also options like vercel for hosting Next.js dynamic webistes but we wanted this template to be easy to use for any non techie person too so we explored the option of static site generation. <br /><br />
-                        If you have a github account you can clone the project or use it as a template, or else you can simply download the code. 
+                        The idea was to start a blog or create a template with as little investment as possible. <br />In this template we have used Next.js SSG to create static HTML files which can be hosted on firebase or any static site hosting service. <br />
+                        There is also options like vercel for hosting Next.js dynamic webistes but we wanted this template to be easy to use for any non techie person too, so we explored the option of static site generation. <br /><br />
+                        If you have a github account you can clone the project or use it as a template or else you can simply download the code. 
                     </Text>
 
                     <div className="flex flex-wrap justify-between">

@@ -17,8 +17,8 @@ const ArticleCard = ({ article, path }: IProp) => {
   }, [theme]);
 
   return (
-    <div className={'w-full sm:w-1/3 px-[15px] mb-[30px]'}>
-      <div className={combineClasses(classes.article_card, theme === 'dark' ? classes.dark : null)}>
+    <div className={'w-full sm:w-1/3 px-[15px] mb-[30px] '}>
+      <div className={combineClasses(classes.article_card, theme === 'dark' ? classes.dark : null, 'border-b-[5px] border-sky-400')}>
         <div className={'rounded-t-[4px] overflow-hidden h-[200px]'}>
           <img src={transformImagePaths(article.thumbnail)} alt="" width="100%" />
         </div>

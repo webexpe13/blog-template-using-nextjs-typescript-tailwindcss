@@ -39,7 +39,7 @@
     @apply text-black;
 
     &.dark {
-        @apply bg-slate-800 text-white;
+        @apply bg-slate-900 text-white;
 
         .search_input {
             @apply text-white;

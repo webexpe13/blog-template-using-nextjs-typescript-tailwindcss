@@ -1,14 +1,28 @@
 import ArticleCard from "../../src/components/ArticleCards/ArticleCard";
 import { ARTICLES_LIST } from '../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import HomeLayout from "../../src/layouts/HomeLayout";
+import { useRouter } from "next/router";
 
 const Categories = () => {
+    const router = useRouter()
+    const { category } = router.query;
+    const categoryArticles = ARTICLES_LIST.filter((each) => each.preview.category === category);
+    const articles = category ? categoryArticles : ARTICLES_LIST;
+
     return (
         <HomeLayout>
             <div className={"container"}>
-                <div className='d-flex flex-wrap'>
+                {
+                    category ?
+                        <h1 className='px-2 mb-[30px] text-[45px] font-bold' style={{ textTransform: 'capitalize' }}>
+                            {category}
+                            <hr className='mt-[10px]' />
+                        </h1> : null
+                }
+
+                <div className='flex flex-wrap'>
                     {
-                        ARTICLES_LIST.map((each, i) => (
+                        articles.map((each, i) => (
                             <ArticleCard article={each.preview} path={each.path} key={i} />
                         ))
                     }

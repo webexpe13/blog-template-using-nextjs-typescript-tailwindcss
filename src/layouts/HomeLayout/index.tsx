@@ -6,20 +6,24 @@ import { NavbarType, THEMES } from '../../shared/enums';
 import { combineClasses, getArticleDetails, getTheme } from '../../utils/utils';
 import classes from './HomeLayout.module.scss';
 
-const HomeLayout = ({ children }: any) => {
+const HomeLayout = ({ children, className }: any) => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
     useEffect(() => {
         getTheme(setTheme);
     }, [theme]);
     const ARTICLE_DETAILS = getArticleDetails();
-    
+
 
     return (
         <>
             <DefaultSeo {...ARTICLE_DETAILS?.seo} />
-            <div className={combineClasses(classes.home_layout_wrapper, theme === THEMES.DARK ? "bg-darkBlue font-white" : "bg-offWhite font-black", 'pb-20')} style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '100px' : '150px' }}>
+            <div
+                className={combineClasses( theme === THEMES.DARK ? "bg-slate-900 text-white" : "bg-slate-100 text-black", 'pb-[20px] min-h-screen transition-all', className)}>
+                {/* style={{ paddingTop: PRIMARY_NAV.type === NavbarType.DEFAULT ? '100px' : '150px' }} */}
                 <Navbar />
-                {children}
+                <div className={combineClasses(className)}>
+                    {children}
+                </div>
             </div>
         </>
     )

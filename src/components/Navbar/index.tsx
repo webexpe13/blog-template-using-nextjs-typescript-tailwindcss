@@ -1,18 +1,13 @@
-import { NavbarType, ContainerWidths, THEMES } from "../../shared/enums";
+import { NavbarType, THEMES } from "../../shared/enums";
 import SimpleNavbar from './SimpleNavbar';
 import CenteredNavbar from './Centered';
 import { useEffect, useState } from "react";
-import { addBodyNoScroll, getTheme, isMobileDevice, removeBodyNoScroll } from "../../utils/utils";
+import { addBodyNoScroll, changeTheme, getTheme, isMobileDevice, removeBodyNoScroll } from "../../utils/utils";
 import NavSidebar from './NavSideBar';
 import Search from "../Search";
 import { PRIMARY_NAV } from "../../../BLOG_CONSTANTS/_BLOG_SETUP"
 
-interface iNavbar {
-    showSocialMedia?: boolean;
-    container?: ContainerWidths;
-}
-
-const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }: iNavbar) => {
+const Navbar = () => {
     const [theme, setTheme] = useState(THEMES.LIGHT);
     const [isMobile, setIsMobile] = useState(false);
     const [openSidebar, setOpenSidebar] = useState(false);
@@ -33,26 +28,21 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
         };
     }, [showSearch]);
 
-    const changeTheme = () => {
-        localStorage.setItem("theme", theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT);
-        location.reload();
-    };
-
     const [scrolled, setScrolled] = useState(false);
     let lastScrollTop = 0;
     useEffect(() => {
+        setIsMobile(isMobileDevice());
+        
         window.onscroll = () => {
             const st = window.pageYOffset || document.documentElement.scrollTop;
             const scrollYDistance = window.scrollY;
-            if (scrollYDistance > 100 && st > lastScrollTop) {
+            if (scrollYDistance > 0 && st > lastScrollTop) {
                 setScrolled(true);
             } else if (scrollYDistance > 50 && st < lastScrollTop) {
                 setScrolled(false);
             }
             lastScrollTop = st <= 0 ? 0 : st;
         };
-
-        setIsMobile(isMobileDevice());
 
         return () => {
             setScrolled(false);
@@ -71,8 +61,6 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
         <>
             {
                 isMobile ? <SimpleNavbar
-                    container={ContainerWidths.DEFAULT}
-                    showSocial={showSocialMedia}
                     openSearch={openSearch}
                     scrolled={scrolled}
                     theme={theme}
@@ -86,8 +74,6 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                             case NavbarType.DEFAULT:
                                 return (
                                     <SimpleNavbar
-                                        container={container || PRIMARY_NAV.width}
-                                        showSocial={showSocialMedia}
                                         openSearch={openSearch}
                                         scrolled={scrolled}
                                         theme={theme}
@@ -99,8 +85,6 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                             case NavbarType.CENTERED:
                                 return (
                                     <CenteredNavbar
-                                        container={container || PRIMARY_NAV.width}
-                                        showSocial={showSocialMedia}
                                         openSearch={openSearch}
                                         scrolled={scrolled}
                                         theme={theme}
@@ -112,8 +96,6 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                             default:
                                 return (
                                     <SimpleNavbar
-                                        container={container || PRIMARY_NAV.width}
-                                        showSocial={showSocialMedia}
                                         openSearch={openSearch}
                                         scrolled={scrolled}
                                         theme={theme}
@@ -127,10 +109,10 @@ const Navbar = ({ showSocialMedia = true, container = ContainerWidths.DEFAULT }:
                     })()
             }
 
-            <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} navSetup={PRIMARY_NAV} changeTheme={changeTheme}/>
+            <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} navSetup={PRIMARY_NAV} changeTheme={changeTheme} />
             {showSearch && <Search setShowSearch={setShowSearch} />}
         </>
     )
 }
 
-export default Navbar
+export default Navbar 

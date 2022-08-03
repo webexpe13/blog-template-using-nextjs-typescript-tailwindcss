@@ -1,4 +1,3 @@
-@import "../../styles/utils/color";
 @import "../../styles//utils/mixins";
 
 .shadow {
@@ -8,26 +7,26 @@
 }
 
 .logo {
-    width: 50px;
+    width: auto;
     height: 50px;
     border-radius: 50%;
-    background: $black;
     display: block;
+    @apply bg-black;
 }
 
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
     transition: all 0.2s ease-in-out;
     width: 100%;
     z-index: 10;
-    background: $white;
+    @apply bg-white;
 
-    &__container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    @include mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateY(0%);
     }
 }
 
@@ -73,29 +72,25 @@
 }
 
 .navbar.dark {
-    background: $darkBlue;
+    @apply bg-slate-900;
 
     .search_icon_wrapper {
-        color: $white;
+        @apply text-white;
     }
 
     .mobileBurgerToggle {
         span,
         span::before {
-            background: $white;
+            @apply bg-white;
         }
     }
 
     .sidebarCategoryDD__floating {
-        background: $darkBlue2;
-
-        a {
-            border-bottom-color: $blue;
-        }
+        @apply bg-slate-800;
     }
 }
 
-.hideNav {
+.scrolled {
     @include mobile {
         transition: all 0.5s ease;
         transform: translateY(-110%);
@@ -117,7 +112,7 @@
         display: block;
         width: 30px;
         height: 2px;
-        background: $black;
+        @apply bg-black;
         position: relative;
         top: -3px;
         transition: all 0.5s ease-in-out;
@@ -128,7 +123,7 @@
             position: absolute;
             width: 75%;
             height: 2px;
-            background: $black;
+            @apply bg-black;
             left: 0;
             display: block;
         }
@@ -137,21 +132,6 @@
             top: 7px;
         }
     }
-
-    // &__close {
-    //     span {
-    //         transform: rotate(135deg);
-    //         transform-origin: center center;
-    //         top: 2px;
-
-    //         &::before {
-    //             transform: rotate(-270deg);
-    //             transform-origin: center center;
-    //             top: 0px;
-    //             width: 100%;
-    //         }
-    //     }
-    // }
 }
 
 // nav sidebar
@@ -162,11 +142,10 @@
     width: 100%;
     height: 100vh;
     max-width: 300px;
-    background-color: $white;
+    @apply bg-white text-black;
     transition: all 0.5s ease-in-out;
     transform: translateX(-110%);
     z-index: 13;
-    color: $black;
     padding: 20px 15px 10px;
     overflow-y: auto;
 
@@ -187,11 +166,6 @@
         transform: translateX(0%);
     }
 
-    .navSidebarHeader {
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-    }
-
     .sideNavCloseIcon {
         position: relative;
         width: 25px;
@@ -205,7 +179,7 @@
             position: relative;
             width: 100%;
             height: 2px;
-            background: $darkSpaceGray;
+            @apply bg-slate-800;
             transform: rotate(45deg);
 
             &::after {
@@ -213,20 +187,19 @@
                 position: absolute;
                 width: 100%;
                 height: 2px;
-                background: $darkSpaceGray;
+                @apply bg-slate-800;
                 transform: rotate(90deg);
             }
         }
     }
 
     &.dark {
-        background-color: $darkBlue2;
-        color: $white;
+        @apply bg-slate-900 text-white;
 
         .sideNavCloseIcon {
             span,
             span::after {
-                background-color: $white;
+                @apply bg-white;
             }
         }
     }
@@ -242,16 +215,13 @@
     .sidebarCategoryDD {
         overflow: auto;
         border-radius: 4px;
-        // transition: all 0.2s ease-in-out;
 
-        a {
-            border-bottom: solid 1px $gray;
-            padding: 10px 10px;
+        a{
+            @apply text-[14px] block p-[10px] border-b border-slate-300;
         }
 
         &__floating {
             position: absolute;
-            background: $white;
             width: 180px;
             z-index: 20;
             top: 35px;

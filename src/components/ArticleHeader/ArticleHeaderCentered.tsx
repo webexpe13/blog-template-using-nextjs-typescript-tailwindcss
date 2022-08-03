@@ -7,17 +7,17 @@ interface IProps {
 }
 const ArticleHeaderCenter = ({ headerData }: IProps) => {
     return (
-        <div className="mb-30">
-            <h1 className={combineClasses(classes.articleTitle, "mt-20 mb-5 text-center")}>
+        <div className="mb-[30px]">
+            <h1 className={combineClasses(classes.articleTitle, "text-center text-2xl md:text-4xl font-medium mt-[20px] mb-[5px]")}>
                 {headerData.articleTitle}
             </h1>
-            <div className={combineClasses("mb-10 mt-15 font-14 font-medium", classes.centered_article_header_author)}>
-                <p className={'my-0 mx-30'}>
+            <div className={combineClasses("mb-[10px] mt-[15px] text-[14px] font-medium", classes.centered_article_header_author)}>
+                <p className={'my-0 mx-[30px]'}>
                     {headerData.author.name}
                 </p>
                 {
-                    headerData.category && <p className="my-0 mx-30">
-                        <Link href={'/blog/' + headerData.category} passHref={true}>
+                    headerData.category && <p className="my-0 mx-[30px]">
+                        <Link href={"/blog?category=" + headerData.category} passHref={true}>
                             <a>{headerData.category}</a>
                         </Link>
                     </p>
@@ -27,7 +27,7 @@ const ArticleHeaderCenter = ({ headerData }: IProps) => {
             <div className="text-center">
                 {
                     headerData.tags.split(',').map((each, i) => (
-                        <span key={i} className="font-12 font-regular font-spaceGray mr-10" >#{each}</span>
+                        <span key={i} className="text-xs font-regular text-gray-400 mr-[10px]" >#{each}</span>
                     ))
                 }
             </div>

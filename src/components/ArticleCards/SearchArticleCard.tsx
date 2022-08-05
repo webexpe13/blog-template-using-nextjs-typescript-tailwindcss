@@ -7,7 +7,7 @@ import classes from './ArticleCard.module.scss';
 
 const SerachArticleCard = ({ article, theme = THEMES.LIGHT, path }: { article: IArticleHeaderData, theme: THEMES, path: string }) => (
   <div className="w-full md:w-1/3 px-3 mb-10">
-    <div className={combineClasses(classes.article_card, "px-[15px] py-[10px]", theme === THEMES.DARK ? classes.dark : null, 'border-b-[5px] border-sky-400')}>
+    <div className={combineClasses(classes.article_card, "px-[15px] py-[10px]", theme === THEMES.DARK ? classes.dark : null, 'border-b-[5px] border-blue-600')}>
       <p className={combineClasses(classes.article_card__date, "font-medium text-xs mt-3 mb-2")}>{article.date}</p>
       <Link href={transformPath(path)} passHref={true}>
         <a>

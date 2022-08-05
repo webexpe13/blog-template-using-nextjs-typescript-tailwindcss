@@ -1,8 +1,8 @@
 import { THEMES } from "../shared/enums";
 import { useRouter } from "next/router";
 import { ARTICLES_LIST } from "../../BLOG_CONSTANTS/_ARTICLES_LIST";
-import { iArticle } from "../shared/interfaces";
-import { WEBSITE_NAME } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
+import { iArticle, iSEO } from "../shared/interfaces";
+import { WEBSITE_NAME, WEBSITE_URL } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
 
 /**
  *
@@ -15,54 +15,51 @@ export const combineClasses = function (...classes: any): string {
 
 export const changeTheme = () => {
   const lsTheme = localStorage.getItem("theme");
-  localStorage.setItem("theme", lsTheme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT);
+  localStorage.setItem(
+    "theme",
+    lsTheme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT
+  );
 
-  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
   } else {
-    document.documentElement.classList.remove('dark')
+    document.documentElement.classList.remove("dark");
   }
 
-  // Whenever the user explicitly chooses light mode
-  // localStorage.theme = 'light'
-
-  // // Whenever the user explicitly chooses dark mode
-  // localStorage.theme = 'dark'
-
-  // Whenever the user explicitly chooses to respect the OS preference
-  // localStorage.removeItem('theme');
-
   location.reload();
-}
+};
 
 export const getTheme = (setThemeState?: any) => {
   const lsTheme = localStorage.getItem("theme");
   setThemeState(lsTheme ? lsTheme : THEMES.LIGHT);
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
   } else {
-    document.documentElement.classList.remove('dark')
+    document.documentElement.classList.remove("dark");
   }
 
-  if(setThemeState){
+  if (setThemeState) {
     setThemeState(lsTheme ? lsTheme : THEMES.LIGHT);
   } else {
-    return lsTheme ? lsTheme : THEMES.LIGHT
+    return lsTheme ? lsTheme : THEMES.LIGHT;
   }
 };
 
 export const isDarkTheme = () => {
   const lsTheme = localStorage.getItem("theme");
-  if(lsTheme === 'dark'){
-    return true
+  if (lsTheme === "dark") {
+    return true;
   } else {
-    return false
+    return false;
   }
-}
-
-export const setPath = (path: string): string => {
-  return path.substring(1);
 };
 
 export const getDeviceType = () => {
@@ -80,7 +77,7 @@ export const getDeviceType = () => {
   return "desktop";
 };
 
-export const isDesktopDevice = () => {
+export const isDesktopDevice = (): boolean => {
   if (getDeviceType() === "desktop") {
     return true;
   } else {
@@ -88,7 +85,7 @@ export const isDesktopDevice = () => {
   }
 };
 
-export const isMobileDevice = () => {
+export const isMobileDevice = (): boolean => {
   if (getDeviceType() === "mobile") {
     return true;
   } else {
@@ -96,11 +93,11 @@ export const isMobileDevice = () => {
   }
 };
 
-export const addBodyNoScroll = () => {
+export const addBodyNoScroll = (): void => {
   document.body.className += "no-scroll";
 };
 
-export const removeBodyNoScroll = () => {
+export const removeBodyNoScroll = (): void => {
   document.body.className = document.body.className.replace("no-scroll", "");
 };
 
@@ -120,40 +117,82 @@ export const getCategories = (): string[] => {
   return categories;
 };
 
-export const CREATE_SEO_CONFIG = (ARTICLE_DETAILS: iArticle) => {
-  const { path, preview, seo } = ARTICLE_DETAILS;
+export const transformPath = (path = "") => {
+  return path.replace("/pages", "").replace(".tsx", "");
+};
+
+export const transformImagePaths = (path = "") => {
+  return path.replace("/public", "");
+};
+
+
+export const CREATE_SEO_CONFIG = ({ARTICLE_DETAILS, SEO}: {ARTICLE_DETAILS ?: iArticle, SEO ? : iSEO}) => {
+  /**
+   * We can create SEO Config from
+   * ARTICLE_DETAILS or SEO object passed in article list or layout
+   */
+  const router = useRouter()
+  const { path, preview } = (ARTICLE_DETAILS as iArticle);
+  // set SEO
+  const localSEO : any = ARTICLE_DETAILS ? ARTICLE_DETAILS.seo : (SEO as iSEO);
+
+  // set url and path
+  const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
+  const LOCAL_URL = WEBSITE_URL ? WEBSITE_URL : origin;
+  const LOCAL_PATH = path ? transformPath(path) : router.asPath;
+
+  const title = localSEO.title ? localSEO.title : preview?.articleTitle + " | " + WEBSITE_NAME;
+  const description = localSEO.description || preview?.shortIntro;
+  const keywords = localSEO.keywords || preview?.tags;
+  const ogUrl = `${LOCAL_URL}${LOCAL_PATH}`;
+  const ogImage = localSEO.ogImage ? transformImagePaths(localSEO.ogImage) : null  ||  `${LOCAL_URL}${preview.thumbnail ? transformImagePaths(preview.thumbnail) : null}`;
+  const twitterHandle = localSEO?.twitterHandle || '';
+  const author = localSEO.author || preview.author.name;
+
   let seo_config = {
-    title: seo.title ? seo.title : preview.articleTitle + " | " + WEBSITE_NAME,
-    description: seo.description || preview.shortIntro,
+    title: title,
+    description: description,
     additionalMetaTags: [
       {
         property: "keywords",
-        content:
-          "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
+        content: keywords,
+      },
+      {
+        property: "og:description",
+        content: description,
+      },
+      {
+        property: "twitter:description",
+        content: description,
+      },
+      {
+        property: "al:web:url",
+        content: ogUrl,
+      },
+      {
+        property: "author",
+        content: author,
       },
     ],
     openGraph: {
       type: "website",
       locale: "en_IN",
-      url: `https://nextjs-simple-blog-template.web.app/${path ? path : null}`,
-      site_name: "nextjs-simple-blog-template",
+      url: ogUrl,
+      site_name: WEBSITE_NAME,
       images: [
         {
-          url: `/images/og-image.jpg`,
+          url: ogImage,
           width: 1200,
           height: 630,
-          alt: "nextjs-simple-blog-template",
+          alt: title,
         },
       ],
     },
+    twitter: {
+        handle: twitterHandle,
+        site: LOCAL_URL,
+        cardType: 'summary_large_image',
+    }
   };
   return seo_config;
 };
-
-export const transformPath = (path = '') => {
-  return path.replace('/pages', '').replace('.tsx', '');
-}
-
-export const transformImagePaths = (path = '') => {
-  return path.replace('/public', '');
-}

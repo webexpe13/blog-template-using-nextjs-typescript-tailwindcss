@@ -1,6 +1,6 @@
 /**These are necessary imports / components for the page */
 import BlogLayout from "../../src/layouts/BlogLayouts";
-import { ArticleHeaderLayouts, BlogLayouts, SectionSeperatorTypes, TextAlign, ImageSize, TextAs } from "../../src/shared/enums";
+import { ArticleHeaderLayouts, BlogLayouts, SectionSeperatorTypes, ImageSize, TextAs } from "../../src/shared/enums";
 import Image from "../../src/components/ArticleImage";
 import ArticleHeader from "../../src/components/ArticleHeader";
 import SectionSeperator from "../../src/components/SectionSeperator";

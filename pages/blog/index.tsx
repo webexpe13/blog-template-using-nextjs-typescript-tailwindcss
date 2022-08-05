@@ -7,7 +7,7 @@ const Categories = () => {
     const router = useRouter()
     const { category } = router.query;
     const categoryArticles = ARTICLES_LIST.filter((each) => each.preview.category === category);
-    const articles = category ? categoryArticles : ARTICLES_LIST;
+    const articles = category ? categoryArticles : ARTICLES_LIST;    
 
     return (
         <HomeLayout>

@@ -23,5 +23,14 @@ export interface iArticle {
   path: string;
   featureArticle?: boolean;
   preview: IArticleHeaderData,
-  seo?: any
+  seo?: iSEO
+}
+
+export interface iSEO {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  twitterHandle?: string;
+  author?: string;
 }

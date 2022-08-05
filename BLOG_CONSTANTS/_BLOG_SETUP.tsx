@@ -49,7 +49,8 @@ export const RUPALI: IAuthor = {
 
 
 // This can your company name / your name etc for SEO purposes
-export const WEBSITE_NAME = 'Website Name';
+export const WEBSITE_NAME = 'Next Js Blog Template';
+export const WEBSITE_URL = 'https://nextjs-simple-blog-template.web.app/';
 
 /**
  * This is the main navigation setup.
@@ -138,28 +139,43 @@ export const PRIMARY_NAV = {
 }
 
 export const DEFAULT_SEO = {
-    title: "Nextjs simple blog template | " + WEBSITE_NAME,
-    description:
-        "A simple blog template using NextJS and Typescript.",
+    title: "Nextjs simple blog template",
+    description: "A simple blog template using NextJS and Typescript.",
     additionalMetaTags: [
         {
             property: "keywords",
             content:
                 "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
+        }, {
+            property: "og:description",
+            content:
+                "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
+        }, {
+            property: "twitter:description",
+            content:
+                "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
+        }, {
+            property: "al:web:url",
+            content: WEBSITE_URL,
         },
     ],
     openGraph: {
         type: "website",
         locale: "en_IN",
-        url: "https://nextjs-simple-blog-template.web.app/",
-        site_name: "nextjs-simple-blog-template",
+        url: WEBSITE_URL,
+        site_name: WEBSITE_NAME,
         images: [
             {
-                url: `/images/og-image.jpg`,
+                url: `${WEBSITE_URL}/public/images/og-image.jpg`,
                 width: 1200,
                 height: 630,
-                alt: "nextjs-simple-blog-template",
+                alt: WEBSITE_NAME,
             },
         ],
     },
+    twitter: {
+        handle: '@mayur_nalwala',
+        site: 'https://webexpe.com/',
+        cardType: 'summary_large_image',
+    }
 };

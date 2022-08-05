@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { generateRandomAvtar } from "../../constants/appConstants";
 import { IArticleHeaderData } from "../../shared/interfaces";
-import { combineClasses, getTheme, setPath, transformImagePaths, transformPath } from "../../utils/utils";
+import { combineClasses, getTheme, transformImagePaths, transformPath } from "../../utils/utils";
 import classes from "./ArticleCard.module.scss";
 
 interface IProp {
@@ -18,7 +18,7 @@ const ArticleCard = ({ article, path }: IProp) => {
 
   return (
     <div className={'w-full sm:w-1/3 px-[15px] mb-[30px] '}>
-      <div className={combineClasses(classes.article_card, theme === 'dark' ? classes.dark : null, 'border-b-[5px] border-sky-400')}>
+      <div className={combineClasses(classes.article_card, theme === 'dark' ? classes.dark : null, 'border-b-[5px] border-blue-500')}>
         <div className={'rounded-t-[4px] overflow-hidden h-[200px]'}>
           <img src={transformImagePaths(article.thumbnail)} alt="" width="100%" />
         </div>

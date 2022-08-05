@@ -1,5 +1,5 @@
 import { LogoType, NavbarType } from "../src/shared/enums";
-import { IAuthor } from "../src/shared/interfaces";
+import { IAuthor, iSEO } from "../src/shared/interfaces";
 
 /**
  * EXAMPLE AUTHOR
@@ -57,7 +57,7 @@ export const WEBSITE_URL = 'https://nextjs-simple-blog-template.web.app/';
  * This includes the main navbar and the side drawer.
  */
 export const PRIMARY_NAV = {
-    type: NavbarType.DEFAULT,
+    type: NavbarType.CENTERED,
     // max logo image height 40px
     // you can add logo light version if using image
     // logo: {
@@ -138,44 +138,12 @@ export const PRIMARY_NAV = {
     ]
 }
 
-export const DEFAULT_SEO = {
+export const DEFAULT_SEO : iSEO = {
     title: "Nextjs simple blog template",
     description: "A simple blog template using NextJS and Typescript.",
-    additionalMetaTags: [
-        {
-            property: "keywords",
-            content:
-                "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
-        }, {
-            property: "og:description",
-            content:
-                "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
-        }, {
-            property: "twitter:description",
-            content:
-                "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
-        }, {
-            property: "al:web:url",
-            content: WEBSITE_URL,
-        },
-    ],
-    openGraph: {
-        type: "website",
-        locale: "en_IN",
-        url: WEBSITE_URL,
-        site_name: WEBSITE_NAME,
-        images: [
-            {
-                url: `${WEBSITE_URL}/public/images/og-image.jpg`,
-                width: 1200,
-                height: 630,
-                alt: WEBSITE_NAME,
-            },
-        ],
-    },
-    twitter: {
-        handle: '@mayur_nalwala',
-        site: 'https://webexpe.com/',
-        cardType: 'summary_large_image',
-    }
-};
+    keywords: "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
+    url: WEBSITE_URL,
+    author: `${MAYUR.name}, ${RUPALI.name}`,
+    twitterHandle: '@mayur_nalwala',
+    ogImage: '/public/images/og-image.jpg'
+}

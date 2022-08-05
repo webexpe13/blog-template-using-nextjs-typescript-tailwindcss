@@ -8,17 +8,16 @@ interface IProps {
     textAlign?: TextAlign;
     className?: string;
     as?: TextAs;
-    fontSize?: number;
 }
 
-const Text = ({ children, fontSize, color, textAlign = TextAlign.NONE, className, as = TextAs.p }: IProps) => {
+const Text = ({ children, color, textAlign = TextAlign.NONE, className, as = TextAs.p }: IProps) => {
     const computeComponent = () => {
         let ui = <></>;
         switch (as) {
             case TextAs.p:
                 ui = (
                     <p
-                        className={combineClasses(`font-regular mb-3`, fontSize ? `text-[${fontSize}px]` : '', className)}
+                        className={combineClasses(`font-regular mb-3`, className)}
                         style={{ color: color, textAlign: textAlign }}>
                         {children}
                     </p>
@@ -27,7 +26,7 @@ const Text = ({ children, fontSize, color, textAlign = TextAlign.NONE, className
             case TextAs.title:
                 ui = (
                     <h1
-                        className={combineClasses(`font-bold my-[10px]`, fontSize ? `text-[${fontSize}px]` : '', className)}
+                        className={combineClasses(`font-bold my-[10px]`, className)}
                         style={{ color: color, textAlign: textAlign }}>
                         {children}
                     </h1>
@@ -36,7 +35,7 @@ const Text = ({ children, fontSize, color, textAlign = TextAlign.NONE, className
             case TextAs.quote:
                 ui = (
                     <blockquote
-                        className={combineClasses(classes.quoted_text, fontSize ? `text-[${fontSize}px]` : '', className)}
+                        className={combineClasses(classes.quoted_text, className)}
                         style={{ color: color, textAlign: textAlign }}>
                         <q>{children}</q>
                     </blockquote>

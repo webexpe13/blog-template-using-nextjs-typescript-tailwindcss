@@ -2,7 +2,11 @@
 
 .article_card,
 .featured_article {
-    @apply bg-white text-black rounded-[4px] overflow-hidden h-full drop-shadow-lg;
+    @apply bg-white text-black rounded-[4px] overflow-hidden h-full drop-shadow-lg transition-all;
+    
+    &:hover{
+        transform: translateY(-10px);
+    }
 }
 
 .featured_article {

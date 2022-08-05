@@ -11,10 +11,10 @@ const Categories = () => {
 
     return (
         <HomeLayout>
-            <div className={"container"}>
+            <div className={"container mt-10"}>
                 {
                     category ?
-                        <h1 className='px-2 mb-[30px] text-[45px] font-bold' style={{ textTransform: 'capitalize' }}>
+                        <h1 className='px-2 mb-[30px] text-[45px] font-bold mt-8' style={{ textTransform: 'capitalize' }}>
                             {category}
                             <hr className='mt-[10px]' />
                         </h1> : null

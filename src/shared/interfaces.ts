@@ -33,4 +33,5 @@ export interface iSEO {
   ogImage?: string;
   twitterHandle?: string;
   author?: string;
+  url?: string;
 }

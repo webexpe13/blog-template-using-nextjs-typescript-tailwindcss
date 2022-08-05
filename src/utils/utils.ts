@@ -2,7 +2,7 @@ import { THEMES } from "../shared/enums";
 import { useRouter } from "next/router";
 import { ARTICLES_LIST } from "../../BLOG_CONSTANTS/_ARTICLES_LIST";
 import { iArticle, iSEO } from "../shared/interfaces";
-import { WEBSITE_NAME, WEBSITE_URL } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
+import { DEFAULT_SEO, WEBSITE_NAME, WEBSITE_URL } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
 
 /**
  *
@@ -125,29 +125,30 @@ export const transformImagePaths = (path = "") => {
   return path.replace("/public", "");
 };
 
-
-export const CREATE_SEO_CONFIG = ({ARTICLE_DETAILS, SEO}: {ARTICLE_DETAILS ?: iArticle, SEO ? : iSEO}) => {
+export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
   /**
    * We can create SEO Config from
    * ARTICLE_DETAILS or SEO object passed in article list or layout
    */
   const router = useRouter()
-  const { path, preview } = (ARTICLE_DETAILS as iArticle);
-  // set SEO
-  const localSEO : any = ARTICLE_DETAILS ? ARTICLE_DETAILS.seo : (SEO as iSEO);
+  const ARTICLE_DETAILS = getArticleDetails();
 
   // set url and path
   const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
   const LOCAL_URL = WEBSITE_URL ? WEBSITE_URL : origin;
-  const LOCAL_PATH = path ? transformPath(path) : router.asPath;
+  const LOCAL_PATH = ARTICLE_DETAILS ? transformPath(ARTICLE_DETAILS.path) : router.asPath;
 
-  const title = localSEO.title ? localSEO.title : preview?.articleTitle + " | " + WEBSITE_NAME;
-  const description = localSEO.description || preview?.shortIntro;
-  const keywords = localSEO.keywords || preview?.tags;
+  const title = `${PAGE_SEO?.title || ARTICLE_DETAILS?.preview?.articleTitle } | ${WEBSITE_NAME}`;
+  const description = PAGE_SEO?.description || ARTICLE_DETAILS?.preview?.shortIntro;
+  const keywords = PAGE_SEO?.keywords || ARTICLE_DETAILS?.preview?.tags;
   const ogUrl = `${LOCAL_URL}${LOCAL_PATH}`;
-  const ogImage = localSEO.ogImage ? transformImagePaths(localSEO.ogImage) : null  ||  `${LOCAL_URL}${preview.thumbnail ? transformImagePaths(preview.thumbnail) : null}`;
-  const twitterHandle = localSEO?.twitterHandle || '';
-  const author = localSEO.author || preview.author.name;
+  
+  const ogImage = 
+    PAGE_SEO?.ogImage ? `${LOCAL_URL}${transformImagePaths(PAGE_SEO?.ogImage)}` : 
+    `${LOCAL_URL}${ARTICLE_DETAILS?.preview.thumbnail ? transformImagePaths(ARTICLE_DETAILS?.preview.thumbnail) : null}`;
+
+  const twitterHandle = PAGE_SEO?.twitterHandle || '';
+  const author = PAGE_SEO?.author || ARTICLE_DETAILS?.preview.author.name;
 
   let seo_config = {
     title: title,
@@ -190,7 +191,7 @@ export const CREATE_SEO_CONFIG = ({ARTICLE_DETAILS, SEO}: {ARTICLE_DETAILS ?: iA
     },
     twitter: {
         handle: twitterHandle,
-        site: LOCAL_URL,
+        site: ogUrl,
         cardType: 'summary_large_image',
     }
   };

@@ -11,8 +11,8 @@ import List from "../../../src/components/List";
 const BlogSetup = () => {
     return (
         <HomeLayout>
-            <div className='container px-3 pb-[20px] mt-[50px]'>
-                <Text as={TextAs.title} className="md:text-3xl">
+            <div className='container px-3 pb-[20px] md:mt-[50px] pt-20'>
+                <Text as={TextAs.title} className="text-3xl">
                     Blog Setup
                 </Text>
                 <hr className="mt-5" />

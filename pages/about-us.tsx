@@ -4,63 +4,27 @@ import HomeLayout from "../src/layouts/HomeLayout";
 import Text from "../src/components/Text";
 import Image from "../src/components/ArticleImage";
 import List from "../src/components/List";
+import { CURRENT_YEAR } from "../src/constants/appConstants";
 
 const AboutUs = () => {
-    const year = new Date().getFullYear()
-
-    const SEO = {
-        title: "File and Folder Structure for Web Development | WebExpe | Mayur Nalwala",
-        description:
-            "A simple folder structure for web development projects with web tech like HTML, CSS, JavaScript, jQuery, Bootstrap 4, SCSS.",
-        additionalMetaTags: [
-            {
-                property: "keywords",
-                content:
-                    "HTML, CSS, JavaScript, jQuery, Bootstrap 4, SCSS, folder structure, web development, web development folder structure, web design folder structure, folder structure for web development, web development folder structure",
-            }, {
-                property: "og:description",
-                content:
-                    "A simple folder structure for web development projects with web tech like HTML, CSS, JavaScript, jQuery, Bootstrap 4, SCSS.",
-            }, {
-                property: "twitter:description",
-                content:
-                    "A simple folder structure for web development projects with web tech like HTML, CSS, JavaScript, jQuery, Bootstrap 4, SCSS.",
-            }, {
-                property: "al:web:url",
-                content:
-                    "https://webexpe.com/blog/folder-structure-for-web-development",
-            },
-        ],
-        openGraph: {
-            type: "website",
-            locale: "en_IN",
-            url: "https://webexpe.com/",
-            site_name: "WebExpe | Web development made simple.",
-            images: [
-                {
-                    url: `https://webexpe.com/images/folder-structure-intro.jpeg`,
-                    width: 1200,
-                    height: 630,
-                    alt: "WebExpe | Web development made simple.",
-                },
-            ],
-        },
-    }
-
     return (
         <HomeLayout>
-            <section className='container px-3 pb-20 mt-10'>
+            <section className='container px-3 md:pb-20 md:mt-10 pt-20'>
                 <div className="">
-                    <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="block rounded-lg w-[15%] overflow-hidden">
+                    <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="block rounded-lg md:w-[15%] w-[50%] overflow-hidden">
                         <Image src="/public/images/YT Logo.png" size={ImageSize.DEFAULT} alt="webexpe.com" />
                     </a>
-                    <Text as={TextAs.title} className='text-3xl mb-5 mt-10'>
-                        Hi we are WebExpe and this blog template is an opensource project which can help you start a simple static blog.
+                    <Text as={TextAs.title} className='md:text-3xl text-2xl mb-5 mt-10'>
+                        Hi we are WebExpe.
                     </Text>
+                    <Text as={TextAs.subTitle} className='text-xl mb-5'>
+                        This is an opensource blog template which can help you start a simple static blog.
+                    </Text>
+
                     <Text as={TextAs.p} className='text-lg'>
                         The idea was to start a blog or create a template with as little investment as possible. <br />In this template we have used Next.js SSG to create static HTML files which can be hosted on firebase or any static site hosting service. <br />
                         There is also options like vercel for hosting Next.js dynamic webistes but we wanted this template to be easy to use for any non techie person too, so we explored the option of static site generation. <br /><br />
-                        If you have a github account you can clone the project or use it as a template or else you can simply download the code. 
+                        If you have a github account you can clone the project or use it as a template or else you can simply download the code.
                     </Text>
 
                     <div className="flex flex-wrap justify-between">
@@ -111,7 +75,7 @@ const AboutUs = () => {
                         License
                     </Text>
                     <Text as={TextAs.p} className='text-lg'>
-                        Licensed under the MIT License, Copyright © {year}
+                        Licensed under the MIT License, Copyright © {CURRENT_YEAR}
                     </Text>
                     <Text as={TextAs.p} className='text-lg'>
                         This project is <b>opensouce</b>. Everyone is welcome to contribute to this project. Feel free to open an issue if you have question or found a bug, create your versions of this template and help the community, also if you are using our template a little credit will be much appreciated.

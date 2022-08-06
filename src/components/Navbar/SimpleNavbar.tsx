@@ -95,7 +95,7 @@ const SimpleNavbar = ({
           </div>
 
 
-          <button name="theme-switch" className={combineClasses(classes.theme_switch, "pl-3")} onClick={() => changeTheme()}>
+          <button name="theme-switch" className={combineClasses(classes.theme_switch, "pl-3")} onClick={changeTheme}>
             <img src={(THEME_ICONS as any)[theme].themeToggle} width="100%" alt="" />
           </button>
         </div>

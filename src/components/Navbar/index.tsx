@@ -110,7 +110,7 @@ const Navbar = () => {
             }
 
             <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} navSetup={PRIMARY_NAV} changeTheme={changeTheme} />
-            {showSearch && <Search setShowSearch={setShowSearch} />}
+            {showSearch && <Search closeSearch={() => setShowSearch(false)} />}
         </>
     )
 }

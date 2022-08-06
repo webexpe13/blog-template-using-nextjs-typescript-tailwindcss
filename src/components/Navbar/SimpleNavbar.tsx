@@ -89,13 +89,13 @@ const SimpleNavbar = ({
 
 
           <div className={combineClasses(classes.search_icon_wrapper, 'ml-5')} onClick={() => openSearch()}>
-            <button>
+            <button name="search-button">
               <img src={(THEME_ICONS as any)[theme].search} width="100%" alt="" />
             </button>
           </div>
 
 
-          <button className={combineClasses(classes.theme_switch, "pl-3")} onClick={() => changeTheme()}>
+          <button name="theme-switch" className={combineClasses(classes.theme_switch, "pl-3")} onClick={() => changeTheme()}>
             <img src={(THEME_ICONS as any)[theme].themeToggle} width="100%" alt="" />
           </button>
         </div>

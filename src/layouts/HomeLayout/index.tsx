@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar';
 import { iSEO } from '../../shared/interfaces';
 import { combineClasses, CREATE_SEO_CONFIG, getArticleDetails, isDarkTheme } from '../../utils/utils';
 
-const HomeLayout = ({ children, className, PAGE_SEO }: {children: any, className: any, PAGE_SEO?: iSEO}) => {    
+const HomeLayout = ({ children, className, PAGE_SEO }: {children: any, className?: any, PAGE_SEO?: iSEO}) => {    
     const [isDark, setTheme] = useState(false);
     useEffect(() => {
         setTheme(isDarkTheme());

@@ -31,7 +31,7 @@ const Search = ({ setShowSearch }: ISearch) => {
                 <div className="px-3">
                     <div className={combineClasses('flex justify-between items-center')}>
                         <h1 className={'text-[45px] font-bold pt-10'}>Search</h1>
-                        <button type="button" className={classes.search_close_icon} onClick={() => setShowSearch(false)}><span></span></button>
+                        <button name="search-button" type="button" className={classes.search_close_icon} onClick={() => setShowSearch(false)}><span></span></button>
                     </div>
                     <div className="mb-[40px] mt-3">
                         <input

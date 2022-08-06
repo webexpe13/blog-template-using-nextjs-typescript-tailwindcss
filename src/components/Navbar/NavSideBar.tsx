@@ -121,7 +121,7 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 </div>
                 <div className='mt-5 mb-4'>
                     <p className='mb-2 font-light'>Switch To {theme === THEMES.LIGHT ? 'Dark' : 'Light'} Theme :</p>
-                    <button className={combineClasses(classes.theme_switch)} onClick={() => changeTheme()}>
+                    <button name="theme-switch" className={combineClasses(classes.theme_switch)} onClick={() => changeTheme()}>
                         <img src={(THEME_ICONS as any)[theme].themeToggle} width="100%" alt="" />
                     </button>
                 </div>

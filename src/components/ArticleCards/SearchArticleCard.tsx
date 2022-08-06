@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { generateRandomAvtar } from "../../constants/appConstants";
-import { THEMES } from "../../shared/enums";
 import { IArticleHeaderData } from "../../shared/interfaces"
 import { combineClasses, transformPath } from "../../utils/utils";
 import classes from './ArticleCard.module.scss';
 
-const SerachArticleCard = ({ article, theme = THEMES.LIGHT, path }: { article: IArticleHeaderData, theme: THEMES, path: string }) => (
+const SerachArticleCard = ({ article, isDark = false, path }: { article: IArticleHeaderData, isDark: boolean, path: string }) => (
   <div className="w-full md:w-1/3 px-3 mb-10">
-    <div className={combineClasses(classes.article_card, "px-[15px] py-[10px]", theme === THEMES.DARK ? classes.dark : null, 'border-b-[5px] border-blue-600')}>
+    <div className={combineClasses(classes.article_card, "px-[15px] py-[10px]", isDark ? classes.dark : null, 'border-b-[5px] border-blue-600')}>
       <p className={combineClasses(classes.article_card__date, "font-medium text-xs mt-3 mb-2")}>{article.date}</p>
       <Link href={transformPath(path)} passHref={true}>
         <a>

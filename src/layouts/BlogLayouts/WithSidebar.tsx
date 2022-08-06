@@ -1,19 +1,17 @@
 import classes from './BlogLayout.module.scss';
 import Navbar from '../../components/Navbar';
-import { NavbarType, THEMES } from '../../shared/enums';
-import { combineClasses, getArticleDetails, getTheme, transformImagePaths, transformPath } from '../../utils/utils';
+import { combineClasses, getArticleDetails, isDarkTheme, transformImagePaths, transformPath } from '../../utils/utils';
 import { useEffect, useState } from 'react';
 import { ARTICLES_LIST } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import Link from 'next/link';
-import { PRIMARY_NAV } from '../../../BLOG_CONSTANTS/_BLOG_SETUP';
 import { generateRandomAvtar } from '../../constants/appConstants';
 
 const WithSidebar = ({ children }: any) => {
-    const [theme, setTheme] = useState(THEMES.LIGHT);
+    const [isDark, setTheme] = useState(false);
 
     useEffect(() => {
-        getTheme(setTheme);
-    }, [theme]);
+        setTheme(isDarkTheme());
+    }, [isDark]);
 
     const ARTICLE_DETAILS = getArticleDetails();
     const author = ARTICLE_DETAILS.preview.author;
@@ -24,7 +22,7 @@ const WithSidebar = ({ children }: any) => {
     return (
         <>
             <Navbar />
-            <section className={combineClasses(classes.withSidebar_article_wrapper, theme === THEMES.DARK ? classes.dark : null)}>
+            <section className={combineClasses(classes.withSidebar_article_wrapper, isDark ? classes.dark : null)}>
                 <div className="container px-0 md:px-3 md:flex pb-[50px] pt-[50px]">
                     <article className={combineClasses(classes.article_content, 'pb-[20px] px-3')}>
                         {children}

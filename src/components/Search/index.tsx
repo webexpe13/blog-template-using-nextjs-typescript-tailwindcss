@@ -1,9 +1,8 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { combineClasses, getTheme } from "../../utils/utils";
+import { combineClasses, isDarkTheme } from "../../utils/utils";
 import classes from './Search.module.scss';
 import SearchArticleCard from "../ArticleCards/SearchArticleCard";
 import { ARTICLES_LIST } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
-import { THEMES } from "../../shared/enums";
 
 interface ISearch {
     setShowSearch: Dispatch<SetStateAction<boolean>>
@@ -21,13 +20,13 @@ const Search = ({ setShowSearch }: ISearch) => {
 
     }
 
-    const [theme, setTheme] = useState(THEMES.LIGHT);
+    const [isDark, setTheme] = useState(false);
     useEffect(() => {
-        getTheme(setTheme);
-    }, [theme]);
+        setTheme(isDarkTheme());
+    }, [isDark]);
 
     return (
-        <div className={combineClasses('bg-slate-100', classes?.search_container, theme === THEMES.DARK ? classes.dark : null)}>
+        <div className={combineClasses('bg-slate-100', classes?.search_container, isDark ? classes.dark : null)}>
             <div className="container mx-auto">
                 <div className="px-3">
                     <div className={combineClasses('flex justify-between items-center')}>
@@ -48,7 +47,7 @@ const Search = ({ setShowSearch }: ISearch) => {
                 {searchResults?.length > 0 && <div className='flex flex-wrap'>
                     {
                         searchResults?.length > 0 && searchResults?.map((article, i) => (
-                            <SearchArticleCard article={article.preview} key={i} theme={theme} path={article.path} />
+                            <SearchArticleCard article={article.preview} key={i} isDark={isDark} path={article.path} />
                         ))
                     }
                 </div>}

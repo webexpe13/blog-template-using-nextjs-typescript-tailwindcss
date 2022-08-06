@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { IArticleHeaderData } from "../../shared/interfaces";
 import classes from "./ArticleCard.module.scss";
-import { combineClasses, getTheme, transformImagePaths, transformPath } from "../../utils/utils";
+import { combineClasses, isDarkTheme, transformImagePaths, transformPath } from "../../utils/utils";
 import Link from "next/link";
 import { generateRandomAvtar } from "../../constants/appConstants";
 
@@ -12,14 +12,14 @@ interface IProp {
 
 
 const FeaturedArticle = ({ article, path }: IProp) => {
-    const [theme, setTheme] = useState('');
+    const [isDark, setTheme] = useState(false);
     useEffect(() => {
-        getTheme(setTheme);
-    }, [theme]);
+        setTheme(isDarkTheme());
+    }, [isDark]);
 
     return (
         <>
-            <div className={combineClasses(classes.featured_article, theme === 'dark' ? classes.dark : null, 'md:border-l-[5px] sm:border-t-[5px] md:border-t-0 border-blue-500')}>
+            <div className={combineClasses(classes.featured_article, isDark ? classes.dark : null, 'md:border-l-[5px] sm:border-t-[5px] md:border-t-0 border-blue-500')}>
                 <div className={'w-full md:w-[55%] md:px-[50px] px-[15px] md:py-[40px] py-[20px]'}>
                     <div className={ "mt-0 mb-[10px] flex items-center"}>
                         <div className={classes.author}>

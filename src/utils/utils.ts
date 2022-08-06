@@ -2,7 +2,7 @@ import { THEMES } from "../shared/enums";
 import { useRouter } from "next/router";
 import { ARTICLES_LIST } from "../../BLOG_CONSTANTS/_ARTICLES_LIST";
 import { iArticle, iSEO } from "../shared/interfaces";
-import { DEFAULT_SEO, WEBSITE_NAME, WEBSITE_URL } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
+import { WEBSITE_NAME, WEBSITE_URL } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
 
 /**
  *
@@ -13,7 +13,10 @@ export const combineClasses = function (...classes: any): string {
   return classes.filter((item: any) => !!item).join(" ");
 };
 
-export const changeTheme = () => {
+/**
+ * Changes Dark / Light Theme
+ */
+export const changeTheme = (): void => {
   const lsTheme = localStorage.getItem("theme");
   localStorage.setItem(
     "theme",
@@ -33,7 +36,11 @@ export const changeTheme = () => {
   location.reload();
 };
 
-export const getTheme = (setThemeState?: any) => {
+/**
+ * Rerturns THEMES.LIGHT || THEMES.DARK or if state update method is passed it updated the state
+ * @param setThemeState
+ */
+export const getTheme = (setThemeState?: any)  => {
   const lsTheme = localStorage.getItem("theme");
   setThemeState(lsTheme ? lsTheme : THEMES.LIGHT);
   if (
@@ -53,7 +60,11 @@ export const getTheme = (setThemeState?: any) => {
   }
 };
 
-export const isDarkTheme = () => {
+/**
+ * Returs True if dark theme is set
+ * @returns boolean
+ */
+export const isDarkTheme = (): boolean => {
   const lsTheme = localStorage.getItem("theme");
   if (lsTheme === "dark") {
     return true;
@@ -62,7 +73,11 @@ export const isDarkTheme = () => {
   }
 };
 
-export const getDeviceType = () => {
+/**
+ * Returns Device Type tablet , mobile, desktop
+ * @returns string
+ */
+export const getDeviceType = (): string => {
   const ua = navigator.userAgent;
   if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
     return "tablet";
@@ -77,6 +92,10 @@ export const getDeviceType = () => {
   return "desktop";
 };
 
+/**
+ * Returns true if desktop
+ * @returns boolean
+ */
 export const isDesktopDevice = (): boolean => {
   if (getDeviceType() === "desktop") {
     return true;
@@ -85,6 +104,10 @@ export const isDesktopDevice = (): boolean => {
   }
 };
 
+/**
+ * Returns true if mobile
+ * @returns boolean
+ */
 export const isMobileDevice = (): boolean => {
   if (getDeviceType() === "mobile") {
     return true;
@@ -93,20 +116,34 @@ export const isMobileDevice = (): boolean => {
   }
 };
 
+/**
+ * Add no scroll class to body when modal isopen
+ */
 export const addBodyNoScroll = (): void => {
   document.body.className += "no-scroll";
 };
 
+/**
+ * Removes no scroll class to body when modal isopen
+ */
 export const removeBodyNoScroll = (): void => {
   document.body.className = document.body.className.replace("no-scroll", "");
 };
 
-export const getArticleDetails = () => {
+/**
+ * Returns Article details from ARTICLES_LIST wrt the path
+ * @returns iArticle
+ */
+export const getArticleDetails = (): iArticle => {
   const router = useRouter();
   const articlePath = "/pages" + router.pathname;
   return ARTICLES_LIST.filter((each) => each.path === articlePath)[0];
 };
 
+/**
+ * Returns list of categories from ARTICLES_LIST
+ * @returns string[]
+ */
 export const getCategories = (): string[] => {
   let categories: string[] = [];
   ARTICLES_LIST.forEach((each) => {
@@ -117,14 +154,29 @@ export const getCategories = (): string[] => {
   return categories;
 };
 
-export const transformPath = (path = "") => {
+/**
+ * Removes /pages from article path
+ * @param path 
+ * @returns 
+ */
+export const transformPath = (path = ""): string => {
   return path.replace("/pages", "").replace(".tsx", "");
 };
 
-export const transformImagePaths = (path = "") => {
+/**
+ * Removes /public from images path
+ * @param path 
+ * @returns 
+ */
+export const transformImagePaths = (path = ""): string => {
   return path.replace("/public", "");
 };
 
+/**
+ * Creates SEO Config from ArticleDetails.preview || ArticleDetails.seo ||  PAGE_SEO
+ * @param PAGE_SEO : iSEO
+ * @returns SEO config
+ */
 export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
   /**
    * We can create SEO Config from

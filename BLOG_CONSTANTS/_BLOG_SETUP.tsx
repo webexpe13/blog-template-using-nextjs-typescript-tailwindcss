@@ -31,11 +31,11 @@ export const MAYUR: IAuthor = {
     social: [
         {
             icon: <i className="icon-2-Z font-32" />,
-            link: 'https://github.com/'
+            link: 'https://github.com/nmayur'
         },
         {
             icon: <i className="icon-I font-36" />,
-            link: 'https://www.linkedin.com/'
+            link: 'https://www.linkedin.com/in/mayur-nalwala/'
         },
     ]
 }
@@ -45,6 +45,16 @@ export const RUPALI: IAuthor = {
     designation: "IT Analyst",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     profilePic: "https://gravatar.com/avatar/8fab154171e299e9b8fe24305267a8fd?s=200&d=robohash&r=r",
+    social: [
+        {
+            icon: <i className="icon-2-Z font-32" />,
+            link: 'https://github.com/rupali-yadav'
+        },
+        {
+            icon: <i className="icon-I font-36" />,
+            link: 'https://www.linkedin.com/in/rupali-yadav-087bb4112/'
+        },
+    ]
 }
 
 
@@ -57,7 +67,7 @@ export const WEBSITE_URL = 'https://nextjs-simple-blog-template.web.app/';
  * This includes the main navbar and the side drawer.
  */
 export const PRIMARY_NAV = {
-    type: NavbarType.CENTERED,
+    type: NavbarType.DEFAULT,
     // max logo image height 40px
     // you can add logo light version if using image
     // logo: {

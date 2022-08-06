@@ -13,8 +13,8 @@ interface IBlogLayout {
 }
 
 const BlogLayout = ({ layout = BlogLayouts.WITH_SIDEBAR, children, PAGE_SEO }: IBlogLayout) => {
-    const ARTICLE_DETAILS = getArticleDetails(); 
-    let SEO_CONFIG = ARTICLE_DETAILS ? CREATE_SEO_CONFIG({...ARTICLE_DETAILS.seo, ...PAGE_SEO}) : CREATE_SEO_CONFIG({...DEFAULT_SEO});;
+    const ARTICLE_DETAILS = getArticleDetails();
+    let SEO_CONFIG = ARTICLE_DETAILS ? CREATE_SEO_CONFIG({...DEFAULT_SEO, ...ARTICLE_DETAILS.seo, ...PAGE_SEO}) : CREATE_SEO_CONFIG({...DEFAULT_SEO, ...PAGE_SEO});
 
     return (
         <>

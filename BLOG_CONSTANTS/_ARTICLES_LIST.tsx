@@ -92,7 +92,7 @@ export const ARTICLES_LIST: iArticle[] = [
     {
         path: '/pages/blog/tutorial/demo-article-with-category',
         preview: {
-            author: MAYUR,
+            author: RUPALI,
             date: "March 03 2022",
             articleTitle: "Demo Article with category",
             tags: "demo, with category",
@@ -107,7 +107,7 @@ export const ARTICLES_LIST: iArticle[] = [
             keywords: "demo, with category",
             ogImage: "/public/images/category-thumb.png",
             twitterHandle: "@mayur_nalwala",
-            author: MAYUR.name
+            author: RUPALI.name
         }
     },
     {

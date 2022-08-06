@@ -3,20 +3,26 @@ import '../src/assets/fontCss/icofont.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import { SEO } from "../next-seo.config";
 import { DefaultSeo } from "next-seo";
 import Footer from '../src/components/Footer';
 import Script from 'next/script';
 import * as gtag from '../google';
 import { ThemeProvider } from 'next-themes';
+import { useEffect } from 'react';
+import { CREATE_SEO_CONFIG, isDarkTheme } from '../src/utils/utils';
 
 function MyApp({ Component, pageProps }: AppProps) {
 
   const env = process.env.NODE_ENV;
 
+  useEffect(() => {
+    document.body.classList.add(isDarkTheme() ? 'dark' : 'light');
+  }, []);  
+  let SEO_CONFIG = CREATE_SEO_CONFIG({});  
+
   return (
     <>
-      <DefaultSeo {...SEO} />
+      <DefaultSeo {...SEO_CONFIG} />
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta

@@ -1,5 +1,5 @@
 import SectionSeperator from "../src/components/SectionSeperator";
-import { SectionSeperatorTypes, TextAs, TextAlign, ImageSize, ListType } from "../src/shared/enums";
+import { TextAs, ImageSize, ListType } from "../src/shared/enums";
 import HomeLayout from "../src/layouts/HomeLayout";
 import Text from "../src/components/Text";
 import Image from "../src/components/ArticleImage";
@@ -7,6 +7,45 @@ import List from "../src/components/List";
 
 const AboutUs = () => {
     const year = new Date().getFullYear()
+
+    const SEO = {
+        title: "File and Folder Structure for Web Development | WebExpe | Mayur Nalwala",
+        description:
+            "A simple folder structure for web development projects with web tech like HTML, CSS, JavaScript, jQuery, Bootstrap 4, SCSS.",
+        additionalMetaTags: [
+            {
+                property: "keywords",
+                content:
+                    "HTML, CSS, JavaScript, jQuery, Bootstrap 4, SCSS, folder structure, web development, web development folder structure, web design folder structure, folder structure for web development, web development folder structure",
+            }, {
+                property: "og:description",
+                content:
+                    "A simple folder structure for web development projects with web tech like HTML, CSS, JavaScript, jQuery, Bootstrap 4, SCSS.",
+            }, {
+                property: "twitter:description",
+                content:
+                    "A simple folder structure for web development projects with web tech like HTML, CSS, JavaScript, jQuery, Bootstrap 4, SCSS.",
+            }, {
+                property: "al:web:url",
+                content:
+                    "https://webexpe.com/blog/folder-structure-for-web-development",
+            },
+        ],
+        openGraph: {
+            type: "website",
+            locale: "en_IN",
+            url: "https://webexpe.com/",
+            site_name: "WebExpe | Web development made simple.",
+            images: [
+                {
+                    url: `https://webexpe.com/images/folder-structure-intro.jpeg`,
+                    width: 1200,
+                    height: 630,
+                    alt: "WebExpe | Web development made simple.",
+                },
+            ],
+        },
+    }
 
     return (
         <HomeLayout>

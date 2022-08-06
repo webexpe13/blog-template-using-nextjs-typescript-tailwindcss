@@ -22,13 +22,9 @@ import { MAYUR, RUPALI } from './_BLOG_SETUP';
             title: "These are the steps to setup your blog",
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-            additionalMetaTags: [
-                {
-                    property: "keywords",
-                    content:
-                        "Blog, learn web development, learn javascript, learn css, learn html css js, responsive web development, responsive website",
-                },
-            ],
+            keywords: "demo, blog setup",
+            ogImage: "/images/demo-image.jpg",
+            twitterHandle: "@mayur_nalwala",
         }
     }
  */
@@ -46,16 +42,12 @@ export const ARTICLES_LIST: iArticle[] = [
             category: 'tutorial'
         },
         seo: {
-            title: "How To Setup Blog | Next js simple blog template",
-            description:
-                "Next js simple blog template setup guide. These are the steps to setup your blog",
-            additionalMetaTags: [
-                {
-                    property: "keywords",
-                    content:
-                        "Blog, learn web development, learn javascript, learn css, learn html css js, responsive web development, responsive website",
-                },
-            ],
+            title: "How to setup this blog template",
+            description: "These are the steps to setup your blog",
+            keywords: "demo, blog setup",
+            ogImage: "/public/images/blog-setup.jpg",
+            twitterHandle: "@mayur_nalwala",
+            author: MAYUR.name
         }
     },
     {
@@ -69,16 +61,12 @@ export const ARTICLES_LIST: iArticle[] = [
             shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
         },
         seo: {
-            title: "Demo Article with default sidebar layout | Next js simple blog template",
-            description:
-                "Next js simple blog template Default Layout Example.",
-            additionalMetaTags: [
-                {
-                    property: "keywords",
-                    content:
-                        "Blog, learn web development, learn javascript, learn css, learn html css js, responsive web development, responsive website",
-                },
-            ],
+            title: "Demo Article with default layout (with sidebar)",
+            description: "This a demo artile with sidebar layout and with demo of all the components.",
+            keywords: "demo, with sidebar, default layout",
+            ogImage: "/public/images/default-layout-thumb.jpg",
+            twitterHandle: "@mayur_nalwala",
+            author: MAYUR.name
         }
     },
     {
@@ -89,44 +77,37 @@ export const ARTICLES_LIST: iArticle[] = [
             articleTitle: "Demo Article with centered layout",
             tags: "demo,centered, centered layout",
             thumbnail: "/public/images/centered-layout-thumb.png",
-            shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
+            shortIntro: "This a demo artile with centered layout and with demo of all the components.",
         },
         seo: {
-            title: "Demo Article with centered layout | Next js simple blog template",
+            title: "Demo Article with centered layout",
             description:
-                "Next js simple blog template Centered Layout Example.",
-            additionalMetaTags: [
-                {
-                    property: "keywords",
-                    content:
-                        "Blog, learn web development, learn javascript, learn css, learn html css js, responsive web development, responsive website",
-                },
-            ],
+                "This a demo artile with centered layout and with demo of all the components.",
+            keywords: "demo,centered, centered layout",
+            ogImage: "/public/images/centered-layout-thumb.png",
+            twitterHandle: "@mayur_nalwala",
+            author: RUPALI.name
         }
     },
     {
         path: '/pages/blog/tutorial/demo-article-with-category',
         preview: {
-            author: MAYUR,
+            author: RUPALI,
             date: "March 03 2022",
             articleTitle: "Demo Article with category",
             tags: "demo, with category",
             thumbnail: "/public/images/category-thumb.png",
-            shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
-            // you can also create a folder of you category example "food-recipies" or "travel" etc and put that exact same name in category folder
+            shortIntro: "This a demo artile with example on how to add category.",
             category: 'tutorial'
         },
         seo: {
-            title: "Demo Article with category  | Next js simple blog template",
+            title: "Demo Article with category",
             description:
-                "Next js simple blog template, article example with category",
-            additionalMetaTags: [
-                {
-                    property: "keywords",
-                    content:
-                        "Blog, learn web development, learn javascript, learn css, learn html css js, responsive web development, responsive website",
-                },
-            ],
+                "This a demo artile with example on how to add category.",
+            keywords: "demo, with category",
+            ogImage: "/public/images/category-thumb.png",
+            twitterHandle: "@mayur_nalwala",
+            author: RUPALI.name
         }
     },
     {
@@ -135,23 +116,20 @@ export const ARTICLES_LIST: iArticle[] = [
         preview: {
             author: RUPALI,
             date: "March 03 2022",
-            articleTitle: " How to Export and deploy blog",
+            articleTitle: "How to Export and deploy blog",
             tags: "demo, deploy blog",
             thumbnail: "/public/images/deploy.png",
             shortIntro: "In this article you will see how to export blog files and what folder to deploy on your hosting.",
             category: 'tutorial'
         },
         seo: {
-            title: " How to Export and deploy blog | Next js simple blog template",
+            title: "How to Export and deploy blog",
             description:
-                "Next js simple blog template, article will show you how to export your blog and deploy",
-            additionalMetaTags: [
-                {
-                    property: "keywords",
-                    content:
-                        "Blog, learn web development, learn javascript, learn css, learn html css js, responsive web development, responsive website",
-                },
-            ],
+                "In this article you will see how to export blog files and what folder to deploy on your hosting.",
+            keywords: "demo, deploy blog",
+            ogImage: "/public/images/deploy.png",
+            twitterHandle: "@mayur_nalwala",
+            author: MAYUR.name
         }
     },
 ]

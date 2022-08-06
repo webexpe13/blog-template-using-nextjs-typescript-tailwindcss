@@ -2,7 +2,7 @@ import classes from "./Navbar.module.scss";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { THEME_ICONS } from "../../constants/appConstants";
-import { combineClasses, getCategories, getTheme } from "../../utils/utils";
+import { combineClasses, getCategories} from "../../utils/utils";
 import { LogoType, THEMES } from "../../shared/enums";
 
 const CenteredNavbar = ({

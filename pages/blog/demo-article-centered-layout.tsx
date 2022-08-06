@@ -35,15 +35,13 @@ const ArticleDefaultLayout = () => {
             {/* 
                 Text will display a paragraph, or title or quote as per the value passed
                 change text type by pass "as": as:{TextAs.p | TextAs.title | TextAs.quote}
-                font size of any number: fontSize={10}
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
-            <Text as={TextAs.p} fontSize={18} textAlign={TextAlign.CENTER}>
-                <b>{'<Text as={TextAs.p} fontSize={18} textAlign={TextAlign.CENTER}>'}</b> <br /><br />
+            <Text as={TextAs.p} textAlign={TextAlign.CENTER}>
+                <b>{'<Text as={TextAs.p} textAlign={TextAlign.CENTER}>'}</b> <br /><br />
                 This will display a paragraph<br />
                 you can pass :
-                font size of any number: size={10} <br />
                 color : color="#3543EA" <br />
                 textAlign: TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY <br />
             </Text>
@@ -56,7 +54,6 @@ const ArticleDefaultLayout = () => {
             {/* 
                 SectionTitle will display a section title
                 you can pass 
-                font size of any number: size={10}
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
@@ -66,7 +63,6 @@ const ArticleDefaultLayout = () => {
             <Text textAlign={TextAlign.CENTER}>
                 <b>{'<Text as={TextAs.title} textAlign={TextAlign.CENTER}>'}</b> This will display a section title<br />
                 you can pass :
-                font size of any number: size={10} <br />
                 color : color="#3543EA" <br />
                 textAlign: = TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY <br />
             </Text>
@@ -75,7 +71,6 @@ const ArticleDefaultLayout = () => {
             {/* 
                 QuotedText will display a Quoted text
                 you can pass 
-                font size {number}: size={10}
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
@@ -85,7 +80,6 @@ const ArticleDefaultLayout = () => {
             <Text textAlign={TextAlign.CENTER}>
                 <b>{'<Text as={TextAs.quote} textAlign={TextAlign.CENTER}>'}</b> will display a Quoted text <br />
                 you can pass
-                font size of any number: size={10}
                 color : color="#3543EA"
                 textAlign: textAlign={'{TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}'}
             </Text>

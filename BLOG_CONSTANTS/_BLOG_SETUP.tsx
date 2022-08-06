@@ -105,6 +105,10 @@ export const PRIMARY_NAV = {
             path: 'https://github.com/nmayur/nextjs-simple-blog-template',
             newTab: true
         },
+        {
+            label: 'Contact Us',
+            path: '/contact-us'
+        }
     ],
     // sideNavLinks are the links which appear when you open the side menu after clicking the burger menu icon.
     sideNavLinks: [
@@ -131,6 +135,10 @@ export const PRIMARY_NAV = {
             path: 'https://github.com/nmayur/nextjs-simple-blog-template',
             newTab: true
         },
+        {
+            label: 'Contact Us',
+            path: '/contact-us'
+        }
     ],
     socials: [
         {

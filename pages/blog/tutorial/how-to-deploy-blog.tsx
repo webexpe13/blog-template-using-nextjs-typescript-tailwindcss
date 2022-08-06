@@ -15,7 +15,7 @@ const HowToDeployBlog = () => {
                     How to Export and deploy blog
                 </Text>
                 <hr />
-                <Text as={TextAs.title} className="mt-10">
+                <Text as={TextAs.subTitle} className="mt-10">
                     1. Export Project.
                 </Text>
                 <List type={ListType.bullet} className="mt-5">
@@ -37,7 +37,7 @@ const HowToDeployBlog = () => {
                     </li>
                 </List>
                 <SectionSeperator />
-                <Text as={TextAs.title} className="mt-10">
+                <Text as={TextAs.subTitle} className="mt-10">
                     2. Basic firebase deployment tutorial.
                 </Text>
                 <List type={ListType.bullet} className="mt-5">

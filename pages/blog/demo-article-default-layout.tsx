@@ -53,16 +53,16 @@ const ArticleDefaultLayout = () => {
             <SectionSeperator type={SectionSeperatorTypes.LINE} />
 
             {/* 
-                <Text as={TextAs.title}> will display a section title
+                <Text as={TextAs.subTitle}> will display a section title
                 you can pass 
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
-            <Text as={TextAs.title}>
+            <Text as={TextAs.subTitle}>
                 Section Title
             </Text>
             <Text>
-                <b>{'<Text as={TextAs.title}>'}</b> This will display a section title<br />
+                <b>{'<Text as={TextAs.subTitle}>'}</b> This will display a section title<br />
                 you can pass :
                 color : color="#3543EA" <br />
                 textAlign: = TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY <br />
@@ -87,7 +87,7 @@ const ArticleDefaultLayout = () => {
 
             <SectionSeperator type={SectionSeperatorTypes.DOTS} />
 
-            <Text as={TextAs.title} className="mt-10">
+            <Text as={TextAs.subTitle} className="mt-10">
                 Image Slider
             </Text>
             <Slider className="mt-2 mb-3" images={[

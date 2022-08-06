@@ -65,7 +65,7 @@ const AboutUs = () => {
 
                     <div className="flex flex-wrap justify-between">
                         <div className="md:w-auto w-full my-5">
-                            <Text as={TextAs.title} className='text-3xl font-medium'>
+                            <Text as={TextAs.subTitle} className='text-3xl font-medium'>
                                 Features
                             </Text>
                             <List type={ListType.bullet}>
@@ -81,7 +81,7 @@ const AboutUs = () => {
                         </div>
 
                         <div className="md:w-auto w-full my-5">
-                            <Text as={TextAs.title} className='text-3xl font-medium'>
+                            <Text as={TextAs.subTitle} className='text-3xl font-medium'>
                                 Philosophy
                             </Text>
                             <List type={ListType.bullet}>
@@ -94,7 +94,7 @@ const AboutUs = () => {
                         </div>
 
                         <div className="md:w-auto w-full my-5">
-                            <Text as={TextAs.title} className='text-3xl font-medium'>
+                            <Text as={TextAs.subTitle} className='text-3xl font-medium'>
                                 Requirements
                             </Text>
                             <List type={ListType.bullet}>
@@ -107,7 +107,7 @@ const AboutUs = () => {
                         </div>
                     </div>
                     <SectionSeperator />
-                    <Text as={TextAs.title} className='text-3xl font-medium'>
+                    <Text as={TextAs.subTitle} className='text-3xl font-medium'>
                         License
                     </Text>
                     <Text as={TextAs.p} className='text-lg'>

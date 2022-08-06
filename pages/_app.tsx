@@ -7,7 +7,6 @@ import { DefaultSeo } from "next-seo";
 import Footer from '../src/components/Footer';
 import Script from 'next/script';
 import * as gtag from '../google';
-import { ThemeProvider } from 'next-themes';
 import { useEffect } from 'react';
 import { CREATE_SEO_CONFIG, isDarkTheme } from '../src/utils/utils';
 
@@ -17,8 +16,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     document.body.classList.add(isDarkTheme() ? 'dark' : 'light');
-  }, []);  
-  let SEO_CONFIG = CREATE_SEO_CONFIG({});  
+  }, []);
+  let SEO_CONFIG = CREATE_SEO_CONFIG({});
 
   return (
     <>
@@ -58,9 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             />
           </> : null
       }
-      <ThemeProvider attribute="class">
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <Component {...pageProps} />
       <Footer />
     </>
   )

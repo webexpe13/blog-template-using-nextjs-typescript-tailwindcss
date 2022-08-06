@@ -9,7 +9,6 @@ const CenteredNavbar = ({
     openSearch,
     scrolled,
     theme = THEMES.LIGHT,
-    changeTheme,
     toggleSideMenu,
     openSidebar = false,
     navSetup }: any) => {

@@ -57,11 +57,11 @@ const ArticleDefaultLayout = () => {
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
-            <Text as={TextAs.title} textAlign={TextAlign.CENTER}>
+            <Text as={TextAs.subTitle} textAlign={TextAlign.CENTER}>
                 Section Title
             </Text>
             <Text textAlign={TextAlign.CENTER}>
-                <b>{'<Text as={TextAs.title} textAlign={TextAlign.CENTER}>'}</b> This will display a section title<br />
+                <b>{'<Text as={TextAs.subTitle} textAlign={TextAlign.CENTER}>'}</b> This will display a section title<br />
                 you can pass :
                 color : color="#3543EA" <br />
                 textAlign: = TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY <br />
@@ -84,7 +84,7 @@ const ArticleDefaultLayout = () => {
                 textAlign: textAlign={'{TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}'}
             </Text>
 
-            <Text as={TextAs.title} textAlign={TextAlign.CENTER} className="mt-10">
+            <Text as={TextAs.subTitle} textAlign={TextAlign.CENTER} className="mt-10">
                 Image Slider
             </Text>
             <Slider className="mt-2 mb-3" images={[

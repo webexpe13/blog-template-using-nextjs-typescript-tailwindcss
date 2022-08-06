@@ -47,6 +47,7 @@ export enum LogoType {
 export enum TextAs {
   p = "p",
   title = "title",
+  subTitle = "subTitle",
   quote = "quote"
 }
 

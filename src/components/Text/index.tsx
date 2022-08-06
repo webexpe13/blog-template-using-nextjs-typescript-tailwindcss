@@ -17,7 +17,7 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, as = Tex
             case TextAs.p:
                 ui = (
                     <p
-                        className={combineClasses(`font-regular mb-3`, className)}
+                        className={combineClasses(`font-light mb-3 text-md leading-relaxed`, className)}
                         style={{ color: color, textAlign: textAlign }}>
                         {children}
                     </p>
@@ -32,6 +32,15 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, as = Tex
                     </h1>
                 )
                 break;
+            case TextAs.subTitle:
+                ui = (
+                    <h2
+                        className={combineClasses(`font-semibold my-[10px]`, className)}
+                        style={{ color: color, textAlign: textAlign }}>
+                        {children}
+                    </h2>
+                )
+                break;
             case TextAs.quote:
                 ui = (
                     <blockquote
@@ -42,6 +51,13 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, as = Tex
                 )
                 break;
             default:
+                ui = (
+                    <p
+                        className={combineClasses(`font-regular mb-3`, className)}
+                        style={{ color: color, textAlign: textAlign }}>
+                        {children}
+                    </p>
+                )
                 break;
         }
         return ui;

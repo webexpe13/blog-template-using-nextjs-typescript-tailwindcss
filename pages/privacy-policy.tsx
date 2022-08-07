@@ -6,7 +6,7 @@ import { iSEO } from "../src/shared/interfaces";
 
 const TermsAndConditions = () => {
     const PAGE_SEO: iSEO = {
-        title: 'Terms and conditions',
+        title: 'Privacy Policy',
         description: `This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in website`,
         keywords: 'webexpx, contact us, webexpe13@gmail.com, next js blog template',
         author: 'Mayur Nalwala, Rupali Yadav'

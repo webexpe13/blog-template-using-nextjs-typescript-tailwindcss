@@ -6,11 +6,11 @@ import { combineClasses } from '../src/utils/utils'
 const ContactUs = () => {
     const dom = typeof window !== 'undefined' && window ? window : null
     console.log(dom?.document.body.className);
-    
+
     return (
         <HomeLayout>
-            <section className='container px-3 pb-20 pt-20'>
-                <Text as={TextAs.title} className="md:text-5xl !font-light">
+            <section className='container px-3 pb-20 md:pt-20 pt-[80px]'>
+                <Text as={TextAs.title} className="md:text-5xl text-3xl !font-light">
                     Contact Us
                 </Text>
 
@@ -33,10 +33,13 @@ const ContactUs = () => {
             </section>
 
 
-            <section className={combineClasses("dark:bg-slate-700 bg-slate-200", "mt-20 container px-3")}>
-                {/* <div className="container px-3"> */}
-                    heloo
-                {/* </div> */}
+            <section className={combineClasses("dark:bg-slate-800 bg-blue-100", "mt-10 container py-10 md:px-20 px-10")}>
+                <Text as={TextAs.title} className="md:text-5xl text-3xl !font-light">
+                    Work with us . . .
+                </Text>
+                <Text as={TextAs.p} className="!text-lg leading-relaxed mt-5 px-1">
+                    We are a group of developers and designers with more than 5 years of industry experience. I you have any requirements like Website Development, Website / App Design feel free to contact us on the given email.
+                </Text>
             </section>
         </HomeLayout>
     )

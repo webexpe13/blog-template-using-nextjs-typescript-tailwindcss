@@ -25,8 +25,8 @@ const Search = ({ closeSearch }: ISearch) => {
         <div className={combineClasses('bg-slate-100 text-black dark:bg-slate-900 dark:text-white', classes?.search_container)}>
             <div className="container mx-auto">
                 <div className="px-3">
-                    <div className={combineClasses('flex justify-between items-center')}>
-                        <h1 className={'text-[45px] font-bold pt-10'}>Search</h1>
+                    <div className={combineClasses('flex justify-between items-center md:pt-10 pt-5')}>
+                        <h1 className={'text-[45px] font-bold'}>Search</h1>
                         <button name="search-button" type="button" className={classes.search_close_icon} onClick={closeSearch}>
                             <XIcon className='text-slate-800 dark:text-white text-[20px]' />
                         </button>

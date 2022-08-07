@@ -12,7 +12,7 @@ const HomeLayout = ({ children, className, PAGE_SEO }: {children: any, className
         <>
             <DefaultSeo {...SEO_CONFIG} />
             <div
-                className={combineClasses("dark:bg-slate-900 dark:text-white bg-slate-100 text-black", 'pb-[20px] min-h-screen transition-all', className)}>
+                className={combineClasses("dark:bg-slate-900 dark:text-white bg-slate-100 text-black", 'pb-[20px] md:min-h-screen transition-all', className)}>
                 <Navbar />
                 <div className={combineClasses(className)}>
                     {children}

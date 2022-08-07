@@ -11,7 +11,7 @@ const Categories = () => {
 
     return (
         <HomeLayout>
-            <div className={"container mt-10"}>
+            <div className={"container mt-10 pt-5 md:pt-0"}>
                 {
                     category ?
                         <h1 className='px-2 mb-[30px] text-[45px] font-bold mt-8' style={{ textTransform: 'capitalize' }}>

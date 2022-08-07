@@ -6,8 +6,8 @@ import Text from "../src/components/Text";
 const TermsAndConditions = () => {
     return (
         <HomeLayout>
-            <div className='container px-3 pb-[20px] mt-10'>
-                <Text as={TextAs.title} className="md:text-3xl">
+            <div className='container px-3 pb-[20px] mt-10 pt-14 md:pt-0'>
+                <Text as={TextAs.title} className="text-3xl">
                     Terms and Conditions
                 </Text>
                 <Text as={TextAs.p} >

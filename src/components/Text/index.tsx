@@ -17,7 +17,7 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, as = Tex
             case TextAs.p:
                 ui = (
                     <p
-                        className={combineClasses(`font-light mb-3 text-md leading-relaxed`, className)}
+                        className={combineClasses(`font-regular mb-3 text-md leading-relaxed`, className)}
                         style={{ color: color, textAlign: textAlign }}>
                         {children}
                     </p>

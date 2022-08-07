@@ -7,18 +7,21 @@ import { DefaultSeo } from "next-seo";
 import Footer from '../src/components/Footer';
 import Script from 'next/script';
 import * as gtag from '../google';
-import { useEffect } from 'react';
-import { CREATE_SEO_CONFIG, isDarkTheme } from '../src/utils/utils';
+import { useEffect, useState } from 'react';
+import { CREATE_SEO_CONFIG } from '../src/utils/utils';
+import { ThemeProvider } from 'next-themes'
+
 
 function MyApp({ Component, pageProps }: AppProps) {
-
+  const [mounted, setMounted] = useState(false);
   const env = process.env.NODE_ENV;
 
   useEffect(() => {
-    document.body.classList.add(isDarkTheme() ? 'dark' : 'light');
+    setMounted(true);
   }, []);
   let SEO_CONFIG = CREATE_SEO_CONFIG({});
 
+  if(!mounted) return null
   return (
     <>
       <DefaultSeo {...SEO_CONFIG} />
@@ -57,8 +60,10 @@ function MyApp({ Component, pageProps }: AppProps) {
             />
           </> : null
       }
-      <Component {...pageProps} />
-      <Footer />
+      <ThemeProvider enableSystem={true} attribute="class">
+        <Component {...pageProps} />
+        <Footer />
+      </ThemeProvider>
     </>
   )
 

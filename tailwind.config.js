@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const tailwind = {
+  darkMode: ['class'],
+  // purge: ['./src/**/*.{js,ts,jsx,tsx}', "./pages/**/*.{js,ts,jsx,tsx}"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
@@ -20,8 +22,8 @@ const tailwind = {
     typography: (theme) => ({}),
     extend: {},
   },
+  variants: {},
   plugins: [require('@tailwindcss/typography')],
-  darkMode: ['class', '[data-mode="dark"]'],
 }
 
 module.exports = tailwind

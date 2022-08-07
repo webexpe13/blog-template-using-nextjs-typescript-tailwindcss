@@ -15,13 +15,11 @@
 }
 
 .navbar {
-    position: sticky;
-    top: 0;
-    transition: all 0.2s ease-in-out;
-    width: 100%;
     z-index: 10;
-    @apply bg-white;
-
+    @apply sticky top-0 w-full transition-all py-3;
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
     @include mobile {
         position: fixed;
         top: 0;
@@ -68,25 +66,6 @@
         input {
             height: 35px;
         }
-    }
-}
-
-.navbar.dark {
-    @apply bg-slate-900;
-
-    .search_icon_wrapper {
-        @apply text-white;
-    }
-
-    .mobileBurgerToggle {
-        span,
-        span::before {
-            @apply bg-white;
-        }
-    }
-
-    .sidebarCategoryDD__floating {
-        @apply bg-slate-800;
     }
 }
 
@@ -142,7 +121,7 @@
     width: 100%;
     height: 100vh;
     max-width: 300px;
-    @apply bg-white text-black;
+    @apply shadow-md;
     transition: all 0.5s ease-in-out;
     transform: translateX(-110%);
     z-index: 13;
@@ -193,17 +172,6 @@
         }
     }
 
-    &.dark {
-        @apply bg-slate-900 text-white;
-
-        .sideNavCloseIcon {
-            span,
-            span::after {
-                @apply bg-white;
-            }
-        }
-    }
-
     @include mobile {
         max-width: 380px;
     }
@@ -216,7 +184,7 @@
         overflow: auto;
         border-radius: 4px;
 
-        a{
+        a {
             @apply text-[14px] block p-[10px] border-b border-slate-300;
         }
 

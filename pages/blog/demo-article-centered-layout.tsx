@@ -38,8 +38,8 @@ const ArticleDefaultLayout = () => {
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
-            <Text as={TextAs.p} textAlign={TextAlign.CENTER}>
-                <b>{'<Text as={TextAs.p} textAlign={TextAlign.CENTER}>'}</b> <br /><br />
+            <Text p textAlign={TextAlign.CENTER}>
+                <b>{'<Text p textAlign={TextAlign.CENTER}>'}</b> <br /><br />
                 This will display a paragraph<br />
                 you can pass :
                 color : color="#3543EA" <br />
@@ -57,11 +57,11 @@ const ArticleDefaultLayout = () => {
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
-            <Text as={TextAs.subTitle} textAlign={TextAlign.CENTER}>
+            <Text subtitle textAlign={TextAlign.CENTER}>
                 Section Title
             </Text>
             <Text textAlign={TextAlign.CENTER}>
-                <b>{'<Text as={TextAs.subTitle} textAlign={TextAlign.CENTER}>'}</b> This will display a section title<br />
+                <b>{'<Text subtitle textAlign={TextAlign.CENTER}>'}</b> This will display a section title<br />
                 you can pass :
                 color : color="#3543EA" <br />
                 textAlign: = TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY <br />
@@ -74,17 +74,17 @@ const ArticleDefaultLayout = () => {
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
-            <Text as={TextAs.quote} textAlign={TextAlign.CENTER} className="text-3xl">
+            <Text quote textAlign={TextAlign.CENTER} className="text-3xl">
                 Quoted text
             </Text>
             <Text textAlign={TextAlign.CENTER}>
-                <b>{'<Text as={TextAs.quote} textAlign={TextAlign.CENTER}>'}</b> will display a Quoted text <br />
+                <b>{'<Text quote textAlign={TextAlign.CENTER}>'}</b> will display a Quoted text <br />
                 you can pass
                 color : color="#3543EA"
                 textAlign: textAlign={'{TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}'}
             </Text>
 
-            <Text as={TextAs.subTitle} textAlign={TextAlign.CENTER} className="mt-10">
+            <Text subtitle textAlign={TextAlign.CENTER} className="mt-10">
                 Image Slider
             </Text>
             <Slider className="mt-2 mb-3" images={[

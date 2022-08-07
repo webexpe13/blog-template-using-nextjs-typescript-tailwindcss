@@ -51,6 +51,25 @@ export const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
+        path: '/pages/blog/layouts/home-layout.tsx',
+        preview: {
+            author: RUPALI,
+            date: "August 08 2022",
+            articleTitle: "Home Layout Example",
+            tags: "demo, layout, home layout",
+            thumbnail: "/public/images/centered-layout-thumb.png",
+            shortIntro: "This a demo artile with centered layout and with demo of all the components.",
+        },
+        seo: {
+            title: "Home Layout Example",
+            description:
+                "demo, layout, home layout, This a demo artile with centered layout and with demo of all the components.",
+            keywords: "next js, tailwind css, typescript, blog template",
+            ogImage: "/public/images/centered-layout-thumb.png",
+            author: RUPALI.name
+        }
+    },
+    {
         path: '/pages/blog/demo-article-default-layout',
         preview: {
             author: MAYUR,

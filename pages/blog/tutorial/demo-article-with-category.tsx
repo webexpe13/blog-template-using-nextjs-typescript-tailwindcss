@@ -34,12 +34,12 @@ const ArticleDefaultLayout = () => {
 
            {/* 
                 Text will display a paragraph, or title or quote as per the value passed
-                change text type by pass "as": as:{TextAs.p | TextAs.title | TextAs.quote}
+                change text type by pass "as": as:{TextAs.p | TextAs.title | TextAs.quote
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
-            <Text as={TextAs.p}>
-                <b>{'<Text as={TextAs.p}>'}</b>               This will display a paragraph<br />
+            <Text p>
+                <b>{'<Text p>'}</b>               This will display a paragraph<br />
                 you can pass :
                 type: as = {` TextAs.p | TextAs.title | TextAs.quote`} <br />
                 color : color="#3543EA" <br />
@@ -52,16 +52,16 @@ const ArticleDefaultLayout = () => {
             <SectionSeperator type={SectionSeperatorTypes.LINE} />
 
            {/* 
-                <Text as={TextAs.subTitle}> will display a section title
+                <Text subtitle> will display a section title
                 you can pass 
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
-            <Text as={TextAs.subTitle}>
+            <Text subtitle>
                 Section Title
             </Text>
             <Text>
-                <b>{'<Text as={TextAs.subTitle}>'}</b> This will display a section title<br />
+                <b>{'<Text subtitle>'}</b> This will display a section title<br />
                 you can pass :
                 color : color="#3543EA" <br />
                 textAlign: = TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY <br />
@@ -69,16 +69,16 @@ const ArticleDefaultLayout = () => {
             </Text>
 
             {/* 
-                <Text as={TextAs.quote}> will display a Quoted text
+                <Text quote> will display a Quoted text
                 you can pass 
                 color : color="#3543EA"
                 textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
             */}
-            <Text as={TextAs.quote}>
+            <Text quote>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </Text>
             <Text>
-                <b>{'<Text as={TextAs.quote}>'}</b> will display a Quoted text <br />
+                <b>{'<Text quote>'}</b> will display a Quoted text <br />
                 you can pass 
                 color : color="#3543EA"
                 textAlign: textAlign={'{TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}'}
@@ -86,7 +86,7 @@ const ArticleDefaultLayout = () => {
 
             <SectionSeperator type={SectionSeperatorTypes.DOTS} />
 
-            <Text as={TextAs.subTitle} className="mt-10">
+            <Text subtitle className="mt-10">
                 Image Slider
             </Text>
             <Slider className="mt-2 mb-3" images={[

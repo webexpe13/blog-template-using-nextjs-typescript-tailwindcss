@@ -15,7 +15,7 @@ const Icons = () => {
         <HomeLayout PAGE_SEO={PAGE_SEO}>
             <div className="container pb-5 md:mt-[50px] pt-20 md:pt-0">
                 <div className="px-3">
-                    <Text as={TextAs.title} className="text-3xl">
+                    <Text title className="text-3xl">
                         Icons
                     </Text>
                     <p className="mb-10 mt-5">

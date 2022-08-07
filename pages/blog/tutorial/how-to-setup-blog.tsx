@@ -12,11 +12,11 @@ const BlogSetup = () => {
     return (
         <HomeLayout>
             <div className='container px-3 pb-[20px] md:mt-[50px] pt-20 md:pt-0'>
-                <Text as={TextAs.title} className="text-3xl">
+                <Text title className="text-3xl">
                     Blog Setup
                 </Text>
                 <hr className="mt-5" />
-                <Text as={TextAs.subTitle} className="mt-10">
+                <Text subtitle className="mt-10">
                     1.  Installing Node, VS Code and downloading the project on your computer.
                 </Text>
                 <List type={ListType.bullet} className="mt-5">
@@ -58,23 +58,23 @@ const BlogSetup = () => {
                     </li>
                 </List>
                 <SectionSeperator type={SectionSeperatorTypes.DOTS} />
-                <Text as={TextAs.subTitle} className="mt-10">
+                <Text subtitle className="mt-10">
                     2.  Setting up authors.
                 </Text>
-                <Text as={TextAs.p} >
+                <Text p >
                     Before we start writing articles we need to setup authors and navbar so that it can be used throughtout the application.
                 </Text>
-                <Text as={TextAs.p} >
+                <Text p >
                     Goto <b>_BLOG_SETUP.tsx</b> in <b>BLOG_CONSTANTS</b> folder. Here you will see some example authors you can refer. <br />
                     The <b>export const</b> is used to make the item/variable available throughtout the project. <br />
                     You can add as many authors you want just make sure you keep the format as shown.
                 </Text>
                 <Image className="my-5" src="/images/author-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                 <SectionSeperator />
-                <Text as={TextAs.subTitle} className="mt-10">
+                <Text subtitle className="mt-10">
                     3.  Setting up Main Navbar and Side Nav.
                 </Text>
-                <Text as={TextAs.p} >
+                <Text p >
                     Goto <b>_BLOG_SETUP.tsx</b> in <b>BLOG_CONSTANTS</b> folder. Here you will see some example navbar you can refer. <br />
                 </Text>
                 <List type={ListType.bullet} className="mt-5">
@@ -120,7 +120,7 @@ const BlogSetup = () => {
                     </li>
                 </List>
                 <SectionSeperator />
-                <Text as={TextAs.subTitle} className="mt-10">
+                <Text subtitle className="mt-10">
                     4.  Writing First Article.
                 </Text>
                 <i>
@@ -199,7 +199,7 @@ const BlogSetup = () => {
                     </li>
                 </List>
                 <SectionSeperator />
-                <Text as={TextAs.p} >
+                <Text p >
                     And thats it, you are ready with the basic setup required to kick start your blog.
                 </Text>
             </div>

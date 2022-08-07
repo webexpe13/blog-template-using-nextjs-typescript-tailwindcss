@@ -13,11 +13,11 @@ const Home = () => {
     <HomeLayout className="md:pt-0">
       <section className='w-full md:pt-[100px] md:pb-[70px] pt-[130px] pb-20 mb-10 dark:bg-slate-800 bg-slate-200'>
         <div className="container text-center px-3">
-          <Text as={TextAs.title} className='text-3xl'>
+          <Text title className='text-3xl'>
             Blog template using Next Js, Typescript and Taildwind CSS
           </Text>
 
-          <Text as={TextAs.p} className="mt-3 text-xl">
+          <Text p className="mt-3 text-xl">
             This is a simple and static component based blog template.
           </Text>
 

@@ -34,14 +34,14 @@ const SimpleNavbar = ({
               logo ?
                 logo.type === LogoType.IMAGE ?
                   <img src={theme === THEMES.DARK ? logo.logoLight : logo.logo} alt="WebExpe" className="cursor-pointer" width="100px" /> :
-                  <a className={combineClasses('dark:text-white text-black', 'text-[22px] font-semibold')}>{logo.logo}</a>
-                : <a className={combineClasses('dark:text-white text-black', 'text-[22px] font-semibold')}>Logo</a>
+                  <a className='dark:text-white text-black text-[22px] font-semibold'>{logo.logo}</a>
+                : <a className='dark:text-white text-black text-[22px] font-semibold'>Logo</a>
             }
           </Link>
         </div>
 
         <div className="flex items-center">
-          <div className={combineClasses('text-[14px] font-normal items-center md:flex hidden')}>
+          <div className='text-[14px] font-normal items-center md:flex hidden'>
             {
               navLinks.map((each: any, i: any) => (
                 each.type !== 'dropdown' ? !each.newTab ?

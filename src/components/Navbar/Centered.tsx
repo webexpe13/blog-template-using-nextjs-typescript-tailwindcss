@@ -20,7 +20,7 @@ const CenteredNavbar = ({
 
     return (
         <div className={'container'}>
-            <div className={combineClasses("flex items-center justify-between px-3")}>
+            <div className="flex items-center justify-between px-3">
                 <div className="flex" style={{ width: "120px" }}>
                     <div
                         className={combineClasses(classes.mobileBurgerToggle, "mr-3", openSidebar ? classes.mobileBurgerToggle__close : ' ')}
@@ -39,8 +39,8 @@ const CenteredNavbar = ({
                         logo ?
                             logo.type === LogoType.IMAGE ?
                                 <img src={theme === THEMES.DARK ? logo.logoLight : logo.logo} alt="WebExpe" className="cursor-pointer" width="100px" /> :
-                                <a className={combineClasses('dark:text-white text-black', 'text-[22px] font-semibold')}>{logo.logo}</a>
-                            : <a className={combineClasses('dark:text-white text-black', 'text-[22px] font-semibold')}>Logo</a>
+                                <a className='dark:text-white text-black text-[22px] font-semibold'>{logo.logo}</a>
+                            : <a className='dark:text-white text-black text-[22px] font-semibold'>Logo</a>
                     }
                 </Link>
 
@@ -58,7 +58,7 @@ const CenteredNavbar = ({
                     }
                 </div>
             </div>
-            <div className={combineClasses('dark:font-white font-black flex justify-center items-center font-regular text-[14px] d-sm-none mt-3')}>
+            <div className='dark:font-white font-black flex justify-center items-center font-regular text-[14px] d-sm-none mt-3'>
                 {
                     navLinks.map((each: any, i: any) => (
                         each.type !== 'dropdown' ? !each.newTab ?

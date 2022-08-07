@@ -3,7 +3,6 @@ import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
 import { ARTICLES_LIST } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
 import HomeLayout from '../src/layouts/HomeLayout';
 import SectionSeperator from '../src/components/SectionSeperator';
-import { combineClasses } from '../src/utils/utils';
 import { TextAs } from '../src/shared/enums';
 import Text from '../src/components/Text';
 import Link from 'next/link';
@@ -12,7 +11,7 @@ import Link from 'next/link';
 const Home = () => {
   return (
     <HomeLayout className="md:pt-0">
-      <section className={combineClasses('w-full md:pt-[100px] md:pb-[70px] pt-[130px] pb-20 mb-10 dark:bg-slate-800 bg-slate-200')}>
+      <section className='w-full md:pt-[100px] md:pb-[70px] pt-[130px] pb-20 mb-10 dark:bg-slate-800 bg-slate-200'>
         <div className="container text-center px-3">
           <Text as={TextAs.title} className='text-3xl'>
             Blog template using Next Js, Typescript and Taildwind CSS

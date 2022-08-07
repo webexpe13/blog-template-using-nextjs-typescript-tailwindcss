@@ -1,7 +1,6 @@
 import { TextAs } from "../src/shared/enums";
 import HomeLayout from "../src/layouts/HomeLayout";
 import Text from "../src/components/Text";
-import { combineClasses } from '../src/utils/utils'
 import { iSEO } from "../src/shared/interfaces";
 
 const ContactUs = () => {
@@ -37,12 +36,12 @@ const ContactUs = () => {
             </section>
 
 
-            <section className={combineClasses("dark:bg-slate-800 bg-blue-100", "mt-10 container py-10 md:px-20 px-10")}>
+            <section className={"dark:bg-slate-800 bg-blue-100 mt-10 container py-10 md:px-20 px-10"}>
                 <Text as={TextAs.title} className="md:text-5xl text-3xl !font-light">
                     Work with us . . .
                 </Text>
                 <Text as={TextAs.p} className="!text-lg leading-relaxed mt-5 px-1">
-                    We are a group of developers and designers with more than 5 years of industry experience. I you have any requirements like Website Development, Website / App Design feel free to contact us on the given email.
+                    We are a group of developers and designers with more than 5 years of industry experience. If you have any requirements like Website Development, Website / App Design feel free to contact us on the given email.
                 </Text>
             </section>
         </HomeLayout>

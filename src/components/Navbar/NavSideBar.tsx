@@ -40,7 +40,7 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
             ) : null}
 
             <aside className={combineClasses(classes.nav_sidebar_wrapper, openSidebar && classes.open, 'dark:bg-slate-900 dark:text-white bg-white text-black')}>
-                <div className={combineClasses('flex items-center justify-between pb-3')} onClick={closeNavSidebar}>
+                <div className='flex items-center justify-between pb-3' onClick={closeNavSidebar}>
                     <p className='font-light'>menu</p>
                     <div className={classes.sideNavCloseIcon}><XIcon className='text-slate-800 dark:text-white' /></div>
                 </div>

@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   let SEO_CONFIG = CREATE_SEO_CONFIG({});
 
-  if(!mounted) return null
+  if(!mounted && env === 'development') return null
   return (
     <>
       <DefaultSeo {...SEO_CONFIG} />

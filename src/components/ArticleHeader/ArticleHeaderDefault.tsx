@@ -9,7 +9,7 @@ interface IProps {
 const ArticleHeaderDefault = ({ headerData }: IProps) => {
     return (
         <div className="mb-[30px]">
-            <div className={combineClasses("mb-[10px] flex items-center mt-[15px]")}>
+            <div className="mb-[10px] flex items-center mt-[15px]">
                 <div className={classes.article_header_author_img}>
                 {headerData.author.profilePic ? <img src={headerData.author.profilePic} alt={headerData.author.name} /> : <img src={generateRandomAvtar()} alt={headerData.author.name} /> }
                 </div>
@@ -32,7 +32,7 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
                     <p className="text-xs text-gray-400 my-0 mt-1">{headerData.date}</p>
                 </div>
             </div>
-            <h1 className={combineClasses("text-2xl md:text-4xl font-semibold mt-[20px] mb-[5px]")}>
+            <h1 className="text-2xl md:text-4xl font-semibold mt-[20px] mb-[5px]">
                 {headerData.articleTitle}
             </h1>
             <div>

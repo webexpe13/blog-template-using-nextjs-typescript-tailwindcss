@@ -2,20 +2,18 @@ import { NavbarType, THEMES } from "../../shared/enums";
 import SimpleNavbar from './SimpleNavbar';
 import CenteredNavbar from './Centered';
 import { useEffect, useState } from "react";
-import { addBodyNoScroll, changeTheme, getTheme, isMobileDevice, removeBodyNoScroll } from "../../utils/utils";
+import { addBodyNoScroll, combineClasses, isMobileDevice, removeBodyNoScroll } from "../../utils/utils";
 import NavSidebar from './NavSideBar';
 import Search from "../Search";
 import { PRIMARY_NAV } from "../../../BLOG_CONSTANTS/_BLOG_SETUP"
+import { useTheme } from "next-themes";
+import classes from "./Navbar.module.scss";
 
 const Navbar = () => {
-    const [theme, setTheme] = useState(THEMES.LIGHT);
+    const { theme, setTheme } = useTheme();
     const [isMobile, setIsMobile] = useState(false);
     const [openSidebar, setOpenSidebar] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
-
-    useEffect(() => {
-        getTheme(setTheme);
-    }, [theme]);
 
     useEffect(() => {
         showSearch
@@ -28,11 +26,15 @@ const Navbar = () => {
         };
     }, [showSearch]);
 
+    const changeTheme = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark');
+    }
+
     const [scrolled, setScrolled] = useState(false);
     let lastScrollTop = 0;
     useEffect(() => {
         setIsMobile(isMobileDevice());
-        
+
         window.onscroll = () => {
             const st = window.pageYOffset || document.documentElement.scrollTop;
             const scrollYDistance = window.scrollY;
@@ -59,55 +61,57 @@ const Navbar = () => {
 
     return (
         <>
-            {
-                isMobile ? <SimpleNavbar
-                    openSearch={openSearch}
-                    scrolled={scrolled}
-                    theme={theme}
-                    changeTheme={changeTheme}
-                    toggleSideMenu={toggleSideMenu}
-                    openSidebar={openSidebar}
-                    navSetup={PRIMARY_NAV}
-                /> :
-                    (() => {
-                        switch (PRIMARY_NAV.type) {
-                            case NavbarType.DEFAULT:
-                                return (
-                                    <SimpleNavbar
-                                        openSearch={openSearch}
-                                        scrolled={scrolled}
-                                        theme={theme}
-                                        changeTheme={changeTheme}
-                                        toggleSideMenu={toggleSideMenu}
-                                        openSidebar={openSidebar}
-                                        navSetup={PRIMARY_NAV}
-                                    />);
-                            case NavbarType.CENTERED:
-                                return (
-                                    <CenteredNavbar
-                                        openSearch={openSearch}
-                                        scrolled={scrolled}
-                                        theme={theme}
-                                        changeTheme={changeTheme}
-                                        toggleSideMenu={toggleSideMenu}
-                                        openSidebar={openSidebar}
-                                        navSetup={PRIMARY_NAV}
-                                    />);
-                            default:
-                                return (
-                                    <SimpleNavbar
-                                        openSearch={openSearch}
-                                        scrolled={scrolled}
-                                        theme={theme}
-                                        changeTheme={changeTheme}
-                                        toggleSideMenu={toggleSideMenu}
-                                        openSidebar={openSidebar}
-                                        navSetup={PRIMARY_NAV}
-                                    />
-                                );
-                        }
-                    })()
-            }
+            <nav className={combineClasses(classes.navbar, scrolled ? classes.hideNav : " ", "bg-white  dark:bg-slate-900 dark:text-white text-black")}>
+                {
+                    isMobile ? <SimpleNavbar
+                        openSearch={openSearch}
+                        scrolled={scrolled}
+                        theme={theme}
+                        changeTheme={changeTheme}
+                        toggleSideMenu={toggleSideMenu}
+                        openSidebar={openSidebar}
+                        navSetup={PRIMARY_NAV}
+                    /> :
+                        (() => {
+                            switch (PRIMARY_NAV.type) {
+                                case NavbarType.DEFAULT:
+                                    return (
+                                        <SimpleNavbar
+                                            openSearch={openSearch}
+                                            scrolled={scrolled}
+                                            theme={theme}
+                                            changeTheme={changeTheme}
+                                            toggleSideMenu={toggleSideMenu}
+                                            openSidebar={openSidebar}
+                                            navSetup={PRIMARY_NAV}
+                                        />);
+                                case NavbarType.CENTERED:
+                                    return (
+                                        <CenteredNavbar
+                                            openSearch={openSearch}
+                                            scrolled={scrolled}
+                                            theme={theme}
+                                            changeTheme={changeTheme}
+                                            toggleSideMenu={toggleSideMenu}
+                                            openSidebar={openSidebar}
+                                            navSetup={PRIMARY_NAV}
+                                        />);
+                                default:
+                                    return (
+                                        <SimpleNavbar
+                                            openSearch={openSearch}
+                                            scrolled={scrolled}
+                                            theme={theme}
+                                            changeTheme={changeTheme}
+                                            toggleSideMenu={toggleSideMenu}
+                                            openSidebar={openSidebar}
+                                            navSetup={PRIMARY_NAV}
+                                        />
+                                    );
+                            }
+                        })()
+                }
+            </ nav>
 
             <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} navSetup={PRIMARY_NAV} changeTheme={changeTheme} />
             {showSearch && <Search closeSearch={() => setShowSearch(false)} />}

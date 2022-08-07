@@ -11,9 +11,11 @@
     "out": "next build && next export"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "css-loader": "^6.7.1",
     "next": "12.1.0",
     "next-seo": "^5.1.0",
+    "next-themes": "^0.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.52.1",

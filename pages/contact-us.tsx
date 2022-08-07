@@ -1,15 +1,9 @@
 import { TextAs } from "../src/shared/enums";
 import HomeLayout from "../src/layouts/HomeLayout";
 import Text from "../src/components/Text";
-import { useEffect, useState } from "react";
-import { combineClasses, isDarkTheme } from '../src/utils/utils'
+import { combineClasses } from '../src/utils/utils'
 
 const ContactUs = () => {
-    const [isDark, setIsDark] = useState(false);
-    useEffect(() => {
-        setIsDark(isDarkTheme());
-    }, []);
-
     const dom = typeof window !== 'undefined' && window ? window : null
     console.log(dom?.document.body.className);
     
@@ -39,7 +33,7 @@ const ContactUs = () => {
             </section>
 
 
-            <section className={combineClasses(isDark ? "bg-slate-700" : "bg-slate-200", "mt-20 container px-3")}>
+            <section className={combineClasses("dark:bg-slate-700 bg-slate-200", "mt-20 container px-3")}>
                 {/* <div className="container px-3"> */}
                     heloo
                 {/* </div> */}

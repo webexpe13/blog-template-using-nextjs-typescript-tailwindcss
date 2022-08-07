@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { generateRandomAvtar } from "../../constants/appConstants";
 import { IArticleHeaderData } from "../../shared/interfaces";
-import { combineClasses, isDarkTheme, transformImagePaths, transformPath } from "../../utils/utils";
+import { combineClasses, transformImagePaths, transformPath } from "../../utils/utils";
 import classes from "./ArticleCard.module.scss";
 
 interface IProp {
@@ -11,14 +10,9 @@ interface IProp {
 }
 
 const ArticleCard = ({ article, path }: IProp) => {
-  const [isDark, setTheme] = useState(false);
-  useEffect(() => {
-    setTheme(isDarkTheme());
-  }, [isDark]);
-
   return (
     <div className={'w-full sm:w-1/3 px-[15px] mb-[30px] '}>
-      <div className={combineClasses(classes.article_card, isDark ? classes.dark : null, 'border-b-[5px] border-blue-500')}>
+      <div className={combineClasses(classes.article_card, 'border-b-[5px] border-blue-500 dark:bg-slate-800 dark:text-white dark:drop-shadow-lg')}>
         <div className={'rounded-t-[4px] overflow-hidden h-[200px]'}>
           <img src={transformImagePaths(article.thumbnail)} alt="" width="100%" />
         </div>

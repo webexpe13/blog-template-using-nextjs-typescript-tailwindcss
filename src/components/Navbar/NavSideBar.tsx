@@ -4,10 +4,11 @@ import { THEME_ICONS } from '../../constants/appConstants';
 import { THEMES } from '../../shared/enums';
 import { addBodyNoScroll, combineClasses, getCategories, removeBodyNoScroll } from '../../utils/utils';
 import classes from './Navbar.module.scss';
+import { XIcon } from '@heroicons/react/outline'
 
 interface IProps {
     openSidebar: boolean;
-    theme: THEMES;
+    theme: any;
     closeNavSidebar: () => void;
     navSetup: any;
     changeTheme: () => void;
@@ -38,10 +39,10 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 <div className="backdrop" onClick={closeNavSidebar}></div>
             ) : null}
 
-            <aside className={combineClasses(classes.nav_sidebar_wrapper, classes.shadow, openSidebar && classes.open, theme === THEMES.DARK && classes.dark)}>
+            <aside className={combineClasses(classes.nav_sidebar_wrapper, openSidebar && classes.open, 'dark:bg-slate-900 dark:text-white bg-white text-black')}>
                 <div className={combineClasses('flex items-center justify-between pb-3')} onClick={closeNavSidebar}>
                     <p className='font-light'>menu</p>
-                    <div className={classes.sideNavCloseIcon}><span></span></div>
+                    <div className={classes.sideNavCloseIcon}><XIcon className='text-slate-800 dark:text-white' /></div>
                 </div>
                 <hr />
                 <div className='my-15'>

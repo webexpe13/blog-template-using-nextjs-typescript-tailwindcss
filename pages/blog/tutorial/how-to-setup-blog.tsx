@@ -1,5 +1,5 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, ListType, TextAs } from "../../../src/shared/enums";
+import { ImageSize, ListType, SectionSeperatorTypes, TextAs } from "../../../src/shared/enums";
 import Image from "../../../src/components/ArticleImage";
 import SectionSeperator from "../../../src/components/SectionSeperator";
 import HomeLayout from "../../../src/layouts/HomeLayout";
@@ -11,7 +11,7 @@ import List from "../../../src/components/List";
 const BlogSetup = () => {
     return (
         <HomeLayout>
-            <div className='container px-3 pb-[20px] md:mt-[50px] pt-20'>
+            <div className='container px-3 pb-[20px] md:mt-[50px] pt-20 md:pt-0'>
                 <Text as={TextAs.title} className="text-3xl">
                     Blog Setup
                 </Text>
@@ -57,7 +57,7 @@ const BlogSetup = () => {
                         If everything goes well you will see a demo blog with few demo articles which will walk you through simple tutorials on how to use layouts and different components to write articles.
                     </li>
                 </List>
-                <SectionSeperator />
+                <SectionSeperator type={SectionSeperatorTypes.DOTS} />
                 <Text as={TextAs.subTitle} className="mt-10">
                     2.  Setting up authors.
                 </Text>

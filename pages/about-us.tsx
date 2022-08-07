@@ -9,7 +9,7 @@ import { CURRENT_YEAR } from "../src/constants/appConstants";
 const AboutUs = () => {
     return (
         <HomeLayout>
-            <section className='container px-3 md:pb-20 md:mt-10 pt-20'>
+            <section className='container px-3 md:pb-20 md:mt-10 pt-20 md:pt-0'>
                 <div className="">
                     <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="block rounded-lg md:w-[15%] w-[50%] overflow-hidden">
                         <Image src="/public/images/YT Logo.png" size={ImageSize.DEFAULT} alt="webexpe.com" />

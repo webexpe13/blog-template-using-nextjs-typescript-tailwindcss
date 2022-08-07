@@ -48,23 +48,23 @@
 
 // dark theme
 
-.article_card.dark,
-.featured_article.dark {
-    @apply bg-slate-800 text-white drop-shadow-lg;
+// .article_card.dark,
+// .featured_article.dark {
+//     @apply bg-slate-800 text-white drop-shadow-lg;
 
-    &:active,
-    &:focus,
-    &:visited {
-        @apply text-white;
-    }
+//     &:active,
+//     &:focus,
+//     &:visited {
+//         @apply text-white;
+//     }
 
-    .author_img {
-        -webkit-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
-        -moz-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
-        box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
-        overflow: hidden;
-        img{
-            width: 100%;
-        }
-    }
-}
+//     .author_img {
+//         -webkit-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
+//         -moz-box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
+//         box-shadow: 0px 5px 20px 0px rgba(#7389ff, 0.20);
+//         overflow: hidden;
+//         img{
+//             width: 100%;
+//         }
+//     }
+// }

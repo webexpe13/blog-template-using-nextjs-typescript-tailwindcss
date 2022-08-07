@@ -7,9 +7,9 @@ import { TextAs } from "../src/shared/enums";
 const Icons = () => {
     return (
         <HomeLayout>
-            <div className="container mt-10">
-                <div className="px-15">
-                    <Text as={TextAs.title} className="md:text-3xl">
+            <div className="container pb-5 md:mt-[50px] pt-20 md:pt-0">
+                <div className="px-3">
+                    <Text as={TextAs.title} className="text-3xl">
                         Icons
                     </Text>
                     <p className="mb-10 mt-5">

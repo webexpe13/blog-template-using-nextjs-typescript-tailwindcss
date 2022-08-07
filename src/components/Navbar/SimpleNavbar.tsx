@@ -1,9 +1,11 @@
 import classes from "./Navbar.module.scss";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { THEME_ICONS } from "../../constants/appConstants";
 import { combineClasses, getCategories } from "../../utils/utils";
 import { LogoType, THEMES } from "../../shared/enums";
+import { MenuIcon } from '@heroicons/react/outline';
+
 
 const SimpleNavbar = ({
   openSearch,
@@ -20,21 +22,20 @@ const SimpleNavbar = ({
   const [openDD, setOpenDD] = useState(false)
 
   return (
-    <nav className={combineClasses(classes.navbar, classes.shadow, scrolled ? classes.scrolled : " ", theme === THEMES.DARK ? classes.dark : null, "py-3")}>
       <div className={combineClasses(classes.navbar__container, 'container flex items-center justify-between', "px-2")}>
         <div className="flex items-center">
           <div
             className={combineClasses(classes.mobileBurgerToggle, "mr-5", openSidebar ? classes.mobileBurgerToggle__close : ' ')}
             onClick={() => toggleSideMenu()}>
-            <span></span>
+            <MenuIcon className="dark:text-white text-black" />
           </div>
           <Link href="/" passHref>
             {
               logo ?
                 logo.type === LogoType.IMAGE ?
-                  <img src={theme === THEMES.DARK ? logo.logoLight : logo.logo} alt="WebExpe" width="100px" /> :
-                  <a className={combineClasses(theme === THEMES.DARK ? 'text-white' : 'text-black', 'text-[22px] font-semibold')}>{logo.logo}</a>
-                : <a className={combineClasses(theme === THEMES.DARK ? 'text-white' : 'text-black', 'text-[22px] font-semibold')}>Logo</a>
+                  <img src={theme === THEMES.DARK ? logo.logoLight : logo.logo} alt="WebExpe" className="cursor-pointer" width="100px" /> :
+                  <a className={combineClasses('dark:text-white text-black', 'text-[22px] font-semibold')}>{logo.logo}</a>
+                : <a className={combineClasses('dark:text-white text-black', 'text-[22px] font-semibold')}>Logo</a>
             }
           </Link>
         </div>
@@ -59,7 +60,7 @@ const SimpleNavbar = ({
                     </div>
                     {
                       openDD &&
-                      <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white')}>
+                      <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white dark:bg-slate-800')}>
                         <Link href={'/blog'} passHref>
                           <a className=''>All Articles</a>
                         </Link>
@@ -88,19 +89,18 @@ const SimpleNavbar = ({
           </div>
 
 
-          <div className={combineClasses(classes.search_icon_wrapper, 'ml-5')} onClick={() => openSearch()}>
+          <div className={combineClasses(classes.search_icon_wrapper, 'ml-5 dark:text-white')} onClick={() => openSearch()}>
             <button name="search-button">
               <img src={(THEME_ICONS as any)[theme].search} width="100%" alt="" />
             </button>
           </div>
 
 
-          <button name="theme-switch" className={combineClasses(classes.theme_switch, "pl-3")} onClick={() => changeTheme()}>
+          <button name="theme-switch" className={combineClasses(classes.theme_switch, "pl-3")} onClick={changeTheme}>
             <img src={(THEME_ICONS as any)[theme].themeToggle} width="100%" alt="" />
           </button>
         </div>
       </div>
-    </nav>
   );
 };
 

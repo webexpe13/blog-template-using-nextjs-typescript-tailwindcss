@@ -10,12 +10,12 @@ import Text from "../../../src/components/Text";
 const HowToDeployBlog = () => {
     return (
         <HomeLayout>
-            <div className='container px-3 pb-5 mt-[50px]'>
-                <Text as={TextAs.title} className="md:text-3xl">
+            <div className='container px-3 pb-5 md:mt-[50px] pt-20 md:pt-0'>
+                <Text as={TextAs.title} className="text-3xl">
                     How to Export and deploy blog
                 </Text>
                 <hr />
-                <Text as={TextAs.title} className="mt-10">
+                <Text as={TextAs.subTitle} className="mt-10">
                     1. Export Project.
                 </Text>
                 <List type={ListType.bullet} className="mt-5">
@@ -37,7 +37,7 @@ const HowToDeployBlog = () => {
                     </li>
                 </List>
                 <SectionSeperator />
-                <Text as={TextAs.title} className="mt-10">
+                <Text as={TextAs.subTitle} className="mt-10">
                     2. Basic firebase deployment tutorial.
                 </Text>
                 <List type={ListType.bullet} className="mt-5">

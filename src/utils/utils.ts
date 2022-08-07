@@ -61,19 +61,6 @@ export const getTheme = (setThemeState?: any)  => {
 };
 
 /**
- * Returs True if dark theme is set
- * @returns boolean
- */
-export const isDarkTheme = (): boolean => {
-  const lsTheme = localStorage.getItem("theme");
-  if (lsTheme === "dark") {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-/**
  * Returns Device Type tablet , mobile, desktop
  * @returns string
  */
@@ -120,14 +107,14 @@ export const isMobileDevice = (): boolean => {
  * Add no scroll class to body when modal isopen
  */
 export const addBodyNoScroll = (): void => {
-  document.body.className += "no-scroll";
+  document.body.classList.add("no-scroll");
 };
 
 /**
  * Removes no scroll class to body when modal isopen
  */
 export const removeBodyNoScroll = (): void => {
-  document.body.className = document.body.className.replace("no-scroll", "");
+  document.body.classList.remove("no-scroll")
 };
 
 /**

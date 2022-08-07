@@ -1,18 +1,11 @@
 import classes from './BlogLayout.module.scss';
 import Navbar from '../../components/Navbar';
-import { combineClasses, getArticleDetails, isDarkTheme, transformImagePaths, transformPath } from '../../utils/utils';
-import { useEffect, useState } from 'react';
+import { combineClasses, getArticleDetails, transformImagePaths, transformPath } from '../../utils/utils';
 import { ARTICLES_LIST } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import Link from 'next/link';
 import { generateRandomAvtar } from '../../constants/appConstants';
 
 const WithSidebar = ({ children }: any) => {
-    const [isDark, setTheme] = useState(false);
-
-    useEffect(() => {
-        setTheme(isDarkTheme());
-    }, [isDark]);
-
     const ARTICLE_DETAILS = getArticleDetails();
     const author = ARTICLE_DETAILS.preview.author;
 
@@ -22,13 +15,13 @@ const WithSidebar = ({ children }: any) => {
     return (
         <>
             <Navbar />
-            <section className={combineClasses(classes.withSidebar_article_wrapper, isDark ? classes.dark : null)}>
+            <section className={combineClasses(classes.withSidebar_article_wrapper, 'dark:bg-slate-900 dark:text-white')}>
                 <div className="container px-0 md:px-3 md:flex pb-[50px] pt-[50px]">
-                    <article className={combineClasses(classes.article_content, 'pb-[20px] px-3')}>
+                    <article className={combineClasses(classes.article_content, 'pb-[20px] px-3 text-black bg-white dark:bg-slate-800 dark:border-none dark:drop-shadow-lg dark:text-white')}>
                         {children}
                     </article>
                     <div className={classes.article_sidebar_wrapper}>
-                        <div className={classes.sidebar_author_details}>
+                        <div className={combineClasses(classes.sidebar_author_details, 'dark:bg-slate-800 dark:border-none dark:drop-shadow-lg')}>
                             <div className={classes.author}>
                                 <div className={classes.author_img}>
                                     {author.profilePic ? <img src={author.profilePic} alt={author.name} /> : <img src={generateRandomAvtar()} alt={author.name} />}
@@ -55,7 +48,7 @@ const WithSidebar = ({ children }: any) => {
                         </div>
                         {
                             relatedArticles.length &&
-                            <div className={classes.more_from_author}>
+                            <div className={combineClasses(classes.more_from_author, 'dark:bg-slate-800 dark:border-none dark:drop-shadow-lg')}>
                                 <p className='border-b border-gray-300 pb-2 mb-3 font-medium'>More from  Author</p>
                                 {
                                     relatedArticles.map((each, i) =>

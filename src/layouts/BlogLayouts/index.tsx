@@ -1,4 +1,4 @@
-import { DefaultSeo, NextSeo } from 'next-seo';
+import { DefaultSeo } from 'next-seo';
 import { DEFAULT_SEO } from '../../../BLOG_CONSTANTS/_BLOG_SETUP';
 import { BlogLayouts } from '../../shared/enums';
 import { iSEO } from '../../shared/interfaces';

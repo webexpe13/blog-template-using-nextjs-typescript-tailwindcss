@@ -2,10 +2,17 @@ import SectionSeperator from "../src/components/SectionSeperator";
 import { SectionSeperatorTypes, TextAs } from "../src/shared/enums";
 import HomeLayout from "../src/layouts/HomeLayout";
 import Text from "../src/components/Text";
+import { iSEO } from "../src/shared/interfaces";
 
 const TermsAndConditions = () => {
+    const PAGE_SEO: iSEO = {
+        title: 'Terms and conditions',
+        description: `This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in website`,
+        keywords: 'webexpx, contact us, webexpe13@gmail.com, next js blog template',
+        author: 'Mayur Nalwala, Rupali Yadav'
+    }
     return (
-        <HomeLayout>
+        <HomeLayout PAGE_SEO={PAGE_SEO}>
             <div className='container px-3 pb-[20px] mt-10 pt-14 md:pt-0'>
                 <Text as={TextAs.title} className="text-3xl">
                     Privacy Policy

@@ -225,10 +225,6 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
         property: "al:web:url",
         content: ogUrl,
       },
-      {
-        property: "author",
-        content: author,
-      },
     ],
     openGraph: {
       type: "website",

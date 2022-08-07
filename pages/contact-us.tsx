@@ -2,13 +2,17 @@ import { TextAs } from "../src/shared/enums";
 import HomeLayout from "../src/layouts/HomeLayout";
 import Text from "../src/components/Text";
 import { combineClasses } from '../src/utils/utils'
+import { iSEO } from "../src/shared/interfaces";
 
 const ContactUs = () => {
-    const dom = typeof window !== 'undefined' && window ? window : null
-    console.log(dom?.document.body.className);
-
+    const PAGE_SEO: iSEO = {
+        title: 'Contact Us',
+        description: 'For any any queries related to this project / template feel free to connect with us on webexpe13@gmail.com',
+        keywords: 'webexpx, contact us, webexpe13@gmail.com, next js blog template',
+        author: 'Mayur Nalwala, Rupali Yadav'
+    } 
     return (
-        <HomeLayout>
+        <HomeLayout PAGE_SEO={PAGE_SEO}>
             <section className='container px-3 pb-20 md:pt-20 pt-[80px]'>
                 <Text as={TextAs.title} className="md:text-5xl text-3xl !font-light">
                     Contact Us

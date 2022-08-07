@@ -3,10 +3,16 @@ import HomeLayout from "../src/layouts/HomeLayout";
 import { combineClasses } from "../src/utils/utils";
 import Text from "../src/components/Text";
 import { TextAs } from "../src/shared/enums";
+import { iSEO } from "../src/shared/interfaces";
 
 const Icons = () => {
+    const PAGE_SEO: iSEO = {
+        title: 'Icons',
+        keywords: 'webexpx, contact us, webexpe13@gmail.com, next js blog template',
+        author: 'Mayur Nalwala, Rupali Yadav'
+    }  
     return (
-        <HomeLayout>
+        <HomeLayout PAGE_SEO={PAGE_SEO}>
             <div className="container pb-5 md:mt-[50px] pt-20 md:pt-0">
                 <div className="px-3">
                     <Text as={TextAs.title} className="text-3xl">

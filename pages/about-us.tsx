@@ -5,10 +5,17 @@ import Text from "../src/components/Text";
 import Image from "../src/components/ArticleImage";
 import List from "../src/components/List";
 import { CURRENT_YEAR } from "../src/constants/appConstants";
+import { iSEO } from "../src/shared/interfaces";
 
 const AboutUs = () => {
+    const PAGE_SEO: iSEO = {
+        title: 'About Us',
+        description: `Hi we are WebExpe. This is an opensource blog template which can help you start a simple static blog.`,
+        keywords: 'webexpx, contact us, webexpe13@gmail.com, next js blog template',
+        author: 'Mayur Nalwala, Rupali Yadav'
+    }  
     return (
-        <HomeLayout>
+        <HomeLayout PAGE_SEO={PAGE_SEO}>
             <section className='container px-3 md:pb-20 md:mt-10 pt-20 md:pt-0'>
                 <div className="">
                     <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="block rounded-lg md:w-[15%] w-[50%] overflow-hidden">

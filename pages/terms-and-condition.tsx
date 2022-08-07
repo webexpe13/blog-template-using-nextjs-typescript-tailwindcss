@@ -2,10 +2,18 @@ import SectionSeperator from "../src/components/SectionSeperator";
 import HomeLayout from "../src/layouts/HomeLayout";
 import { SectionSeperatorTypes, TextAs } from "../src/shared/enums";
 import Text from "../src/components/Text";
+import { iSEO } from "../src/shared/interfaces";
+import { WEBSITE_URL } from "../BLOG_CONSTANTS/_BLOG_SETUP";
 
 const TermsAndConditions = () => {
+    const PAGE_SEO: iSEO = {
+        title: 'Terms and conditions',
+        description: `These terms and conditions outline the rules and regulations for the use of Website, located at ${WEBSITE_URL}.`,
+        keywords: 'webexpx, contact us, webexpe13@gmail.com, next js blog template',
+        author: 'Mayur Nalwala, Rupali Yadav'
+    }    
     return (
-        <HomeLayout>
+        <HomeLayout PAGE_SEO={PAGE_SEO}>
             <div className='container px-3 pb-[20px] mt-10 pt-14 md:pt-0'>
                 <Text as={TextAs.title} className="text-3xl">
                     Terms and Conditions

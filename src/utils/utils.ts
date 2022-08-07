@@ -40,7 +40,7 @@ export const changeTheme = (): void => {
  * Rerturns THEMES.LIGHT || THEMES.DARK or if state update method is passed it updated the state
  * @param setThemeState
  */
-export const getTheme = (setThemeState?: any)  => {
+export const getTheme = (setThemeState?: any) => {
   const lsTheme = localStorage.getItem("theme");
   setThemeState(lsTheme ? lsTheme : THEMES.LIGHT);
   if (
@@ -114,7 +114,7 @@ export const addBodyNoScroll = (): void => {
  * Removes no scroll class to body when modal isopen
  */
 export const removeBodyNoScroll = (): void => {
-  document.body.classList.remove("no-scroll")
+  document.body.classList.remove("no-scroll");
 };
 
 /**
@@ -143,8 +143,8 @@ export const getCategories = (): string[] => {
 
 /**
  * Removes /pages from article path
- * @param path 
- * @returns 
+ * @param path
+ * @returns
  */
 export const transformPath = (path = ""): string => {
   return path.replace("/pages", "").replace(".tsx", "");
@@ -152,8 +152,8 @@ export const transformPath = (path = ""): string => {
 
 /**
  * Removes /public from images path
- * @param path 
- * @returns 
+ * @param path
+ * @returns
  */
 export const transformImagePaths = (path = ""): string => {
   return path.replace("/public", "");
@@ -169,25 +169,41 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
    * We can create SEO Config from
    * ARTICLE_DETAILS or SEO object passed in article list or layout
    */
-  const router = useRouter()
+  const router = useRouter();
   const ARTICLE_DETAILS = getArticleDetails();
 
   // set url and path
-  const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
+  const origin =
+    typeof window !== "undefined" && window.location.origin
+      ? window.location.origin
+      : "";
   const LOCAL_URL = WEBSITE_URL ? WEBSITE_URL : origin;
-  const LOCAL_PATH = ARTICLE_DETAILS ? transformPath(ARTICLE_DETAILS.path) : router.asPath;
+  const LOCAL_PATH = ARTICLE_DETAILS
+    ? transformPath(ARTICLE_DETAILS.path)
+    : router.asPath;
 
-  const title = `${PAGE_SEO?.title || ARTICLE_DETAILS?.preview?.articleTitle } | ${WEBSITE_NAME}`;
-  const description = PAGE_SEO?.description || ARTICLE_DETAILS?.preview?.shortIntro;
+  
+  const description =
+    PAGE_SEO?.description || ARTICLE_DETAILS?.preview?.shortIntro;
   const keywords = PAGE_SEO?.keywords || ARTICLE_DETAILS?.preview?.tags;
   const ogUrl = `${LOCAL_URL}${LOCAL_PATH}`;
-  
-  const ogImage = 
-    PAGE_SEO?.ogImage ? `${LOCAL_URL}${transformImagePaths(PAGE_SEO?.ogImage)}` : 
-    `${LOCAL_URL}${ARTICLE_DETAILS?.preview.thumbnail ? transformImagePaths(ARTICLE_DETAILS?.preview.thumbnail) : null}`;
 
-  const twitterHandle = PAGE_SEO?.twitterHandle || '';
-  const author = PAGE_SEO?.author || ARTICLE_DETAILS?.preview.author.name;
+  const ogImage = PAGE_SEO?.ogImage
+    ? `${LOCAL_URL}${transformImagePaths(PAGE_SEO?.ogImage)}`
+    : `${LOCAL_URL}${
+        ARTICLE_DETAILS?.preview.thumbnail
+          ? transformImagePaths(ARTICLE_DETAILS?.preview.thumbnail)
+          : null
+      }`;
+
+  const twitterHandle = PAGE_SEO?.twitterHandle || "";
+  const author = ARTICLE_DETAILS?.preview.author.name
+    ? ARTICLE_DETAILS?.preview.author.name
+    : PAGE_SEO?.author;
+
+    const title = `${
+      PAGE_SEO?.title || ARTICLE_DETAILS?.preview?.articleTitle
+    } | ${WEBSITE_NAME} ${author ? '| ' + author : null}`;
 
   let seo_config = {
     title: title,
@@ -229,10 +245,10 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
       ],
     },
     twitter: {
-        handle: twitterHandle,
-        site: ogUrl,
-        cardType: 'summary_large_image',
-    }
+      handle: twitterHandle,
+      site: ogUrl,
+      cardType: "summary_large_image",
+    },
   };
   return seo_config;
 };

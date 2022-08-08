@@ -74,7 +74,7 @@ export const ARTICLES_LIST: iArticle[] = [
         preview: {
             author: MAYUR,
             date: "March 03 2022",
-            articleTitle: "Page Layout with sidebar example",
+            articleTitle: "Blog Page Layout with sidebar example",
             tags: "demo, with sidebar, default layout",
             thumbnail: "/public/images/default-layout-thumb.jpg",
             shortIntro: "In this article we will see Page Layout for blog with sidebar example.",

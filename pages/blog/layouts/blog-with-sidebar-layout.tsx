@@ -12,6 +12,10 @@ const Article = () => {
         // PageLayout is the wrapper which will display Centered or with sidebar layout
         <PageLayout blogwithsidebar>
             <ArticleHeader />
+            <hr className="mb-5" />
+            <Text p>
+                Blog layout with sidebar
+            </Text>
         </PageLayout>
     )
 }

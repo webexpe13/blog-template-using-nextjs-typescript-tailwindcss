@@ -123,7 +123,7 @@ export const removeBodyNoScroll = (): void => {
  */
 export const getArticleDetails = (): iArticle => {
   const router = useRouter();
-  const articlePath = "/pages" + router.pathname;
+  const articlePath = "/pages" + router.pathname + ".tsx" ;
   return ARTICLES_LIST.filter((each) => each.path === articlePath)[0];
 };
 

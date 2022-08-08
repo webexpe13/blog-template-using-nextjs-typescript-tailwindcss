@@ -58,31 +58,30 @@ export const ARTICLES_LIST: iArticle[] = [
             articleTitle: "Home Layout Example",
             tags: "demo, layout, home layout",
             thumbnail: "/public/images/centered-layout-thumb.png",
-            shortIntro: "This a demo artile with centered layout and with demo of all the components.",
+            shortIntro: "In this article we will see Default Home Layout example.",
         },
         seo: {
             title: "Home Layout Example",
             description:
-                "demo, layout, home layout, This a demo artile with centered layout and with demo of all the components.",
-            keywords: "next js, tailwind css, typescript, blog template",
+                "In this article we will see Default Home Layout example.",
+            keywords: "next js, tailwind css, typescript, blog template, default layout, default home layout",
             ogImage: "/public/images/centered-layout-thumb.png",
             author: RUPALI.name
         }
     },
     {
-        path: '/pages/blog/demo-article-default-layout',
+        path: '/pages/blog/layouts/blog-with-sidebar-layout.tsx',
         preview: {
             author: MAYUR,
             date: "March 03 2022",
-            articleTitle: "Demo Article with default layout (with sidebar)",
+            articleTitle: "Page Layout with sidebar example",
             tags: "demo, with sidebar, default layout",
             thumbnail: "/public/images/default-layout-thumb.jpg",
-            shortIntro: "This a demo artile with sidebar layout and with demo of all the components.",
+            shortIntro: "In this article we will see Page Layout for blog with sidebar example.",
         },
         seo: {
-            title: "Demo Article with default layout (with sidebar)",
-            description: "This a demo artile with sidebar layout and with demo of all the components.",
-            keywords: "demo, with sidebar, default layout",
+            description: "In this article we will see Page Layout for blog with sidebar  example.",
+            keywords: "demo, with sidebar, blog page layout, blog page design with sidebar, webexpe, webexpe.com",
             ogImage: "/public/images/default-layout-thumb.jpg",
             twitterHandle: "@mayur_nalwala",
             author: MAYUR.name
@@ -135,20 +134,11 @@ export const ARTICLES_LIST: iArticle[] = [
         preview: {
             author: RUPALI,
             date: "March 03 2022",
-            articleTitle: "How to Export and deploy blog",
+            articleTitle: "How to Export and deploy on firebase",
             tags: "demo, deploy blog",
             thumbnail: "/public/images/deploy.png",
             shortIntro: "In this article you will see how to export blog files and what folder to deploy on your hosting.",
             category: 'tutorial'
-        },
-        seo: {
-            title: "How to Export and deploy blog",
-            description:
-                "In this article you will see how to export blog files and what folder to deploy on your hosting.",
-            keywords: "demo, deploy blog",
-            ogImage: "/public/images/deploy.png",
-            twitterHandle: "@mayur_nalwala",
-            author: MAYUR.name
         }
     },
 ]

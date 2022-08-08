@@ -1,9 +1,8 @@
-import SectionSeperator from "../src/components/SectionSeperator";
-import HomeLayout from "../src/layouts/HomeLayout";
-import { SectionSeperatorTypes, TextAs } from "../src/shared/enums";
+import Seperator from "../src/components/Seperator";
 import Text from "../src/components/Text";
 import { iSEO } from "../src/shared/interfaces";
 import { WEBSITE_URL } from "../BLOG_CONSTANTS/_BLOG_SETUP";
+import PageLayout from "../src/layouts/PageLayouts";
 
 const TermsAndConditions = () => {
     const PAGE_SEO: iSEO = {
@@ -13,7 +12,7 @@ const TermsAndConditions = () => {
         author: 'Mayur Nalwala, Rupali Yadav'
     }    
     return (
-        <HomeLayout PAGE_SEO={PAGE_SEO}>
+        <PageLayout PAGE_SEO={PAGE_SEO} home>
             <div className='container px-3 pb-[20px] mt-10 pt-14 md:pt-0'>
                 <Text title className="text-3xl">
                     Terms and Conditions
@@ -24,7 +23,7 @@ const TermsAndConditions = () => {
                     By accessing this website we assume you accept these terms and conditions. Do not continue to use [Website_Name] if you do not agree to take all of the terms and conditions stated on this page. <br />
                     The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client’s needs in respect of provision of the Company’s stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.
                 </Text>
-                <SectionSeperator type={SectionSeperatorTypes.LINE} />
+                <Seperator line />
                 <Text subtitle className="text-xl">
                     Cookies
                 </Text>
@@ -32,7 +31,7 @@ const TermsAndConditions = () => {
                     We employ the use of cookies. By accessing [Website_Name], you agreed to use cookies in agreement with the [Company_Name]'s Privacy Policy. <br />
                     Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.
                 </Text>
-                <SectionSeperator type={SectionSeperatorTypes.LINE} />
+                <Seperator line />
                 <Text subtitle className="text-xl">
                     License
                 </Text>
@@ -62,7 +61,7 @@ const TermsAndConditions = () => {
                 <Text p >
                     You hereby grant [Company_Name] a non-exclusive license to use, reproduce, edit and authorize others to use, reproduce and edit any of your Comments in any and all forms, formats or media.
                 </Text>
-                <SectionSeperator type={SectionSeperatorTypes.LINE} />
+                <Seperator line />
                 <Text subtitle className="text-xl">
                     Hyperlinking to our Content
                 </Text>
@@ -100,28 +99,28 @@ const TermsAndConditions = () => {
                     <br />
                     If you are one of the organizations listed in paragraph 2 above and are interested in linking to our website, you must inform us by sending an e-mail to [Company_Name]. Please include your name, your organization name, contact information as well as the URL of your site, a list of any URLs from which you intend to link to our Website, and a list of the URLs on our site to which you would like to link. Wait 2-3 weeks for a response.
                 </Text>
-                <SectionSeperator type={SectionSeperatorTypes.LINE} />
+                <Seperator line />
                 <Text subtitle className="text-xl">
                     iFrames
                 </Text>
                 <Text p> 
                     Without prior approval and written permission, you may not create frames around our Webpages that alter in any way the visual presentation or appearance of our Website.
                 </Text>
-                <SectionSeperator type={SectionSeperatorTypes.LINE} />
+                <Seperator line />
                 <Text subtitle className="text-xl">
                     Content Liability
                 </Text>
                 <Text p> 
                     We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us against all claims that is rising on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.
                 </Text>
-                <SectionSeperator type={SectionSeperatorTypes.LINE} />
+                <Seperator line />
                 <Text subtitle className="text-xl">
                     Reservation of Rights
                 </Text>
                 <Text p> 
                     We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amen these terms and conditions and it’s linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.
                 </Text>
-                <SectionSeperator type={SectionSeperatorTypes.LINE} />
+                <Seperator line />
                 <Text subtitle className="text-xl">
                     Removal of links from our website
                 </Text>
@@ -129,7 +128,7 @@ const TermsAndConditions = () => {
                     If you find any link on our Website that is offensive for any reason, you are free to contact and inform us any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly. <br />
                     We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.
                 </Text>
-                <SectionSeperator type={SectionSeperatorTypes.LINE} />
+                <Seperator line />
                 <Text subtitle className="text-xl">
                     Disclaimer
                 </Text>
@@ -146,7 +145,7 @@ const TermsAndConditions = () => {
                     As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.
                 </Text>
             </div>
-        </HomeLayout>
+        </PageLayout>
     )
 }
 

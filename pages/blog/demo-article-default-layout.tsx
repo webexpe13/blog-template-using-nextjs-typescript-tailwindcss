@@ -1,9 +1,9 @@
 /**These are necessary imports / components for the page */
-import BlogLayout from "../../src/layouts/BlogLayouts";
-import { ArticleHeaderLayouts, BlogLayouts, SectionSeperatorTypes, ImageSize, TextAs } from "../../src/shared/enums";
+import PageLayout from "../../src/layouts/PageLayouts";
+import { ArticleHeaderLayouts, ImageSize } from "../../src/shared/enums";
 import Image from "../../src/components/ArticleImage";
 import ArticleHeader from "../../src/components/ArticleHeader";
-import SectionSeperator from "../../src/components/SectionSeperator";
+import Seperator from "../../src/components/Seperator";
 import Text from "../../src/components/Text";
 import Slider from "../../src/components/Slider";
 
@@ -15,9 +15,8 @@ const ArticleDefaultLayout = () => {
      */
 
     return (
-        // BlogLayout is the wrapper which will display Centered or with sidebar layout
-        // layout = BlogLayouts.WITH_SIDEBAR || BlogLayouts.CENTERED
-        <BlogLayout layout={BlogLayouts.WITH_SIDEBAR}>
+        // PageLayout is the wrapper which will display Centered or with sidebar layout
+        <PageLayout blogwithsidebar>
             {/* 
                 Image will display images, save images in public -> images folder
                 pass image path in src="path"
@@ -26,31 +25,16 @@ const ArticleDefaultLayout = () => {
                 we have three sizes :  ImageSize.FUll || ImageSize.SMALL || ImageSize.DEFAULT                      
             */}
             <Image src="/images/dummy-banner-img.jpg" caption="this is banner image example" alt="dummy image alt text" size={ImageSize.FUll} />
+            <ArticleHeader />
 
-            {/* 
-                ArticleHeader will display the title, tags and other article header imformation 
-                it has two types = ArticleHeaderLayouts.DEFAULT || ArticleHeaderLayouts.CENTERED
-            */}
-            <ArticleHeader type={ArticleHeaderLayouts.DEFAULT} />
-
-            {/* 
-                Text will display a paragraph, or title or quote as per the value passed
-                change text type by pass "as": as:{TextAs.p | TextAs.title | TextAs.quote
-                color : color="#3543EA"
-                textAlign: textAlign={TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}
-            */}
+            
             <Text p>
                 <b>{'<Text p>'}</b>               This will display a paragraph<br />
                 you can pass :
-                type: as = {` TextAs.p | TextAs.title | TextAs.quote`} <br />
                 color : color="#3543EA" <br />
                 textAlign: = TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY <br />
             </Text>
-            {/* 
-                This will display dots or line wrt the type passed
-                type={SectionSeperatorTypes.LINE | SectionSeperatorTypes.DOTS}
-            */}
-            <SectionSeperator type={SectionSeperatorTypes.LINE} />
+            <Seperator line />
 
             {/* 
                 <Text subtitle> will display a section title
@@ -68,7 +52,7 @@ const ArticleDefaultLayout = () => {
                 textAlign: = TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY <br />
             </Text> 
             
-            <SectionSeperator type={SectionSeperatorTypes.DOTS} />
+            <Seperator dots />
             {/* 
                 <Text quote> will display a Quoted text
                 you can pass 
@@ -85,7 +69,7 @@ const ArticleDefaultLayout = () => {
                 textAlign: textAlign={'{TextAlign.LEFT | TextAlign.RIGHT | TextAlign.CENTER | TextAlign.JUSTIFY}'}
             </Text>
 
-            <SectionSeperator type={SectionSeperatorTypes.DOTS} />
+            <Seperator dots />
 
             <Text subtitle className="mt-10">
                 Image Slider
@@ -106,7 +90,7 @@ const ArticleDefaultLayout = () => {
                     ]} />
                 `}
             </Text>
-        </BlogLayout>
+        </PageLayout>
     )
 }
 

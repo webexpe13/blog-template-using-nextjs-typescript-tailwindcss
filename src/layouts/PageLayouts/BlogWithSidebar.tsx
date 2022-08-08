@@ -1,4 +1,4 @@
-import classes from './BlogLayout.module.scss';
+import classes from './PageLayout.module.scss';
 import Navbar from '../../components/Navbar';
 import { combineClasses, getArticleDetails, transformImagePaths, transformPath } from '../../utils/utils';
 import { ARTICLES_LIST } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';

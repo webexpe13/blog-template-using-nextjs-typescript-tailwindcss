@@ -1,11 +1,11 @@
-import SectionSeperator from "../src/components/SectionSeperator";
-import { TextAs, ImageSize, ListType } from "../src/shared/enums";
-import HomeLayout from "../src/layouts/HomeLayout";
+import Seperator from "../src/components/Seperator";
+import { ImageSize, ListType } from "../src/shared/enums";
 import Text from "../src/components/Text";
 import Image from "../src/components/ArticleImage";
 import List from "../src/components/List";
 import { CURRENT_YEAR } from "../src/constants/appConstants";
 import { iSEO } from "../src/shared/interfaces";
+import PageLayout from "../src/layouts/PageLayouts";
 
 const AboutUs = () => {
     const PAGE_SEO: iSEO = {
@@ -15,13 +15,13 @@ const AboutUs = () => {
         author: 'Mayur Nalwala, Rupali Yadav'
     }  
     return (
-        <HomeLayout PAGE_SEO={PAGE_SEO}>
-            <section className='container px-3 md:pb-20 md:mt-10 pt-20 md:pt-0'>
+        <PageLayout PAGE_SEO={PAGE_SEO} home>
+            <section className='container px-3 md:pb-20 md:pt-10 pt-20'>
                 <div className="">
                     <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="block rounded-lg md:w-[15%] w-[50%] overflow-hidden">
                         <Image src="/public/images/YT Logo.png" size={ImageSize.DEFAULT} alt="webexpe.com" />
                     </a>
-                    <Text title className='md:text-3xl text-2xl mb-5 mt-10'>
+                    <Text title className='mb-5 mt-10'>
                         Hi we are WebExpe.
                     </Text>
                     <Text subtitle className='text-xl mb-5'>
@@ -77,7 +77,7 @@ const AboutUs = () => {
                             </List>
                         </div>
                     </div>
-                    <SectionSeperator />
+                    <Seperator />
                     <Text subtitle className='text-3xl font-medium'>
                         License
                     </Text>
@@ -87,7 +87,7 @@ const AboutUs = () => {
                     <Text p className='text-lg'>
                         This project is <b>opensouce</b>. Everyone is welcome to contribute to this project. Feel free to open an issue if you have question or found a bug, create your versions of this template and help the community, also if you are using our template a little credit will be much appreciated.
                     </Text>
-                    <SectionSeperator />
+                    <Seperator />
                     <Text p className='text-lg'>
                         Made with ♥ by <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="font-medium tracking-widest">WebExpe</a>
                     </Text>
@@ -99,7 +99,7 @@ const AboutUs = () => {
                     </Text>
                 </div>
             </section>
-        </HomeLayout>
+        </PageLayout>
     )
 }
 

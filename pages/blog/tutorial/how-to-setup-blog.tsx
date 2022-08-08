@@ -1,16 +1,16 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, ListType, SectionSeperatorTypes, TextAs } from "../../../src/shared/enums";
+import { ImageSize, ListType } from "../../../src/shared/enums";
 import Image from "../../../src/components/ArticleImage";
-import SectionSeperator from "../../../src/components/SectionSeperator";
-import HomeLayout from "../../../src/layouts/HomeLayout";
+import Seperator from "../../../src/components/Seperator";
 import Link from "next/link";
 import Text from "../../../src/components/Text";
 import List from "../../../src/components/List";
+import PageLayout from "../../../src/layouts/PageLayouts";
 /**These are necessary imports / components for the page */
 
 const BlogSetup = () => {
     return (
-        <HomeLayout>
+        <PageLayout home>
             <div className='container px-3 pb-[20px] md:mt-[50px] pt-20 md:pt-0'>
                 <Text title className="text-3xl">
                     Blog Setup
@@ -57,7 +57,7 @@ const BlogSetup = () => {
                         If everything goes well you will see a demo blog with few demo articles which will walk you through simple tutorials on how to use layouts and different components to write articles.
                     </li>
                 </List>
-                <SectionSeperator type={SectionSeperatorTypes.DOTS} />
+                <Seperator dots/>
                 <Text subtitle className="mt-10">
                     2.  Setting up authors.
                 </Text>
@@ -70,7 +70,7 @@ const BlogSetup = () => {
                     You can add as many authors you want just make sure you keep the format as shown.
                 </Text>
                 <Image className="my-5" src="/images/author-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
-                <SectionSeperator />
+                <Seperator />
                 <Text subtitle className="mt-10">
                     3.  Setting up Main Navbar and Side Nav.
                 </Text>
@@ -119,7 +119,7 @@ const BlogSetup = () => {
                         You can get the icons from <b><Link href="/icons" passHref={true}><a>Icons</a></Link></b>
                     </li>
                 </List>
-                <SectionSeperator />
+                <Seperator />
                 <Text subtitle className="mt-10">
                     4.  Writing First Article.
                 </Text>
@@ -198,12 +198,12 @@ const BlogSetup = () => {
                         <a href="https://www.garymeehan.ie/blog/seo-in-nextjs-with-next-seo" target="_blank" rel="noopener noreferrer">https://www.garymeehan.ie/blog/seo-in-nextjs-with-next-seo</a>
                     </li>
                 </List>
-                <SectionSeperator />
+                <Seperator />
                 <Text p >
                     And thats it, you are ready with the basic setup required to kick start your blog.
                 </Text>
             </div>
-        </HomeLayout >
+        </PageLayout>
     )
 }
 

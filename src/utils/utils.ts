@@ -181,10 +181,9 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
   const LOCAL_PATH = ARTICLE_DETAILS
     ? transformPath(ARTICLE_DETAILS.path)
     : router.asPath;
-
   
-  const description =
-    PAGE_SEO?.description || ARTICLE_DETAILS?.preview?.shortIntro;
+  const description = PAGE_SEO?.description || ARTICLE_DETAILS?.preview?.shortIntro;
+  
   const keywords = PAGE_SEO?.keywords || ARTICLE_DETAILS?.preview?.tags;
   const ogUrl = `${LOCAL_URL}${LOCAL_PATH}`;
 
@@ -197,13 +196,10 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
       }`;
 
   const twitterHandle = PAGE_SEO?.twitterHandle || "";
-  const author = ARTICLE_DETAILS?.preview.author.name
-    ? ARTICLE_DETAILS?.preview.author.name
+  const author = ARTICLE_DETAILS ? ARTICLE_DETAILS?.preview.author.name
     : PAGE_SEO?.author;
 
-    const title = `${
-      PAGE_SEO?.title || ARTICLE_DETAILS?.preview?.articleTitle
-    } | ${WEBSITE_NAME} ${author ? '| ' + author : null}`;
+    const title = `${ ARTICLE_DETAILS ? ARTICLE_DETAILS?.preview?.articleTitle : PAGE_SEO?.title} | ${WEBSITE_NAME} ${author ? '| ' + author : null}`;
 
   let seo_config = {
     title: title,

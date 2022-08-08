@@ -1,9 +1,9 @@
-import { TextAlign, TextAs } from "../../shared/enums";
+import { TextAlign } from "../../shared/enums";
 import { combineClasses } from "../../utils/utils";
 import classes from './text.module.scss'
 
 interface IProps {
-    children: any;
+    children?: any;
     color?: string;
     textAlign?: TextAlign;
     className?: string;
@@ -20,7 +20,7 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = 
         if (title) {
             ui = (
                 <h1
-                    className={combineClasses(`font-bold text-3xl my-[10px]`, className)}
+                    className={combineClasses(`font-bold text-3xl md:text-4xl my-[10px]`, className)}
                     style={{ color: color, textAlign: textAlign }}>
                     {children}
                 </h1>
@@ -28,7 +28,7 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = 
         } else if (subtitle) {
             ui = (
                 <h2
-                    className={combineClasses(`font-semibold text-xl my-[10px]`, className)}
+                    className={combineClasses(`font-semibold text-xl md:text-2xl my-[10px]`, className)}
                     style={{ color: color, textAlign: textAlign }}>
                     {children}
                 </h2>
@@ -36,7 +36,7 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = 
         } else if (p) {
             ui = (
                 <p
-                    className={combineClasses(`font-regular mb-3 text-md leading-relaxed`, className)}
+                    className={combineClasses(`font-regular mb-3 text-lg leading-relaxed`, className)}
                     style={{ color: color, textAlign: textAlign }}>
                     {children}
                 </p>
@@ -52,7 +52,7 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = 
         } else {
             ui = (
                 <p
-                    className={combineClasses(`font-regular mb-3 text-md leading-relaxed`, className)}
+                    className={combineClasses(`font-regular mb-3 text-lg leading-relaxed`, className)}
                     style={{ color: color, textAlign: textAlign }}>
                     {children}
                 </p>

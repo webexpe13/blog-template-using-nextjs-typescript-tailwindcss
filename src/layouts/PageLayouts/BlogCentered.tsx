@@ -1,10 +1,10 @@
-import classes from './BlogLayout.module.scss';
+import classes from './PageLayout.module.scss';
 import Navbar from '../../components/Navbar';
 import { combineClasses, getArticleDetails, transformImagePaths, transformPath } from '../../utils/utils';
 import { ARTICLES_LIST } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import { generateRandomAvtar } from '../../constants/appConstants';
 import Link from 'next/link';
-import SectionSeperator from '../../components/SectionSeperator';
+import Seperator from '../../components/Seperator';
 
 const Centered = ({ children }: any) => {
     const ARTICLE_DETAILS = getArticleDetails();
@@ -19,7 +19,7 @@ const Centered = ({ children }: any) => {
                 <article className={combineClasses(classes.article_content, 'pb-[30px] px-3 bg-white dark:bg-slate-800 dark:border-none dark:drop-shadow-lg dark:text-white')}>
                     {children}
                 </article>
-                <SectionSeperator />
+                <Seperator />
                 <div className={combineClasses(classes.author_and_more, 'mx-auto')}>
                     <div className={combineClasses(classes.sidebar_author_details, "dark:bg-slate-800 dark:border-none dark:drop-shadow-lg")}>
                         <div className={classes.author}>

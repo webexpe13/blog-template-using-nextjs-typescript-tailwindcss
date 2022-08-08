@@ -1,7 +1,6 @@
-import { TextAs } from "../src/shared/enums";
-import HomeLayout from "../src/layouts/HomeLayout";
 import Text from "../src/components/Text";
 import { iSEO } from "../src/shared/interfaces";
+import PageLayout from "../src/layouts/PageLayouts";
 
 const ContactUs = () => {
     const PAGE_SEO: iSEO = {
@@ -11,7 +10,7 @@ const ContactUs = () => {
         author: 'Mayur Nalwala, Rupali Yadav'
     } 
     return (
-        <HomeLayout PAGE_SEO={PAGE_SEO}>
+        <PageLayout PAGE_SEO={PAGE_SEO} home>
             <section className='container px-3 pb-20 md:pt-20 pt-[80px]'>
                 <Text title className="md:text-5xl text-3xl !font-light">
                     Contact Us
@@ -44,7 +43,7 @@ const ContactUs = () => {
                     We are a group of developers and designers with more than 5 years of industry experience. If you have any requirements like Website Development, Website / App Design feel free to contact us on the given email.
                 </Text>
             </section>
-        </HomeLayout>
+        </PageLayout>
     )
 }
 

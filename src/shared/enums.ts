@@ -1,8 +1,3 @@
-export enum BlogLayouts {
-  WITH_SIDEBAR = "WithSidebar",
-  CENTERED = "Centered",
-}
-
 export enum THEMES {
   LIGHT = "light",
   DARK = "dark",
@@ -26,11 +21,6 @@ export enum ArticleHeaderLayouts {
   CENTERED = "centered",
 }
 
-export enum SectionSeperatorTypes {
-  LINE = "line",
-  DOTS = "dots",
-}
-
 export enum TextAlign {
   LEFT = "left",
   RIGHT = "right",
@@ -42,13 +32,6 @@ export enum TextAlign {
 export enum LogoType {
   TEXT = "text",
   IMAGE = "image",
-}
-
-export enum TextAs {
-  p = "p",
-  title = "title",
-  subTitle = "subTitle",
-  quote = "quote"
 }
 
 export enum ListType {

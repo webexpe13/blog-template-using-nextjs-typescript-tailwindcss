@@ -1,9 +1,8 @@
 import { iconsArray } from "../src/constants/appConstants";
-import HomeLayout from "../src/layouts/HomeLayout";
 import { combineClasses } from "../src/utils/utils";
 import Text from "../src/components/Text";
-import { TextAs } from "../src/shared/enums";
 import { iSEO } from "../src/shared/interfaces";
+import PageLayout from "../src/layouts/PageLayouts";
 
 const Icons = () => {
     const PAGE_SEO: iSEO = {
@@ -12,7 +11,7 @@ const Icons = () => {
         author: 'Mayur Nalwala, Rupali Yadav'
     }  
     return (
-        <HomeLayout PAGE_SEO={PAGE_SEO}>
+        <PageLayout PAGE_SEO={PAGE_SEO} home>
             <div className="container pb-5 md:mt-[50px] pt-20 md:pt-0">
                 <div className="px-3">
                     <Text title className="text-3xl">
@@ -42,7 +41,7 @@ const Icons = () => {
                     }
                 </div>
             </div>
-        </HomeLayout>
+        </PageLayout>
     )
 }
 

@@ -1,7 +1,7 @@
 import ArticleCard from "../../src/components/ArticleCards/ArticleCard";
 import { ARTICLES_LIST } from '../../BLOG_CONSTANTS/_ARTICLES_LIST';
-import HomeLayout from "../../src/layouts/HomeLayout";
 import { useRouter } from "next/router";
+import PageLayout from "../../src/layouts/PageLayouts";
 
 const Categories = () => {
     const router = useRouter()
@@ -10,7 +10,7 @@ const Categories = () => {
     const articles = category ? categoryArticles : ARTICLES_LIST;    
 
     return (
-        <HomeLayout>
+        <PageLayout home>
             <div className={"container mt-10 pt-5 md:pt-0"}>
                 {
                     category ?
@@ -28,7 +28,7 @@ const Categories = () => {
                     }
                 </div>
             </div>
-        </HomeLayout>
+        </PageLayout>
     )
 }
 

@@ -1,15 +1,15 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, ListType, TextAs } from "../../../src/shared/enums";
+import { ImageSize, ListType } from "../../../src/shared/enums";
 import Image from "../../../src/components/ArticleImage";
-import SectionSeperator from "../../../src/components/SectionSeperator";
-import HomeLayout from "../../../src/layouts/HomeLayout";
+import Seperator from "../../../src/components/Seperator";
 import List from "../../../src/components/List";
 import Text from "../../../src/components/Text";
+import PageLayout from "../../../src/layouts/PageLayouts";
 /**These are necessary imports / components for the page */
 
 const HowToDeployBlog = () => {
     return (
-        <HomeLayout>
+        <PageLayout home>
             <div className='container px-3 pb-5 md:mt-[50px] pt-20 md:pt-0'>
                 <Text title className="text-3xl">
                     How to Export and deploy blog
@@ -36,7 +36,7 @@ const HowToDeployBlog = () => {
                         This <b>out</b> is the folder you need to deploy on your hosting service.
                     </li>
                 </List>
-                <SectionSeperator />
+                <Seperator />
                 <Text subtitle className="mt-10">
                     2. Basic firebase deployment tutorial.
                 </Text>
@@ -98,7 +98,7 @@ const HowToDeployBlog = () => {
                     </li>
                 </List>
             </div>
-        </HomeLayout>
+        </PageLayout>
     )
 }
 

@@ -4,26 +4,14 @@ import ArticleHeaderCenter from "./ArticleHeaderCentered"
 import ArticleHeaderDefault from "./ArticleHeaderDefault"
 
 interface IArticleHeader {
-    type?: ArticleHeaderLayouts,
+    centered?: boolean,
 }
-const ArticleHeader = ({ type = ArticleHeaderLayouts.DEFAULT }: IArticleHeader) => {
+const ArticleHeader = ({ centered = false }: IArticleHeader) => {
     const ARTICLE_DETAILS = getArticleDetails();
 
     return (
-        (() => {
-            switch (type) {
-                case ArticleHeaderLayouts.DEFAULT:
-                    return (
-                        <ArticleHeaderDefault headerData={ARTICLE_DETAILS.preview} />);
-                case ArticleHeaderLayouts.CENTERED:
-                    return (
-                        <ArticleHeaderCenter headerData={ARTICLE_DETAILS.preview} />);
-                default:
-                    return (
-                        <ArticleHeaderDefault headerData={ARTICLE_DETAILS.preview} />
-                    );
-            }
-        })()
+        centered ? <ArticleHeaderCenter headerData={ARTICLE_DETAILS.preview} /> :
+            <ArticleHeaderDefault headerData={ARTICLE_DETAILS.preview} />
     )
 }
 

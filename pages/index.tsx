@@ -1,16 +1,15 @@
 import ArticleCard from '../src/components/ArticleCards/ArticleCard';
 import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
 import { ARTICLES_LIST } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
-import HomeLayout from '../src/layouts/HomeLayout';
-import SectionSeperator from '../src/components/SectionSeperator';
-import { TextAs } from '../src/shared/enums';
+import Seperator from '../src/components/Seperator';
 import Text from '../src/components/Text';
 import Link from 'next/link';
+import PageLayout from '../src/layouts/PageLayouts';
 
 
 const Home = () => {
   return (
-    <HomeLayout className="md:pt-0">
+    <PageLayout home>
       <section className='w-full md:pt-[100px] md:pb-[70px] pt-[130px] pb-20 mb-10 dark:bg-slate-800 bg-slate-200'>
         <div className="container text-center px-3">
           <Text title className='text-3xl'>
@@ -45,7 +44,7 @@ const Home = () => {
                 <FeaturedArticle article={each.preview} path={each.path} key={each.path + i} /> : null
             ))
           }
-          <SectionSeperator />
+          <Seperator />
           <h1 className='px-3 w-full mb-5 text-xl md:text-3xl font-medium'>Checkout the below articles on how to use different layouts and components</h1>
           <hr className='border-1 mb-5 w-[98%] mx-auto' />
           {
@@ -57,7 +56,7 @@ const Home = () => {
           }
         </div>
       </div>
-    </HomeLayout>
+    </PageLayout>
   )
 }
 

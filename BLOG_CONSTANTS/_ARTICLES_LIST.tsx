@@ -59,6 +59,7 @@ export const ARTICLES_LIST: iArticle[] = [
             tags: "demo, layout, home layout",
             thumbnail: "/public/images/centered-layout-thumb.png",
             shortIntro: "In this article we will see Default Home Layout example.",
+            category: 'layouts'
         },
         seo: {
             title: "Home Layout Example",
@@ -73,59 +74,31 @@ export const ARTICLES_LIST: iArticle[] = [
         path: '/pages/blog/layouts/blog-with-sidebar-layout.tsx',
         preview: {
             author: MAYUR,
-            date: "March 03 2022",
-            articleTitle: "Blog Page Layout with sidebar example",
+            date: "August 08 2022",
+            articleTitle: "Page Layout for article with sidebar",
             tags: "demo, with sidebar, default layout",
             thumbnail: "/public/images/default-layout-thumb.jpg",
             shortIntro: "In this article we will see Page Layout for blog with sidebar example.",
+            category: 'layouts'
         },
         seo: {
-            description: "In this article we will see Page Layout for blog with sidebar  example.",
             keywords: "demo, with sidebar, blog page layout, blog page design with sidebar, webexpe, webexpe.com",
             ogImage: "/public/images/default-layout-thumb.jpg",
-            twitterHandle: "@mayur_nalwala",
-            author: MAYUR.name
         }
     },
     {
-        path: '/pages/blog/demo-article-centered-layout',
+        path: '/pages/blog/layouts/blog-with-centered-layout.tsx',
         preview: {
             author: RUPALI,
-            date: "March 03 2022",
-            articleTitle: "Demo Article with centered layout",
-            tags: "demo,centered, centered layout",
+            date: "August 08 2022",
+            articleTitle: "Page Layout for article with centered layout",
+            tags: "demo, centered, centered layout",
             thumbnail: "/public/images/centered-layout-thumb.png",
             shortIntro: "This a demo artile with centered layout and with demo of all the components.",
+            category: 'layouts'
         },
         seo: {
-            title: "Demo Article with centered layout",
-            description:
-                "This a demo artile with centered layout and with demo of all the components.",
-            keywords: "demo,centered, centered layout",
-            ogImage: "/public/images/centered-layout-thumb.png",
-            twitterHandle: "@mayur_nalwala",
-            author: RUPALI.name
-        }
-    },
-    {
-        path: '/pages/blog/tutorial/demo-article-with-category',
-        preview: {
-            author: RUPALI,
-            date: "March 03 2022",
-            articleTitle: "Demo Article with category",
-            tags: "demo, with category",
-            thumbnail: "/public/images/category-thumb.png",
-            shortIntro: "This a demo artile with example on how to add category.",
-            category: 'tutorial'
-        },
-        seo: {
-            title: "Demo Article with category",
-            description:
-                "This a demo artile with example on how to add category.",
-            keywords: "demo, with category",
-            ogImage: "/public/images/category-thumb.png",
-            twitterHandle: "@mayur_nalwala",
-            author: RUPALI.name
+            keywords: "demo, centered, centered layout, blog page layout, blog page design with centered layout, webexpe, webexpe.com",
         }
     },
     {

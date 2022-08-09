@@ -14,7 +14,7 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
                 {headerData.author.profilePic ? <img src={headerData.author.profilePic} alt={headerData.author.name} /> : <img src={generateRandomAvtar()} alt={headerData.author.name} /> }
                 </div>
                 <div>
-                    <div className="flex text-[16px] md:text-[14px]">
+                    <div className="flex text-[16px] md:text-lg items-center">
                         <p className={combineClasses(classes.article_header_author_name, 'font-medium my-0')}>
                             {headerData.author.name}
                         </p>

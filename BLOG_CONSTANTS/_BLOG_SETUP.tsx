@@ -3,9 +3,8 @@ import { IAuthor, iSEO } from "../src/shared/interfaces";
 
 /**
  * EXAMPLE AUTHOR
- * In this only name is required, and rest all are optional
  * 
- * export const AUTHOR_NAME: IAuthor = {
+ export const AUTHOR_NAME: IAuthor = {
     name: "Full Name",
     designation: "Work Designation",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

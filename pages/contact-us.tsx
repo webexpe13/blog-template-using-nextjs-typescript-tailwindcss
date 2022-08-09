@@ -12,7 +12,7 @@ const ContactUs = () => {
     return (
         <PageLayout PAGE_SEO={PAGE_SEO} home>
             <section className='container px-3 pb-20 md:pt-20 pt-[80px]'>
-                <Text title className="md:text-5xl text-3xl !font-light">
+                <Text title className="md:!text-5xl text-3xl !font-light">
                     Contact Us
                 </Text>
 
@@ -27,7 +27,7 @@ const ContactUs = () => {
                         <Text p>
                             write to us at
                         </Text>
-                        <Text subtitle className="!font-light md:text-3xl">
+                        <Text subtitle className="!font-light md:!text-3xl">
                             webexpe13@gmail.com
                         </Text>
                     </div>
@@ -36,7 +36,7 @@ const ContactUs = () => {
 
 
             <section className={"dark:bg-slate-800 bg-blue-100 mt-10 container py-10 md:px-20 px-10"}>
-                <Text subtitle className="md:text-5xl text-3xl !font-light">
+                <Text subtitle className="md:!text-5xl text-3xl !font-light">
                     Work with us . . .
                 </Text>
                 <Text p className="!text-lg leading-relaxed mt-5 px-1">

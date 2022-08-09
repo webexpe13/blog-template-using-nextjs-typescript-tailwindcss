@@ -8,7 +8,7 @@ const HomeLayoutExample = () => {
 
     return (
         <PageLayout home>
-            <section className={"container pt-20 md:pt-10 px-3"}>
+            <section className={"container pt-20 md:pt-10"}>
                 <Text className="!md:text-5xl" title>
                     Default Home Layout example.
                 </Text>

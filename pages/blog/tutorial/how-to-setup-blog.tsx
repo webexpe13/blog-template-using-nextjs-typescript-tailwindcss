@@ -57,7 +57,7 @@ const BlogSetup = () => {
                         If everything goes well you will see a demo blog with few demo articles which will walk you through simple tutorials on how to use layouts and different components to write articles.
                     </li>
                 </List>
-                <Seperator dots/>
+                <Seperator dots />
                 <Text subtitle className="mt-10">
                     2.  Setting up authors.
                 </Text>
@@ -69,54 +69,47 @@ const BlogSetup = () => {
                     The <b>export const</b> is used to make the item/variable available throughtout the project. <br />
                     You can add as many authors you want just make sure you keep the format as shown.
                 </Text>
-                <Image className="my-5" src="/images/author-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                <Image className="my-5" src="/public/images/tutorials/how-to-setup-author.svg" alt="how to setup authors | webexpe.com" size={ImageSize.DEFAULT} />
                 <Seperator />
                 <Text subtitle className="mt-10">
                     3.  Setting up Main Navbar and Side Nav.
                 </Text>
                 <Text p >
-                    Goto <b>_BLOG_SETUP.tsx</b> in <b>BLOG_CONSTANTS</b> folder. Here you will see some example navbar you can refer. <br />
+                    Goto <b>_BLOG_SETUP.tsx</b> file in <b>BLOG_CONSTANTS</b> folder. Here you will see example to setup your navbar. <br />
+                    We have 5 important items to set in navbar setup
                 </Text>
+                <Image className="my-5" src="/public/images/tutorials/how-to-navbar.svg" alt="how to setup navbar | webexpe.com" size={ImageSize.MEDIUM} />
                 <List type={ListType.bullet} className="mt-5">
                     <li>
                         <b>type</b><br />
                         We have two types, <span className="bg-grey font-black">NavbarType.DEFAULT | NavbarType.CENTERED</span>
+                        <Image className="my-5" src="/public/images/tutorials/how-to-navbar-type.svg" alt="how to setup navbar type | webexpe.com" size={ImageSize.MEDIUM} />
                     </li>
                     <li>
                         <b>logo</b><br />
                         You can pass image or text as logo, max logo image height 40px, <br />
                         If the logo is text : <b> type: LogoType.Text</b> <br />
                         If the logo is image : <b> type: LogoType.IMAGE</b> <br />
-                        <code>
-                            {
-                                `
-                            logo:{
-                                type: LogoType.TEXT,
-                                logo: 'Logo',
-                            }
-                            `
-                            }
-                        </code>
-
+                        <Image className="my-5" src="/public/images/tutorials/how-to-set-nav-logo.svg" alt="how to setup navbar logo | webexpe.com" size={ImageSize.MEDIUM} />
                     </li>
                     <li>
                         <b>navLinks</b><br />
-                        These are the main nav links. please make sure you are following the example format.
+                        These are the main nav links. The given below image shows hows to setup primary links for your navbar.
+                        <Image className="my-5" src="/public/images/tutorials/how-to-set-navLinks.svg" alt="how to setup navbar logo | webexpe.com" size={ImageSize.DEFAULT} />
                     </li>
                     <li>
                         <b>sideNavLinks</b><br />
-                        These are the links that will be visible on the side menu. please make sure you are following the example format. <br /><br />
-                        <i>* note: you can see some extra links like <b>Icons, Styles Doc, and some Demo Article links</b> these are only visible during development or when you run the project locally on your computer.</i>
+                        These are the links that will be visible on the side menu. please make sure you are following the example format which is same as the above image. <br /><br />
+                        <b>* note: you can see some extra links like <b>Icons and some Demo Article links</b> these are only visible during development or when you run the project locally on your computer.</b>
                         <br /><br />
-                        <i>
-                            These are pages with styles , icons and examples of how to use them. <br />
-                            These pages also include sample blog articles and the smaple components and how to use it. Open the demo article files in your code editor and you can see how many components are used with porper explanations.
-                        </i>
+                        These are pages with icons and examples of how to use them. <br />
+                        These pages also include sample blog articles and the smaple components and how to use it. Open the demo article files in your code editor and you can see how many components are used with porper explanations.
                     </li>
                     <li>
                         <b>socials</b><br />
-                        These are for the social media icons. please make sure you are following the example format. <br />
-                        You can get the icons from <b><Link href="/icons" passHref={true}><a>Icons</a></Link></b>
+                        These are for you social media links. The given below image shows hows to setup social media links for your navbar. <br />
+                        You can get the icons from <b><Link href="/icons" passHref={true}>Icons</Link></b>
+                        <Image className="my-5" src="/public/images/tutorials/how-to-set-socials.svg" alt="how to setup social icons | webexpe.com" size={ImageSize.MEDIUM} />
                     </li>
                 </List>
                 <Seperator />

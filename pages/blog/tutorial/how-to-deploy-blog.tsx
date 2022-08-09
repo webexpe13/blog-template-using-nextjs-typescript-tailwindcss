@@ -1,11 +1,6 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, ListType } from "../../../src/shared/enums";
-import Image from "../../../src/components/ArticleImage";
-import Seperator from "../../../src/components/Seperator";
-import List from "../../../src/components/List";
-import Text from "../../../src/components/Text";
-import PageLayout from "../../../src/layouts/PageLayouts";
-/**These are necessary imports / components for the page */
+import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../../../src/components";
 
 const HowToDeployBlog = () => {
     return (

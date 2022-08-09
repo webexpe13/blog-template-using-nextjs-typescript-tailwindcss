@@ -9,7 +9,11 @@
     &.size_full {
         margin-left: -15px;
         margin-right: -15px;
-        width: calc(100% + 45px);
+        width: calc(100% + 41px);
+
+        @include mobile{
+            width: calc(100% + 32px);
+        }
     }
 
     &.size_small {

@@ -16,11 +16,6 @@ export enum NavbarType {
   CENTERED = "centered",
 }
 
-export enum ArticleHeaderLayouts {
-  DEFAULT = "default",
-  CENTERED = "centered",
-}
-
 export enum TextAlign {
   LEFT = "left",
   RIGHT = "right",

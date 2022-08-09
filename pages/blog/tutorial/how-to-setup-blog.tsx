@@ -1,12 +1,6 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, ListType } from "../../../src/shared/enums";
-import Image from "../../../src/components/ArticleImage";
-import Seperator from "../../../src/components/Seperator";
-import Link from "next/link";
-import Text from "../../../src/components/Text";
-import List from "../../../src/components/List";
-import PageLayout from "../../../src/layouts/PageLayouts";
-/**These are necessary imports / components for the page */
+import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../../../src/components";
 
 const BlogSetup = () => {
     return (
@@ -108,87 +102,8 @@ const BlogSetup = () => {
                     <li>
                         <b>socials</b><br />
                         These are for you social media links. The given below image shows hows to setup social media links for your navbar. <br />
-                        You can get the icons from <b><Link href="/icons" passHref={true}>Icons</Link></b>
+                        You can get the icons from <b><LinkTo href="/pages/icons.tsx" passHref={true}>Icons</LinkTo></b>
                         <Image className="my-5" src="/public/images/tutorials/how-to-set-socials.svg" alt="how to setup social icons | webexpe.com" size={ImageSize.MEDIUM} />
-                    </li>
-                </List>
-                <Seperator />
-                <Text subtitle className="mt-10">
-                    4.  Writing First Article.
-                </Text>
-                <i>
-                    *note: All the files you will create or interact with are in <br />
-                </i>
-                <List type={ListType.bullet} className="mt-5">
-                    <li><b>BLOG_CONSTANTS Folder and its files</b></li>
-                    <li><b>blog Folder inside pages folder</b> - you will create all the article files in this folder <br /></li>
-                    <li>You will add all the images to use in <b>public - images folder</b></li>
-                </List>
-                <hr />
-                <List type={ListType.number} className="mt-5">
-                    <li>
-                        <b>Making entry in ARTICLES_LIST on _ARTICLES_LIST.tsx file</b>
-                        <Image className="my-5" src="/images/article-entry-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
-                        In the <b>ARTICLES_LIST</b> array copy paste the sample article object.
-                    </li>
-                    <li>
-                        <b>path</b><br />
-                        This is path of the article file. <br />
-                        Copy a demo file example demo-article-default-layout in blog folder and rename the file to you article name. <br /> <i>* note: make sure all the words are in lowercase and seperated bt hyphen, this is good for google SEO. </i><br />
-                        <span className="bg-grey font-black px-10 py-5 my-5 d-block">
-                            example: <b>how-to-make-cake.tsx</b> so the path will be <b>'/blog/how-to-make-cake'</b>
-                        </span>
-                    </li>
-                    <li>
-                        <b>featureArticle</b><br />
-                        You can pass <b>true or false</b> <br />
-                        If true the article card will be of full width. <br />
-                        <i>* adding featureArticle property is optional</i>
-                        <Image className="my-5" src="/images/feature-article-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
-                    </li>
-                    <li>
-                        <b>preview</b><br />
-                        This will display the details in main home page and artcile header in article page <br />
-
-                        <List type={ListType.bullet} className="mt-5">
-                            <li>
-                                <b>author</b><br />
-                                Paste the author variable imported from _BLOG_SETUP
-                            </li>
-                            <li>
-                                <b>date</b><br />
-                                Write the article date in quotes
-                            </li>
-                            <li>
-                                <b>articleTitle</b><br />
-                                Write the article title in quotes.
-                            </li>
-                            <li>
-                                <b>tags</b><br />
-                                Write tags and seperate with commas.
-                            </li>
-                            <li>
-                                <b>thumbnail</b><br />
-                                Save the image file in public-images folder and paste the image path.  This will be displayed in article cards on home page
-                            </li>
-                            <li>
-                                <b>shortIntro</b><br />
-                                A short intro for your article that will be shown on article cards.
-                            </li>
-                            <li>
-                                <b>category</b><br />
-                                If the article in under some category, write the category name.
-                            </li>
-                        </List>
-                    </li>
-
-                    <li>
-                        <b>seo</b><br />
-                        SEO details for your article page.<br />
-                        The example contains basic SEO setup, you can refer examples on <a href="https://github.com/garmeeh/next-seo#add-seo-to-page" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/next-seo</a> for more tags and info to add. <br />
-                        More tutorials and examples : <br />
-                        <a href="https://blog.avneesh.tech/next-seo-a-better-way-to-manage-seo-for-nextjs" target="_blank" rel="noopener noreferrer">https://blog.avneesh.tech/next-seo-a-better-way-to-manage-seo-for-nextjs</a> <br />
-                        <a href="https://www.garymeehan.ie/blog/seo-in-nextjs-with-next-seo" target="_blank" rel="noopener noreferrer">https://www.garymeehan.ie/blog/seo-in-nextjs-with-next-seo</a>
                     </li>
                 </List>
                 <Seperator />

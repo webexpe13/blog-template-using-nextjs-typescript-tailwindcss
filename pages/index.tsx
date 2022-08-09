@@ -1,10 +1,9 @@
+/**These are necessary imports / components for the page */
+import { ImageSize, TextAlign, ListType } from "../src/shared/enums";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../src/components";
 import ArticleCard from '../src/components/ArticleCards/ArticleCard';
 import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
 import { ARTICLES_LIST } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
-import Seperator from '../src/components/Seperator';
-import Text from '../src/components/Text';
-import Link from 'next/link';
-import PageLayout from '../src/layouts/PageLayouts';
 
 
 const Home = () => {
@@ -24,11 +23,11 @@ const Home = () => {
             <a href="https://github.com/nmayur/nextjs-simple-blog-template" target="_blank" rel="noopener noreferrer" className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
               <i className='icon-2-z text-[28px]' /> <span className='text-xl pl-2 pt-2 block'>Github</span>
             </a>
-            <Link href="/about-us" passHref>
+            <LinkTo href="/about-us" passHref>
               <a className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
                 <span className='text-xl pt-2 block'>About</span>
               </a>
-            </Link>
+            </LinkTo>
 
             <a href="https://www.buymeacoffee.com/webexpe13z" target="_blank" rel="noopener noreferrer" className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
               <span className='text-xl pt-2 block'>Support Us</span>

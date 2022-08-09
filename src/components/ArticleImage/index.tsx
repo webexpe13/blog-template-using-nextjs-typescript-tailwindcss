@@ -15,7 +15,7 @@ const Image = ({ src, caption, size = ImageSize.DEFAULT, alt, className }: IArti
             <img src={transformImagePaths(src)} alt={alt} width="100%" className={combineClasses('block')} />
             {
                 caption &&
-                <p className={combineClasses(classes.article_image__caption, "mb-0 mt-2 text-xs w-full text-center")}>{caption}</p>
+                <p className={combineClasses(classes.article_image__caption, "mb-0 mt-2 text-sm w-full text-center")}>{caption}</p>
             }
         </div>
     )

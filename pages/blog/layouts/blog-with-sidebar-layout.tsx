@@ -1,10 +1,6 @@
 /**These are necessary imports / components for the page */
-import PageLayout from "../../../src/layouts/PageLayouts";
-import { ImageSize } from "../../../src/shared/enums";
-import Image from "../../../src/components/ArticleImage";
-import ArticleHeader from "../../../src/components/ArticleHeader";
-import Text from "../../../src/components/Text";
-import List from "../../../src/components/List";
+import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../../../src/components";
 
 const Article = () => {
 
@@ -12,6 +8,7 @@ const Article = () => {
         '<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=webexpestore-21&language=en_IN&marketplace=amazon&region=IN&placement=B09N3ZNHTY&asins=B09N3ZNHTY&linkId=c7ed1872e77f058de27c9274a3c008af&show_border=false&link_opens_in_new_window=true"></iframe>',
         '<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=webexpestore-21&language=en_IN&marketplace=amazon&region=IN&placement=B08FN4Q6VZ&asins=B08FN4Q6VZ&linkId=10cf0c67665473cd37743f129cf50ad9&show_border=true&link_opens_in_new_window=true"></iframe>'
     ]
+
     return (
         // pass blogwithsidebar as show below for article page with sidebar layout
         <PageLayout blogwithsidebar ads={ads}>

@@ -6,27 +6,28 @@ import { MAYUR, RUPALI } from './_BLOG_SETUP';
 // main article list to display all atricles
 /**
  * Example article object
- * {
-        path: '/pages/blog/tutorial/how-to-setup-blog',
-        featureArticle: true,
-        preview: {
-            // the author object you created in _BLOG_SETUP file
-            author: MAYUR,
-            date: "March 03 2022",
-            articleTitle: "How to setup this plog template",
-            tags: "demo, blog setup",
-            thumbnail: "/images/demo-image.jpg",
-            shortIntro: "These are the steps to setup your blog",
-        },
-        seo: {
-            title: "These are the steps to setup your blog",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-            keywords: "demo, blog setup",
-            ogImage: "/images/demo-image.jpg",
-            twitterHandle: "@mayur_nalwala",
-        }
+ * 
+ {
+    path: '/pages/blog/tutorial/how-to-setup-blog',
+    featureArticle: true,
+    preview: {
+        // the author object you created in _BLOG_SETUP file
+        author: MAYUR,
+        date: "March 03 2022",
+        articleTitle: "How to setup this plog template",
+        tags: "demo, blog setup",
+        thumbnail: "/images/demo-image.jpg",
+        shortIntro: "These are the steps to setup your blog",
+    },
+    seo: {
+        title: "These are the steps to setup your blog",
+        description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        keywords: "demo, blog setup",
+        ogImage: "/images/demo-image.jpg",
+        twitterHandle: "@mayur_nalwala",
     }
+}
  */
 export const ARTICLES_LIST: iArticle[] = [
     {
@@ -99,6 +100,22 @@ export const ARTICLES_LIST: iArticle[] = [
         },
         seo: {
             keywords: "demo, centered, centered layout, blog page layout, blog page design with centered layout, webexpe, webexpe.com",
+        }
+    },
+    {
+        path: '/pages/blog/tutorial/how-to-write-your-first-article.tsx',
+        featureArticle: true,
+        preview: {
+            author: RUPALI,
+            date: "August 08 2022",
+            articleTitle: "How to write your first article",
+            tags: "demo, first article",
+            thumbnail: "/public/images/centered-layout-thumb.png",
+            shortIntro: "This a step by step guide on how to write your first article.",
+            category: 'tutorial'
+        },
+        seo: {
+            keywords: "demo, centered, centered layout, blog page layout, blog page design with centered layout, writing first article, webexpe, webexpe.com",
         }
     },
     {

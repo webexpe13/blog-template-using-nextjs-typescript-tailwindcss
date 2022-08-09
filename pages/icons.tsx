@@ -1,8 +1,9 @@
+/**These are necessary imports / components for the page */
+import { ImageSize, TextAlign, ListType } from "../src/shared/enums";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../src/components";
 import { iconsArray } from "../src/constants/appConstants";
 import { combineClasses } from "../src/utils/utils";
-import Text from "../src/components/Text";
 import { iSEO } from "../src/shared/interfaces";
-import PageLayout from "../src/layouts/PageLayouts";
 
 const Icons = () => {
     const PAGE_SEO: iSEO = {

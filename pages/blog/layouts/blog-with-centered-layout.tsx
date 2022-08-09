@@ -1,10 +1,6 @@
 /**These are necessary imports / components for the page */
-import PageLayout from "../../../src/layouts/PageLayouts";
-import { ImageSize } from "../../../src/shared/enums";
-import Image from "../../../src/components/ArticleImage";
-import ArticleHeader from "../../../src/components/ArticleHeader";
-import Text from "../../../src/components/Text";
-import List from "../../../src/components/List";
+import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../../../src/components";
 
 const Article = () => {
     return (

@@ -1,11 +1,8 @@
-import Seperator from "../src/components/Seperator";
-import { ImageSize, ListType } from "../src/shared/enums";
-import Text from "../src/components/Text";
-import Image from "../src/components/ArticleImage";
-import List from "../src/components/List";
+/**These are necessary imports / components for the page */
+import { ImageSize, TextAlign, ListType } from "../src/shared/enums";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../src/components";
 import { CURRENT_YEAR } from "../src/constants/appConstants";
 import { iSEO } from "../src/shared/interfaces";
-import PageLayout from "../src/layouts/PageLayouts";
 
 const AboutUs = () => {
     const PAGE_SEO: iSEO = {

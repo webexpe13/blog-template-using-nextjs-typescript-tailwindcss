@@ -1,7 +1,7 @@
 import ArticleCard from "../../src/components/ArticleCards/ArticleCard";
 import { ARTICLES_LIST } from '../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import { useRouter } from "next/router";
-import PageLayout from "../../src/layouts/PageLayouts";
+import { PageLayout } from "../../src/components";
 
 const Categories = () => {
     const router = useRouter()

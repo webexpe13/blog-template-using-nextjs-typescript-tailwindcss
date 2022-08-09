@@ -1,8 +1,6 @@
-import PageLayout from "../../../src/layouts/PageLayouts";
-import Text from "../../../src/components/Text";
-import Image from "../../../src/components/ArticleImage";
-import { ImageSize } from "../../../src/shared/enums";
-import Link from "next/link";
+/**These are necessary imports / components for the page */
+import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../../../src/components";
 
 const HomeLayoutExample = () => {
 
@@ -16,11 +14,11 @@ const HomeLayoutExample = () => {
                 <Text p>
                     This example/demo page is written in Default Home Page Layout. <br />
                     This is the layout we used to create 
-                    <Link href="/" passHref> Home</Link>, 
-                    <Link href="/about-us" passHref> About</Link>, 
-                    <Link href="/icons" passHref> Icons</Link>, 
-                    <Link href="/privacy-policy" passHref> Privacy Policy</Link>, 
-                    <Link href="/terms-and-condition" passHref> Terms & Conditions </Link> pages.
+                    <LinkTo href="/" passHref> Home</LinkTo>, 
+                    <LinkTo href="/pages/about-us.tsx" passHref> About</LinkTo>, 
+                    <LinkTo href="/pages/icons.tsx" passHref> Icons</LinkTo>, 
+                    <LinkTo href="/pages/privacy-policy.tsx" passHref> Privacy Policy</LinkTo>, 
+                    <LinkTo href="/pages/terms-and-condition.tsx" passHref> Terms & Conditions </LinkTo> pages.
                 </Text>
 
                 <Text subtitle className="mt-10 md:text">

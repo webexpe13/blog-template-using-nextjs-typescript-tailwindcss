@@ -13,7 +13,7 @@ const BlogSetup = () => {
                 <Text subtitle className="mt-10">
                     1.  Installing Node, VS Code and downloading the project on your computer.
                 </Text>
-                <List type={ListType.bullet} className="mt-5">
+                <List type={ListType.disc} className="mt-5">
                     <li className="">
                         You will need <b>node js</b> installed in your computer <br />
                         You can install node via <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/download/</a> or you can look up any tutorial to install node js on your computer.
@@ -73,7 +73,7 @@ const BlogSetup = () => {
                     We have 5 important items to set in navbar setup
                 </Text>
                 <Image className="my-5" src="/public/images/tutorials/how-to-navbar.svg" alt="how to setup navbar | webexpe.com" size={ImageSize.MEDIUM} />
-                <List type={ListType.bullet} className="mt-5">
+                <List type={ListType.disc} className="mt-5">
                     <li>
                         <b>type</b><br />
                         We have two types, <span className="bg-grey font-black">NavbarType.DEFAULT | NavbarType.CENTERED</span>

@@ -2,7 +2,7 @@ import { ListType } from "../../shared/enums"
 import { combineClasses } from "../../utils/utils"
 import classes from './List.module.scss'
 
-const List = ({ children, type = ListType.bullet, className }: {
+const List = ({ children, type = ListType.disc, className }: {
     children?: any,
     type?: ListType,
     className?: any

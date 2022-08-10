@@ -34,8 +34,8 @@ const SimpleNavbar = ({
               logo ?
                 logo.type === LogoType.IMAGE ?
                   <img src={theme === THEMES.DARK ? logo.logoLight : logo.logo} alt="WebExpe" className="cursor-pointer" width="100px" /> :
-                  <a className='dark:text-white text-black text-[22px] font-semibold'>{logo.logo}</a>
-                : <a className='dark:text-white text-black text-[22px] font-semibold'>Logo</a>
+                  <a className='text-[22px] font-semibold'>{logo.logo}</a>
+                : <a className='text-[22px] font-semibold'>Logo</a>
             }
           </Link>
         </div>

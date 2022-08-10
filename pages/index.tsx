@@ -1,6 +1,6 @@
 /**These are necessary imports / components for the page */
 import { ImageSize, TextAlign, ListType } from "../src/shared/enums";
-import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../src/components";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider } from "../src/components";
 import ArticleCard from '../src/components/ArticleCards/ArticleCard';
 import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
 import { ARTICLES_LIST } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
@@ -37,6 +37,10 @@ const Home = () => {
       </section>
       <div className="container mx-auto">
         <div className={'flex flex-wrap'}>
+          <Text subtitle className="mb-5 md:!text-4xl text-3xl w-full px-3 !font-medium">
+            Featured Articles
+          </Text>
+          <hr className='border-1 mb-5 w-[98%] mx-auto' />
           {
             ARTICLES_LIST.map((each, i) => (
               each.featureArticle ?

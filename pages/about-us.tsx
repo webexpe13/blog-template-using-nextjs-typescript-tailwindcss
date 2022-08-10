@@ -36,7 +36,7 @@ const AboutUs = () => {
                             <Text subtitle className='text-3xl font-medium'>
                                 Features
                             </Text>
-                            <List type={ListType.bullet}>
+                            <List type={ListType.disc}>
                                 <li>Minimilist Template</li>
                                 <li>Light and Dark theme</li>
                                 <li>Default and Centered Layout</li>
@@ -52,7 +52,7 @@ const AboutUs = () => {
                             <Text subtitle className='text-3xl font-medium'>
                                 Philosophy
                             </Text>
-                            <List type={ListType.bullet}>
+                            <List type={ListType.disc}>
                                 <li>Minimal code</li>
                                 <li>SEO-friendly</li>
                                 <li>Production-ready</li>
@@ -65,7 +65,7 @@ const AboutUs = () => {
                             <Text subtitle className='text-3xl font-medium'>
                                 Requirements
                             </Text>
-                            <List type={ListType.bullet}>
+                            <List type={ListType.disc}>
                                 <li>Node.js</li>
                                 <li>NPM</li>
                                 <li>Firebase for hosting</li>

@@ -7,13 +7,13 @@ const HowToDeployBlog = () => {
         <PageLayout home>
             <div className='container px-3 pb-5 md:mt-[50px] pt-20 md:pt-0'>
                 <Text title className="text-3xl">
-                    How to Export and deploy blog
+                    How to Export and deploy blog on firebase
                 </Text>
                 <hr />
                 <Text subtitle className="mt-10">
                     1. Export Project.
                 </Text>
-                <List type={ListType.bullet} className="mt-5">
+                <List type={ListType.disc} className="mt-5">
                     <li>
                         <b>Stop the local server</b> (if running)<br />
                         Open terminal and press <b>ctrl + C</b> to stop the server.
@@ -35,7 +35,7 @@ const HowToDeployBlog = () => {
                 <Text subtitle className="mt-10">
                     2. Basic firebase deployment tutorial.
                 </Text>
-                <List type={ListType.bullet} className="mt-5">
+                <List type={ListType.disc} className="mt-5">
                     <li>
                         <b>Goto firebase console</b><br />
                         If you have a gmail account, goto firebase <a href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer">https://firebase.google.com/</a> and goto firebase console.

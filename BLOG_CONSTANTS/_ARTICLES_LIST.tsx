@@ -123,12 +123,27 @@ export const ARTICLES_LIST: iArticle[] = [
         featureArticle: true,
         preview: {
             author: RUPALI,
-            date: "March 03 2022",
+            date: "August 09 2022",
             articleTitle: "How to Export and deploy on firebase",
             tags: "demo, deploy blog",
             thumbnail: "/public/images/deploy.png",
             shortIntro: "In this article you will see how to export blog files and what folder to deploy on your hosting.",
             category: 'tutorial'
+        }
+    },
+    {
+        path: '/pages/all-components.tsx',
+        preview: {
+            author: RUPALI,
+            date: "August 08 2022",
+            articleTitle: "All Components",
+            tags: "demo, all components",
+            thumbnail: "/public/images/centered-layout-thumb.png",
+            shortIntro: "List of all usable components, its types and how to use it.",
+            category: 'layouts'
+        },
+        seo: {
+            keywords: "demo, all components, webexpe, webexpe.com",
         }
     },
 ]

@@ -13,7 +13,7 @@ const Article = () => {
                 <i>
                     *note: All the files you will create or interact with are in <br />
                 </i>
-                <List type={ListType.bullet} className="mt-5">
+                <List type={ListType.disc} className="mt-5">
                     <li><b>BLOG_CONSTANTS Folder and its files</b></li>
                     <li><b>blog Folder inside pages folder</b> - you will create all the article files in this folder <br /></li>
                     <li>You will add all the images to use in <b>public - images folder</b></li>
@@ -37,7 +37,7 @@ const Article = () => {
                     In our article details we have 4 important properties <b>path, featureArticle, preview, and seo</b>.
                 </Text>
 
-                <List type={ListType.bullet} className="mt-5">
+                <List type={ListType.disc} className="mt-5">
                     <li>
                         <Text p className="mt-2">
                             <b>path</b><br />
@@ -57,7 +57,7 @@ const Article = () => {
                         <Text p className="mt-2">
                             This will display the details in main home page and artcile header in article page
                         </Text>
-                        <List type={ListType.bullet} className="mt-3">
+                        <List type={ListType.disc} className="mt-3">
                             <li>
                                 <b>author : </b>
                                 Paste the author variable imported from _BLOG_SETUP as shown in the image.

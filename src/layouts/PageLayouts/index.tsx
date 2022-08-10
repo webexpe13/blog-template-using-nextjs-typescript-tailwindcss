@@ -28,7 +28,7 @@ const PageLayout = ({ children, PAGE_SEO, blogwithsidebar = false, blogcentered 
                 blogwithsidebar ? <WithSidebar children={children} ads={ads} /> :
                     blogcentered ? <Centered children={children} /> :
                         home ? <HomeLayout children={children} /> :
-                            <WithSidebar children={children} />
+                            <HomeLayout children={children} />
             }
         </>
     )

@@ -13,7 +13,7 @@ const Centered = ({ children }: any) => {
     return (
         <section className={combineClasses(classes.centered_article_wrapper, 'dark:bg-slate-900 dark:text-white')}>
             <div className="container px-0 md:px-[15px] pt-[50px] pb-[50px]">
-                <article className={combineClasses(classes.article_content, 'pb-[30px] px-3 bg-white dark:bg-slate-800 dark:border-none dark:drop-shadow-lg dark:text-white pt-10 md:pt-0 mx-auto')}>
+                <article className={combineClasses(classes.article_content, 'pb-[30px] px-3 bg-white dark:bg-slate-800 dark:border-none dark:drop-shadow-lg dark:text-white pt-10 md:pt-0 mx-auto font-regular text-lg leading-relaxed')}>
                     {children}
                 </article>
                 <Seperator />

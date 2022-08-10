@@ -11,25 +11,26 @@ interface IProps {
     subtitle?: boolean;
     p?: boolean;
     quote?: boolean;
+    id?: string;
 }
 
-const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = false, subtitle = false, p = false, quote = false }: IProps) => {
+const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = false, subtitle = false, p = false, quote = false, id }: IProps) => {
     const computeComponent = () => {
         let ui = <></>;
 
         if (title) {
             ui = (
                 <h1
-                    className={combineClasses(`font-bold text-3xl md:text-4xl my-[10px]`, className)}
-                    style={{ color: color, textAlign: textAlign }}>
+                    className={combineClasses(`font-bold text-3xl md:text-4xl my-[10px]`, className)} style={{ color: color, textAlign: textAlign }} id={id}>
                     {children}
+                    
                 </h1>
             )
         } else if (subtitle) {
             ui = (
                 <h2
                     className={combineClasses(`font-semibold text-xl md:text-2xl my-[10px]`, className)}
-                    style={{ color: color, textAlign: textAlign }}>
+                    style={{ color: color, textAlign: textAlign }} id={id}>
                     {children}
                 </h2>
             )
@@ -37,7 +38,7 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = 
             ui = (
                 <p
                     className={combineClasses(`font-regular mb-3 text-lg leading-relaxed`, className)}
-                    style={{ color: color, textAlign: textAlign }}>
+                    style={{ color: color, textAlign: textAlign }} id={id}>
                     {children}
                 </p>
             )
@@ -45,7 +46,7 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = 
             ui = (
                 <blockquote
                     className={combineClasses(classes.quoted_text, className)}
-                    style={{ color: color, textAlign: textAlign }}>
+                    style={{ color: color, textAlign: textAlign }} id={id}>
                     <q>{children}</q>
                 </blockquote>
             )
@@ -53,7 +54,7 @@ const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = 
             ui = (
                 <p
                     className={combineClasses(`font-regular mb-3 text-lg leading-relaxed`, className)}
-                    style={{ color: color, textAlign: textAlign }}>
+                    style={{ color: color, textAlign: textAlign }} id={id}>
                     {children}
                 </p>
             )

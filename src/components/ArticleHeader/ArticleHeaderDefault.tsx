@@ -20,7 +20,7 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
                         </p>
                         {
                             headerData.category && <>
-                                <p className="px-2 text-gray-400 my-0">in</p>
+                                <p className="px-2 text-gray-500 my-0">in</p>
                                 <p className="font-medium my-0">
                                     <Link href={"/blog?category=" + headerData.category} passHref={true}>
                                         <a>{headerData.category}</a>
@@ -29,7 +29,7 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
                             </>
                         }
                     </div>
-                    <p className="text-xs text-gray-400 my-0 mt-1">{headerData.date}</p>
+                    <p className="text-xs text-gray-600 my-0 mt-1">{headerData.date}</p>
                 </div>
             </div>
             <h1 className="text-2xl md:text-4xl font-semibold mt-[20px] mb-[5px]">
@@ -38,7 +38,7 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
             <div>
                 {
                     headerData.tags.split(',').map((each, i) => (
-                        <span key={i} className="text-xs font-regular text-gray-400 mr-[10px]" >#{each}</span>
+                        <span key={i} className="text-xs font-regular text-gray-500 mr-[10px]" >#{each}</span>
                     ))
                 }
             </div>

@@ -30,7 +30,7 @@ export enum LogoType {
 }
 
 export enum ListType {
-  bullet = "list-disc",
+  disc = "list-disc",
   number = "list-decimal",
   none = "list-none"
 }

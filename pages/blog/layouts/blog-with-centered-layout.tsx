@@ -7,8 +7,6 @@ const Article = () => {
         // pass blogcentered as show below for article page centered layout
         <PageLayout blogcentered>
             <Image src='/public/images/page-layouts/how-to-use-centered.svg' alt="how to use article with centered layout | webexpe.com" size={ImageSize.FUll} />
-            <ArticleHeader centered />
-            <hr className="mb-5" />
             <Text p>
                 This current article made using <b>blogcentered</b> layout. This layout will be used to write your blog posts or articles.
             </Text>

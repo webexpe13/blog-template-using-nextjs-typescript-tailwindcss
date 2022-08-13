@@ -142,7 +142,7 @@ export const ARTICLES_LIST: iArticle[] = [
             tags: "demo, all components",
             thumbnail: "/public/images/tutorials/centered-layout-thumb.png",
             shortIntro: "List of all usable components, its types and how to use it.",
-            category: 'layouts'
+            category: 'tutorial'
         },
         seo: {
             keywords: "demo, all components, webexpe, webexpe.com",

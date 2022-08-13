@@ -13,9 +13,6 @@ const Article = () => {
         // pass blogwithsidebar as show below for article page with sidebar layout
         <PageLayout blogwithsidebar ads={ads}>
             <Image src='/public/images/page-layouts/how-to-use-sidebar-article-layout.svg' alt="how to use article with sidebar layout | webexpe.com" className="mb-5" size={ImageSize.FUll} />
-            {/* component to show the header with title, author date and etc */}
-            <ArticleHeader />
-            <hr className="mb-5" />
             <Text p>
                 This current article made using <b>blogwithsidebar</b> layout. This layout will be used to write your blog posts or articles.
             </Text>

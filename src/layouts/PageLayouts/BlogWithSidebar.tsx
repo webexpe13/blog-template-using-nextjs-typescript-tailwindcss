@@ -3,6 +3,7 @@ import { combineClasses, getArticleDetails, transformImagePaths, transformPath }
 import { ARTICLES_LIST } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import Link from 'next/link';
 import { generateRandomAvtar } from '../../constants/appConstants';
+import { ArticleHeader } from '../../components';
 
 const WithSidebar = ({ children, ads }: any) => {
     const ARTICLE_DETAILS = getArticleDetails();
@@ -16,6 +17,7 @@ const WithSidebar = ({ children, ads }: any) => {
             <section className={combineClasses(classes.withSidebar_article_wrapper, 'dark:bg-slate-900 dark:text-white')}>
                 <div className="container px-0 md:px-[15px] md:flex pb-[50px] pt-[50px]">
                     <article className={combineClasses(classes.article_content, 'pb-[20px] px-3 text-black bg-white dark:bg-slate-800 dark:border-none dark:drop-shadow-lg dark:text-white pt-10 md:pt-0 font-regular text-lg leading-relaxed')}>
+                        <ArticleHeader />
                         {children}
                     </article>
                     <div className={classes.article_sidebar_wrapper}>

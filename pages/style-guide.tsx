@@ -6,15 +6,15 @@ const StyleGuide = () => {
     return (
         <PageLayout>
             <section className="container md:pt-10 pt-20 px-0 md:px-[15px]">
-                <Text title>
+                <Text title className="text-blue-600">
                     Style Guide
                 </Text>
-                We have used <LinkTo href="https://tailwindcss.com/" external><b>Tailwind CSS</b></LinkTo> for this project so we can use all the css classes and styles given in the <LinkTo href="https://tailwindcss.com/docs/font-size" external><b> tailwind css docs</b></LinkTo>. You can get all the tutorials and how to's in the tailwind docs, in this guide we will show some classes and styling you might be using frequently with some of the components, rest you can go crazy with the help of the official docs.
+                We have used <LinkTo href="https://tailwindcss.com/" external><b>Tailwind CSS</b></LinkTo> for this project so we can use all the css classes and styles given in the <LinkTo href="https://tailwindcss.com/docs/font-size" external><b> tailwind css docs</b></LinkTo>. You can have an extensive tutorial of all utility classes in the tailwind docs, but in this guide we will show some classes and styling you might be using frequently with some of the components, rest you can go crazy with the help of the official docs.
                 <hr className="my-5" />
 
                 <Text subtitle className="md:!font-bold">Styling Texts</Text>
                 <b>Text</b> component is used to add text with some default styling in your article. You can see the <LinkTo href="/pages/all-components.tsx/#text" className="underline">demo and guide here</LinkTo>. <br />
-                With tailwind css utility classes we can change font size, font weight, color, and other text manipulation utilities classes shown in <LinkTo href="https://tailwindcss.com/docs/font-size" external><b> tailwind css text docs</b></LinkTo>, by adding the classes in <b>classname=""</b>. <br />
+                With tailwind css utility classes we can change font size, font weight, color, and other text manipulation utilities classes shown in <LinkTo href="https://tailwindcss.com/docs/font-size" external><b> tailwind css text docs</b></LinkTo>, by adding the classes in <b>className=""</b> attribute. <br />
                 <b>Example:</b> 
                 <br /> <b>{'<Text className="text-[20px] text-blue-500 font-bold">Lorem ipsum dummy text</Text>'}</b> <br />
                 You can override default styles by adding <b>"!"</b> in front of classes like <b>{`className="!font-bold md:!text-[50px] md:!font-semibold"`}</b>.

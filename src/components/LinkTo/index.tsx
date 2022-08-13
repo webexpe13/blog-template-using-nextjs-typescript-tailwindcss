@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { transformPath } from "../../utils/utils"
+import { combineClasses, transformPath } from "../../utils/utils"
 
-const LinkTo = ({ href, passHref = true, newTab = false, external = false, children, className }: { href: string, passHref?: boolean, newTab?: boolean, children?: any, external?: boolean, className?: any }) => {
+const LinkTo = ({ href, passHref = true, newTab = false, external = false, children, className }: { href: string, passHref?: boolean, newTab?: boolean, children?: any, external?: boolean, className?: string }) => {
     return (
         <>
             {
@@ -10,7 +10,7 @@ const LinkTo = ({ href, passHref = true, newTab = false, external = false, child
                         {children}
                     </a> :
                     <Link href={transformPath(href)} passHref={passHref}>
-                        <a className={className}>
+                        <a className={combineClasses(className, 'cursor-pointer')}>
                             {children}
                         </a>
                     </Link>

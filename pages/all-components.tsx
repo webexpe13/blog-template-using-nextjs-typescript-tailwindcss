@@ -35,10 +35,6 @@ const AllComponents = () => {
             href: '#pageLayouts'
         },
         {
-            component: 'Article Headers',
-            href: '#articleHeader'
-        },
-        {
             component: 'Text',
             href: '#text'
         },
@@ -70,7 +66,11 @@ const AllComponents = () => {
                 <div key={each.component + i}>
                     {
                         each.types ? <p className="text-xl font-semibold mb-3">{each.component}</p> :
-                            <LinkTo href={each.href} key={each.href} className={combineClasses("md:text-xl text-md font-semibold mb-3 block whitespace-nowrap md:mr-0 mr-5", isActive(each.href) && 'text-blue-500')}>
+                            <LinkTo
+                                href={each.href}
+                                key={each.href}
+                                className={combineClasses("md:text-xl text-md font-semibold mb-3 block whitespace-nowrap md:mr-0 mr-5", isActive(each.href) && 'text-blue-500')}
+                            >
                                 {each.component}
                             </LinkTo>
                     }
@@ -95,7 +95,7 @@ const AllComponents = () => {
         <PageLayout>
             <section className="container md:pt-10 pt-20 px-0 md:px-[15px]">
                 <div className="md:px-0 px-3">
-                    <Text title>
+                    <Text title className="text-blue-600">
                         All Components
                     </Text>
                     <hr className="my-5" />
@@ -130,28 +130,15 @@ const AllComponents = () => {
                             <Image src="/public/images/tutorials/how-to-use-pageLayout.svg" alt="how to use PageLayout | webexpe.com" />
                         </section>
 
-                        <section className={cardBBorder} id="articleHeader" >
-                            <Text subtitle className="mb-5 pb-3 border-b md:!text-3xl font-bold">
-                                Article Headers
-                            </Text>
-                            This component to show the header with title, author date and etc. <br /> <b>note*</b>: this can be only used in <b>{'<PageLayout blogcentered>'}</b> or <b>{'<PageLayout blogwithsidebar>'}</b> layouts or when an article entry is made in the _ARTICLE_LIST. <br /><br />
-                            <b>Demo</b> <br />
-                            <ArticleHeader />
-                            or
-                            <ArticleHeader centered />
-                            <b>How to use</b>
-                            <Image src="/public/images/tutorials/how-to-use-articleHeader.svg" alt="how to use ArticleHeader | webexpe.com" />
-                        </section>
-
                         <section className={cardBBorder} id="text">
                             <Text subtitle className="mb-5 pb-3 border-b md:!text-3xl font-bold">
                                 Text
                             </Text>
                             Text is used to write Paragraphs, Title, Sub title or Quotes in the article. <br /><br />
                             <b>Demo</b>
-                            <Text p>This is paragraph with default styles font size 18px and font weight of 400</Text>
-                            <Text title>This is Title with default styles font size 36px and font weight of 700, and is an <b>h1</b> tag. For better SEO use title only once per page/article. </Text>
-                            <Text subtitle>This is Sub Title with default styles font size 24px and font weight of 600. </Text>
+                            <Text p>This is a paragraph with default styles font size 18px and font weight of 400</Text>
+                            <Text title className="inline">This is a Title</Text> with default font size 36px and font weight of 700, and is an <b>h1</b> tag. For better SEO use title only once per page/article.
+                            <Text subtitle>This is a Sub Title with default styles font size 24px and font weight of 600. </Text>
                             <Text quote>This is Quoted text with default styles font size 18px and font weight of 400. </Text>
                             <Text p><b>Note:</b> By default we have some standard styles applied to the Text component, so if you need to override like text size, weight you can do as follows: <br /> <b>{'<Text p className="!text-[20px] !font-bold">Overide text size and weight</Text>'}</b> <br /> by adding <b>!</b> in front of the classes we can change the default styles like here font size will be changed to 22px and font weight will change to bold for paragraph </Text>  <br />
                             <b>Parameters</b> <br />
@@ -164,7 +151,11 @@ const AllComponents = () => {
                             <b>
                                 {'<Text p color="red">Text color red</Text>'} <br />
                                 {'<Text p color="#E2904B">Text color #E2904B</Text>'}
-                            </b>
+                            </b> <br /> or we can use tailwind css classes for font colors as shown below. <br />
+                            <b>
+                                {'<Text p className="font-blue-600">...</Text>'} <br />
+                                {'<Text p className="font-slate-400">...</Text>'}
+                            </b> you can find more tailwind font color classes on the official docs <LinkTo href="https://tailwindcss.com/docs/text-color" className="underline">here</LinkTo>.
                             <br /><br />
                             <b>How to use</b>
                             <Image src="/public/images/tutorials/how-to-use-text-full.svg" alt="how to use Text | webexpe.com" />
@@ -174,7 +165,7 @@ const AllComponents = () => {
                             <Text subtitle className="mb-5 pb-3 border-b md:!text-3xl font-bold">
                                 Image
                             </Text>
-                            To add image in your project, first save the image file in <b>public -- images</b> and then add the image path in image src. For demo check <b>/pages/all-coponents.tsx</b> file in code. <br /><br />
+                            To add image in your project, first save the image file in <b>{`public --> images`}</b> folder and then add the image path in image tag's src. For demo check <b>/pages/all-components.tsx</b> file in code. <br /><br />
                             <b>Demo</b>
                             <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Default size image with caption" className="my-5" />
                             <Image src="https://picsum.photos/300/100" alt="how to use Image | webexpe.com" caption="Full size image with caption" size={ImageSize.FUll} className="mb-5" />
@@ -184,6 +175,8 @@ const AllComponents = () => {
 
                             <b>How to use</b>
                             <Image src="/public/images/tutorials/how-to-use-image-2.svg" alt="how to use Image | webexpe.com" caption="XS size image with caption" className="mb-5" />
+
+                            <div></div>
                         </section>
 
                         <section className={cardBBorder} id="list" >

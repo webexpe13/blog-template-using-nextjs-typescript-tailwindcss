@@ -17,17 +17,17 @@ const HowToDeployBlog = () => {
                     <li>
                         <b>Stop the local server</b> (if running)<br />
                         Open terminal and press <b>ctrl + C</b> to stop the server.
-                        <Image className="mt-5" src="/images/stop-server.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="mt-5" src="/images/tutorials/stop-server.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     </li>
                     <li>
                         Run <b>npm run out</b><br />
                         In the terminal run <b>npm run out</b>.
-                        <Image className="mt-5" src="/images/npm-run-out.png" alt="nextjs-simple-blog-template" size={ImageSize.MEDIUM} />
-                        <Image className="mt-5" src="/images/export-done.png" alt="nextjs-simple-blog-template" size={ImageSize.MEDIUM} />
+                        <Image className="mt-5" src="/images/tutorials/npm-run-out.png" alt="nextjs-simple-blog-template" size={ImageSize.MEDIUM} />
+                        <Image className="mt-5" src="/images/tutorials/export-done.png" alt="nextjs-simple-blog-template" size={ImageSize.MEDIUM} />
                     </li>
                     <li>
                         After the export is successful. You will see a new folder created named <b>out</b> in you project directory .
-                        <Image className="my-5" src="/images/out-folder.png" alt="nextjs-simple-blog-template" size={ImageSize.XS} />
+                        <Image className="my-5" src="/images/tutorials/out-folder.png" alt="nextjs-simple-blog-template" size={ImageSize.XS} />
                         This <b>out</b> is the folder you need to deploy on your hosting service.
                     </li>
                 </List>
@@ -42,15 +42,15 @@ const HowToDeployBlog = () => {
                     </li>
                     <li>
                         <b>Create a project</b><br />
-                        <Image className="my-5" src="/images/firebase-create-proj.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="my-5" src="/images/tutorials/firebase-create-proj.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
 
                         Enter project name and Select Conitnue with analytics and enter the contry. and click create project.
                     </li>
                     <li>
                         <b>Firebase Dashboard</b><br />
                         Click on <b>Hosting</b> inside <b>Build</b>
-                        <Image className="my-5" src="/images/select-hosting.png" alt="nextjs-simple-blog-template" size={ImageSize.SMALL} />
-                        <Image className="my-5" src="/images/hosting-gs.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="my-5" src="/images/tutorials/select-hosting.png" alt="nextjs-simple-blog-template" size={ImageSize.SMALL} />
+                        <Image className="my-5" src="/images/tutorials/hosting-gs.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     </li>
                     <li>
                         <b>Install firebase</b><br />
@@ -63,14 +63,14 @@ const HowToDeployBlog = () => {
                     <li>
                         <b>Init Firebase and Deploy</b><br />
                         Run <b>firebase init</b> in terminal, move the selection to hosting using arrow keys and select Hosting by hitting space, and then press enter.
-                        <Image className="my-5" src="/images/use-exi.png" alt="nextjs-simple-blog-template" caption="Select Use an Existing Project" size={ImageSize.DEFAULT} />
+                        <Image className="my-5" src="/images/tutorials/use-exi.png" alt="nextjs-simple-blog-template" caption="Select Use an Existing Project" size={ImageSize.DEFAULT} />
                         After you select <b>Use an Existing Project</b> you will see list of all projects in your firebase account, including the one we created now.
-                        <Image className="my-5" src="/images/select-proj.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="my-5" src="/images/tutorials/select-proj.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                         it will ask the following:
                         <List type={ListType.number} className="mt-5">
                             <li>
                                 <b>What do you want to use as your public directory?</b> here write <b>out</b>
-                                <Image className="my-5" src="/images/select-dir.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                                <Image className="my-5" src="/images/tutorials/select-dir.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                             </li>
                             <li>
                                 <b>Configure as a single-page app (rewrite all urls to /index.html)</b> here enter <b>N</b> (decline it)
@@ -82,10 +82,10 @@ const HowToDeployBlog = () => {
                                 <b>File out/index.html already exists. Overwrite? (y/N)</b>  here enter <b>N</b> (decline it)
                             </li>
                         </List>
-                        <Image className="my-5" src="/images/firebase-complete.png" alt="nextjs-simple-blog-template" caption="Firebase Setup Complete" size={ImageSize.DEFAULT} />
+                        <Image className="my-5" src="/images/tutorials/firebase-complete.png" alt="nextjs-simple-blog-template" caption="Firebase Setup Complete" size={ImageSize.DEFAULT} />
 
                         Finally run <b>firebase deploy</b> and your peoject will be deployed on your firebase hosting.
-                        <Image className="my-5" src="/images/fb-deploy.png" alt="nextjs-simple-blog-template" caption="Firebase Deploy" size={ImageSize.DEFAULT} />
+                        <Image className="my-5" src="/images/tutorials/fb-deploy.png" alt="nextjs-simple-blog-template" caption="Firebase Deploy" size={ImageSize.DEFAULT} />
                     </li>
                     <li>
                         <b>* note</b><br />

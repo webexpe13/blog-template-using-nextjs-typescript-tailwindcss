@@ -18,7 +18,7 @@ const ArticleHeaderCenter = ({ headerData }: IProps) => {
                         headerData.category && <>
                             <span className="px-1 font-light">in</span>
                             <Link href={"/blog?category=" + headerData.category} passHref={true}>
-                                <a>{headerData.category}</a>
+                                {headerData.category}
                             </Link>
                         </>
                     }

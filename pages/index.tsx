@@ -23,15 +23,11 @@ const Home = () => {
             <a href="https://github.com/nmayur/nextjs-simple-blog-template" target="_blank" rel="noopener noreferrer" className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
               <span className='text-xl pl-2 pt-2 block'>Github</span>
             </a>
-            <LinkTo href="/about-us" passHref>
-              <a className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
-                <span className='text-xl pt-2 block'>About</span>
-              </a>
+            <LinkTo href="/about-us" passHref className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
+              <span className='text-xl pt-2 block'>About</span>
             </LinkTo>
-            <LinkTo href="/pages/all-components.tsx" passHref>
-              <a className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
-                <span className='text-xl pt-2 block'>Components</span>
-              </a>
+            <LinkTo href="/pages/all-components.tsx" passHref className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
+              <span className='text-xl pt-2 block'>Components</span>
             </LinkTo>
 
             <a href="https://www.buymeacoffee.com/webexpe13z" target="_blank" rel="noopener noreferrer" className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>

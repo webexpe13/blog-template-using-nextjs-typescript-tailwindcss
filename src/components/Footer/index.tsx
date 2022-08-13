@@ -10,7 +10,7 @@ const Footer = () => {
                     <a className="pr-[10px] md:pr-3">Privacy Policy</a>
                 </Link>
                 <Link href="/terms-and-condition" passHref={true}>
-                    <a>Terms and Conditions</a>
+                    Terms and Conditions
                 </Link>
             </div>
         </div>

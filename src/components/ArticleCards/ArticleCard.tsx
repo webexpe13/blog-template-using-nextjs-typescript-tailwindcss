@@ -1,4 +1,4 @@
-import Link from "next/link";
+import LinkTo from "../LinkTo";
 import { generateRandomAvtar } from "../../constants/appConstants";
 import { IArticleHeaderData } from "../../shared/interfaces";
 import { combineClasses, transformImagePaths, transformPath } from "../../utils/utils";
@@ -20,13 +20,11 @@ const ArticleCard = ({ article, path }: IProp) => {
 
           <div className={'d-block px-[15px] py-0'}>
             <p className={"font-normal text-xs pt-3 mb-0 md:mb-3"}>{article.date}</p>
-            <Link href={transformPath(path)}>
-              <a>
-                <h1 className={"text-[22px] font-bold cursor-pointer tracking-wide hover:text-blue-600"} >
-                  {article.articleTitle}
-                </h1>
-              </a>
-            </Link>
+            <LinkTo href={transformPath(path)} passHref>
+              <h1 className={"text-[22px] font-bold cursor-pointer tracking-wide hover:text-blue-600"} >
+                {article.articleTitle}
+              </h1>
+            </LinkTo>
             <p className={combineClasses(classes.article_card__intro, "text-sm font-normal mt-2 md:mt-1")}>
               {article.shortIntro.slice(0, 100)} ...
             </p>
@@ -56,9 +54,9 @@ const ArticleCard = ({ article, path }: IProp) => {
             article.category && <>
               <p className="text-sm px-2 font-regumal">in</p>
               <p className={"font-medium text-sm cursor-pointer hover:text-blue-600"}>
-                <Link href={"/blog?category=" + article.category} passHref={true}>
+                <LinkTo href={"/blog?category=" + article.category} passHref={true}>
                   {article.category}
-                </Link>
+                </LinkTo>
               </p>
             </>
           }

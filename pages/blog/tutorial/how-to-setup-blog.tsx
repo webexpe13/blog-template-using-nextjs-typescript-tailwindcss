@@ -30,14 +30,14 @@ const BlogSetup = () => {
                         </a>
                         <br />
                         If you are using Git you can clone the code or click the <b>use template</b> button to generate your own repo.
-                        <Image className="mt-3" src="/images/download-code.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="mt-3" src="/images/tutorials/download-code.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     </li>
                     <li className="">
                         Open the blog project in VS code. <br /> Open terminal in VS code using ther <b>Terminal button</b> on tool bar of the VS Code window or press <b>ctrl + ~</b> or <b>cmd + ~</b>.
                     </li>
                     <li className="mb-20">
                         In Terminal run <b>npm install</b>. This will install all the required packages.
-                        <Image className="my-4" src="/images/project-install.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="my-4" src="/images/tutorials/project-install.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
 
                         After the installation is done run <b>npm start</b> in the terminal, it will start your project on http://localhost:3000/.
 

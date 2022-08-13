@@ -49,8 +49,8 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                     {
                         navSetup.sideNavLinks.map((each: any, i: any) => (
                             each.type !== 'dropdown' ? !each.newTab ?
-                                <LinkTo href={each.path} key={i} passHref>
-                                    <a className='text-[16px] block my-3'>{each.label}</a>
+                                <LinkTo href={each.path} key={i} passHref className='text-[16px] block my-3'>
+                                    {each.label}
                                 </LinkTo> :
                                 <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='text-[16px] block my-3 flex-wrap'>
                                     {each.label}
@@ -65,12 +65,12 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                     </div>
                                     <div className={classes.sidebarCategoryDD} style={{ height: openDD ? 'auto' : '0px', padding: openDD ? '10px' : '0px' }}>
                                         <LinkTo href={'/blog'} passHref>
-                                            <a className=''>All Articles</a>
+                                            All Articles
                                         </LinkTo>
                                         {
                                             CATEGORIES.map(each => (
                                                 <LinkTo href={"/blog?category=" + each} key={each} passHref>
-                                                    <a className='' style={{ textTransform: 'capitalize' }}>{each}</a>
+                                                    <span style={{ textTransform: 'capitalize' }}>{each}</span>
                                                 </LinkTo>
                                             ))
                                         }
@@ -83,32 +83,32 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                             <>
                                 <hr />
                                 <Text subtitle className='mt-3 !text-[18px]'>Examples and tutorials</Text>
-                                <LinkTo href='/pages/all-components.tsx' passHref>
-                                    <a className='text-[16px] block my-3'>All Components</a>
+                                <LinkTo href='/pages/all-components.tsx' passHref className='text-[16px] block my-3'>
+                                    All Components
                                 </LinkTo>
-                                <LinkTo href='/pages/style-guide.tsx' passHref>
-                                    <a className='text-[16px] block my-3'>Style Guide</a>
+                                <LinkTo href='/pages/style-guide.tsx' passHref className='text-[16px] block my-3'>
+                                    Style Guide
                                 </LinkTo>                                   
-                                <LinkTo href='/pages/blog/layouts/home-layout.tsx' passHref>
-                                    <a className='text-[16px] block my-3'>Home Page Layout</a>
+                                <LinkTo href='/pages/blog/layouts/home-layout.tsx' passHref className='text-[16px] block my-3'>
+                                    Home Page Layout
                                 </LinkTo>
-                                <LinkTo href='/pages/blog/layouts/blog-with-sidebar-layout.tsx' passHref>
-                                    <a className='text-[16px] block my-3'>Page Layout for article with sidebar</a>
+                                <LinkTo href='/pages/blog/layouts/blog-with-sidebar-layout.tsx' passHref className='text-[16px] block my-3'>
+                                    Page Layout for article with sidebar
                                 </LinkTo>
-                                <LinkTo href='/pages/blog/layouts/blog-with-centered-layout.tsx' passHref>
-                                    <a className='text-[16px] block my-3'>Page Layout for centered article</a>
+                                <LinkTo href='/pages/blog/layouts/blog-with-centered-layout.tsx' passHref className='text-[16px] block my-3'>
+                                    Page Layout for centered article
                                 </LinkTo>
-                                <LinkTo href='/pages/blog/tutorial/how-to-setup-blog.tsx' passHref>
-                                    <a className='text-[16px] block my-3'>How to setup your blog</a>
+                                <LinkTo href='/pages/blog/tutorial/how-to-setup-blog.tsx' passHref className='text-[16px] block my-3'>
+                                    How to setup your blog
                                 </LinkTo>
-                                <LinkTo href='/pages/blog/tutorial/how-to-write-your-first-article.tsx' passHref>
-                                    <a className='text-[16px] block my-3'>How to write your first article</a>
+                                <LinkTo href='/pages/blog/tutorial/how-to-write-your-first-article.tsx' passHref className='text-[16px] block my-3'>
+                                    How to write your first article
                                 </LinkTo>
-                                <LinkTo href='/pages/blog/tutorial/how-to-deploy-blog.tsx' passHref>
-                                    <a className='text-[16px] block my-3'>How to export the blog</a>
+                                <LinkTo href='/pages/blog/tutorial/how-to-deploy-blog.tsx' passHref className='text-[16px] block my-3'>
+                                    How to export the blog
                                 </LinkTo>                                
-                                <LinkTo href='/icons' passHref>
-                                    <a className='text-[16px] block my-3'>Icons</a>
+                                <LinkTo href='/icons' passHref className='text-[16px] block my-3'>
+                                    Icons
                                 </LinkTo>
                             </>
                             : null

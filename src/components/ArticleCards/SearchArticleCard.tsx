@@ -9,11 +9,9 @@ const SerachArticleCard = ({ article, path }: { article: IArticleHeaderData, pat
     <div className={combineClasses(classes.article_card, "px-[15px] py-[10px] border-b-[5px] border-blue-600 dark:bg-slate-800 dark:text-white bg-white text-black drop-shadow-lg")}>
       <p className={combineClasses(classes.article_card__date, "font-medium text-xs mt-3 mb-2")}>{article.date}</p>
       <Link href={transformPath(path)} passHref={true}>
-        <a>
-          <h1 className={combineClasses(classes.article_card__title, "text-[22px] font-bold my-0")} >
-            {article.articleTitle}
-          </h1>
-        </a>
+        <h1 className={combineClasses(classes.article_card__title, "text-[22px] font-bold my-0")} >
+          {article.articleTitle}
+        </h1>
       </Link>
       <div className={classes.article_card__tags}>
         {

@@ -70,21 +70,19 @@ const AllComponents = () => {
                 <div key={each.component + i}>
                     {
                         each.types ? <p className="text-xl font-semibold mb-3">{each.component}</p> :
-                            <LinkTo href={each.href} key={each.href}>
-                                <a className={combineClasses("md:text-xl text-md font-semibold mb-3 block whitespace-nowrap md:mr-0 mr-5", isActive(each.href) && 'text-blue-500')}>{each.component}</a>
+                            <LinkTo href={each.href} key={each.href} className={combineClasses("md:text-xl text-md font-semibold mb-3 block whitespace-nowrap md:mr-0 mr-5", isActive(each.href) && 'text-blue-500')}>
+                                {each.component}
                             </LinkTo>
                     }
                     <div className="mb-3">
                         {
                             each.types &&
                             each.types.map((each: any) => (
-                                <LinkTo href={each.href} key={each.href}>
-                                    <a className={combineClasses(
-                                        "block text-gray-500 font-medium py-1 pl-3 border-l",
-                                        isActive(each.href) && 'text-blue-500 border-blue-500 border-l-2'
-                                    )}>
-                                        {each.label}
-                                    </a>
+                                <LinkTo href={each.href} key={each.href} className={combineClasses(
+                                    "block text-gray-500 font-medium py-1 pl-3 border-l",
+                                    isActive(each.href) && 'text-blue-500 border-blue-500 border-l-2'
+                                )}>
+                                    {each.label}
                                 </LinkTo>
                             ))
                         }
@@ -178,7 +176,7 @@ const AllComponents = () => {
                             </Text>
                             To add image in your project, first save the image file in <b>public -- images</b> and then add the image path in image src. For demo check <b>/pages/all-coponents.tsx</b> file in code. <br /><br />
                             <b>Demo</b>
-                            <Image src="/public/images/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Default size image with caption" className="my-5" />
+                            <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Default size image with caption" className="my-5" />
                             <Image src="https://picsum.photos/300/100" alt="how to use Image | webexpe.com" caption="Full size image with caption" size={ImageSize.FUll} className="mb-5" />
                             <Image src="https://picsum.photos/300/100" alt="how to use Image | webexpe.com" caption="Medium size image with caption" size={ImageSize.MEDIUM} className="mb-5" />
                             <Image src="https://picsum.photos/300/100" alt="how to use Image | webexpe.com" caption="Small size image with caption" size={ImageSize.SMALL} className="mb-5" />

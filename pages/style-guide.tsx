@@ -24,7 +24,7 @@ const StyleGuide = () => {
                 <Seperator />
                 <Text subtitle className="md:!font-bold">Background color and images</Text>
                 For background color follow the guide given <LinkTo href="https://tailwindcss.com/docs/background-color" external className="underline">here</LinkTo>. <br />
-                For background image use the syntax <b>{`className="bg-[url('/public/images/demo-image.jpg)]"`}</b>. For more info follow the guide given <LinkTo href="https://tailwindcss.com/docs/background-image#arbitrary-values" external className="underline">here</LinkTo>.
+                For background image use the syntax <b>{`className="bg-[url('/public/images/tutorials/demo-image.jpg)]"`}</b>. For more info follow the guide given <LinkTo href="https://tailwindcss.com/docs/background-image#arbitrary-values" external className="underline">here</LinkTo>.
                 <Seperator />
                 <Text subtitle className="md:!font-bold">Light and Dark mode</Text>
                 We have a setup for dark and light mode by default. You can see the styling doc on how to change your styles with respect to light or dark theme  <LinkTo href="https://tailwindcss.com/docs/dark-mode" external className="underline">here</LinkTo>.

@@ -1,24 +1,19 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, ListType, TextAs } from "../../../src/shared/enums";
-import Image from "../../../src/components/ArticleImage";
-import SectionSeperator from "../../../src/components/SectionSeperator";
-import HomeLayout from "../../../src/layouts/HomeLayout";
-import List from "../../../src/components/List";
-import Text from "../../../src/components/Text";
-/**These are necessary imports / components for the page */
+import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../../../src/components";
 
 const HowToDeployBlog = () => {
     return (
-        <HomeLayout>
-            <div className='container px-3 pb-5 mt-[50px]'>
-                <Text as={TextAs.title} className="md:text-3xl">
-                    How to Export and deploy blog
+        <PageLayout home>
+            <div className='container px-3 pb-5 md:mt-[50px] pt-20 md:pt-0'>
+                <Text title className="text-3xl">
+                    How to Export and deploy blog on firebase
                 </Text>
                 <hr />
-                <Text as={TextAs.title} className="mt-10">
+                <Text subtitle className="mt-10">
                     1. Export Project.
                 </Text>
-                <List type={ListType.bullet} className="mt-5">
+                <List type={ListType.disc} className="mt-5">
                     <li>
                         <b>Stop the local server</b> (if running)<br />
                         Open terminal and press <b>ctrl + C</b> to stop the server.
@@ -36,11 +31,11 @@ const HowToDeployBlog = () => {
                         This <b>out</b> is the folder you need to deploy on your hosting service.
                     </li>
                 </List>
-                <SectionSeperator />
-                <Text as={TextAs.title} className="mt-10">
+                <Seperator />
+                <Text subtitle className="mt-10">
                     2. Basic firebase deployment tutorial.
                 </Text>
-                <List type={ListType.bullet} className="mt-5">
+                <List type={ListType.disc} className="mt-5">
                     <li>
                         <b>Goto firebase console</b><br />
                         If you have a gmail account, goto firebase <a href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer">https://firebase.google.com/</a> and goto firebase console.
@@ -98,7 +93,7 @@ const HowToDeployBlog = () => {
                     </li>
                 </List>
             </div>
-        </HomeLayout>
+        </PageLayout>
     )
 }
 

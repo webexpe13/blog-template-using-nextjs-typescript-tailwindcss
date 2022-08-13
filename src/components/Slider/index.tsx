@@ -9,6 +9,9 @@ import classes from './slider.module.scss';
 import Image from '../ArticleImage';
 import { ImageSize } from '../../shared/enums';
 
+import LightGallery from 'lightgallery/react';
+import lgZoom from 'lightgallery/plugins/zoom';
+
 const Slider = ({ images, className }: { images: string[], className?: string }) => {
     return (
         <Swiper
@@ -17,8 +20,6 @@ const Slider = ({ images, className }: { images: string[], className?: string })
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
             loop={true}
             className={className}
         >

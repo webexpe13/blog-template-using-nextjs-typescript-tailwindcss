@@ -1,27 +1,39 @@
 import '../src/styles/globals.scss'
 import '../src/assets/fontCss/icofont.css'
+
+import 'lightgallery/scss/lightgallery.scss';
+import 'lightgallery/scss/lg-zoom.scss';
+
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import { SEO } from "../next-seo.config";
 import { DefaultSeo } from "next-seo";
 import Footer from '../src/components/Footer';
 import Script from 'next/script';
 import * as gtag from '../google';
-import { ThemeProvider } from 'next-themes';
+import { useEffect, useState } from 'react';
+import { CREATE_SEO_CONFIG } from '../src/utils/utils';
+import { ThemeProvider } from 'next-themes'
+
 
 function MyApp({ Component, pageProps }: AppProps) {
-
+  const [mounted, setMounted] = useState(false);
   const env = process.env.NODE_ENV;
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  let SEO_CONFIG = CREATE_SEO_CONFIG({});
+
+  if(!mounted && env === 'development') return null
   return (
     <>
-      <DefaultSeo {...SEO} />
+      <DefaultSeo {...SEO_CONFIG} />
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+          content="width=device-width, initial-scale=1, minimum-scale=1"
         />
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -52,10 +64,10 @@ function MyApp({ Component, pageProps }: AppProps) {
             />
           </> : null
       }
-      <ThemeProvider attribute="class">
+      <ThemeProvider enableSystem={true} attribute="class">
         <Component {...pageProps} />
+        <Footer />
       </ThemeProvider>
-      <Footer />
     </>
   )
 

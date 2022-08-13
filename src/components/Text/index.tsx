@@ -1,49 +1,63 @@
-import { TextAlign, TextAs } from "../../shared/enums";
+import { TextAlign } from "../../shared/enums";
 import { combineClasses } from "../../utils/utils";
 import classes from './text.module.scss'
 
 interface IProps {
-    children: any;
+    children?: any;
     color?: string;
     textAlign?: TextAlign;
     className?: string;
-    as?: TextAs;
-    fontSize?: number;
+    title?: boolean;
+    subtitle?: boolean;
+    p?: boolean;
+    quote?: boolean;
+    id?: string;
 }
 
-const Text = ({ children, fontSize, color, textAlign = TextAlign.LEFT, className, as = TextAs.p }: IProps) => {
+const Text = ({ children, color, textAlign = TextAlign.NONE, className, title = false, subtitle = false, p = false, quote = false, id }: IProps) => {
     const computeComponent = () => {
         let ui = <></>;
-        switch (as) {
-            case TextAs.p:
-                ui = (
-                    <p 
-                        className={combineClasses(`font-regular mb-3 text-[${fontSize}px]`, className)} 
-                        style={{ color: color, textAlign: textAlign}}>
-                        {children}
-                    </p>
-                )
-                break;
-            case TextAs.title:
-                ui = (
-                    <h1 
-                        className={`font-bold my-[10px] text-xl text-[${fontSize}px] ${className}`} 
-                        style={{ color: color, textAlign: textAlign }}>
-                        {children}
-                    </h1>
-                )
-                break;
-            case TextAs.quote:
-                ui = (
-                    <blockquote 
-                        className={combineClasses(classes.quoted_text, className, `text-[${fontSize}px]`)} 
-                        style={{ color: color, textAlign: textAlign }}>
-                        <q>{children}</q>
-                    </blockquote>
-                )
-                break;
-            default:
-                break;
+
+        if (title) {
+            ui = (
+                <h1
+                    className={combineClasses(`font-bold text-3xl md:text-4xl my-[10px]`, className)} style={{ color: color, textAlign: textAlign }} id={id}>
+                    {children}
+                    
+                </h1>
+            )
+        } else if (subtitle) {
+            ui = (
+                <h2
+                    className={combineClasses(`font-semibold text-xl md:text-2xl my-[10px]`, className)}
+                    style={{ color: color, textAlign: textAlign }} id={id}>
+                    {children}
+                </h2>
+            )
+        } else if (p) {
+            ui = (
+                <p
+                    className={combineClasses(`font-regular mb-3 text-lg leading-relaxed`, className)}
+                    style={{ color: color, textAlign: textAlign }} id={id}>
+                    {children}
+                </p>
+            )
+        } else if (quote) {
+            ui = (
+                <blockquote
+                    className={combineClasses(classes.quoted_text, className)}
+                    style={{ color: color, textAlign: textAlign }} id={id}>
+                    <q>{children}</q>
+                </blockquote>
+            )
+        } else {
+            ui = (
+                <p
+                    className={combineClasses(`font-regular mb-3 text-lg leading-relaxed`, className)}
+                    style={{ color: color, textAlign: textAlign }} id={id}>
+                    {children}
+                </p>
+            )
         }
         return ui;
     }

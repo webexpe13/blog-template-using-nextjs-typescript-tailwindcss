@@ -110,3 +110,5 @@ export const generateRandomAvtar = () => {
 
   return avtars[Math.floor(Math.random()*avtars.length)]
 }
+
+export const CURRENT_YEAR = new Date().getFullYear();

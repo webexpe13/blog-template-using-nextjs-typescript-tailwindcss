@@ -1,0 +1,15 @@
+.section_seperator_line{
+    max-width: 350px;
+    @apply opacity-50 border-t-2 mx-auto my-[50px] w-1/2;
+}
+
+.section_seperator_dots{
+    @apply mx-auto my-[50px] w-1/4 flex items-center justify-between;
+
+    span{
+        background: #000;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+    }
+}

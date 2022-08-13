@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
 import { IArticleHeaderData } from "../../shared/interfaces";
 import classes from "./ArticleCard.module.scss";
-import { combineClasses, getTheme, setPath, transformImagePaths, transformPath } from "../../utils/utils";
+import { combineClasses, transformImagePaths, transformPath } from "../../utils/utils";
 import Link from "next/link";
 import { generateRandomAvtar } from "../../constants/appConstants";
 
@@ -12,15 +11,11 @@ interface IProp {
 
 
 const FeaturedArticle = ({ article, path }: IProp) => {
-    const [theme, setTheme] = useState('');
-    useEffect(() => {
-        getTheme(setTheme);
-    }, [theme]);
-
     return (
         <>
-            <div className={combineClasses(classes.featured_article, theme === 'dark' ? classes.dark : null)}>
-                <div className={'w-full md:w-[55%] px-[50px] py-[40px]'}>
+            <div className={combineClasses(classes.featured_article, 
+                'md:border-l-[5px] border-b-[5px] md:border-b-0 border-blue-500 dark:bg-slate-800 dark:text-white dark:drop-shadow-lg')}>
+                <div className={'w-full md:w-[55%] md:px-[50px] px-[15px] md:py-[40px] py-[20px]'}>
                     <div className={ "mt-0 mb-[10px] flex items-center"}>
                         <div className={classes.author}>
                             <div className={classes.author_img}>

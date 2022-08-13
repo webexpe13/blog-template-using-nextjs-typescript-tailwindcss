@@ -1,13 +1,14 @@
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { THEME_ICONS } from '../../constants/appConstants';
 import { THEMES } from '../../shared/enums';
 import { addBodyNoScroll, combineClasses, getCategories, removeBodyNoScroll } from '../../utils/utils';
 import classes from './Navbar.module.scss';
+import { XIcon } from '@heroicons/react/outline';
+import { Text, LinkTo } from '../../components';
 
 interface IProps {
     openSidebar: boolean;
-    theme: THEMES;
+    theme: any;
     closeNavSidebar: () => void;
     navSetup: any;
     changeTheme: () => void;
@@ -38,19 +39,19 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 <div className="backdrop" onClick={closeNavSidebar}></div>
             ) : null}
 
-            <aside className={combineClasses(classes.nav_sidebar_wrapper, classes.shadow, openSidebar && classes.open, theme === THEMES.DARK && classes.dark)}>
-                <div className={combineClasses('flex items-center justify-between pb-3')} onClick={closeNavSidebar}>
-                    <p className='font-light'>menu</p>
-                    <div className={classes.sideNavCloseIcon}><span></span></div>
+            <aside className={combineClasses(classes.nav_sidebar_wrapper, openSidebar && classes.open, 'dark:bg-slate-900 dark:text-white bg-white text-black')}>
+                <div className='flex items-center justify-between pb-3' onClick={closeNavSidebar}>
+                    <p className=''>menu</p>
+                    <div className={classes.sideNavCloseIcon}><XIcon className='text-slate-800 dark:text-white' /></div>
                 </div>
                 <hr />
                 <div className='my-15'>
                     {
                         navSetup.sideNavLinks.map((each: any, i: any) => (
                             each.type !== 'dropdown' ? !each.newTab ?
-                                <Link href={each.path} key={i} passHref>
+                                <LinkTo href={each.path} key={i} passHref>
                                     <a className='text-[16px] block my-3'>{each.label}</a>
-                                </Link> :
+                                </LinkTo> :
                                 <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='text-[16px] block my-3 flex-wrap'>
                                     {each.label}
                                 </a>
@@ -63,14 +64,14 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                         <i className='icofont-caret-down'></i>
                                     </div>
                                     <div className={classes.sidebarCategoryDD} style={{ height: openDD ? 'auto' : '0px', padding: openDD ? '10px' : '0px' }}>
-                                        <Link href={'/blog'} passHref>
+                                        <LinkTo href={'/blog'} passHref>
                                             <a className=''>All Articles</a>
-                                        </Link>
+                                        </LinkTo>
                                         {
                                             CATEGORIES.map(each => (
-                                                <Link href={"/blog?category=" + each} key={each} passHref>
+                                                <LinkTo href={"/blog?category=" + each} key={each} passHref>
                                                     <a className='' style={{ textTransform: 'capitalize' }}>{each}</a>
-                                                </Link>
+                                                </LinkTo>
                                             ))
                                         }
                                     </div>
@@ -80,27 +81,35 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                     {
                         env === 'development' ?
                             <>
-                                <Link href='/icons' passHref>
-                                    <a className='text-[16px] block my-3'>Icons</a>
-                                </Link>
-                                {/* <Link href='/styles' passHref>
-                                    <a className='text-[16px] block my-3'>Styles Doc</a>
-                                </Link> */}
-                                <Link href='/blog/demo-article-default-layout' passHref>
-                                    <a className='text-[16px] block my-3'>Demo Article Default Layout</a>
-                                </Link>
-                                <Link href='/blog/demo-article-centered-layout' passHref>
-                                    <a className='text-[16px] block my-3'>Demo Article Centered Layout</a>
-                                </Link>
-                                <Link href='/blog/tutorial/demo-article-with-category' passHref>
-                                    <a className='text-[16px] block my-3'>Demo Article With category</a>
-                                </Link>
-                                <Link href='/blog/tutorial/how-to-setup-blog' passHref>
+                                <hr />
+                                <Text subtitle className='mt-3 !text-[18px]'>Examples and tutorials</Text>
+                                <LinkTo href='/pages/all-components.tsx' passHref>
+                                    <a className='text-[16px] block my-3'>All Components</a>
+                                </LinkTo>
+                                <LinkTo href='/pages/style-guide.tsx' passHref>
+                                    <a className='text-[16px] block my-3'>Style Guide</a>
+                                </LinkTo>                                   
+                                <LinkTo href='/pages/blog/layouts/home-layout.tsx' passHref>
+                                    <a className='text-[16px] block my-3'>Home Page Layout</a>
+                                </LinkTo>
+                                <LinkTo href='/pages/blog/layouts/blog-with-sidebar-layout.tsx' passHref>
+                                    <a className='text-[16px] block my-3'>Page Layout for article with sidebar</a>
+                                </LinkTo>
+                                <LinkTo href='/pages/blog/layouts/blog-with-centered-layout.tsx' passHref>
+                                    <a className='text-[16px] block my-3'>Page Layout for centered article</a>
+                                </LinkTo>
+                                <LinkTo href='/pages/blog/tutorial/how-to-setup-blog.tsx' passHref>
                                     <a className='text-[16px] block my-3'>How to setup your blog</a>
-                                </Link>
-                                <Link href='/blog/tutorial/how-to-deploy-blog' passHref>
+                                </LinkTo>
+                                <LinkTo href='/pages/blog/tutorial/how-to-write-your-first-article.tsx' passHref>
+                                    <a className='text-[16px] block my-3'>How to write your first article</a>
+                                </LinkTo>
+                                <LinkTo href='/pages/blog/tutorial/how-to-deploy-blog.tsx' passHref>
                                     <a className='text-[16px] block my-3'>How to export the blog</a>
-                                </Link>
+                                </LinkTo>                                
+                                <LinkTo href='/icons' passHref>
+                                    <a className='text-[16px] block my-3'>Icons</a>
+                                </LinkTo>
                             </>
                             : null
                     }
@@ -121,19 +130,19 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 </div>
                 <div className='mt-5 mb-4'>
                     <p className='mb-2 font-light'>Switch To {theme === THEMES.LIGHT ? 'Dark' : 'Light'} Theme :</p>
-                    <button className={combineClasses(classes.theme_switch)} onClick={() => changeTheme()}>
+                    <button name="theme-switch" className={combineClasses(classes.theme_switch)} onClick={() => changeTheme()}>
                         <img src={(THEME_ICONS as any)[theme].themeToggle} width="100%" alt="" />
                     </button>
                 </div>
                 <hr />
                 <div className='my-5'>
                     <p className='text-sm font-light text-gray-500 mb-1'>Copyright © 2022</p>
-                    <Link href="/privacy-policy" passHref>
+                    <LinkTo href="/privacy-policy" passHref>
                         <a className='text-sm font-light text-gray-500 pr-3'>Privacy Policy</a>
-                    </Link>
-                    <Link href="/terms-and-condition" passHref>
+                    </LinkTo>
+                    <LinkTo href="/terms-and-condition" passHref>
                         <a className='text-sm font-light text-gray-500'>Terms and Conditions</a>
-                    </Link>
+                    </LinkTo>
                 </div>
             </aside>
         </>

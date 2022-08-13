@@ -37,19 +37,4 @@
     top: 0;
     left: 0;
     @apply text-black;
-
-    &.dark {
-        @apply bg-slate-800 text-white;
-
-        .search_input {
-            @apply text-white;
-        }
-
-        .search_close_icon {
-            span,
-            span::after { 
-                @apply bg-white;
-            }
-        }
-    }
 }

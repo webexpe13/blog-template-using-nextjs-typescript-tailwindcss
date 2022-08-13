@@ -1,25 +1,19 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, ListType, TextAs } from "../../../src/shared/enums";
-import Image from "../../../src/components/ArticleImage";
-import SectionSeperator from "../../../src/components/SectionSeperator";
-import HomeLayout from "../../../src/layouts/HomeLayout";
-import Link from "next/link";
-import Text from "../../../src/components/Text";
-import List from "../../../src/components/List";
-/**These are necessary imports / components for the page */
+import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../../../src/components";
 
 const BlogSetup = () => {
     return (
-        <HomeLayout>
-            <div className='container px-3 pb-[20px] mt-[50px]'>
-                <Text as={TextAs.title} className="md:text-3xl">
+        <PageLayout home>
+            <div className='container px-3 pb-[20px] md:mt-[50px] pt-20 md:pt-0'>
+                <Text title className="text-3xl">
                     Blog Setup
                 </Text>
                 <hr className="mt-5" />
-                <Text as={TextAs.title} className="mt-10">
+                <Text subtitle className="mt-10">
                     1.  Installing Node, VS Code and downloading the project on your computer.
                 </Text>
-                <List type={ListType.bullet} className="mt-5">
+                <List type={ListType.disc} className="mt-5">
                     <li className="">
                         You will need <b>node js</b> installed in your computer <br />
                         You can install node via <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/download/</a> or you can look up any tutorial to install node js on your computer.
@@ -57,153 +51,67 @@ const BlogSetup = () => {
                         If everything goes well you will see a demo blog with few demo articles which will walk you through simple tutorials on how to use layouts and different components to write articles.
                     </li>
                 </List>
-                <SectionSeperator />
-                <Text as={TextAs.title} className="mt-10">
+                <Seperator dots />
+                <Text subtitle className="mt-10">
                     2.  Setting up authors.
                 </Text>
-                <p>
+                <Text p >
                     Before we start writing articles we need to setup authors and navbar so that it can be used throughtout the application.
-                </p>
-                <p>
+                </Text>
+                <Text p >
                     Goto <b>_BLOG_SETUP.tsx</b> in <b>BLOG_CONSTANTS</b> folder. Here you will see some example authors you can refer. <br />
                     The <b>export const</b> is used to make the item/variable available throughtout the project. <br />
                     You can add as many authors you want just make sure you keep the format as shown.
-                </p>
-                <Image className="my-5" src="/images/author-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
-                <SectionSeperator />
-                <Text as={TextAs.title} className="mt-10">
+                </Text>
+                <Image className="my-5" src="/public/images/tutorials/how-to-setup-author.svg" alt="how to setup authors | webexpe.com" size={ImageSize.DEFAULT} />
+                <Seperator />
+                <Text subtitle className="mt-10">
                     3.  Setting up Main Navbar and Side Nav.
                 </Text>
-                <p>
-                    Goto <b>_BLOG_SETUP.tsx</b> in <b>BLOG_CONSTANTS</b> folder. Here you will see some example navbar you can refer. <br />
-                </p>
-                <List type={ListType.bullet} className="mt-5">
+                <Text p >
+                    Goto <b>_BLOG_SETUP.tsx</b> file in <b>BLOG_CONSTANTS</b> folder. Here you will see example to setup your navbar. <br />
+                    We have 5 important items to set in navbar setup
+                </Text>
+                <Image className="my-5" src="/public/images/tutorials/how-to-navbar.svg" alt="how to setup navbar | webexpe.com" size={ImageSize.MEDIUM} />
+                <List type={ListType.disc} className="mt-5">
                     <li>
                         <b>type</b><br />
                         We have two types, <span className="bg-grey font-black">NavbarType.DEFAULT | NavbarType.CENTERED</span>
+                        <Image className="my-5" src="/public/images/tutorials/how-to-navbar-type.svg" alt="how to setup navbar type | webexpe.com" size={ImageSize.MEDIUM} />
                     </li>
                     <li>
                         <b>logo</b><br />
                         You can pass image or text as logo, max logo image height 40px, <br />
                         If the logo is text : <b> type: LogoType.Text</b> <br />
                         If the logo is image : <b> type: LogoType.IMAGE</b> <br />
-                        <code>
-                            {
-                                `
-                            logo:{
-                                type: LogoType.TEXT,
-                                logo: 'Logo',
-                            }
-                            `
-                            }
-                        </code>
-
+                        <Image className="my-5" src="/public/images/tutorials/how-to-set-nav-logo.svg" alt="how to setup navbar logo | webexpe.com" size={ImageSize.MEDIUM} />
                     </li>
                     <li>
                         <b>navLinks</b><br />
-                        These are the main nav links. please make sure you are following the example format.
+                        These are the main nav links. The given below image shows hows to setup primary links for your navbar.
+                        <Image className="my-5" src="/public/images/tutorials/how-to-set-navLinks.svg" alt="how to setup navbar logo | webexpe.com" size={ImageSize.DEFAULT} />
                     </li>
                     <li>
                         <b>sideNavLinks</b><br />
-                        These are the links that will be visible on the side menu. please make sure you are following the example format. <br /><br />
-                        <i>* note: you can see some extra links like <b>Icons, Styles Doc, and some Demo Article links</b> these are only visible during development or when you run the project locally on your computer.</i>
+                        These are the links that will be visible on the side menu. please make sure you are following the example format which is same as the above image. <br /><br />
+                        <b>* note: you can see some extra links like <b>Icons and some Demo Article links</b> these are only visible during development or when you run the project locally on your computer.</b>
                         <br /><br />
-                        <i>
-                            These are pages with styles , icons and examples of how to use them. <br />
-                            These pages also include sample blog articles and the smaple components and how to use it. Open the demo article files in your code editor and you can see how many components are used with porper explanations.
-                        </i>
+                        These are pages with icons and examples of how to use them. <br />
+                        These pages also include sample blog articles and the smaple components and how to use it. Open the demo article files in your code editor and you can see how many components are used with porper explanations.
                     </li>
                     <li>
                         <b>socials</b><br />
-                        These are for the social media icons. please make sure you are following the example format. <br />
-                        You can get the icons from <b><Link href="/icons" passHref={true}><a>Icons</a></Link></b>
+                        These are for you social media links. The given below image shows hows to setup social media links for your navbar. <br />
+                        You can get the icons from <b><LinkTo href="/pages/icons.tsx" passHref={true}>Icons</LinkTo></b>
+                        <Image className="my-5" src="/public/images/tutorials/how-to-set-socials.svg" alt="how to setup social icons | webexpe.com" size={ImageSize.MEDIUM} />
                     </li>
                 </List>
-                <SectionSeperator />
-                <Text as={TextAs.title} className="mt-10">
-                    4.  Writing First Article.
-                </Text>
-                <i>
-                    *note: All the files you will create or interact with are in <br />
-                </i>
-                <List type={ListType.bullet} className="mt-5">
-                    <li><b>BLOG_CONSTANTS Folder and its files</b></li>
-                    <li><b>blog Folder inside pages folder</b> - you will create all the article files in this folder <br /></li>
-                    <li>You will add all the images to use in <b>public - images folder</b></li>
-                </List>
-                <hr />
-                <List type={ListType.number} className="mt-5">
-                    <li>
-                        <b>Making entry in ARTICLES_LIST on _ARTICLES_LIST.tsx file</b>
-                        <Image className="my-5" src="/images/article-entry-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
-                        In the <b>ARTICLES_LIST</b> array copy paste the sample article object.
-                    </li>
-                    <li>
-                        <b>path</b><br />
-                        This is path of the article file. <br />
-                        Copy a demo file example demo-article-default-layout in blog folder and rename the file to you article name. <br /> <i>* note: make sure all the words are in lowercase and seperated bt hyphen, this is good for google SEO. </i><br />
-                        <span className="bg-grey font-black px-10 py-5 my-5 d-block">
-                            example: <b>how-to-make-cake.tsx</b> so the path will be <b>'/blog/how-to-make-cake'</b>
-                        </span>
-                    </li>
-                    <li>
-                        <b>featureArticle</b><br />
-                        You can pass <b>true or false</b> <br />
-                        If true the article card will be of full width. <br />
-                        <i>* adding featureArticle property is optional</i>
-                        <Image className="my-5" src="/images/feature-article-example.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
-                    </li>
-                    <li>
-                        <b>preview</b><br />
-                        This will display the details in main home page and artcile header in article page <br />
-
-                        <List type={ListType.bullet} className="mt-5">
-                            <li>
-                                <b>author</b><br />
-                                Paste the author variable imported from _BLOG_SETUP
-                            </li>
-                            <li>
-                                <b>date</b><br />
-                                Write the article date in quotes
-                            </li>
-                            <li>
-                                <b>articleTitle</b><br />
-                                Write the article title in quotes.
-                            </li>
-                            <li>
-                                <b>tags</b><br />
-                                Write tags and seperate with commas.
-                            </li>
-                            <li>
-                                <b>thumbnail</b><br />
-                                Save the image file in public-images folder and paste the image path.  This will be displayed in article cards on home page
-                            </li>
-                            <li>
-                                <b>shortIntro</b><br />
-                                A short intro for your article that will be shown on article cards.
-                            </li>
-                            <li>
-                                <b>category</b><br />
-                                If the article in under some category, write the category name.
-                            </li>
-                        </List>
-                    </li>
-
-                    <li>
-                        <b>seo</b><br />
-                        SEO details for your article page.<br />
-                        The example contains basic SEO setup, you can refer examples on <a href="https://github.com/garmeeh/next-seo#add-seo-to-page" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/next-seo</a> for more tags and info to add. <br />
-                        More tutorials and examples : <br />
-                        <a href="https://blog.avneesh.tech/next-seo-a-better-way-to-manage-seo-for-nextjs" target="_blank" rel="noopener noreferrer">https://blog.avneesh.tech/next-seo-a-better-way-to-manage-seo-for-nextjs</a> <br />
-                        <a href="https://www.garymeehan.ie/blog/seo-in-nextjs-with-next-seo" target="_blank" rel="noopener noreferrer">https://www.garymeehan.ie/blog/seo-in-nextjs-with-next-seo</a>
-                    </li>
-                </List>
-                <SectionSeperator />
-                <p>
+                <Seperator />
+                <Text p >
                     And thats it, you are ready with the basic setup required to kick start your blog.
-                </p>
+                </Text>
             </div>
-        </HomeLayout >
+        </PageLayout>
     )
 }
 

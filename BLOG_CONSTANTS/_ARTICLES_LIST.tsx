@@ -16,7 +16,7 @@ import { MAYUR, RUPALI } from './_BLOG_SETUP';
         date: "March 03 2022",
         articleTitle: "How to setup this plog template",
         tags: "demo, blog setup",
-        thumbnail: "/images/demo-image.jpg",
+        thumbnail: "/images/tutorials/demo-image.jpg",
         shortIntro: "These are the steps to setup your blog",
     },
     seo: {
@@ -24,7 +24,7 @@ import { MAYUR, RUPALI } from './_BLOG_SETUP';
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
         keywords: "demo, blog setup",
-        ogImage: "/images/demo-image.jpg",
+        ogImage: "/images/tutorials/demo-image.jpg",
         twitterHandle: "@mayur_nalwala",
     }
 }
@@ -40,7 +40,7 @@ export const ARTICLES_LIST: iArticle[] = [
             date: "March 03 2022",
             articleTitle: "How to setup this blog template",
             tags: "demo, blog setup",
-            thumbnail: "/public/images/blog-setup.jpg",
+            thumbnail: "/public/images/tutorials/blog-setup.jpg",
             shortIntro: "These are the steps to setup your blog",
             category: 'tutorial'
         },
@@ -48,7 +48,7 @@ export const ARTICLES_LIST: iArticle[] = [
             title: "How to setup this blog template",
             description: "These are the steps to setup your blog",
             keywords: "demo, blog setup",
-            ogImage: "/public/images/blog-setup.jpg",
+            ogImage: "/public/images/tutorials/blog-setup.jpg",
             twitterHandle: "@mayur_nalwala",
             author: MAYUR.name
         }
@@ -60,7 +60,7 @@ export const ARTICLES_LIST: iArticle[] = [
             date: "August 08 2022",
             articleTitle: "Home Layout Example",
             tags: "demo, layout, home layout",
-            thumbnail: "/public/images/centered-layout-thumb.png",
+            thumbnail: "/public/images/tutorials/centered-layout-thumb.png",
             shortIntro: "In this article we will see Default Home Layout example.",
             category: 'layouts'
         },
@@ -69,7 +69,7 @@ export const ARTICLES_LIST: iArticle[] = [
             description:
                 "In this article we will see Default Home Layout example.",
             keywords: "next js, tailwind css, typescript, blog template, default layout, default home layout",
-            ogImage: "/public/images/centered-layout-thumb.png",
+            ogImage: "/public/images/tutorials/centered-layout-thumb.png",
             author: RUPALI.name
         }
     },
@@ -80,13 +80,13 @@ export const ARTICLES_LIST: iArticle[] = [
             date: "August 08 2022",
             articleTitle: "Page Layout for article with sidebar",
             tags: "demo, with sidebar, default layout",
-            thumbnail: "/public/images/default-layout-thumb.jpg",
+            thumbnail: "/public/images/tutorials/default-layout-thumb.jpg",
             shortIntro: "In this article we will see Page Layout for blog with sidebar example.",
             category: 'layouts'
         },
         seo: {
             keywords: "demo, with sidebar, blog page layout, blog page design with sidebar, webexpe, webexpe.com",
-            ogImage: "/public/images/default-layout-thumb.jpg",
+            ogImage: "/public/images/tutorials/default-layout-thumb.jpg",
         }
     },
     {
@@ -96,7 +96,7 @@ export const ARTICLES_LIST: iArticle[] = [
             date: "August 08 2022",
             articleTitle: "Page Layout for article with centered layout",
             tags: "demo, centered, centered layout",
-            thumbnail: "/public/images/centered-layout-thumb.png",
+            thumbnail: "/public/images/tutorials/centered-layout-thumb.png",
             shortIntro: "This a demo artile with centered layout and with demo of all the components.",
             category: 'layouts'
         },
@@ -112,7 +112,7 @@ export const ARTICLES_LIST: iArticle[] = [
             date: "August 08 2022",
             articleTitle: "How to write your first article",
             tags: "demo, first article",
-            thumbnail: "/public/images/centered-layout-thumb.png",
+            thumbnail: "/public/images/tutorials/centered-layout-thumb.png",
             shortIntro: "This a step by step guide on how to write your first article.",
             category: 'tutorial'
         },
@@ -128,7 +128,7 @@ export const ARTICLES_LIST: iArticle[] = [
             date: "August 09 2022",
             articleTitle: "How to Export and deploy on firebase",
             tags: "demo, deploy blog",
-            thumbnail: "/public/images/deploy.png",
+            thumbnail: "/public/images/tutorials/deploy.png",
             shortIntro: "In this article you will see how to export blog files and what folder to deploy on your hosting.",
             category: 'tutorial'
         }
@@ -140,7 +140,7 @@ export const ARTICLES_LIST: iArticle[] = [
             date: "August 08 2022",
             articleTitle: "All Components",
             tags: "demo, all components",
-            thumbnail: "/public/images/centered-layout-thumb.png",
+            thumbnail: "/public/images/tutorials/centered-layout-thumb.png",
             shortIntro: "List of all usable components, its types and how to use it.",
             category: 'layouts'
         },
@@ -155,7 +155,7 @@ export const ARTICLES_LIST: iArticle[] = [
             date: "August 10 2022",
             articleTitle: "Style Guide",
             tags: "demo, all components, style guide, styling tutorial",
-            thumbnail: "/public/images/centered-layout-thumb.png",
+            thumbnail: "/public/images/tutorials/centered-layout-thumb.png",
             shortIntro: "Styling and theming tutorial.",
             category: 'tutorial'
         },

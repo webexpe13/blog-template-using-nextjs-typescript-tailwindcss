@@ -1,7 +1,7 @@
 import { IArticleHeaderData } from "../../shared/interfaces";
 import classes from "./ArticleCard.module.scss";
 import { combineClasses, transformImagePaths, transformPath } from "../../utils/utils";
-import Link from "next/link";
+import LinkTo from "../LinkTo";
 import { generateRandomAvtar } from "../../constants/appConstants";
 
 interface IProp {
@@ -13,10 +13,10 @@ interface IProp {
 const FeaturedArticle = ({ article, path }: IProp) => {
     return (
         <>
-            <div className={combineClasses(classes.featured_article, 
+            <div className={combineClasses(classes.featured_article,
                 'md:border-l-[5px] border-b-[5px] md:border-b-0 border-blue-500 dark:bg-slate-800 dark:text-white dark:drop-shadow-lg')}>
                 <div className={'w-full md:w-[55%] md:px-[50px] px-[15px] md:py-[40px] py-[20px]'}>
-                    <div className={ "mt-0 mb-[10px] flex items-center"}>
+                    <div className={"mt-0 mb-[10px] flex items-center"}>
                         <div className={classes.author}>
                             <div className={classes.author_img}>
                                 {article.author.profilePic ? <img src={article.author.profilePic} alt={article.author.name} /> : <img src={generateRandomAvtar()} alt={article.author.name} />}
@@ -29,20 +29,18 @@ const FeaturedArticle = ({ article, path }: IProp) => {
                             article.category && <>
                                 <p className="text-[14px] md:text-[16px] px-2 font-normal">in</p>
                                 <p className={combineClasses(classes.article_card__category, "font-medium text-[14px] md:text-[16px]")}>
-                                    <Link href={"/blog?category=" + article.category}>
+                                    <LinkTo href={"/blog?category=" + article.category}>
                                         {article.category}
-                                    </Link>
+                                    </LinkTo>
                                 </p>
                             </>
                         }
                     </div>
-                    <Link href={transformPath(path)}>
-                        <a>
-                            <h1 className={combineClasses(classes.featured_article__title, "text-[24px] font-bold mt-0 mb-[10px]")} >
-                                {article.articleTitle}
-                            </h1>
-                        </a>
-                    </Link>
+                    <LinkTo href={transformPath(path)} passHref>
+                        <h1 className={combineClasses(classes.featured_article__title, "text-[24px] font-bold mt-0 mb-[10px]")} >
+                            {article.articleTitle}
+                        </h1>
+                    </LinkTo>
                     <p className={combineClasses(classes.featured_article__intro, "text-[14px] font-regular mt-0 mb-[10px]")}>
                         {article.shortIntro.slice(0, 150)} ...
                     </p>

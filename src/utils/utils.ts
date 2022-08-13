@@ -3,6 +3,10 @@ import { useRouter } from "next/router";
 import { ARTICLES_LIST } from "../../BLOG_CONSTANTS/_ARTICLES_LIST";
 import { iArticle, iSEO } from "../shared/interfaces";
 import { WEBSITE_NAME, WEBSITE_URL } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
+import { MOCK_ARTICLES_LIST } from "../constants/mocks";
+
+// env
+const env = process.env.NODE_ENV;
 
 /**
  *
@@ -124,6 +128,9 @@ export const removeBodyNoScroll = (): void => {
 export const getArticleDetails = (): iArticle => {
   const router = useRouter();
   const articlePath = "/pages" + router.pathname + ".tsx" ;
+  if(env === 'development'){
+    return MOCK_ARTICLES_LIST.filter((each) => each.path === articlePath)[0] || ARTICLES_LIST.filter((each) => each.path === articlePath)[0];
+  }
   return ARTICLES_LIST.filter((each) => each.path === articlePath)[0];
 };
 

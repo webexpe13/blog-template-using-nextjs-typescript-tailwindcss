@@ -1,37 +1,7 @@
-import { iArticle } from '../src/shared/interfaces';
+import { MAYUR, RUPALI } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
+import { iArticle } from "../shared/interfaces";
 
-// Import author profiles, just type the name you have set in _BLOG_SETUP inside the curly brackets
-import { MAYUR, RUPALI } from './_BLOG_SETUP';
-
-// main article list to display all atricles
-/**
- * Example article object
- * 
- {
-    path: '/pages/blog/tutorial/how-to-setup-blog',
-    featureArticle: true,
-    preview: {
-        // the author object you created in _BLOG_SETUP file
-        author: MAYUR,
-        date: "March 03 2022",
-        articleTitle: "How to setup this plog template",
-        tags: "demo, blog setup",
-        thumbnail: "/images/demo-image.jpg",
-        shortIntro: "These are the steps to setup your blog",
-    },
-    seo: {
-        title: "These are the steps to setup your blog",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-        keywords: "demo, blog setup",
-        ogImage: "/images/demo-image.jpg",
-        twitterHandle: "@mayur_nalwala",
-    }
-}
- */
-
-// clear this article list and add your own
-export const ARTICLES_LIST: iArticle[] = [
+export const MOCK_ARTICLES_LIST: iArticle[] = [
     {
         path: '/pages/blog/tutorial/how-to-setup-blog',
         featureArticle: true,

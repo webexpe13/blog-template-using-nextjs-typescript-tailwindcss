@@ -1,6 +1,6 @@
 /**These are necessary imports / components for the page */
 import { ImageSize, TextAlign, ListType } from "../src/shared/enums";
-import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../src/components";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider } from "../src/components";
 import { CURRENT_YEAR } from "../src/constants/appConstants";
 import { iSEO } from "../src/shared/interfaces";
 
@@ -10,7 +10,7 @@ const AboutUs = () => {
         description: `Hi we are WebExpe. This is an opensource blog template which can help you start a simple static blog.`,
         keywords: 'webexpx, contact us, webexpe13@gmail.com, next js blog template',
         author: 'Mayur Nalwala, Rupali Yadav'
-    }  
+    }
     return (
         <PageLayout PAGE_SEO={PAGE_SEO} home>
             <section className='container px-3 md:pb-20 md:pt-10 pt-20'>
@@ -86,7 +86,7 @@ const AboutUs = () => {
                     </Text>
                     <Seperator />
                     <Text p className='text-lg'>
-                        Made with ♥ by <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="font-medium tracking-widest">WebExpe</a>
+                        Created by <LinkTo href="https://www.linkedin.com/in/rupali-yadav-087bb4112/" external className="font-semibold">Rupali Yadav</LinkTo> and <LinkTo href="https://www.linkedin.com/in/mayur-nalwala/" external className="font-semibold">Mayur Nalwala</LinkTo> from <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="font-medium tracking-widest">WebExpe</a> with ♥ 
                     </Text>
                     <a href="https://www.buymeacoffee.com/webexpe13z" target="_blank" rel="noopener noreferrer">
                         <Image src="/public/images/bmc.png" size={ImageSize.XS} className="ml-0" alt="webexpe.com" />

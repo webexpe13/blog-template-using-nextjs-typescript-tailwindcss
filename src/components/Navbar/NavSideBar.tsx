@@ -4,7 +4,7 @@ import { THEMES } from '../../shared/enums';
 import { addBodyNoScroll, combineClasses, getCategories, removeBodyNoScroll } from '../../utils/utils';
 import classes from './Navbar.module.scss';
 import { XIcon } from '@heroicons/react/outline';
-import LinkTo from "../../components/LinkTo"
+import { Text, LinkTo } from '../../components';
 
 interface IProps {
     openSidebar: boolean;
@@ -41,7 +41,7 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
 
             <aside className={combineClasses(classes.nav_sidebar_wrapper, openSidebar && classes.open, 'dark:bg-slate-900 dark:text-white bg-white text-black')}>
                 <div className='flex items-center justify-between pb-3' onClick={closeNavSidebar}>
-                    <p className='font-light'>menu</p>
+                    <p className=''>menu</p>
                     <div className={classes.sideNavCloseIcon}><XIcon className='text-slate-800 dark:text-white' /></div>
                 </div>
                 <hr />
@@ -81,11 +81,16 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                     {
                         env === 'development' ?
                             <>
-                                <LinkTo href='/icons' passHref>
-                                    <a className='text-[16px] block my-3'>Icons</a>
-                                </LinkTo>
+                                <hr />
+                                <Text subtitle className='mt-3 !text-[18px]'>Examples and tutorials</Text>
                                 <LinkTo href='/pages/all-components.tsx' passHref>
                                     <a className='text-[16px] block my-3'>All Components</a>
+                                </LinkTo>
+                                <LinkTo href='/pages/style-guide.tsx' passHref>
+                                    <a className='text-[16px] block my-3'>Style Guide</a>
+                                </LinkTo>                                   
+                                <LinkTo href='/pages/blog/layouts/home-layout.tsx' passHref>
+                                    <a className='text-[16px] block my-3'>Home Page Layout</a>
                                 </LinkTo>
                                 <LinkTo href='/pages/blog/layouts/blog-with-sidebar-layout.tsx' passHref>
                                     <a className='text-[16px] block my-3'>Page Layout for article with sidebar</a>
@@ -101,6 +106,9 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                 </LinkTo>
                                 <LinkTo href='/pages/blog/tutorial/how-to-deploy-blog.tsx' passHref>
                                     <a className='text-[16px] block my-3'>How to export the blog</a>
+                                </LinkTo>                                
+                                <LinkTo href='/icons' passHref>
+                                    <a className='text-[16px] block my-3'>Icons</a>
                                 </LinkTo>
                             </>
                             : null

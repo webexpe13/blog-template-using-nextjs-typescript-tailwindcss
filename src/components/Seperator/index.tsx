@@ -2,12 +2,11 @@ import { combineClasses } from "../../utils/utils";
 import classes from './Seperator.module.scss';
 
 interface iProps {
-    color?: string;
     line?: boolean;
     dots?: boolean;
 }
 
-const Seperator = ({ color, line = false, dots = false }: iProps) => {
+const Seperator = ({ line = false, dots = false }: iProps) => {
     return (
         <>
             {
@@ -15,7 +14,7 @@ const Seperator = ({ color, line = false, dots = false }: iProps) => {
                     dots ? <div className={combineClasses(classes.section_seperator_dots)}>
                         {
                             [...Array(5)].map((i) => (
-                                <span key={i} className="dark:bg-white"></span>
+                                <span key={Math.random()} className="dark:bg-white"></span>
                             ))
                         }
                     </div> : 

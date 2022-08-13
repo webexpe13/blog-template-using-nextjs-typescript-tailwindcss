@@ -1,5 +1,9 @@
 import '../src/styles/globals.scss'
 import '../src/assets/fontCss/icofont.css'
+
+import 'lightgallery/scss/lightgallery.scss';
+import 'lightgallery/scss/lg-zoom.scss';
+
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 

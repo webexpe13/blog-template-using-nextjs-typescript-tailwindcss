@@ -12,16 +12,18 @@ const ArticleHeaderCenter = ({ headerData }: IProps) => {
                 {headerData.articleTitle}
             </h1>
             <div className={combineClasses("mb-[10px] mt-[15px] text-[14px] font-medium", classes.centered_article_header_author)}>
-                <p className={'my-0 mx-[30px]'}>
+                <p className={'my-0 mx-[30px] font-medium'}>
                     {headerData.author.name}
+                    {
+                        headerData.category && <>
+                            <span className="px-1 font-light">in</span>
+                            <Link href={"/blog?category=" + headerData.category} passHref={true}>
+                                <a>{headerData.category}</a>
+                            </Link>
+                        </>
+                    }
                 </p>
-                {
-                    headerData.category && <p className="my-0 mx-[30px]">
-                        <Link href={"/blog?category=" + headerData.category} passHref={true}>
-                            <a>{headerData.category}</a>
-                        </Link>
-                    </p>
-                }
+
                 <p className="my-0">{headerData.date}</p>
             </div>
             <div className="text-center">

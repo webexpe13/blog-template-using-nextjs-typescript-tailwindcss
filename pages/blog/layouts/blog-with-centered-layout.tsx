@@ -4,9 +4,9 @@ import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider
 
 const Article = () => {
     return (
-        // pass blogwithsidebar as show below for article page with sidebar layout
+        // pass blogcentered as show below for article page centered layout
         <PageLayout blogcentered>
-            <Image src='/public/images/page-layouts/how-to-use-centered-layout.svg' alt="how to use article with centered layout | webexpe.com" size={ImageSize.FUll} />
+            <Image src='/public/images/page-layouts/how-to-use-centered.svg' alt="how to use article with centered layout | webexpe.com" size={ImageSize.FUll} />
             <ArticleHeader centered />
             <hr className="mb-5" />
             <Text p>

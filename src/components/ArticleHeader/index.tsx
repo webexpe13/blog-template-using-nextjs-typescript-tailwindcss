@@ -1,4 +1,3 @@
-import { ArticleHeaderLayouts } from "../../shared/enums"
 import { getArticleDetails } from "../../utils/utils"
 import ArticleHeaderCenter from "./ArticleHeaderCentered"
 import ArticleHeaderDefault from "./ArticleHeaderDefault"

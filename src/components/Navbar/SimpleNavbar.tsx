@@ -2,9 +2,10 @@ import classes from "./Navbar.module.scss";
 import Link from "next/link";
 import { useState } from "react";
 import { THEME_ICONS } from "../../constants/appConstants";
-import { combineClasses, getCategories } from "../../utils/utils";
+import { combineClasses, getCategories, transformImagePaths } from "../../utils/utils";
 import { LogoType, THEMES } from "../../shared/enums";
 import { MenuIcon } from '@heroicons/react/outline';
+import LinkTo from "../LinkTo";
 
 
 const SimpleNavbar = ({
@@ -33,7 +34,7 @@ const SimpleNavbar = ({
             {
               logo ?
                 logo.type === LogoType.IMAGE ?
-                  <img src={theme === THEMES.DARK ? logo.logoLight : logo.logo} alt="WebExpe" className="cursor-pointer" width="100px" /> :
+                  <img src={theme === THEMES.DARK ? transformImagePaths(logo.logoLight) : transformImagePaths(logo.logo)} alt="WebExpe" className="cursor-pointer" width="100px" /> :
                   <a className='text-[22px] font-semibold'>{logo.logo}</a>
                 : <a className='text-[22px] font-semibold'>Logo</a>
             }
@@ -45,9 +46,9 @@ const SimpleNavbar = ({
             {
               navLinks.map((each: any, i: any) => (
                 each.type !== 'dropdown' ? !each.newTab ?
-                  <Link href={each.path} key={i} passHref>
+                  <LinkTo href={each.path} key={i} passHref>
                     <a className='mx-2'>{each.label}</a>
-                  </Link> :
+                  </LinkTo> :
                   <a href={each.path} key={each.path + 1} target="_blank" rel="noopener noreferrer" className='d-block mx-2 flex-wrap'>
                     {each.label}
                   </a>

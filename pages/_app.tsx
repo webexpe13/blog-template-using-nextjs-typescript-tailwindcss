@@ -12,6 +12,8 @@ import { useEffect, useState } from 'react';
 import { CREATE_SEO_CONFIG } from '../src/utils/utils';
 import { ThemeProvider } from 'next-themes'
 
+import "@uiw/react-textarea-code-editor/dist.css";
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [mounted, setMounted] = useState(false);

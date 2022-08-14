@@ -11,7 +11,7 @@ interface IArticleImage {
 }
 const Image = ({ src, caption, size = ImageSize.DEFAULT, alt, className }: IArticleImage) => {
     return (
-        <div className={combineClasses(classes.article_image, classes.article_image__wrapper, className, classes['size_' + size], 'display-block mx-auto')}>
+        <div className={combineClasses(classes.article_image, classes.article_image__wrapper, className, classes['size_' + size], 'display-block mx-auto my-5')}>
             <img src={transformImagePaths(src)} alt={alt} width="100%" className={combineClasses('block')} />
             {
                 caption &&

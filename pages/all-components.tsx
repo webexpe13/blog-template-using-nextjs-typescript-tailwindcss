@@ -2,7 +2,9 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import { PageLayout, Text, LinkTo, Slider, Seperator, Image, List, ArticleHeader } from "../src/components"
 import { ListType, ImageSize, TextAlign } from "../src/shared/enums"
-import { combineClasses } from "../src/utils/utils"
+import { combineClasses } from "../src/utils/utils";
+import CodeBlock from "../src/components/CodeBlock";
+import { HowToUseList, HowToUseSeperator, HowToUsePageLayout, HowToUseImageCode, HowToUseTextCode, HowToUseLinkTo, HowToUseSlider } from "../src/constants/codeBlocks";
 
 interface iSideBtnLinks {
     component: string,
@@ -91,6 +93,7 @@ const AllComponents = () => {
             ))
         )
     }
+
     return (
         <PageLayout>
             <section className="container md:pt-10 pt-20 px-0 md:px-[15px]">
@@ -127,7 +130,8 @@ const AllComponents = () => {
                             </Text>
                             We have 3 page layouts <u><LinkTo href="/pages/blog/layouts/home-layout.tsx">Home</LinkTo></u>, <u><LinkTo href="/pages/blog/layouts/blog-with-sidebar-layout.tsx">Blog with sidebar</LinkTo></u> and  <u><LinkTo href="/pages/blog/layouts/blog-with-centered-layout.tsx">Blog centered</LinkTo></u>. <br />
                             <b>How to use</b>
-                            <Image src="/public/images/tutorials/how-to-use-pageLayout.svg" alt="how to use PageLayout | webexpe.com" />
+                            {/* <Image src="/public/images/tutorials/how-to-use-pageLayout.svg" alt="how to use PageLayout | webexpe.com" /> */}
+                            <CodeBlock code={HowToUsePageLayout} />
                         </section>
 
                         <section className={cardBBorder} id="text">
@@ -136,29 +140,15 @@ const AllComponents = () => {
                             </Text>
                             Text is used to write Paragraphs, Title, Sub title or Quotes in the article. <br /><br />
                             <b>Demo</b>
-                            <Text p>This is a paragraph with default styles font size 18px and font weight of 400</Text>
-                            <Text title className="inline">This is a Title</Text> with default font size 36px and font weight of 700, and is an <b>h1</b> tag. For better SEO use title only once per page/article.
-                            <Text subtitle>This is a Sub Title with default styles font size 24px and font weight of 600. </Text>
-                            <Text quote>This is Quoted text with default styles font size 18px and font weight of 400. </Text>
+                            <Text p>p.Paragraph Example.</Text>
+                            <Text title className="inline">h1.Title Example.</Text>
+                            <Text subtitle>h2.Subtitle example.</Text>
+                            <Text quote>Quoted text example.</Text>
                             <Text p><b>Note:</b> By default we have some standard styles applied to the Text component, so if you need to override like text size, weight you can do as follows: <br /> <b>{'<Text p className="!text-[20px] !font-bold">Overide text size and weight</Text>'}</b> <br /> by adding <b>!</b> in front of the classes we can change the default styles like here font size will be changed to 22px and font weight will change to bold for paragraph </Text>  <br />
-                            <b>Parameters</b> <br />
-                            We can pass text align and color to the text component. <br />
-                            <b>{'<Text p textAlign={TextAlign.CENTER}>Text Align Center</Text>'} <br /> {'<Text p textAlign={TextAlign.LEFT}>Text Align Left</Text>'} <br />
-                                {'<Text p textAlign={TextAlign.RIGHT}>Text Align Right</Text>'} <br />
-                                {'<Text p textAlign={TextAlign.JUSTIFY}>Text Align Justify</Text>'} <br />
-                                {'<Text p textAlign={TextAlign.NONE}>Text Align None</Text>'}
-                            </b> <br /> and for color <br />
-                            <b>
-                                {'<Text p color="red">Text color red</Text>'} <br />
-                                {'<Text p color="#E2904B">Text color #E2904B</Text>'}
-                            </b> <br /> or we can use tailwind css classes for font colors as shown below. <br />
-                            <b>
-                                {'<Text p className="font-blue-600">...</Text>'} <br />
-                                {'<Text p className="font-slate-400">...</Text>'}
-                            </b> you can find more tailwind font color classes on the official docs <LinkTo href="https://tailwindcss.com/docs/text-color" className="underline">here</LinkTo>.
-                            <br /><br />
                             <b>How to use</b>
-                            <Image src="/public/images/tutorials/how-to-use-text-full.svg" alt="how to use Text | webexpe.com" />
+                            <CodeBlock code={HowToUseTextCode} className="my-5" />
+                            you can find more tailwind font classes on the official docs <LinkTo href="https://tailwindcss.com/docs/font-size" className="underline" external>here</LinkTo>.
+                            {/* <Image src="/public/images/tutorials/how-to-use-text-full.svg" alt="how to use Text | webexpe.com" /> */}
                         </section>
 
                         <section className={cardBBorder} id="image">
@@ -167,16 +157,17 @@ const AllComponents = () => {
                             </Text>
                             To add image in your project, first save the image file in <b>{`public --> images`}</b> folder and then add the image path in image tag's src. For demo check <b>/pages/all-components.tsx</b> file in code. <br /><br />
                             <b>Demo</b>
-                            <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Default size image with caption" className="my-5" />
-                            <Image src="https://picsum.photos/300/100" alt="how to use Image | webexpe.com" caption="Full size image with caption" size={ImageSize.FUll} className="mb-5" />
-                            <Image src="https://picsum.photos/300/100" alt="how to use Image | webexpe.com" caption="Medium size image with caption" size={ImageSize.MEDIUM} className="mb-5" />
-                            <Image src="https://picsum.photos/300/100" alt="how to use Image | webexpe.com" caption="Small size image with caption" size={ImageSize.SMALL} className="mb-5" />
-                            <Image src="https://picsum.photos/300/100" alt="how to use Image | webexpe.com" caption="XS size image with caption" size={ImageSize.XS} className="mb-5" />
+                            <div className="flex flex-wrap">
+                                <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Default size image with caption" className="my-5" />
+                                <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Full size image with caption" size={ImageSize.FUll} className="mb-5" />
+                                <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Medium size image with caption" size={ImageSize.MEDIUM} className="mb-5" />
+                                <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Small size image with caption" size={ImageSize.SMALL} className="mb-5" />
+                                <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="XS size image with caption" size={ImageSize.XS} className="mb-5" />
+                            </div>
 
                             <b>How to use</b>
-                            <Image src="/public/images/tutorials/how-to-use-image-2.svg" alt="how to use Image | webexpe.com" caption="XS size image with caption" className="mb-5" />
-
-                            <div></div>
+                            <CodeBlock code={HowToUseImageCode} className="my-5" />
+                            {/* <Image src="/public/images/tutorials/how-to-use-image-2.svg" alt="how to use Image | webexpe.com" caption="XS size image with caption" className="mb-5" /> */}
                         </section>
 
                         <section className={cardBBorder} id="list" >
@@ -201,8 +192,8 @@ const AllComponents = () => {
                                     <li>Item </li>
                                 </List>
                             </div>
-                            <b>How to use</b>
-                            <Image src="/public/images/tutorials/how-to-use-list-2.svg" alt="how to use List | webexpe.com" />
+                            <b>How to use</b>                            
+                            <CodeBlock code={HowToUseList} className="my-5" />
                         </section>
 
                         <section className={cardBBorder} id="seperator">
@@ -213,8 +204,8 @@ const AllComponents = () => {
                             <b>Demo</b>
                             <Seperator dots />
                             <Seperator line />
-                            <b>How to use</b>
-                            <Image src="/public/images/tutorials/how-to-use-seperator.svg" alt="how to use Seperator | webexpe.com" />
+                            <b>How to use</b>                            
+                            <CodeBlock code={HowToUseSeperator} className="my-5" />
                         </section>
 
                         <section className={cardBBorder} id="linkto" >
@@ -222,9 +213,9 @@ const AllComponents = () => {
                                 LinkTo
                             </Text>
                             <b>{'<LinkTo href="url" />'}</b> <br />
-                            This is used to link between your blog pages or external pages.
-
-                            <Image src="/public/images/tutorials/how-to-use-linkto.svg" alt="how to use LinkTo | webexpe.com" />
+                            This is used to link between your blog pages or external pages.<br /> <br />
+                            <b>How to use</b>  
+                            <CodeBlock code={HowToUseLinkTo} className="my-5" />
                         </section>
 
                         <section className={cardBBorder} id="imageslider">
@@ -234,14 +225,15 @@ const AllComponents = () => {
                             <b>Demo</b>
                             <Slider className="mb-5"
                                 images={[
-                                    'https://picsum.photos/300/100',
-                                    'https://picsum.photos/300/100',
-                                    'https://picsum.photos/300/100',
-                                    'https://picsum.photos/300/100'
+                                    '/public/images/tutorials/demo-image.jpg',
+                                    '/public/images/tutorials/demo-image.jpg',
+                                    '/public/images/tutorials/demo-image.jpg',
+                                    '/public/images/tutorials/demo-image.jpg'
                                 ]}
                             />
                             <b>How to use</b>
-                            <Image src="/public/images/tutorials/how-to-use-slider.svg" alt="how to use image slider | webexpe.com" />
+                            <CodeBlock code={HowToUseSlider} className="my-5" />
+                            {/* <Image src="/public/images/tutorials/how-to-use-slider.svg" alt="how to use image slider | webexpe.com" /> */}
                         </section>
                     </aside>
                 </div>

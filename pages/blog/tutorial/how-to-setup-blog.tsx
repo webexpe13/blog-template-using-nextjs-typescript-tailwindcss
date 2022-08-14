@@ -1,6 +1,8 @@
 /**These are necessary imports / components for the page */
 import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
-import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../../../src/components";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider } from "../../../src/components";
+import CodeBlock from "../../../src/components/CodeBlock";
+import { AuthorSetup, NavbarSetup, NavbarSetupType, NavbarSetup_NAVLINKS, NavbarSetup_Socials } from "../../../src/constants/codeBlocks";
 
 const BlogSetup = () => {
     return (
@@ -63,33 +65,59 @@ const BlogSetup = () => {
                     The <b>export const</b> is used to make the item/variable available throughtout the project. <br />
                     You can add as many authors you want just make sure you keep the format as shown.
                 </Text>
-                <Image className="my-5" src="/public/images/tutorials/how-to-setup-author.svg" alt="how to setup authors | webexpe.com" size={ImageSize.DEFAULT} />
+                <CodeBlock code={AuthorSetup} className="my-5" />
+                {/* <Image className="my-5" src="/public/images/tutorials/how-to-setup-author.svg" alt="how to setup authors | webexpe.com" size={ImageSize.DEFAULT} /> */}
                 <Seperator />
                 <Text subtitle className="mt-10">
                     3.  Setting up Main Navbar and Side Nav.
                 </Text>
                 <Text p >
                     Goto <b>_BLOG_SETUP.tsx</b> file in <b>BLOG_CONSTANTS</b> folder. Here you will see example to setup your navbar. <br />
-                    We have 5 important items to set in navbar setup
+                    We have 5 important items to set in navbar setup, <b>type, logo, navLinks, sideNavLinks, socials</b>
                 </Text>
-                <Image className="my-5" src="/public/images/tutorials/how-to-navbar.svg" alt="how to setup navbar | webexpe.com" size={ImageSize.MEDIUM} />
+                <CodeBlock code={NavbarSetup} className="my-5" />
+                {/* <Image className="my-5" src="/public/images/tutorials/how-to-navbar.svg" alt="how to setup navbar | webexpe.com" size={ImageSize.MEDIUM} /> */}
                 <List type={ListType.disc} className="mt-5">
                     <li>
                         <b>type</b><br />
                         We have two types, <span className="bg-grey font-black">NavbarType.DEFAULT | NavbarType.CENTERED</span>
-                        <Image className="my-5" src="/public/images/tutorials/how-to-navbar-type.svg" alt="how to setup navbar type | webexpe.com" size={ImageSize.MEDIUM} />
+                        <CodeBlock code={NavbarSetupType} className="my-5" />
+                        {/* <Image className="my-5" src="/public/images/tutorials/how-to-navbar-type.svg" alt="how to setup navbar type | webexpe.com" size={ImageSize.MEDIUM} /> */}
                     </li>
                     <li>
                         <b>logo</b><br />
-                        You can pass image or text as logo, max logo image height 40px, <br />
+                        You can pass image or text as logo, max logo image height 40px. Save the logo file in {'public -> images'} folder and paste the path as shown below <br />
                         If the logo is text : <b> type: LogoType.Text</b> <br />
                         If the logo is image : <b> type: LogoType.IMAGE</b> <br />
-                        <Image className="my-5" src="/public/images/tutorials/how-to-set-nav-logo.svg" alt="how to setup navbar logo | webexpe.com" size={ImageSize.MEDIUM} />
+                        <CodeBlock code={
+                            `
+    export const PRIMARY_NAV = {
+        ...
+        logo: {
+            type: LogoType.IMAGE,
+            logo: '/images/logo.png',
+            logoLight: '/images/logoLight.png'
+        }
+        ...
+    }
+    // or
+    export const PRIMARY_NAV = {
+        ...
+        logo: {
+            type: LogoType.TEXT,
+            logo: 'Next Blog',
+        }
+        ...
+    }
+    `
+                        } className="my-5" />
+                        {/* <Image className="my-5" src="/public/images/tutorials/how-to-set-nav-logo.svg" alt="how to setup navbar logo | webexpe.com" size={ImageSize.MEDIUM} /> */}
                     </li>
                     <li>
                         <b>navLinks</b><br />
-                        These are the main nav links. The given below image shows hows to setup primary links for your navbar.
-                        <Image className="my-5" src="/public/images/tutorials/how-to-set-navLinks.svg" alt="how to setup navbar logo | webexpe.com" size={ImageSize.DEFAULT} />
+                        These are the main nav links. The given code block shows hows to setup primary links for your navbar.
+                        <CodeBlock code={NavbarSetup_NAVLINKS} className="my-5" />
+                        {/* <Image className="my-5" src="/public/images/tutorials/how-to-set-navLinks.svg" alt="how to setup navbar logo | webexpe.com" size={ImageSize.DEFAULT} /> */}
                     </li>
                     <li>
                         <b>sideNavLinks</b><br />
@@ -101,9 +129,10 @@ const BlogSetup = () => {
                     </li>
                     <li>
                         <b>socials</b><br />
-                        These are for you social media links. The given below image shows hows to setup social media links for your navbar. <br />
+                        These are for your social media links. The given code block shows hows to setup social media links for your navbar. <br />
                         You can get the icons from <b><LinkTo href="/pages/icons.tsx" passHref={true}>Icons</LinkTo></b>
-                        <Image className="my-5" src="/public/images/tutorials/how-to-set-socials.svg" alt="how to setup social icons | webexpe.com" size={ImageSize.MEDIUM} />
+                        <CodeBlock code={NavbarSetup_Socials} className="my-5" />
+                        {/* <Image className="my-5" src="/public/images/tutorials/how-to-set-socials.svg" alt="how to setup social icons | webexpe.com" size={ImageSize.MEDIUM} /> */}
                     </li>
                 </List>
                 <Seperator />

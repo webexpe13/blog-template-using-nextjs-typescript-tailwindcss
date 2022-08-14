@@ -1,6 +1,8 @@
 /**These are necessary imports / components for the page */
 import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
 import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../../../src/components";
+import CodeBlock from "../../../src/components/CodeBlock";
+import { Article_Entry_inList } from "../../../src/constants/codeBlocks";
 
 const Article = () => {
     return (
@@ -32,7 +34,8 @@ const Article = () => {
                 <Text p>
                     Goto <b>/BLOG_CONSTANTS/_ARTICLES_LIST.tsx</b> file. Here we will add details of your article in <b>ARTICLES_LIST</b> array as follows.
                 </Text>
-                <Image className="my-5" src="/public/images/tutorials/add-article-in-list.svg" alt="Adding your article details in ARTICLES_LIST | webexpe.com" size={ImageSize.DEFAULT} />
+                <CodeBlock code={Article_Entry_inList} className="my-5" />
+                {/* <Image className="my-5" src="/public/images/tutorials/add-article-in-list.svg" alt="Adding your article details in ARTICLES_LIST | webexpe.com" size={ImageSize.DEFAULT} /> */}
                 <Text p>
                     In our article details we have 4 important properties <b>path, featureArticle, preview, and seo</b>.
                 </Text>

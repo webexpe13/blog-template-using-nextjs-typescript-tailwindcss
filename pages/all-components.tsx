@@ -114,8 +114,11 @@ const AllComponents = () => {
                             {
                                 sideBtnsComponents()
                             }
+                            <LinkTo href="/pages/style-guide.tsx" className="md:hidden block whitespace-nowrap">
+                                Style Guide
+                            </LinkTo>
                         </div>
-                        <div className="md:rounded-lg md:p-3 bg-white dark:bg-slate-800 shadow-md overflow-auto md:text-xl text-md font-semibold block whitespace-nowrap">
+                        <div className="md:rounded-lg md:p-3 bg-white dark:bg-slate-800 shadow-md overflow-auto md:text-xl text-md font-semibold block whitespace-nowrap md:block hidden">
                             <LinkTo href="/pages/style-guide.tsx">
                                 Style Guide
                             </LinkTo>

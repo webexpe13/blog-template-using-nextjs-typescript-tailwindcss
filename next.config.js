@@ -6,4 +6,4 @@ const nextConfig = {
   experimental: { esmExternals: true }
 }
 
-module.exports = removeImports({nextConfig})
+module.exports = nextConfig

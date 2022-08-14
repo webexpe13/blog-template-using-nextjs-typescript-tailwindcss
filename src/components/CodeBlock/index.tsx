@@ -6,7 +6,7 @@ import { Pre } from './style';
 
 const CodeBlock = ({ code, className }: { code: string, className?: string }) => {
     return (
-        <div className={combineClasses("bg-blue-500 p-5", className)}>
+        <div className={combineClasses("bg-blue-500 md:p-5 p-2", className)}>
             <div className="shadow-lg">
                 <Highlight {...defaultProps} theme={theme} code={code} language="tsx">
                     {({ className, style, tokens, getLineProps, getTokenProps }) => (

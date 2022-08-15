@@ -63,13 +63,13 @@ const SimpleNavbar = ({
                   </div>
                   {
                     openDD &&
-                    <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white dark:bg-slate-800')}>
-                      <LinkTo href={'/blog'} passHref>
+                    <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white dark:bg-slate-800 px-1')}>
+                      <LinkTo href={'/blog'} passHref className='block text-sm py-2 px-2'>
                         All Articles
                       </LinkTo>
                       {
                         CATEGORIES.map(each => (
-                          <LinkTo href={"/blog?category=" + each} key={each} passHref>
+                          <LinkTo href={"/blog?category=" + each} key={each} passHref className='block text-sm py-2 px-2 border-t border-gray-400'>
                             <span style={{ textTransform: 'capitalize' }}>{each}</span>
                           </LinkTo>
                         ))

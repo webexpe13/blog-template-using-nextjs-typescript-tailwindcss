@@ -62,29 +62,29 @@ const CenteredNavbar = ({
                 {
                     navLinks.map((each: any, i: any) => (
                         each.type !== 'dropdown' ? !each.newTab ?
-                            <LinkTo href={each.path} key={i} passHref={true} className='mx-2 font-light'>
+                            <LinkTo href={each.path} key={i} passHref={true} className='mx-2 font-normal'>
                                 {each.label}
                             </LinkTo> :
-                            <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='block mx-2 flex-wrap font-light	'>
+                            <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='block mx-2 flex-wrap font-normal	'>
                                 {each.label}
                             </a>
                             : <div className={classes.sidebarCategoryDD_wrapper} key={each.label}>
                                 <div className='flex items-center cursor-pointer mx-2' key={each.label} onClick={() => setOpenDD(!openDD)}>
-                                    <p className='my-0 font-light	'>
+                                    <p className='my-0 font-normal	'>
                                         {each.label}
                                     </p>
                                     <i className='icofont-caret-down'></i>
                                 </div>
                                 {
                                     openDD &&
-                                    <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white dark:bg-slate-800 shadow-md')}>
-                                        <LinkTo href={'/blog'} passHref={true} className='font-light'>
+                                    <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white dark:bg-slate-800 shadow-md px-1')}>
+                                        <LinkTo href={'/blog'} passHref={true} className='block text-sm p-2 font-normal'>
                                             All Articles
                                         </LinkTo>
                                         {
                                             CATEGORIES.map(each => (
-                                                <LinkTo href={"/blog?category=" + each} key={each} passHref={true}>
-                                                    <span className='font-light' style={{ textTransform: 'capitalize' }}>{each}</span>
+                                                <LinkTo href={"/blog?category=" + each} key={each} passHref className='block text-sm p-2 border-t border-gray-400 font-normal' >
+                                                    <span style={{ textTransform: 'capitalize' }}>{each}</span>
                                                 </LinkTo>
                                             ))
                                         }

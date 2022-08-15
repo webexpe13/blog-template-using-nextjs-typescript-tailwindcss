@@ -1,7 +1,6 @@
 import classes from "./Navbar.module.scss";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { THEME_ICONS } from "../../constants/appConstants";
 import { combineClasses, getCategories, transformImagePaths } from "../../utils/utils";
 import { LogoType, THEMES } from "../../shared/enums";
 import { MenuIcon, SearchIcon } from '@heroicons/react/outline';

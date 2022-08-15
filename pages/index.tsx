@@ -37,7 +37,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <div className="container mx-auto">
+      <div className="container mx-auto md:px-[15px] px-0">
         <div className={'flex flex-wrap'}>
           <Text subtitle className="mb-5 md:!text-4xl text-3xl w-full px-3 !font-medium">
             Featured Articles

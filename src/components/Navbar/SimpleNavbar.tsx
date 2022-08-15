@@ -46,8 +46,8 @@ const SimpleNavbar = ({
             {
               navLinks.map((each: any, i: any) => (
                 each.type !== 'dropdown' ? !each.newTab ?
-                  <LinkTo href={each.path} key={i} passHref>
-                    <a className='mx-2'>{each.label}</a>
+                  <LinkTo href={each.path} key={i} passHref className='mx-2'>
+                    {each.label}
                   </LinkTo> :
                   <a href={each.path} key={each.path + 1} target="_blank" rel="noopener noreferrer" className='d-block mx-2 flex-wrap'>
                     {each.label}
@@ -62,14 +62,14 @@ const SimpleNavbar = ({
                     {
                       openDD &&
                       <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white dark:bg-slate-800')}>
-                        <Link href={'/blog'} passHref>
-                          <a className=''>All Articles</a>
-                        </Link>
+                        <LinkTo href={'/blog'} passHref>
+                          All Articles
+                        </LinkTo>
                         {
                           CATEGORIES.map(each => (
-                            <Link href={"/blog?category=" + each} key={each} passHref>
-                              <a className='' style={{ textTransform: 'capitalize' }}>{each}</a>
-                            </Link>
+                            <LinkTo href={"/blog?category=" + each} key={each} passHref>
+                              <span style={{ textTransform: 'capitalize' }}>{each}</span>
+                            </LinkTo>
                           ))
                         }
                       </div>

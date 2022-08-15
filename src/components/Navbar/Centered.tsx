@@ -35,15 +35,15 @@ const CenteredNavbar = ({
                     </div>
                 </div>
 
-                <Link href="/" passHref={true}>
+                <LinkTo href="/" passHref={true}>
                     {
                         logo ?
                             logo.type === LogoType.IMAGE ?
                                 <img src={theme === THEMES.DARK ? transformImagePaths(logo.logoLight) : transformImagePaths(logo.logo)} alt="WebExpe" className="cursor-pointer" width="100px" /> :
-                                <a className='text-[22px] font-semibold'>{logo.logo}</a>
-                            : <a className='text-[22px] font-semibold'>Logo</a>
+                                <span className='text-[22px] font-semibold'>{logo.logo}</span>
+                            : <span className='text-[22px] font-semibold'>Logo</span>
                     }
-                </Link>
+                </LinkTo>
 
                 <div className="flex justify-end" style={{ width: "120px" }}>
                     {
@@ -63,8 +63,8 @@ const CenteredNavbar = ({
                 {
                     navLinks.map((each: any, i: any) => (
                         each.type !== 'dropdown' ? !each.newTab ?
-                            <LinkTo href={each.path} key={i} passHref={true}>
-                                <a className='mx-2 font-light'>{each.label}</a>
+                            <LinkTo href={each.path} key={i} passHref={true} className='mx-2 font-light'>
+                                {each.label}
                             </LinkTo> :
                             <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='block mx-2 flex-wrap font-light	'>
                                 {each.label}
@@ -79,14 +79,14 @@ const CenteredNavbar = ({
                                 {
                                     openDD &&
                                     <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white dark:bg-slate-800 shadow-md')}>
-                                        <Link href={'/blog'} passHref={true}>
-                                            <a className='font-light'>All Articles</a>
-                                        </Link>
+                                        <LinkTo href={'/blog'} passHref={true} className='font-light'>
+                                            All Articles
+                                        </LinkTo>
                                         {
                                             CATEGORIES.map(each => (
-                                                <Link href={"/blog?category=" + each} key={each} passHref={true}>
-                                                    <a className='font-light' style={{ textTransform: 'capitalize' }}>{each}</a>
-                                                </Link>
+                                                <LinkTo href={"/blog?category=" + each} key={each} passHref={true}>
+                                                    <span className='font-light' style={{ textTransform: 'capitalize' }}>{each}</span>
+                                                </LinkTo>
                                             ))
                                         }
                                     </div>

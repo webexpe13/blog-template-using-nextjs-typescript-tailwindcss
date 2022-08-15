@@ -5,18 +5,12 @@ import CodeBlock from "../../../src/components/CodeBlock";
 import { HowToUseImageCode, HowToUseList, HowToUseSeperator, HowToUseTextCode } from "../../../src/constants/codeBlocks";
 
 const Article = () => {
-
-    const ads = [
-        '<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=webexpestore-21&language=en_IN&marketplace=amazon&region=IN&placement=B09N3ZNHTY&asins=B09N3ZNHTY&linkId=c7ed1872e77f058de27c9274a3c008af&show_border=false&link_opens_in_new_window=true"></iframe>',
-        '<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=webexpestore-21&language=en_IN&marketplace=amazon&region=IN&placement=B08FN4Q6VZ&asins=B08FN4Q6VZ&linkId=10cf0c67665473cd37743f129cf50ad9&show_border=true&link_opens_in_new_window=true"></iframe>'
-    ]
-
     return (
         // pass blogwithsidebar as show below for article page with sidebar layout
-        <PageLayout blogwithsidebar ads={ads}>
+        <PageLayout blogwithsidebar>
             {/* <Image src='/public/images/page-layouts/how-to-use-sidebar-article-layout.svg' alt="how to use article with sidebar layout | webexpe.com" className="mb-5" size={ImageSize.FUll} /> */}
             <CodeBlock code={
-`
+                `
     // import PageLayout from components
     import { ..., PageLayout, ... } from "../../../src/components";
     const Article = () => {
@@ -54,10 +48,10 @@ const Article = () => {
                 </li>
                 <li>
                     We can also place ads on the right sidebar.
-                    
+
                     {/* <Image src='/public/images/page-layouts/how-to-show-ads-script.svg' alt="how to show ads | webexpe.com" className="my-3" /> */}
                     <CodeBlock code={
-`
+                        `
     // import PageLayout from components
     import { ..., PageLayout, ... } from "../../../src/components";
     const Article = () => {
@@ -77,7 +71,7 @@ const Article = () => {
 
     export default Article;
 `
-            } className="my-5" />
+                    } className="my-5" />
                     The above code block shows how to pass ads in the sidebar layout.
                 </li>
             </List>

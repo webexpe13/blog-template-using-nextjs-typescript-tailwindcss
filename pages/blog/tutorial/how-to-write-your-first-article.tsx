@@ -25,7 +25,7 @@ const Article = () => {
                     1. Creating the article file.
                 </Text>
                 <Text p>
-                    First create a file inside <b>blog</b> folder in <b>pages</b> (/pages/blog/). You can also create sub folder inside blog folder. For SEO, the best practice is to name the file and folders in all lower case seperated by hyphen  <b>"-"</b> and end with <b>".tsx"</b>. <br /> example: <b>"blog-with-sidebar-layout.tsx"</b>. This will create a <b>tsx</b> file.
+                    First create a file inside <b>blog</b> folder in <b>pages</b> (/pages/blog/). You can also create a sub folder inside blog folder. For SEO, the best practice is to name the file and folders in all lower case seperated by hyphen  <b>"-"</b> and end with <b>".tsx"</b>. <br /> example: <b>"blog-with-sidebar-layout.tsx"</b>. This will create a <b>tsx</b> file.
                 </Text>
                 <Seperator />
                 <Text subtitle className="mt-10">
@@ -50,14 +50,14 @@ const Article = () => {
                         <Text p className="mt-2">
                             <b>featureArticle</b><br />
                             You can set it <b>true or false</b> as shown in the above image. If true the article card will be of full width as shown in the image below. <br />
-                            <i>* adding featureArticle property is optional</i>
+                            <i><b>*note : </b> adding featureArticle property is optional</i>
                         </Text>
                         <Image className="my-5" src="/images/tutorials/feature-article-example.png" alt="feature article example | webexpe.com" caption="feature article exmaple" size={ImageSize.DEFAULT} />
                     </li>
                     <li>
                         <b>preview</b><br />
                         <Text p className="mt-2">
-                            This will display the details in main home page and artcile header in article page
+                            This will display the details of the article in the article cards on main home page and article's header on the article page
                         </Text>
                         <List type={ListType.disc} className="mt-3">
                             <li>
@@ -66,11 +66,11 @@ const Article = () => {
                             </li>
                             <li>
                                 <b>date : </b>
-                                Write the article date in quotes
+                                Write the article date in quotes i.e. as a string.
                             </li>
                             <li>
                                 <b>articleTitle : </b>
-                                Write the article title in quotes.
+                                Write the article title in quotes i.e. as a string.
                             </li>
                             <li>
                                 <b>tags : </b>

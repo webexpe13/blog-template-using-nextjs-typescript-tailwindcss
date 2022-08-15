@@ -4,6 +4,7 @@
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
+  productionBrowserSourceMaps: true
 }
 
 module.exports = nextConfig

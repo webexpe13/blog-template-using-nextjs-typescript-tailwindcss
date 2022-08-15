@@ -4,34 +4,31 @@ import { THEMES } from '../../shared/enums';
 import { addBodyNoScroll, combineClasses, getCategories, removeBodyNoScroll } from '../../utils/utils';
 import classes from './Navbar.module.scss';
 import { XIcon } from '@heroicons/react/outline';
+import { MoonIcon, SunIcon } from '@heroicons/react/solid';
 import { Text, LinkTo } from '../../components';
+import { useTheme } from 'next-themes';
 
 interface IProps {
     openSidebar: boolean;
-    theme: any;
     closeNavSidebar: () => void;
     navSetup: any;
     changeTheme: () => void;
 }
 
-const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar, navSetup, changeTheme }: IProps) => {
-
+const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeTheme }: IProps) => {
+    const { theme, setTheme } = useTheme();
     useEffect(() => {
         openSidebar
             ? addBodyNoScroll()
             : () => {
                 return;
             };
-        return () => {
-            removeBodyNoScroll();
-        };
     }, [openSidebar]);
 
     const env = process.env.NODE_ENV;
 
     const CATEGORIES = getCategories();
     const [openDD, setOpenDD] = useState(false)
-
 
     return (
         <>
@@ -64,12 +61,12 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                         <i className='icofont-caret-down'></i>
                                     </div>
                                     <div className={classes.sidebarCategoryDD} style={{ height: openDD ? 'auto' : '0px', padding: openDD ? '10px' : '0px' }}>
-                                        <LinkTo href={'/blog'} passHref>
+                                        <LinkTo href={'/blog'} passHref className='block mb-2 text-sm'>
                                             All Articles
                                         </LinkTo>
                                         {
                                             CATEGORIES.map(each => (
-                                                <LinkTo href={"/blog?category=" + each} key={each} passHref>
+                                                <LinkTo href={"/blog?category=" + each} key={each} passHref className='block mb-2 text-sm'>
                                                     <span style={{ textTransform: 'capitalize' }}>{each}</span>
                                                 </LinkTo>
                                             ))
@@ -130,8 +127,10 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 </div>
                 <div className='mt-5 mb-4'>
                     <p className='mb-2 font-light'>Switch To {theme === THEMES.LIGHT ? 'Dark' : 'Light'} Theme :</p>
-                    <button name="theme-switch" aria-label="theme-switch" className={combineClasses(classes.theme_switch)} onClick={() => changeTheme()}>
-                        <img src={(THEME_ICONS as any)[theme].themeToggle} width="100%" alt="" />
+                    <button name="theme-switch" aria-label="theme-switch" className={combineClasses(classes.theme_switch, 'dark:text-white text-black')} onClick={() => changeTheme()}>
+                        {
+                            theme === THEMES.DARK ? <SunIcon className="w-[28px]" /> : <MoonIcon className="w-[25px]" />
+                        }
                     </button>
                 </div>
                 <hr />

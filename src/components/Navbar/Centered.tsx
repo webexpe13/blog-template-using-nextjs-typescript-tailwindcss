@@ -1,16 +1,14 @@
 import classes from "./Navbar.module.scss";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { THEME_ICONS } from "../../constants/appConstants";
 import { combineClasses, getCategories, transformImagePaths } from "../../utils/utils";
 import { LogoType, THEMES } from "../../shared/enums";
-import { MenuIcon } from '@heroicons/react/outline';
+import { MenuIcon, SearchIcon } from '@heroicons/react/outline';
 import LinkTo from "../LinkTo";
+import { useTheme } from "next-themes";
 
 const CenteredNavbar = ({
     openSearch,
     scrolled,
-    theme = THEMES.LIGHT,
     toggleSideMenu,
     openSidebar = false,
     navSetup }: any) => {
@@ -18,6 +16,7 @@ const CenteredNavbar = ({
 
     const CATEGORIES = getCategories();
     const [openDD, setOpenDD] = useState(false)
+    const { theme, setTheme } = useTheme();
 
     return (
         <div className={'container'}>
@@ -29,8 +28,8 @@ const CenteredNavbar = ({
                         <MenuIcon className="dark:text-white text-black" />
                     </div>
                     <div className={combineClasses(classes.search_icon_wrapper)} onClick={() => openSearch()}>
-                        <button name="theme-switch" aria-label="theme switch">
-                            <img src={(THEME_ICONS as any)[theme].search} width="100%" alt="" />
+                        <button name="search" aria-label="search" className="dark:text-white text-black">
+                            <SearchIcon className="w-[20px]" />
                         </button>
                     </div>
                 </div>
@@ -63,29 +62,29 @@ const CenteredNavbar = ({
                 {
                     navLinks.map((each: any, i: any) => (
                         each.type !== 'dropdown' ? !each.newTab ?
-                            <LinkTo href={each.path} key={i} passHref={true} className='mx-2 font-light'>
+                            <LinkTo href={each.path} key={i} passHref={true} className='mx-2 font-normal'>
                                 {each.label}
                             </LinkTo> :
-                            <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='block mx-2 flex-wrap font-light	'>
+                            <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='block mx-2 flex-wrap font-normal	'>
                                 {each.label}
                             </a>
                             : <div className={classes.sidebarCategoryDD_wrapper} key={each.label}>
                                 <div className='flex items-center cursor-pointer mx-2' key={each.label} onClick={() => setOpenDD(!openDD)}>
-                                    <p className='my-0 font-light	'>
+                                    <p className='my-0 font-normal	'>
                                         {each.label}
                                     </p>
                                     <i className='icofont-caret-down'></i>
                                 </div>
                                 {
                                     openDD &&
-                                    <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white dark:bg-slate-800 shadow-md')}>
-                                        <LinkTo href={'/blog'} passHref={true} className='font-light'>
+                                    <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white dark:bg-slate-800 shadow-md px-1')}>
+                                        <LinkTo href={'/blog'} passHref={true} className='block text-sm p-2 font-normal'>
                                             All Articles
                                         </LinkTo>
                                         {
                                             CATEGORIES.map(each => (
-                                                <LinkTo href={"/blog?category=" + each} key={each} passHref={true}>
-                                                    <span className='font-light' style={{ textTransform: 'capitalize' }}>{each}</span>
+                                                <LinkTo href={"/blog?category=" + each} key={each} passHref className='block text-sm p-2 border-t border-gray-400 font-normal' >
+                                                    <span style={{ textTransform: 'capitalize' }}>{each}</span>
                                                 </LinkTo>
                                             ))
                                         }

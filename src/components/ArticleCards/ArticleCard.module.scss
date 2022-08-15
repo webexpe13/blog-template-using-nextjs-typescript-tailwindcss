@@ -10,11 +10,12 @@
 }
 
 .featured_article {
-    @apply flex relative items-center w-full md:flex-nowrap flex-wrap;
+    @apply flex relative w-full md:flex-nowrap flex-wrap;
     margin: 0px 10px 30px;
 
     &__image {
-        @apply md:w-[45%] w-full md:h-[auto] h-[200px] rounded-none;
+        @apply md:w-[50%] w-full md:h-[auto] h-[200px];
+        border-radius: 0;
         align-self: stretch;
         background-size: cover !important;
         background-position: center !important;

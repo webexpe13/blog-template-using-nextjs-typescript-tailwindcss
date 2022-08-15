@@ -4,11 +4,12 @@ import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider
 import ArticleCard from '../src/components/ArticleCards/ArticleCard';
 import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
 import { ARTICLES_LIST } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
+import { DEFAULT_SEO } from "../BLOG_CONSTANTS/_BLOG_SETUP";
 
 
 const Home = () => {
   return (
-    <PageLayout home>
+    <PageLayout home PAGE_SEO={DEFAULT_SEO}>
       <section className='w-full md:pt-[100px] md:pb-[70px] pt-[130px] pb-20 mb-10 dark:bg-slate-800 bg-slate-200'>
         <div className="container text-center px-3">
           <Text title className='text-3xl'>
@@ -21,7 +22,7 @@ const Home = () => {
 
           <div className='flex justify-center mt-5 flex-wrap '>
             <a href="https://github.com/nmayur/nextjs-simple-blog-template" target="_blank" rel="noopener noreferrer" className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
-              <span className='text-xl pl-2 pt-2 block'>Github</span>
+              <span className='text-xl pt-2 block'>Github</span>
             </a>
             <LinkTo href="/about-us" passHref className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
               <span className='text-xl pt-2 block'>About</span>

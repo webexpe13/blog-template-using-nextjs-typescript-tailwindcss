@@ -12,9 +12,9 @@ const CodeBlock = ({ code, className }: { code: string, className?: string }) =>
                     {({ className, style, tokens, getLineProps, getTokenProps }) => (
                         <Pre className={className} style={style}>
                             {tokens.map((line, i) => (
-                                <div {...getLineProps({ line, key: i })} key={i}>
+                                <div {...getLineProps({ line, key: i })} key={Math.random()}>
                                     {line.map((token, key) => (
-                                        <span {...getTokenProps({ token, key })} key={i}/>
+                                        <span {...getTokenProps({ token, key })} key={Math.random()} />
                                     ))}
                                 </div>
                             ))}

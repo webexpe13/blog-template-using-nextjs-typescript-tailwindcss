@@ -17,8 +17,6 @@ const Search = ({ closeSearch }: ISearch) => {
             || article.preview.articleTitle.indexOf(searchStr) >= 0)
         );
         setSearchResults(results)
-        console.log(searchResults);
-
     }
 
     return (

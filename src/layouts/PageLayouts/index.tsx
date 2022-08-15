@@ -17,8 +17,15 @@ interface IBlogLayout {
 }
 
 const PageLayout = ({ children, PAGE_SEO, blogwithsidebar = false, blogcentered = false, home = false, ads = [] }: IBlogLayout) => {
-    const ARTICLE_DETAILS = getArticleDetails();
-    let SEO_CONFIG = ARTICLE_DETAILS ? CREATE_SEO_CONFIG({ ...DEFAULT_SEO, ...ARTICLE_DETAILS.seo, ...PAGE_SEO }) : CREATE_SEO_CONFIG({ ...DEFAULT_SEO, ...PAGE_SEO });
+    const ARTICLE_DETAILS = getArticleDetails();    
+    let SEO_CONFIG = {};
+    if (ARTICLE_DETAILS && ARTICLE_DETAILS.seo) {
+        SEO_CONFIG = CREATE_SEO_CONFIG({ ...ARTICLE_DETAILS.seo })
+    } else if (PAGE_SEO) {
+        SEO_CONFIG = CREATE_SEO_CONFIG({ ...PAGE_SEO, ...DEFAULT_SEO })
+    } else {
+        SEO_CONFIG = CREATE_SEO_CONFIG({ ...DEFAULT_SEO })
+    }
 
     return (
         <>

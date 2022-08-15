@@ -54,8 +54,11 @@ const FeaturedArticle = ({ article, path }: IProp) => {
                     </div>
                     <p className={combineClasses(classes.featured_article__date, "font-normal text-xs pt-3 mb-0")}>{article.date}</p>
                 </div>
-                <div className={classes.featured_article__image} style={{ background: `url(${transformImagePaths(article.thumbnail)})` }}>
-                    {/* <img src={article.thumbnail} alt={article.articleTitle} /> */}
+                <div className={combineClasses(classes.featured_article__image, 'rounded-sm overflow-hidden')} style={{ background: `url(${transformImagePaths(article.thumbnail)})` }} >
+                    {/* style={{ background: `url(${transformImagePaths(article.thumbnail)})` }} */}
+                    {/* <img 
+                        src={transformImagePaths(article.thumbnail)} alt={article.articleTitle} 
+                        className="w-full h-full" /> */}
                 </div>
             </div>
         </>

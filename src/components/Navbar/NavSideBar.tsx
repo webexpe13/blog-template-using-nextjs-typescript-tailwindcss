@@ -136,12 +136,12 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 </div>
                 <hr />
                 <div className='my-5'>
-                    <p className='text-sm font-light text-gray-500 mb-1'>Copyright © 2022</p>
+                    <p className='text-sm font-light dark:text-gray-400 text-gray-500 mb-1'>Copyright © 2022</p>
                     <LinkTo href="/privacy-policy" passHref>
-                        <a className='text-sm font-light text-gray-500 pr-3'>Privacy Policy</a>
+                        <a className='text-sm font-light dark:text-gray-400 text-gray-500 pr-3'>Privacy Policy</a>
                     </LinkTo>
                     <LinkTo href="/terms-and-condition" passHref>
-                        <a className='text-sm font-light text-gray-500'>Terms and Conditions</a>
+                        <a className='text-sm font-light dark:text-gray-400 text-gray-500'>Terms and Conditions</a>
                     </LinkTo>
                 </div>
             </aside>

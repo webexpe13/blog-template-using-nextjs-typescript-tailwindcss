@@ -35,7 +35,6 @@ const Article = () => {
                     Goto <b>/BLOG_CONSTANTS/_ARTICLES_LIST.tsx</b> file. Here we will add details of your article in <b>ARTICLES_LIST</b> array as follows.
                 </Text>
                 <CodeBlock code={Article_Entry_inList} className="my-5" />
-                {/* <Image className="my-5" src="/public/images/tutorials/add-article-in-list.svg" alt="Adding your article details in ARTICLES_LIST | webexpe.com" size={ImageSize.DEFAULT} /> */}
                 <Text p>
                     In our article details we have 4 important properties <b>path, featureArticle, preview, and seo</b>.
                 </Text>

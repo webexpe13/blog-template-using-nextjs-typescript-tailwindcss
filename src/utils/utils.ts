@@ -7,6 +7,7 @@ import { MOCK_ARTICLES_LIST } from "../constants/mocks";
 
 // env
 const env = process.env.NODE_ENV;
+export const IS_DEV_MODE = env === "development" ? true : false;
 
 /**
  *
@@ -127,11 +128,16 @@ export const removeBodyNoScroll = (): void => {
  */
 export const getArticleDetails = (): iArticle => {
   const router = useRouter();
-  const articlePath = "/pages" + router.pathname + ".tsx" ;
-  if(env === 'development'){
-    return MOCK_ARTICLES_LIST.filter((each) => each.path === articlePath)[0] || ARTICLES_LIST.filter((each) => each.path === articlePath)[0];
+  const articlePath = "/pages" + router.pathname + ".tsx";
+  if (IS_DEV_MODE) {
+    return (
+      MOCK_ARTICLES_LIST.filter((each) =>
+        each.path.includes(articlePath)
+      )[0] ||
+      ARTICLES_LIST.filter((each) => each.path.includes(articlePath))[0]
+    );
   }
-  return ARTICLES_LIST.filter((each) => each.path === articlePath)[0];
+  return ARTICLES_LIST.filter((each) => each.path.includes(articlePath))[0];
 };
 
 /**
@@ -184,17 +190,17 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
     typeof window !== "undefined" && window.location.origin
       ? window.location.origin
       : "";
-  const LOCAL_URL = WEBSITE_URL ? WEBSITE_URL : origin;
+  const LOCAL_URL = IS_DEV_MODE ? origin : WEBSITE_URL ? WEBSITE_URL : origin;
   const LOCAL_PATH = ARTICLE_DETAILS
     ? transformPath(ARTICLE_DETAILS.path)
     : router.asPath;
-  
+
   const description = ARTICLE_DETAILS?.preview?.shortIntro;
-  
+
   const keywords = PAGE_SEO?.keywords || ARTICLE_DETAILS?.preview?.tags;
   const ogUrl = `${LOCAL_URL}${LOCAL_PATH}`;
 
-  const ogImage = PAGE_SEO?.ogImage
+  const ogImage = PAGE_SEO.ogImage
     ? `${LOCAL_URL}${transformImagePaths(PAGE_SEO?.ogImage)}`
     : `${LOCAL_URL}${
         ARTICLE_DETAILS?.preview.thumbnail
@@ -203,15 +209,18 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
       }`;
 
   const twitterHandle = PAGE_SEO?.twitterHandle || "";
-  const author = ARTICLE_DETAILS ? ARTICLE_DETAILS?.preview.author.name
+  const author = ARTICLE_DETAILS
+    ? ARTICLE_DETAILS?.preview.author.name
     : PAGE_SEO?.author;
 
-    const title = `${ ARTICLE_DETAILS ? ARTICLE_DETAILS?.preview?.articleTitle : PAGE_SEO?.title} | ${WEBSITE_NAME} ${author ? '| ' + author : null}`;
+  const title = `${
+    ARTICLE_DETAILS ? ARTICLE_DETAILS?.preview?.articleTitle : PAGE_SEO?.title
+  } | ${WEBSITE_NAME} ${author ? "| " + author : null}`;
 
   let seo_config = {
     title: title,
     description: description,
-    canonical:"https://webexpe.com/",
+    canonical: "https://webexpe.com/",
     additionalMetaTags: [
       {
         property: "keywords",

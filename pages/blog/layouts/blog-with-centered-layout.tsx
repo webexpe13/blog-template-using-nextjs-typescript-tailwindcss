@@ -14,18 +14,18 @@ const Article = () => {
             </Text>
             <CodeBlock
                 code={`
-                    // import PageLayout from components
-                    import { ..., PageLayout, ... } from "../../../src/components";
-                    const Article = () => {
-                        return (
-                            // pass blogcentered as shown
-                            <PageLayout blogcentered />
-                                {/* Start writing your article here */}
-                            </PageLayout>
-                        )		
-                    }
+    // import PageLayout from components
+    import { ..., PageLayout, ... } from "../../../src/components";
+    const Article = () => {
+        return (
+            // pass blogcentered as shown
+            <PageLayout blogcentered />
+                {/* Start writing your article here */}
+            </PageLayout>
+        )		
+    }
 
-                    export default Article;`}
+    export default Article;`}
                 className="my-5"
             />
             <Text p>

@@ -2,7 +2,7 @@
 import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
 import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider } from "../../../src/components";
 import CodeBlock from "../../../src/components/CodeBlock";
-import { HowToUseImageCode, HowToUseList, HowToUseSeperator, HowToUseTextCode } from "../../../src/constants/codeBlocks";
+import { HowToUseImageCode, HowToUseList, HowToUseSeperator, HowToUseTextCode, rightSideAdCode } from "../../../src/constants/codeBlocks";
 
 const Article = () => {
     return (
@@ -14,18 +14,18 @@ const Article = () => {
             </Text>
             <CodeBlock
                 code={`
-                    // import PageLayout from components
-                    import { ..., PageLayout, ... } from "../../../src/components";
-                    const Article = () => {
-                        return (
-                            // pass blogwithsidebar as shown
-                            <PageLayout blogwithsidebar />
-                                {/* Start writing your article here */}
-                            </PageLayout>
-                        )		
-                    }
+    // import PageLayout from components
+    import { ..., PageLayout, ... } from "../../../src/components";
+    const Article = () => {
+        return (
+            // pass blogwithsidebar as shown
+            <PageLayout blogwithsidebar />
+                {/* Start writing your article here */}
+            </PageLayout>
+        )		
+    }
 
-                    export default Article;
+    export default Article;
                 `}
                 className="my-5"
             />
@@ -54,26 +54,7 @@ const Article = () => {
 
                     {/* <Image src='/public/images/page-layouts/how-to-show-ads-script.svg' alt="how to show ads | webexpe.com" className="my-3" /> */}
                     <CodeBlock
-                        code={`
-                        // import PageLayout from components
-                        import { ..., PageLayout, ... } from "../../../src/components";
-                        const Article = () => {
-                            // create ads array and paste your add scripts as a string in quotes
-                            const ads = [
-                                'ad script',
-                                'ad script'
-                            ]
-
-                            return (
-                                // pass blogwithsidebar as shown
-                                <PageLayout blogwithsidebar ads={ads} />
-                                    {/* Start writing your article here */}
-                                </PageLayout>
-                            )		
-                        }
-
-                        export default Article;
-                        `}
+                        code={rightSideAdCode}
                         className="my-5"
                     />
                     The above code block shows how to pass ads in the sidebar layout.

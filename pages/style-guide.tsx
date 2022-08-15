@@ -9,13 +9,14 @@ const StyleGuide = () => {
                 <Text title className="text-blue-600">
                     Style Guide
                 </Text>
-                We have used <LinkTo href="https://tailwindcss.com/" external><b>Tailwind CSS</b></LinkTo> for this project so we can use all the css classes and styles given in the <LinkTo href="https://tailwindcss.com/docs/font-size" external><b> tailwind css docs</b></LinkTo>. You can have an extensive tutorial of all utility classes in the tailwind docs, but in this guide we will show some classes and styling you might be using frequently with some of the components, rest you can go crazy with the help of the official docs.
-                <hr className="my-5" />
+                <div className="px-4 py-3 dark:bg-slate-800 bg-blue-200 rounded my-5">
+                    We have used <LinkTo href="https://tailwindcss.com/" external><b>Tailwind CSS</b></LinkTo> for this project so we can use all the css classes and styles given in the <LinkTo href="https://tailwindcss.com/docs/font-size" external><b> tailwind css docs</b></LinkTo>. You can have an extensive tutorial of all utility classes in the tailwind docs, but in this guide we will show some classes and styling you might be using frequently with some of the components, rest you can go crazy with the help of the official docs.
+                </div>
 
                 <Text subtitle className="md:!font-bold">Styling Texts</Text>
                 <b>Text</b> component is used to add text with some default styling in your article. You can see the <LinkTo href="/pages/all-components.tsx/#text" className="underline">demo and guide here</LinkTo>. <br />
                 With tailwind css utility classes we can change font size, font weight, color, and other text manipulation utilities classes shown in <LinkTo href="https://tailwindcss.com/docs/font-size" external><b> tailwind css text docs</b></LinkTo>, by adding the classes in <b>className=""</b> attribute. <br />
-                <b>Example:</b> 
+                <b>Example:</b>
                 <br /> <b>{'<Text className="text-[20px] text-blue-500 font-bold">Lorem ipsum dummy text</Text>'}</b> <br />
                 You can override default styles by adding <b>"!"</b> in front of classes like <b>{`className="!font-bold md:!text-[50px] md:!font-semibold"`}</b>.
                 <Seperator />

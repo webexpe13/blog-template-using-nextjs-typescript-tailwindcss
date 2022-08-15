@@ -21,7 +21,7 @@ const Icons = () => {
                     To use these icons, simply copy the text below the icon and paste in className in {"<i />"} tag, and to change the size and color of the icon use font attributes like text-sm or text-[12px] and text-blue-800 in className.
 
                     <br /> <br />
-                    Example: {'<i className="icon-A text-[80px] text-blue-800" />'}
+                    <b>Example:</b> {' <i className="icon-A text-[80px] text-blue-800" />'}
                     <br />
                     <i className="icon-A text-[80px] text-blue-800" />
                 </p>

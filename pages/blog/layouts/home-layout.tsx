@@ -14,7 +14,7 @@ const HomeLayoutExample = () => {
                 <hr className="my-5" />
                 <Text p>
                     This example/demo page is written in Default Home Page Layout. <br />
-                    This is the layout we used to create
+                    This is the layout we have used to create
                     <LinkTo href="/" passHref> Home</LinkTo>,
                     <LinkTo href="/pages/about-us.tsx" passHref> About</LinkTo>,
                     <LinkTo href="/pages/icons.tsx" passHref> Icons</LinkTo>,

@@ -238,7 +238,26 @@ export const NavbarSetup_Socials = `
         ]
     }
 `
+export const rightSideAdCode= `
+    // import PageLayout from components
+    import { ..., PageLayout, ... } from "../../../src/components";
+    const Article = () => {
+        // create ads array and paste your add scripts as a string in quotes
+        const ads = [
+            'ad script',
+            'ad script'
+        ]
 
+        return (
+            // pass blogwithsidebar as shown
+            <PageLayout blogwithsidebar ads={ads} />
+                {/* Start writing your article here */}
+            </PageLayout>
+        )		
+    }
+
+    export default Article;
+`;
 export const Article_Entry_inList = `
     // Import author profiles, just type the name you have set in _BLOG_SETUP inside the curly brackets
     import { MAYUR, RUPALI } from './_BLOG_SETUP';

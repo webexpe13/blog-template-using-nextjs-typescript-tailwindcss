@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { THEME_ICONS } from '../../constants/appConstants';
 import { THEMES } from '../../shared/enums';
 import { addBodyNoScroll, combineClasses, getCategories, removeBodyNoScroll } from '../../utils/utils';
 import classes from './Navbar.module.scss';

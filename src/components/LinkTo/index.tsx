@@ -10,9 +10,9 @@ const LinkTo = ({ href, passHref = true, newTab = false, external = false, child
                         {children}
                     </a> :
                     <Link href={transformPath(href)} passHref={passHref}>
-                        <a className={combineClasses(className, 'cursor-pointer')}>
+                        <span className={combineClasses(className, 'cursor-pointer hover:text-blue-500')}>
                             {children}
-                        </a>
+                        </span>
                     </Link>
             }
         </>

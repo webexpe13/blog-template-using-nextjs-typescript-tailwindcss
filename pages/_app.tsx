@@ -4,7 +4,7 @@ import '../src/assets/fontCss/icofont.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import { DefaultSeo } from "next-seo";
+import { DefaultSeo, NextSeo } from "next-seo";
 import Footer from '../src/components/Footer';
 import Script from 'next/script';
 import * as gtag from '../google';
@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   if(!mounted && env === 'development') return null
   return (
     <>
-      <DefaultSeo {...SEO_CONFIG} />
+      <NextSeo {...SEO_CONFIG} />
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -44,7 +44,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           <>
             <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${gtag.GA_ADSENSE_ID}`} crossOrigin="anonymous"></Script>
             <Script
-              strategy="afterInteractive"
               src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
             />
             <Script

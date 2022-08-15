@@ -88,7 +88,7 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                 </LinkTo>
                                 <LinkTo href='/pages/style-guide.tsx' passHref className='text-[16px] block my-3'>
                                     Style Guide
-                                </LinkTo>                                   
+                                </LinkTo>
                                 <LinkTo href='/pages/blog/layouts/home-layout.tsx' passHref className='text-[16px] block my-3'>
                                     Home Page Layout
                                 </LinkTo>
@@ -106,7 +106,7 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                                 </LinkTo>
                                 <LinkTo href='/pages/blog/tutorial/how-to-deploy-blog.tsx' passHref className='text-[16px] block my-3'>
                                     How to export the blog
-                                </LinkTo>                                
+                                </LinkTo>
                                 <LinkTo href='/icons' passHref className='text-[16px] block my-3'>
                                     Icons
                                 </LinkTo>
@@ -130,18 +130,18 @@ const NavSidebar = ({ openSidebar = false, theme = THEMES.LIGHT, closeNavSidebar
                 </div>
                 <div className='mt-5 mb-4'>
                     <p className='mb-2 font-light'>Switch To {theme === THEMES.LIGHT ? 'Dark' : 'Light'} Theme :</p>
-                    <button name="theme-switch" className={combineClasses(classes.theme_switch)} onClick={() => changeTheme()}>
+                    <button name="theme-switch" aria-label="theme-switch" className={combineClasses(classes.theme_switch)} onClick={() => changeTheme()}>
                         <img src={(THEME_ICONS as any)[theme].themeToggle} width="100%" alt="" />
                     </button>
                 </div>
                 <hr />
                 <div className='my-5'>
                     <p className='text-sm font-light dark:text-gray-400 text-gray-500 mb-1'>Copyright © 2022</p>
-                    <LinkTo href="/privacy-policy" passHref>
-                        <a className='text-sm font-light dark:text-gray-400 text-gray-500 pr-3'>Privacy Policy</a>
+                    <LinkTo href="/privacy-policy" passHref className='text-sm font-light dark:text-gray-400 text-gray-500 pr-3'>
+                        Privacy Policy
                     </LinkTo>
-                    <LinkTo href="/terms-and-condition" passHref>
-                        <a className='text-sm font-light dark:text-gray-400 text-gray-500'>Terms and Conditions</a>
+                    <LinkTo href="/terms-and-condition" passHref className='text-sm font-light dark:text-gray-400 text-gray-500'>
+                        Terms and Conditions
                     </LinkTo>
                 </div>
             </aside>

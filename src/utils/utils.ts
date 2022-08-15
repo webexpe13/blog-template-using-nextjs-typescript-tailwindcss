@@ -195,7 +195,7 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
     ? transformPath(ARTICLE_DETAILS.path)
     : router.asPath;
 
-  const description = ARTICLE_DETAILS?.preview?.shortIntro;
+  const meta_description = ARTICLE_DETAILS?.preview?.shortIntro || PAGE_SEO.description;
 
   const keywords = PAGE_SEO?.keywords || ARTICLE_DETAILS?.preview?.tags;
   const ogUrl = `${LOCAL_URL}${LOCAL_PATH}`;
@@ -215,11 +215,11 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
 
   const title = `${
     ARTICLE_DETAILS ? ARTICLE_DETAILS?.preview?.articleTitle : PAGE_SEO?.title
-  } | ${WEBSITE_NAME} ${author ? "| " + author : null}`;
+  } | ${WEBSITE_NAME} ${author ? "| " + author : null}`;  
 
   let seo_config = {
     title: title,
-    description: description,
+    description: meta_description,
     canonical: "https://webexpe.com/",
     additionalMetaTags: [
       {

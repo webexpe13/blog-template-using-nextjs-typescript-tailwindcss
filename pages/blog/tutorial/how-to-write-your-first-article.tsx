@@ -25,14 +25,14 @@ const Article = () => {
                     1. Creating the article file.
                 </Text>
                 <Text p>
-                    First create a file inside <b>blog</b> filder in <b>pages</b> (/pages/blog/). You can also create sub folder inside blog folder. For SEO best practices name the file and folders in all lower case and seperated by hyphen  <b>"-"</b> and end with <b>".tsx"</b>. <br /> example: <b>"blog-with-sidebar-layout.tsx"</b>. This will create a <b>tsx</b> file.
+                    First create a file inside <b>blog</b> folder in <b>pages</b> (/pages/blog/). You can also create sub folder inside blog folder. For SEO, the best practice is to name the file and folders in all lower case seperated by hyphen  <b>"-"</b> and end with <b>".tsx"</b>. <br /> example: <b>"blog-with-sidebar-layout.tsx"</b>. This will create a <b>tsx</b> file.
                 </Text>
                 <Seperator />
                 <Text subtitle className="mt-10">
                     2. Adding your article details in <b>ARTICLES_LIST</b>
                 </Text>
                 <Text p>
-                    Goto <b>/BLOG_CONSTANTS/_ARTICLES_LIST.tsx</b> file. Here we will add details of your article in <b>ARTICLES_LIST</b> array as follows.
+                    Go to <b>/BLOG_CONSTANTS/_ARTICLES_LIST.tsx</b> file. Here we will add details of your article in <b>ARTICLES_LIST</b> array as follows.
                 </Text>
                 <CodeBlock code={Article_Entry_inList} className="my-5" />
                 <Text p>

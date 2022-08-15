@@ -94,7 +94,7 @@ export const ARTICLES_LIST: iArticle[] = [
         preview: {
             author: RUPALI,
             date: "August 08 2022",
-            articleTitle: "Page Layout for article with centered layout",
+            articleTitle: "Page Layout for a article with centered layout",
             tags: "demo, centered, centered layout",
             thumbnail: "/public/images/tutorials/blog-with-centered-layout.svg",
             shortIntro: "This a demo artile with centered layout and with demo of all the components.",

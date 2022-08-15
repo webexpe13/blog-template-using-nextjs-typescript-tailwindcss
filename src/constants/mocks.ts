@@ -48,10 +48,10 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
         preview: {
             author: MAYUR,
             date: "August 08 2022",
-            articleTitle: "Page Layout for article with sidebar",
+            articleTitle: "Page Layout for a article with sidebar",
             tags: "demo, with sidebar, default layout",
             thumbnail: "/public/images/tutorials/blog-with-sidebar-layout.svg",
-            shortIntro: "In this article we will see Page Layout for blog with sidebar example.",
+            shortIntro: "In this article we will see Page Layout for a blog with sidebar example.",
             category: 'layouts'
         },
         seo: {
@@ -64,10 +64,10 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
         preview: {
             author: RUPALI,
             date: "August 08 2022",
-            articleTitle: "Page Layout for article with centered layout",
+            articleTitle: "Page Layout for a article with centered layout",
             tags: "demo, centered, centered layout",
             thumbnail: "/public/images/tutorials/blog-with-centered-layout.svg",
-            shortIntro: "This a demo artile with centered layout and with demo of all the components.",
+            shortIntro: "This a demo article with centered layout and with demo of all the components.",
             category: 'layouts'
         },
         seo: {

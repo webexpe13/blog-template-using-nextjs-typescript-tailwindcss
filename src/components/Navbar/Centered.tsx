@@ -1,16 +1,14 @@
 import classes from "./Navbar.module.scss";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { THEME_ICONS } from "../../constants/appConstants";
 import { combineClasses, getCategories, transformImagePaths } from "../../utils/utils";
 import { LogoType, THEMES } from "../../shared/enums";
-import { MenuIcon } from '@heroicons/react/outline';
+import { MenuIcon, SearchIcon } from '@heroicons/react/outline';
 import LinkTo from "../LinkTo";
+import { useTheme } from "next-themes";
 
 const CenteredNavbar = ({
     openSearch,
     scrolled,
-    theme = THEMES.LIGHT,
     toggleSideMenu,
     openSidebar = false,
     navSetup }: any) => {
@@ -18,6 +16,7 @@ const CenteredNavbar = ({
 
     const CATEGORIES = getCategories();
     const [openDD, setOpenDD] = useState(false)
+    const { theme, setTheme } = useTheme();
 
     return (
         <div className={'container'}>
@@ -29,8 +28,8 @@ const CenteredNavbar = ({
                         <MenuIcon className="dark:text-white text-black" />
                     </div>
                     <div className={combineClasses(classes.search_icon_wrapper)} onClick={() => openSearch()}>
-                        <button name="theme-switch" aria-label="theme switch">
-                            <img src={(THEME_ICONS as any)[theme].search} width="100%" alt="" />
+                        <button name="search" aria-label="search" className="dark:text-white text-black">
+                            <SearchIcon className="w-[20px]" />
                         </button>
                     </div>
                 </div>

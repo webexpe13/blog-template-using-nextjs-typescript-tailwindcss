@@ -66,7 +66,6 @@ const Navbar = () => {
                     isMobile ? <SimpleNavbar
                         openSearch={openSearch}
                         scrolled={scrolled}
-                        theme={theme}
                         changeTheme={changeTheme}
                         toggleSideMenu={toggleSideMenu}
                         openSidebar={openSidebar}
@@ -79,7 +78,6 @@ const Navbar = () => {
                                         <SimpleNavbar
                                             openSearch={openSearch}
                                             scrolled={scrolled}
-                                            theme={theme}
                                             changeTheme={changeTheme}
                                             toggleSideMenu={toggleSideMenu}
                                             openSidebar={openSidebar}
@@ -90,7 +88,6 @@ const Navbar = () => {
                                         <CenteredNavbar
                                             openSearch={openSearch}
                                             scrolled={scrolled}
-                                            theme={theme}
                                             changeTheme={changeTheme}
                                             toggleSideMenu={toggleSideMenu}
                                             openSidebar={openSidebar}
@@ -101,7 +98,6 @@ const Navbar = () => {
                                         <SimpleNavbar
                                             openSearch={openSearch}
                                             scrolled={scrolled}
-                                            theme={theme}
                                             changeTheme={changeTheme}
                                             toggleSideMenu={toggleSideMenu}
                                             openSidebar={openSidebar}
@@ -113,7 +109,7 @@ const Navbar = () => {
                 }
             </ nav>
 
-            <NavSidebar openSidebar={openSidebar} theme={theme} closeNavSidebar={() => setOpenSidebar(false)} navSetup={PRIMARY_NAV} changeTheme={changeTheme} />
+            <NavSidebar openSidebar={openSidebar} closeNavSidebar={() => setOpenSidebar(false)} navSetup={PRIMARY_NAV} changeTheme={changeTheme} />
             {showSearch && <Search closeSearch={() => setShowSearch(false)} />}
         </>
     )

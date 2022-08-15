@@ -29,7 +29,7 @@ const CenteredNavbar = ({
                         <MenuIcon className="dark:text-white text-black" />
                     </div>
                     <div className={combineClasses(classes.search_icon_wrapper)} onClick={() => openSearch()}>
-                        <button name="theme-switch">
+                        <button name="theme-switch" aria-label="theme switch">
                             <img src={(THEME_ICONS as any)[theme].search} width="100%" alt="" />
                         </button>
                     </div>

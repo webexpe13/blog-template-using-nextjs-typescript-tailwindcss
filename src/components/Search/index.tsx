@@ -25,7 +25,7 @@ const Search = ({ closeSearch }: ISearch) => {
                 <div className="px-3">
                     <div className='flex justify-between items-center md:pt-10 pt-5'>
                         <h1 className={'text-[45px] font-bold'}>Search</h1>
-                        <button name="search-button" type="button" className={classes.search_close_icon} onClick={closeSearch}>
+                        <button name="search-button" aria-label="search button" type="button" className={classes.search_close_icon} onClick={closeSearch}>
                             <XIcon className='text-slate-800 dark:text-white text-[20px]' />
                         </button>
                     </div>

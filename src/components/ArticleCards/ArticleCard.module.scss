@@ -2,7 +2,7 @@
 
 .article_card,
 .featured_article {
-    @apply bg-white text-black rounded-[4px] overflow-hidden h-full drop-shadow-lg transition-all;
+    @apply bg-white text-black rounded-[4px] overflow-hidden h-full drop-shadow-lg transition-transform;
     
     &:hover{
         transform: translateY(-10px);

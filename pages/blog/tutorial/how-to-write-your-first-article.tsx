@@ -1,6 +1,6 @@
 /**These are necessary imports / components for the page */
 import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
-import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../../../src/components";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider } from "../../../src/components";
 import CodeBlock from "../../../src/components/CodeBlock";
 import { Article_Entry_inList } from "../../../src/constants/codeBlocks";
 
@@ -11,16 +11,16 @@ const Article = () => {
                 <Text title className="text-3xl">
                     How to write your first article.
                 </Text>
-                <hr className="my-5" />
-                <i>
-                    *note: All the files you will create or interact with are in <br />
-                </i>
-                <List type={ListType.disc} className="mt-5">
-                    <li><b>BLOG_CONSTANTS Folder and its files</b></li>
-                    <li><b>blog Folder inside pages folder</b> - you will create all the article files in this folder <br /></li>
-                    <li>You will add all the images to use in <b>public - images folder</b></li>
-                </List>
-                <hr />
+                <div className="dark:bg-slate-800 bg-blue-200 mt-5 rounded px-3 py-2">
+                    <i>
+                        *note: All the files you will create or interact with are in
+                    </i>
+                    <List type={ListType.disc} className="mt-5">
+                        <li><b>BLOG_CONSTANTS folder : </b> inside this we have our _BLOG_SETUP.tsx file where we set our authors, navbar and other details and we have _ARTICLES_LIST.tsx file where we maintain our article list.</li>
+                        <li><b>blog folder : </b> Inside this we will create out blog files or sub folders for your article files like this current file is in {'pages -> blog -> tutorial'}</li>
+                        <li><b>images folder : </b> In this we will save all our images to use in the articles, like the og-image.jpg file is stored in {'public -> images'} folder.</li>
+                    </List>
+                </div>
                 <Text subtitle className="mt-10">
                     1. Creating the article file.
                 </Text>
@@ -96,7 +96,7 @@ const Article = () => {
                         <b>seo</b><br />
                         <Text p className="mt-2">
                             SEO details for your article page. As shown in the above image seo contains 5 important properties <b>title, description, keywords, ogImage, twitterHandle, author</b>. <br /> <br />
-                            
+
                             <b>*note : </b> <b>seo</b> is optional as we have already passed <b>preview</b> we will create default seo with that but if you want to pass any extra keywords or different page title, description etc we can write that in <b>seo : {'{}'}</b> object.
                         </Text>
                     </li>
@@ -106,7 +106,7 @@ const Article = () => {
                     3. Writing the article.
                 </Text>
                 <Text p>
-                    Now we can go to our created file <b>blog-with-sidebar-layout.tsx</b> and write our article. To write our article we will use different components as shown in 
+                    Now we can go to our created file <b>blog-with-sidebar-layout.tsx</b> and write our article. To write our article we will use different components as shown in
                     <b><LinkTo href='/pages/blog/layouts/blog-with-sidebar-layout.tsx' passHref> Blog with sidebar layout</LinkTo></b> exmaple. You can also checkout all the available components to write your article in <b><LinkTo href="/all-components" passHref>All Components Demo</LinkTo></b> page.
                 </Text>
             </div>

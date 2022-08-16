@@ -149,7 +149,7 @@ export const PRIMARY_NAV = {
             icon: <i className="icon-2-I" />
         },
         {
-            link: 'https://twitter.com/',
+            link: 'https://twitter.com/WebExpe',
             icon: <i className="icon-L" />
         },
     ]
@@ -161,6 +161,6 @@ export const DEFAULT_SEO : iSEO = {
     keywords: "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
     url: WEBSITE_URL,
     author: `${MAYUR.name}, ${RUPALI.name}`,
-    twitterHandle: '@mayur_nalwala',
+    twitterHandle: '@WebExpe',
     ogImage: '/public/images/og-image.jpg'
 }

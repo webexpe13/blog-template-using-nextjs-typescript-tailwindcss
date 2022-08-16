@@ -36,7 +36,9 @@ const StyleGuide = () => {
 
                 <b>Example</b>: lets say we want to give a text font size of 14px in mobile devices, 18px in medium sceen devices and 28px for large devices, our className will look like this <b>className="text-[14px] md:text-[18px] lg:text=[28px]"</b>. <br /> When we dont give any prefix the style gets applied to all scrren sizes like <b>className="text-[14px]"</b>.
                 <Seperator />
-                These are some the basics you need to know about changing the styling with tailwind css, go to the official docs for more info and if you have any issues or queries please feel free to write us at <u>webexpe13@gmail.com</u> or drop a comment on our github discussions <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions" target="_blank" rel="noopener noreferrer"><u>github.com/nmayur/nextjs-simple-blog-template/discussions</u></a>.
+                <div className="px-4 py-3 dark:bg-slate-800 bg-blue-200 rounded my-5">
+                    These are some the basics you need to know about changing the styling with tailwind css, go to the official docs for more info and if you have any issues or queries please feel free to write us at <u>webexpe13@gmail.com</u> or drop a comment on our github discussions <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions" target="_blank" rel="noopener noreferrer"><u>github.com/nmayur/nextjs-simple-blog-template/discussions</u></a>.
+                </div>
             </section>
         </PageLayout>
     )

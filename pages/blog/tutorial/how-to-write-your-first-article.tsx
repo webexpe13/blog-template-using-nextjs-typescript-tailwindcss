@@ -109,6 +109,11 @@ const Article = () => {
                     Now we can go to our created file <b>blog-with-sidebar-layout.tsx</b> and write our article. To write our article we will use different components as shown in
                     <b><LinkTo href='/pages/blog/layouts/blog-with-sidebar-layout.tsx' passHref> Blog with sidebar layout</LinkTo></b> exmaple. You can also checkout all the available components to write your article in <b><LinkTo href="/all-components" passHref>All Components Demo</LinkTo></b> page.
                 </Text>
+
+                <div className="px-4 py-3 dark:bg-slate-800 bg-blue-200 rounded mt-10 !text-lg leading-relaxed ">
+                    For any any queries related to this project / template feel free to connect with us at <u>webexpe13@gmail.com</u>.
+                    You can also post any comments on our <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions" target="_blank" rel="noopener noreferrer"><u><i>github discussions</i></u></a>.
+                </div>
             </div>
         </PageLayout>
     )

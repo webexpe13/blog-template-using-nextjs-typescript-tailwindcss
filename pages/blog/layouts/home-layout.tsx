@@ -62,6 +62,12 @@ const HomeLayoutExample = () => {
                     </div>
                 </div>
             </section>
+            <div className="container px-3">
+                <div className="px-4 py-3 dark:bg-slate-800 bg-blue-200 rounded mt-5 !text-lg leading-relaxed ">
+                    For any any queries related to this project / template feel free to connect with us at <u>webexpe13@gmail.com</u>.
+                    You can also post any comments on our <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions" target="_blank" rel="noopener noreferrer"><u><i>github discussions</i></u></a>.
+                </div>
+            </div>
         </PageLayout>
     )
 }

@@ -1,6 +1,6 @@
 /**These are necessary imports / components for the page */
 import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
-import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider  } from "../../../src/components";
+import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider } from "../../../src/components";
 
 const HowToDeployBlog = () => {
     return (
@@ -92,6 +92,10 @@ const HowToDeployBlog = () => {
                         This setup is only to be done once for each project. next time when you create any new article file just run <b>npm run out</b> and after successful export run <b>firebase deploy</b> to deploy updated and new files/articles to hosting.
                     </li>
                 </List>
+                <div className="px-4 py-3 dark:bg-slate-800 bg-blue-200 rounded mt-10 !text-lg leading-relaxed ">
+                    For any any queries related to this project / template feel free to connect with us at <u>webexpe13@gmail.com</u>.
+                    You can also post any comments on our <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions" target="_blank" rel="noopener noreferrer"><u><i>github discussions</i></u></a>.
+                </div>
             </div>
         </PageLayout>
     )

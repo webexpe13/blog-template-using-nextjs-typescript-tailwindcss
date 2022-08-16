@@ -195,7 +195,7 @@ const AllComponents = () => {
                                     <li>Item </li>
                                 </List>
                             </div>
-                            <b>How to use</b>                            
+                            <b>How to use</b>
                             <CodeBlock code={HowToUseList} className="my-5" />
                         </section>
 
@@ -207,7 +207,7 @@ const AllComponents = () => {
                             <b>Demo</b>
                             <Seperator dots />
                             <Seperator line />
-                            <b>How to use</b>                            
+                            <b>How to use</b>
                             <CodeBlock code={HowToUseSeperator} className="my-5" />
                         </section>
 
@@ -217,7 +217,7 @@ const AllComponents = () => {
                             </Text>
                             <b>{'<LinkTo href="url" />'}</b> <br />
                             This is used to link between your blog pages or external pages.<br /> <br />
-                            <b>How to use</b>  
+                            <b>How to use</b>
                             <CodeBlock code={HowToUseLinkTo} className="my-5" />
                         </section>
 
@@ -238,6 +238,12 @@ const AllComponents = () => {
                             <CodeBlock code={HowToUseSlider} className="my-5" />
                             {/* <Image src="/public/images/tutorials/how-to-use-slider.svg" alt="how to use image slider | webexpe.com" /> */}
                         </section>
+                        <div className="px-4 py-3 dark:bg-slate-800 bg-blue-200 rounded my-5">
+                            <Text p className="!text-lg leading-relaxed mb-0">
+                                For any any queries related to this project / template feel free to connect with us at <u>webexpe13@gmail.com</u>.
+                                You can also post any comments on our <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions" target="_blank" rel="noopener noreferrer"><u><i>github discussions</i></u></a>.
+                            </Text>
+                        </div>
                     </aside>
                 </div>
             </section>

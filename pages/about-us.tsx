@@ -91,9 +91,12 @@ const AboutUs = () => {
                     <a href="https://www.buymeacoffee.com/webexpe13z" target="_blank" rel="noopener noreferrer">
                         <Image src="/public/images/bmc.png" size={ImageSize.XS} className="ml-0" alt="webexpe.com" />
                     </a>
-                    <Text p className='text-lg mt-5'>
-                        For any queries or doubts please feel free to write us at <u><i>webexpe13@gmail.com</i></u> or drop a comment on our github discussions <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions" target="_blank" rel="noopener noreferrer"><u><i>github.com/nmayur/nextjs-simple-blog-template/discussions</i></u></a>
-                    </Text>
+                    <div className="px-4 py-3 dark:bg-slate-800 bg-blue-200 rounded my-5">
+                        <Text p className="!text-lg leading-relaxed mb-0">
+                            For any any queries related to this project / template feel free to connect with us at <u>webexpe13@gmail.com</u>.
+                            You can also post any comments on our <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions" target="_blank" rel="noopener noreferrer"><u><i>github discussions</i></u></a>.
+                        </Text>
+                    </div>
                 </div>
             </section>
         </PageLayout>

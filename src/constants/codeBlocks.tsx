@@ -263,7 +263,7 @@ export const Article_Entry_inList = `
     import { MAYUR, RUPALI } from './_BLOG_SETUP';
 
     // file --> /BLOG_CONSTANTS/_ARTICLE_LIST.tsx
-    export const ARTICLES_LIST: iArticle[] = [
+    export const ARTICLES: iArticle[] = [
         ...,
         {
             path: '/pages/blog/tutorial/how-to-setup-blog',

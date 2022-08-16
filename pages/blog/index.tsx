@@ -1,13 +1,13 @@
 import ArticleCard from "../../src/components/ArticleCards/ArticleCard";
-import { ARTICLES_LIST } from '../../BLOG_CONSTANTS/_ARTICLES_LIST';
+import { SORTED_ARTICLES_BY_DATE } from '../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import { useRouter } from "next/router";
 import { PageLayout } from "../../src/components";
 
 const Categories = () => {
     const router = useRouter()
     const { category } = router.query;
-    const categoryArticles = ARTICLES_LIST.filter((each) => each.preview.category === category);
-    const articles = category ? categoryArticles : ARTICLES_LIST;    
+    const categoryArticles = SORTED_ARTICLES_BY_DATE.filter((each) => each.preview.category === category);
+    const articles = category ? categoryArticles : SORTED_ARTICLES_BY_DATE;    
 
     return (
         <PageLayout home>

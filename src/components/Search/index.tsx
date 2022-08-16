@@ -2,7 +2,7 @@ import { useState } from "react";
 import { combineClasses } from "../../utils/utils";
 import classes from './Search.module.scss';
 import SearchArticleCard from "../ArticleCards/SearchArticleCard";
-import { ARTICLES_LIST } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
+import { SORTED_ARTICLES_BY_DATE } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import { XIcon } from '@heroicons/react/outline'
 
 interface ISearch {
@@ -12,7 +12,7 @@ const Search = ({ closeSearch }: ISearch) => {
     const [searchStr, setSearchStr] = useState('');
     const [searchResults, setSearchResults] = useState<any[]>([]);
     const handleSearch = () => {
-        const data = [...ARTICLES_LIST];
+        const data = [...SORTED_ARTICLES_BY_DATE];
         const results = data.filter((article) => (article.preview.tags.split(',').join().indexOf(searchStr) >= 0
             || article.preview.articleTitle.indexOf(searchStr) >= 0)
         );

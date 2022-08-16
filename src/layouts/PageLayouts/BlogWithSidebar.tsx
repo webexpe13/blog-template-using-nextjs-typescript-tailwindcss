@@ -1,6 +1,6 @@
 import classes from './PageLayout.module.scss';
 import { combineClasses, getArticleDetails, transformImagePaths, transformPath } from '../../utils/utils';
-import { ARTICLES_LIST } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
+import { SORTED_ARTICLES_BY_DATE } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import Link from 'next/link';
 import { generateRandomAvtar } from '../../constants/appConstants';
 import { ArticleHeader } from '../../components';
@@ -9,7 +9,7 @@ const WithSidebar = ({ children, ads }: any) => {
     const ARTICLE_DETAILS = getArticleDetails();
     const author = ARTICLE_DETAILS.preview.author;
 
-    const relatedArticles = ARTICLES_LIST.filter((each) => each.preview.author === author);
+    const relatedArticles = SORTED_ARTICLES_BY_DATE.filter((each) => each.preview.author === author);
 
 
     return (

@@ -62,12 +62,12 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                                         <i className='icofont-caret-down'></i>
                                     </div>
                                     <div className={classes.sidebarCategoryDD} style={{ height: openDD ? 'auto' : '0px', padding: openDD ? '10px' : '0px' }}>
-                                        <LinkTo href={'/blog'} passHref className='block mb-2 text-sm'>
+                                        <LinkTo href={'/blog'} passHref className='block text-sm'>
                                             All Articles
                                         </LinkTo>
                                         {
                                             CATEGORIES.map(each => (
-                                                <LinkTo href={"/blog?category=" + each} key={each} passHref className='block mb-2 text-sm'>
+                                                <LinkTo href={"/blog?category=" + each} key={each} passHref className='block text-sm border-t border-gray-400'>
                                                     <span style={{ textTransform: 'capitalize' }}>{each}</span>
                                                 </LinkTo>
                                             ))

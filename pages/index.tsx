@@ -3,7 +3,7 @@ import { ImageSize, TextAlign, ListType } from "../src/shared/enums";
 import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider } from "../src/components";
 import ArticleCard from '../src/components/ArticleCards/ArticleCard';
 import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
-import { ARTICLES_LIST } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
+import { SORTED_ARTICLES_BY_DATE } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
 import { DEFAULT_SEO } from "../BLOG_CONSTANTS/_BLOG_SETUP";
 
 
@@ -44,7 +44,7 @@ const Home = () => {
           </Text>
           <hr className='border-1 mb-5 w-[98%] mx-auto' />
           {
-            ARTICLES_LIST.map((each, i) => (
+            SORTED_ARTICLES_BY_DATE.map((each, i) => (
               each.featureArticle ?
                 <FeaturedArticle article={each.preview} path={each.path} key={each.path + i} /> : null
             ))
@@ -53,7 +53,7 @@ const Home = () => {
           <h1 className='px-3 w-full mb-5 text-xl md:text-3xl font-medium'>Checkout the below articles on how to use different layouts and components</h1>
           <hr className='border-1 mb-5 w-[98%] mx-auto' />
           {
-            ARTICLES_LIST.map((each, i) => (
+            SORTED_ARTICLES_BY_DATE.map((each, i) => (
               !each.featureArticle ?
                 <ArticleCard article={each.preview} path={each.path} key={i} />
                 : null

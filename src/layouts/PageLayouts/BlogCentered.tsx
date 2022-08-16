@@ -1,6 +1,6 @@
 import classes from './PageLayout.module.scss';
 import { combineClasses, getArticleDetails, transformImagePaths, transformPath } from '../../utils/utils';
-import { ARTICLES_LIST } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
+import { SORTED_ARTICLES_BY_DATE } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
 import { generateRandomAvtar } from '../../constants/appConstants';
 import Link from 'next/link';
 import Seperator from '../../components/Seperator';
@@ -9,7 +9,7 @@ import { ArticleHeader } from '../../components';
 const Centered = ({ children }: any) => {
     const ARTICLE_DETAILS = getArticleDetails();
     const author = ARTICLE_DETAILS.preview.author;
-    const relatedArticles = ARTICLES_LIST.filter((each) => each.preview.author === author);
+    const relatedArticles = SORTED_ARTICLES_BY_DATE.filter((each) => each.preview.author === author);
 
     return (
         <section className={combineClasses(classes.centered_article_wrapper, 'dark:bg-slate-900 dark:text-white')}>

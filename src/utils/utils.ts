@@ -1,6 +1,6 @@
 import { THEMES } from "../shared/enums";
 import { useRouter } from "next/router";
-import { ARTICLES_LIST } from "../../BLOG_CONSTANTS/_ARTICLES_LIST";
+import { SORTED_ARTICLES_BY_DATE } from "../../BLOG_CONSTANTS/_ARTICLES_LIST";
 import { iArticle, iSEO } from "../shared/interfaces";
 import { WEBSITE_NAME, WEBSITE_URL } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
 import { MOCK_ARTICLES_LIST } from "../constants/mocks";
@@ -123,7 +123,7 @@ export const removeBodyNoScroll = (): void => {
 };
 
 /**
- * Returns Article details from ARTICLES_LIST wrt the path
+ * Returns Article details from SORTED_ARTICLES_BY_DATE wrt the path
  * @returns iArticle
  */
 export const getArticleDetails = (): iArticle => {
@@ -134,19 +134,19 @@ export const getArticleDetails = (): iArticle => {
       MOCK_ARTICLES_LIST.filter((each) =>
         each.path.includes(articlePath)
       )[0] ||
-      ARTICLES_LIST.filter((each) => each.path.includes(articlePath))[0]
+      SORTED_ARTICLES_BY_DATE.filter((each) => each.path.includes(articlePath))[0]
     );
   }
-  return ARTICLES_LIST.filter((each) => each.path.includes(articlePath))[0];
+  return SORTED_ARTICLES_BY_DATE.filter((each) => each.path.includes(articlePath))[0];
 };
 
 /**
- * Returns list of categories from ARTICLES_LIST
+ * Returns list of categories from SORTED_ARTICLES_BY_DATE
  * @returns string[]
  */
 export const getCategories = (): string[] => {
   let categories: string[] = [];
-  ARTICLES_LIST.forEach((each) => {
+  SORTED_ARTICLES_BY_DATE.forEach((each) => {
     if (each.preview.category && !categories.includes(each.preview.category)) {
       categories.push(each.preview.category);
     }

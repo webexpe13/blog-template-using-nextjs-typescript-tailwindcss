@@ -19,9 +19,11 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
     useEffect(() => {
         openSidebar
             ? addBodyNoScroll()
-            : () => {
-                return;
-            };
+            : removeBodyNoScroll()
+
+        return () => {
+            removeBodyNoScroll()
+        }
     }, [openSidebar]);
 
     const env = process.env.NODE_ENV;

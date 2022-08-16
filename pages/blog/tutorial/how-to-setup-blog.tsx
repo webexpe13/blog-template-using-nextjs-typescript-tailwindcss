@@ -27,8 +27,8 @@ const BlogSetup = () => {
 
                     <li className="">
                         Download / clone the blog template from our github page to a folder on your computer.
-                        <a href="https://github.com/nmayur/nextjs-simple-blog-template" className="pl-2 font-semibold" target="_blank" rel="noopener noreferrer">
-                            https://github.com/nmayur/nextjs-simple-blog-template
+                        <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss" className="pl-2 font-semibold" target="_blank" rel="noopener noreferrer">
+                            https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss
                         </a>
                         <br />
                         If you are using Git you can clone the code or click the <b>use template</b> button to generate your own repo.
@@ -44,7 +44,7 @@ const BlogSetup = () => {
                         After the installation is done run <b>npm start</b> in the terminal, it will start your project on http://localhost:3000/.
 
                         <br />
-                        If you are facing any difficulty, write a comment on our discussion board <b><i><a href="https://github.com/nmayur/nextjs-simple-blog-template/discussions/6" target="_blank" rel="noopener noreferrer">LINK</a></i></b>
+                        If you are facing any difficulty, write a comment on our discussion board <b><i><a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions/6" target="_blank" rel="noopener noreferrer">LINK</a></i></b>
 
                         <br />
                         or write to us at <a href="mailto:webexpe13@gmail.com">webexpe13@gmail.com</a>

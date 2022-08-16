@@ -101,7 +101,7 @@ export const PRIMARY_NAV = {
         },
         {
             label: 'Github Repo',
-            path: 'https://github.com/nmayur/nextjs-simple-blog-template',
+            path: 'https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss',
             newTab: true
         },
         {
@@ -131,7 +131,7 @@ export const PRIMARY_NAV = {
         },
         {
             label: 'Github Repo',
-            path: 'https://github.com/nmayur/nextjs-simple-blog-template',
+            path: 'https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss',
             newTab: true
         },
         {

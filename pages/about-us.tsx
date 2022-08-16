@@ -28,7 +28,7 @@ const AboutUs = () => {
                     <Text p className='text-lg'>
                         The idea was to start a blog or create a template with as little investment as possible. <br />In this template we have used Next.js SSG to create static HTML files which can be hosted on firebase or any static site hosting service. <br />
                         There is also options like vercel for hosting Next.js dynamic webistes but we wanted this template to be easy to use for any non techie person too, so we explored the option of static site generation. <br /><br />
-                        If you have a github account you can clone the project or use it as a template or else you can simply download the code from <a href="https://github.com/nmayur/nextjs-simple-blog-template" className="underline font-bold">here</a>.
+                        If you have a github account you can clone the project or use it as a template or else you can simply download the code from <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss" className="underline font-bold">here</a>.
                     </Text>
 
                     <div className="flex flex-wrap justify-between">
@@ -92,7 +92,7 @@ const AboutUs = () => {
                         <Image src="/public/images/bmc.png" size={ImageSize.XS} className="ml-0" alt="webexpe.com" />
                     </a>
                     <Text p className='text-lg mt-5'>
-                        For any queries or doubts please feel free to write us at <u><i>webexpe13@gmail.com</i></u> or drop a comment on our github discussions <a href="https://github.com/nmayur/nextjs-simple-blog-template/discussions" target="_blank" rel="noopener noreferrer"><u><i>github.com/nmayur/nextjs-simple-blog-template/discussions</i></u></a>
+                        For any queries or doubts please feel free to write us at <u><i>webexpe13@gmail.com</i></u> or drop a comment on our github discussions <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions" target="_blank" rel="noopener noreferrer"><u><i>github.com/nmayur/nextjs-simple-blog-template/discussions</i></u></a>
                     </Text>
                 </div>
             </section>

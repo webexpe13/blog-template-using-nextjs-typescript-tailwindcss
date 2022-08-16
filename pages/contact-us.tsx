@@ -21,7 +21,7 @@ const ContactUs = () => {
                     <div className="md:w-1/2 w-full md:pl-2">
                         <Text p className="!text-lg leading-relaxed">
                             For any any queries related to this project / template feel free to connect with us at the given email.
-                            You can also post any comments on our <a href="https://github.com/nmayur/nextjs-simple-blog-template/discussions" target="_blank" rel="noopener noreferrer"><u><i>github discussions</i></u></a>.
+                            You can also post any comments on our <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions" target="_blank" rel="noopener noreferrer"><u><i>github discussions</i></u></a>.
                         </Text>
                     </div>
                     <div className="md:w-1/3 w-full">

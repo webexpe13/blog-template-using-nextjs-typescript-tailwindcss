@@ -43,12 +43,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         env !== 'development' ?
           <>
             <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${gtag.GA_ADSENSE_ID}`} crossOrigin="anonymous"></Script>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-            />
+            <Script async src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}></Script>
             <Script
               id="gtag-init"
-              strategy="afterInteractive"
               dangerouslySetInnerHTML={{
                 __html: `
                     window.dataLayer = window.dataLayer || [];

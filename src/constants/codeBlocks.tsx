@@ -109,9 +109,9 @@ export const HowToUseAccordian = `
             <Accordian title="Accordian Title" />
                 Accordian Content
             </Accordian>
-            {/* or if your want to keep it open by default */}
+            {/* or if you want to keep it open by default */}
             <Accordian title="Accordian Title" keepOpen />
-                Accordian Content
+                Accordian Content open by default
             </Accordian>
         )		
     }

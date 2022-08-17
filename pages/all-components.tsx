@@ -60,6 +60,10 @@ const AllComponents = () => {
             component: 'Image Slider',
             href: '#imageslider'
         },
+        {
+            component: 'Accordian',
+            href: '#accordian'
+        }
     ]
 
     const sideBtnsComponents = () => {
@@ -118,7 +122,7 @@ const AllComponents = () => {
                                 Style Guide
                             </LinkTo>
                         </div>
-                        <div className="md:rounded-lg md:p-3 bg-white dark:bg-slate-800 shadow-md overflow-auto md:text-xl text-md font-semibold block whitespace-nowrap md:block hidden">
+                        <div className="md:rounded-lg md:p-3 bg-white dark:bg-slate-800 shadow-md overflow-auto md:text-xl text-md font-semibold whitespace-nowrap md:block hidden">
                             <LinkTo href="/pages/style-guide.tsx">
                                 Style Guide
                             </LinkTo>
@@ -239,7 +243,7 @@ const AllComponents = () => {
                             {/* <Image src="/public/images/tutorials/how-to-use-slider.svg" alt="how to use image slider | webexpe.com" /> */}
                         </section>
 
-                        <section className={cardBBorder} id="imageslider">
+                        <section className={cardBBorder} id="accordian">
                             <Text subtitle className="mb-5 pb-3 border-b md:!text-3xl font-bold">
                                 Accordian
                             </Text>

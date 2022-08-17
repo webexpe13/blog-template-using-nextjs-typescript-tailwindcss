@@ -1,10 +1,10 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { PageLayout, Text, LinkTo, Slider, Seperator, Image, List, ArticleHeader } from "../src/components"
+import { PageLayout, Text, LinkTo, Slider, Seperator, Image, List, Accordian } from "../src/components"
 import { ListType, ImageSize, TextAlign } from "../src/shared/enums"
 import { combineClasses } from "../src/utils/utils";
 import CodeBlock from "../src/components/CodeBlock";
-import { HowToUseList, HowToUseSeperator, HowToUsePageLayout, HowToUseImageCode, HowToUseTextCode, HowToUseLinkTo, HowToUseSlider } from "../src/constants/codeBlocks";
+import { HowToUseList, HowToUseSeperator, HowToUsePageLayout, HowToUseImageCode, HowToUseTextCode, HowToUseLinkTo, HowToUseSlider, HowToUseAccordian } from "../src/constants/codeBlocks";
 
 interface iSideBtnLinks {
     component: string,
@@ -238,6 +238,19 @@ const AllComponents = () => {
                             <CodeBlock code={HowToUseSlider} className="my-5" />
                             {/* <Image src="/public/images/tutorials/how-to-use-slider.svg" alt="how to use image slider | webexpe.com" /> */}
                         </section>
+
+                        <section className={cardBBorder} id="imageslider">
+                            <Text subtitle className="mb-5 pb-3 border-b md:!text-3xl font-bold">
+                                Accordian
+                            </Text>
+                            <b>Demo</b>
+                            <Accordian title="Accordian Title" keepOpen>
+                                Accordian content
+                            </Accordian>
+                            <b>How to use</b>
+                            <CodeBlock code={HowToUseAccordian} className="mb-5 mt-3" />
+                        </section>
+
                         <div className="px-4 py-3 dark:bg-slate-800 bg-blue-200 rounded my-5">
                             <Text p className="!text-lg leading-relaxed mb-0">
                                 For any any queries related to this project / template feel free to connect with us at <u>webexpe13@gmail.com</u>.

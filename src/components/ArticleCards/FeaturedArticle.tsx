@@ -13,7 +13,7 @@ interface IProp {
 const FeaturedArticle = ({ article, path }: IProp) => {
     return (
         <>
-            <LinkTo href={transformPath(path)} passHref className={combineClasses(classes.featured_article,
+            <div className={combineClasses(classes.featured_article,
                 'md:border-l-[5px] border-b-[5px] md:border-b-0 border-blue-500 dark:bg-slate-800 dark:text-white dark:drop-shadow-lg')}>
                 <div className={'w-full md:w-[55%] md:px-[50px] px-[15px] md:py-[40px] py-[20px]'}>
                     <div className={"mt-0 mb-[10px] flex items-center"}>
@@ -60,7 +60,7 @@ const FeaturedArticle = ({ article, path }: IProp) => {
                         src={transformImagePaths(article.thumbnail)} alt={article.articleTitle} 
                         className="w-full h-full" /> */}
                 </div>
-            </LinkTo>
+            </div>
         </>
     )
 }

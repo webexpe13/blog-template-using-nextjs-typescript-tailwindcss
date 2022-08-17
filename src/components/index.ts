@@ -6,3 +6,4 @@ export {default as Seperator} from "./Seperator";
 export {default as List} from "./List";
 export {default as LinkTo} from "./LinkTo";
 export {default as Slider} from "./Slider";
+export {default as Accordian} from "./Accordian";

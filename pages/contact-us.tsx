@@ -13,7 +13,7 @@ const ContactUs = () => {
     return (
         <PageLayout PAGE_SEO={PAGE_SEO} home>
             <section className='container px-3 pb-10 md:pt-20 pt-[80px]'>
-                <Text title className="text-5xl !font-light">
+                <Text title className="!text-5xl !font-light">
                     Contact Us
                 </Text>
 

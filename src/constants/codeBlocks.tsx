@@ -100,6 +100,25 @@ export const HowToUseList = `
     export default Article;
 `
 
+
+export const HowToUseAccordian = `
+    // import Accordian from components
+    import { ..., Accordian, ... } from "../../../src/components";
+    const Article = () => {
+        return (
+            <Accordian title="Accordian Title" />
+                Accordian Content
+            </Accordian>
+            {/* or if your want to keep it open by default */}
+            <Accordian title="Accordian Title" keepOpen />
+                Accordian Content
+            </Accordian>
+        )		
+    }
+
+    export default Article;
+`
+
 export const HowToUseSeperator = `
     // import Seperator from components
     import { ..., Seperator, ... } from "../../../src/components";
@@ -258,6 +277,7 @@ export const rightSideAdCode= `
 
     export default Article;
 `;
+
 export const Article_Entry_inList = `
     // Import author profiles, just type the name you have set in _BLOG_SETUP inside the curly brackets
     import { MAYUR, RUPALI } from './_BLOG_SETUP';

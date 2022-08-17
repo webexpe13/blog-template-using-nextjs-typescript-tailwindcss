@@ -22,7 +22,7 @@ const PageLayout = ({ children, PAGE_SEO, blogwithsidebar = false, blogcentered 
     if (ARTICLE_DETAILS && ARTICLE_DETAILS.seo) {
         SEO_CONFIG = CREATE_SEO_CONFIG({ ...ARTICLE_DETAILS.seo })
     } else if (PAGE_SEO) {
-        SEO_CONFIG = CREATE_SEO_CONFIG({ ...PAGE_SEO, ...DEFAULT_SEO })
+        SEO_CONFIG = CREATE_SEO_CONFIG({ ...DEFAULT_SEO, ...PAGE_SEO })
     } else {
         SEO_CONFIG = CREATE_SEO_CONFIG({ ...DEFAULT_SEO })
     }

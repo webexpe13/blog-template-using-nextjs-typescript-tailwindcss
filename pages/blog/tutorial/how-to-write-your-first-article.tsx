@@ -52,7 +52,7 @@ const Article = () => {
                             You can set it <b>true or false</b> as shown in the above image. If true the article card will be of full width as shown in the image below. <br />
                             <i><b>*note : </b> adding featureArticle property is optional</i>
                         </Text>
-                        <Image className="my-5" src="/images/tutorials/feature-article-example.png" alt="feature article example | webexpe.com" caption="feature article exmaple" size={ImageSize.DEFAULT} />
+                        <Image className="my-5" src="/public/imp_assets/tutorials/feature-article-example.png" alt="feature article example | webexpe.com" caption="feature article exmaple" size={ImageSize.DEFAULT} />
                     </li>
                     <li>
                         <b>preview</b><br />

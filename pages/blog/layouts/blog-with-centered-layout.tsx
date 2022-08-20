@@ -8,7 +8,6 @@ const Article = () => {
     return (
         // pass blogcentered as show below for article page centered layout
         <PageLayout blogcentered>
-            {/* <Image src='/public/images/page-layouts/how-to-use-centered.svg' alt="how to use article with centered layout | webexpe.com" size={ImageSize.FUll} /> */}
             <Text p>
                 This current article is made using <b>blogcentered</b> layout. This layout will be used to write your blog posts or articles.
             </Text>
@@ -65,7 +64,6 @@ const Article = () => {
                 <li>
                     <b>{'Image'}</b> tag for displaying images. <br /> To use image we have to import <b>Image</b> from components and <b>ImageSize</b> enum from enums. The Image size will help us to set the size of the image. <br /> Available sizes: <b>ImageSize.DEFAULT, ImageSize.FULL, ImageSize.MEDIUM, ImageSize.SMALL, ImageSize.XS</b>.
                     <CodeBlock code={HowToUseImageCode} className="my-5" />
-                    {/* <Image src='/public/images/tutorials/how-to-use-image.svg' alt="how to use image | webexpe.com" className="mt-5" size={ImageSize.DEFAULT} /> */}
                 </li>
                 <li>
                     <b>{'Text'}</b>. <br /> We use this to write content/text. To use image we have to import <b>Text</b> from components. We have different Text types like <b>title, subtitle, p, quote</b> with default styles and by default is paragraph.
@@ -75,7 +73,6 @@ const Article = () => {
                     <b>{'List'}</b> <br />
                     This is used to display lists. We have 3 different types: <b>ListType.disc | ListType.number | ListType.none</b>, by default type is ListType.disc.
                     <CodeBlock code={HowToUseList} className="my-5" />
-                    {/* <Image src='/public/images/tutorials/how-to-use-list.svg' alt="how to use List | webexpe.com" className="mt-5" /> */}
                 </li>
                 <li>
                     <b>{'Seperator'}</b><br />

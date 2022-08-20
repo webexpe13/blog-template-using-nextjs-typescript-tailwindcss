@@ -32,14 +32,14 @@ const BlogSetup = () => {
                         </a>
                         <br />
                         If you are using Git you can clone the code or click the <b>use template</b> button to generate your own repo.
-                        <Image className="mt-3" src="/images/tutorials/download-code.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="mt-3" src="/public/imp_assets/tutorials/download-code.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
                     </li>
                     <li className="">
                         Open the blog project in VS code. <br /> Open terminal in VS code using ther <b>Terminal button</b> on tool bar of the VS Code window or press <b>ctrl + ~</b> or <b>cmd + ~</b>.
                     </li>
                     <li className="mb-20">
                         In Terminal run <b>npm install</b>. This will install all the required packages.
-                        <Image className="my-4" src="/images/tutorials/project-install.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
+                        <Image className="my-4" src="/public/imp_assets/tutorials/project-install.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
 
                         After the installation is done run <b>npm start</b> in the terminal, it will start your project on http://localhost:3000/.
 
@@ -66,7 +66,6 @@ const BlogSetup = () => {
                     You can add as many authors you want just make sure you keep the format as shown.
                 </Text>
                 <CodeBlock code={AuthorSetup} className="my-5" />
-                {/* <Image className="my-5" src="/public/images/tutorials/how-to-setup-author.svg" alt="how to setup authors | webexpe.com" size={ImageSize.DEFAULT} /> */}
                 <Seperator />
                 <Text subtitle className="mt-10">
                     3.  Setting up Main Navbar and Side Nav.
@@ -76,13 +75,11 @@ const BlogSetup = () => {
                     We have 5 important items to set in navbar setup, <b>type, logo, navLinks, sideNavLinks, socials</b>
                 </Text>
                 <CodeBlock code={NavbarSetup} className="my-5" />
-                {/* <Image className="my-5" src="/public/images/tutorials/how-to-navbar.svg" alt="how to setup navbar | webexpe.com" size={ImageSize.MEDIUM} /> */}
                 <List type={ListType.disc} className="mt-5">
                     <li>
                         <b>type</b><br />
                         We have two types, <span className="bg-grey font-black">NavbarType.DEFAULT | NavbarType.CENTERED</span>
                         <CodeBlock code={NavbarSetupType} className="my-5" />
-                        {/* <Image className="my-5" src="/public/images/tutorials/how-to-navbar-type.svg" alt="how to setup navbar type | webexpe.com" size={ImageSize.MEDIUM} /> */}
                     </li>
                     <li>
                         <b>logo</b><br />
@@ -111,13 +108,11 @@ const BlogSetup = () => {
     }
     `
                         } className="my-5" />
-                        {/* <Image className="my-5" src="/public/images/tutorials/how-to-set-nav-logo.svg" alt="how to setup navbar logo | webexpe.com" size={ImageSize.MEDIUM} /> */}
                     </li>
                     <li>
                         <b>navLinks</b><br />
                         These are the main nav links. The given code block shows hows to setup primary links for your navbar.
                         <CodeBlock code={NavbarSetup_NAVLINKS} className="my-5" />
-                        {/* <Image className="my-5" src="/public/images/tutorials/how-to-set-navLinks.svg" alt="how to setup navbar logo | webexpe.com" size={ImageSize.DEFAULT} /> */}
                     </li>
                     <li>
                         <b>sideNavLinks</b><br />
@@ -132,7 +127,6 @@ const BlogSetup = () => {
                         These are for your social media links. The given code block shows hows to setup social media links for your navbar. <br />
                         You can get the icons from <b><LinkTo href="/pages/icons.tsx" passHref={true}>Icons</LinkTo></b>
                         <CodeBlock code={NavbarSetup_Socials} className="my-5" />
-                        {/* <Image className="my-5" src="/public/images/tutorials/how-to-set-socials.svg" alt="how to setup social icons | webexpe.com" size={ImageSize.MEDIUM} /> */}
                     </li>
                 </List>
                 <Seperator />

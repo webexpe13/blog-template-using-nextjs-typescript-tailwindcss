@@ -137,7 +137,6 @@ const AllComponents = () => {
                             </Text>
                             We have 3 page layouts <u><LinkTo href="/pages/blog/layouts/home-layout.tsx">Home</LinkTo></u>, <u><LinkTo href="/pages/blog/layouts/blog-with-sidebar-layout.tsx">Blog with sidebar</LinkTo></u> and  <u><LinkTo href="/pages/blog/layouts/blog-with-centered-layout.tsx">Blog centered</LinkTo></u>. <br />
                             <b>How to use</b>
-                            {/* <Image src="/public/images/tutorials/how-to-use-pageLayout.svg" alt="how to use PageLayout | webexpe.com" /> */}
                             <CodeBlock code={HowToUsePageLayout} />
                         </section>
 
@@ -155,7 +154,6 @@ const AllComponents = () => {
                             <b>How to use</b>
                             <CodeBlock code={HowToUseTextCode} className="my-5" />
                             you can find more tailwind font classes on the official docs <LinkTo href="https://tailwindcss.com/docs/font-size" className="underline" external>here</LinkTo>.
-                            {/* <Image src="/public/images/tutorials/how-to-use-text-full.svg" alt="how to use Text | webexpe.com" /> */}
                         </section>
 
                         <section className={cardBBorder} id="image">
@@ -165,16 +163,15 @@ const AllComponents = () => {
                             To add image in your project, first save the image file in <b>{`public --> images`}</b> folder and then add the image path in image tag's src. For demo check <b>/pages/all-components.tsx</b> file in code. <br /><br />
                             <b>Demo</b>
                             <div className="flex flex-wrap">
-                                <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Default size image with caption" className="my-5" />
-                                <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Full size image with caption" size={ImageSize.FUll} className="mb-5" />
-                                <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Medium size image with caption" size={ImageSize.MEDIUM} className="mb-5" />
-                                <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Small size image with caption" size={ImageSize.SMALL} className="mb-5" />
-                                <Image src="/public/images/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="XS size image with caption" size={ImageSize.XS} className="mb-5" />
+                                <Image src="/public/imp_assets/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Default size image with caption" className="my-5" />
+                                <Image src="/public/imp_assets/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Full size image with caption" size={ImageSize.FUll} className="mb-5" />
+                                <Image src="/public/imp_assets/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Medium size image with caption" size={ImageSize.MEDIUM} className="mb-5" />
+                                <Image src="/public/imp_assets/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="Small size image with caption" size={ImageSize.SMALL} className="mb-5" />
+                                <Image src="/public/imp_assets/tutorials/demo-image.jpg" alt="how to use Image | webexpe.com" caption="XS size image with caption" size={ImageSize.XS} className="mb-5" />
                             </div>
 
                             <b>How to use</b>
                             <CodeBlock code={HowToUseImageCode} className="my-5" />
-                            {/* <Image src="/public/images/tutorials/how-to-use-image-2.svg" alt="how to use Image | webexpe.com" caption="XS size image with caption" className="mb-5" /> */}
                         </section>
 
                         <section className={cardBBorder} id="list" >
@@ -232,15 +229,14 @@ const AllComponents = () => {
                             <b>Demo</b>
                             <Slider className="mb-5"
                                 images={[
-                                    '/public/images/tutorials/demo-image.jpg',
-                                    '/public/images/tutorials/demo-image.jpg',
-                                    '/public/images/tutorials/demo-image.jpg',
-                                    '/public/images/tutorials/demo-image.jpg'
+                                    '/public/imp_assets/tutorials/demo-image.jpg',
+                                    '/public/imp_assets/tutorials/demo-image.jpg',
+                                    '/public/imp_assets/tutorials/demo-image.jpg',
+                                    '/public/imp_assets/tutorials/demo-image.jpg'
                                 ]}
                             />
                             <b>How to use</b>
                             <CodeBlock code={HowToUseSlider} className="my-5" />
-                            {/* <Image src="/public/images/tutorials/how-to-use-slider.svg" alt="how to use image slider | webexpe.com" /> */}
                         </section>
 
                         <section className={cardBBorder} id="accordian">

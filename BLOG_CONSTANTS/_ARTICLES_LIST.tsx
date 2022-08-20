@@ -70,7 +70,7 @@ const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/blog/tutorial/how-to-deploy-blog',
+        path: '/pages/blog/tutorial/how-to-deploy-blog.tsx',
         featureArticle: true,
         preview: {
             author: RUPALI,

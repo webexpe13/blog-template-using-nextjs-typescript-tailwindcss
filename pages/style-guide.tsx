@@ -1,4 +1,4 @@
-import { PageLayout, Text, LinkTo, Slider, Seperator, Image, List, ArticleHeader } from "../src/components"
+import { PageLayout, Text, LinkTo, Slider, Seperator, Image, List } from "../src/components"
 import { ListType, ImageSize, TextAlign } from "../src/shared/enums"
 import { combineClasses } from "../src/utils/utils"
 

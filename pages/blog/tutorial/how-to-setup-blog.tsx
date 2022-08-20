@@ -1,6 +1,6 @@
 /**These are necessary imports / components for the page */
 import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
-import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider } from "../../../src/components";
+import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../../../src/components";
 import CodeBlock from "../../../src/components/CodeBlock";
 import { AuthorSetup, NavbarSetup, NavbarSetupType, NavbarSetup_NAVLINKS, NavbarSetup_Socials } from "../../../src/constants/codeBlocks";
 

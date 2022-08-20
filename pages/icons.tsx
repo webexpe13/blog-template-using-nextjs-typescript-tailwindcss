@@ -1,6 +1,6 @@
 /**These are necessary imports / components for the page */
 import { ImageSize, TextAlign, ListType } from "../src/shared/enums";
-import { PageLayout, ArticleHeader, Text, List, Image, LinkTo, Seperator, Slider } from "../src/components";
+import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../src/components";
 import { iconsArray } from "../src/constants/appConstants";
 import { combineClasses } from "../src/utils/utils";
 import { iSEO } from "../src/shared/interfaces";

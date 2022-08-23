@@ -178,11 +178,11 @@ export const AuthorSetup = `
         profilePic: "",
         social: [
             {
-                icon: <i className="icon-2-Z font-32" />,
+                icon: <AiFillGithub />,
                 link: 'https://github.com/'
             },
             {
-                icon: <i className="icon-I font-36" />,
+                icon: <AiFillLinkedin />,
                 link: 'https://www.linkedin.com/'
             },
         ]
@@ -213,7 +213,6 @@ export const NavbarSetupType = `
 
 export const NavbarSetup_NAVLINKS = `
     export const PRIMARY_NAV = {
-        ...,
         navLinks: [
             {
                 label: 'Home',
@@ -240,19 +239,18 @@ export const NavbarSetup_NAVLINKS = `
 
 export const NavbarSetup_Socials = `
     export const PRIMARY_NAV = {
-        ...,
         socials: [
             {
                 link: 'https://www.facebook.com/',
-                icon: <i className="icon-F" />
+                icon: <AiFillFacebook />
             },
             {
                 link: 'https://www.instagram.com/',
-                icon: <i className="icon-2-I" />
+                icon: <AiFillInstagram />
             },
             {
                 link: 'https://twitter.com/',
-                icon: <i className="icon-L" />
+                icon: <AiOutlineTwitter />
             },
         ]
     }

@@ -2,9 +2,10 @@ import classes from "./Navbar.module.scss";
 import { useEffect, useState } from "react";
 import { combineClasses, getCategories, transformImagePaths } from "../../utils/utils";
 import { LogoType, THEMES } from "../../shared/enums";
-import { MenuIcon, SearchIcon } from '@heroicons/react/outline';
 import LinkTo from "../LinkTo";
 import { useTheme } from "next-themes";
+import { BiChevronDown } from "react-icons/bi";
+import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 
 const CenteredNavbar = ({
     openSearch,
@@ -25,11 +26,11 @@ const CenteredNavbar = ({
                     <div
                         className={combineClasses(classes.mobileBurgerToggle, "mr-3", openSidebar ? classes.mobileBurgerToggle__close : ' ')}
                         onClick={() => toggleSideMenu()}>
-                        <MenuIcon className="dark:text-white text-black" />
+                        <AiOutlineMenu className="dark:text-white text-black text-2xl" />
                     </div>
                     <div className={combineClasses(classes.search_icon_wrapper)} onClick={() => openSearch()}>
                         <button name="search" aria-label="search" className="dark:text-white text-black">
-                            <SearchIcon className="w-[20px]" />
+                            <AiOutlineSearch className="text-[24px]" />
                         </button>
                     </div>
                 </div>
@@ -73,7 +74,7 @@ const CenteredNavbar = ({
                                     <p className='my-0 font-normal	'>
                                         {each.label}
                                     </p>
-                                    <i className='icofont-caret-down'></i>
+                                    <BiChevronDown className="text-[20px]" />
                                 </div>
                                 {
                                     openDD &&

@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import { THEMES } from '../../shared/enums';
 import { addBodyNoScroll, combineClasses, getCategories, removeBodyNoScroll } from '../../utils/utils';
 import classes from './Navbar.module.scss';
-import { XIcon } from '@heroicons/react/outline';
-import { MoonIcon, SunIcon } from '@heroicons/react/solid';
 import { Text, LinkTo } from '../../components';
 import { useTheme } from 'next-themes';
+import { BiChevronDown } from 'react-icons/bi';
+import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
+import { MdOutlineClose } from 'react-icons/md';
 
 interface IProps {
     openSidebar: boolean;
@@ -40,7 +41,7 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
             <aside className={combineClasses(classes.nav_sidebar_wrapper, openSidebar && classes.open, 'dark:bg-slate-900 dark:text-white bg-white text-black')}>
                 <div className='flex items-center justify-between pb-3' onClick={closeNavSidebar}>
                     <p className=''>menu</p>
-                    <div className={classes.sideNavCloseIcon}><XIcon className='text-slate-800 dark:text-white' /></div>
+                    <div className={classes.sideNavCloseIcon}><MdOutlineClose className='text-slate-800 dark:text-white text-[30px]' /></div>
                 </div>
                 <hr />
                 <div className='my-15'>
@@ -59,7 +60,7 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                                         <p className='text-[16px] my-0'>
                                             {each.label}
                                         </p>
-                                        <i className='icofont-caret-down'></i>
+                                        <BiChevronDown className="text-[20px]" />
                                     </div>
                                     <div className={classes.sidebarCategoryDD} style={{ height: openDD ? 'auto' : '0px', padding: openDD ? '10px' : '0px' }}>
                                         <LinkTo href={'/blog'} passHref className='block text-sm'>
@@ -119,7 +120,7 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                         navSetup.socials && <>
                             <p className='font-light'>Follow us : </p> {
                                 navSetup.socials.map((each: any) => (
-                                    <a href={each.link} key={each.link} target="_blank" rel="noopener noreferrer" className='text-[28px] inline-block mr-5 flex-wrap'>{each.icon}</a>
+                                    <a href={each.link} key={each.link} target="_blank" rel="noopener noreferrer" className='text-[28px] inline-block mr-5 mt-2'>{each.icon}</a>
                                 ))
                             }
                             <hr className='mt-5' />
@@ -129,8 +130,8 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                 <div className='mt-5 mb-4'>
                     <p className='mb-2 font-light'>Switch To {theme === THEMES.LIGHT ? 'Dark' : 'Light'} Theme :</p>
                     <button name="theme-switch" aria-label="theme-switch" className={combineClasses(classes.theme_switch, 'dark:text-white text-black')} onClick={() => changeTheme()}>
-                        {
-                            theme === THEMES.DARK ? <SunIcon className="w-[28px]" /> : <MoonIcon className="w-[25px]" />
+                    {
+                            theme === THEMES.DARK ? <BsFillSunFill className="text-2xl" /> : <BsFillMoonFill className="text-lg" />
                         }
                     </button>
                 </div>

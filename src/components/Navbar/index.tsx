@@ -2,7 +2,7 @@ import { NavbarType, THEMES } from "../../shared/enums";
 import SimpleNavbar from './SimpleNavbar';
 import CenteredNavbar from './Centered';
 import { useEffect, useState } from "react";
-import { addBodyNoScroll, combineClasses, isMobileDevice, removeBodyNoScroll } from "../../utils/utils";
+import { addBodyNoScroll, combineClasses, getDeviceType, isMobileDevice, removeBodyNoScroll } from "../../utils/utils";
 import NavSidebar from './NavSideBar';
 import Search from "../Search";
 import { PRIMARY_NAV } from "../../../BLOG_CONSTANTS/_BLOG_SETUP"
@@ -33,7 +33,7 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     let lastScrollTop = 0;
     useEffect(() => {
-        setIsMobile(isMobileDevice());
+        setIsMobile(getDeviceType() === "tablet" || getDeviceType() === "mobile");
 
         window.onscroll = () => {
             const st = window.pageYOffset || document.documentElement.scrollTop;

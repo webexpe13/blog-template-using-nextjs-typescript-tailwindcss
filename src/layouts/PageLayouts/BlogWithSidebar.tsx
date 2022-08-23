@@ -15,7 +15,7 @@ const WithSidebar = ({ children, ads }: any) => {
     return (
         <>
             <section className={combineClasses(classes.withSidebar_article_wrapper, 'dark:bg-slate-900 dark:text-white')}>
-                <div className="container px-0 md:px-[15px] md:flex pb-[50px] pt-[50px]">
+                <div className="container px-0 md:px-[15px] lg:flex pb-[50px] pt-[50px]">
                     <article className={combineClasses(classes.article_content, 'pb-[20px] px-3 text-black bg-white dark:bg-slate-800 dark:border-none dark:drop-shadow-lg dark:text-white pt-10 md:pt-0 font-regular text-lg leading-relaxed')}>
                         <ArticleHeader ARTICLE_DETAILS={ARTICLE_DETAILS} />
                         {children}
@@ -49,7 +49,7 @@ const WithSidebar = ({ children, ads }: any) => {
                         {
                             relatedArticles.length &&
                             <div className={combineClasses(classes.more_from_author, 'dark:bg-slate-800 dark:border-none dark:drop-shadow-lg')}>
-                                <p className='border-b border-gray-300 pb-2 mb-3 font-medium'>More from  Author</p>
+                                <p className='border-b border-gray-300 pb-2 mb-3 font-medium w-full'>More from  Author</p>
                                 {
                                     relatedArticles.map((each, i) =>
                                         <Link href={transformPath(each.path)} key={i} passHref>

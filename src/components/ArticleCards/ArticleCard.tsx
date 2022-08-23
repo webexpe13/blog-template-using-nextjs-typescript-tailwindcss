@@ -11,11 +11,12 @@ interface IProp {
 
 const ArticleCard = ({ article, path }: IProp) => {
   return (
-    <div className={'w-full sm:w-1/3 px-[15px] mb-[30px]'}>
+    <div className={'w-full lg:w-1/3 md:w-1/2 md:px-[15px] px-2 mb-[30px]'}>
       <LinkTo href={transformPath(path)} passHref className={combineClasses(classes.article_card, 'border-b-[5px] border-blue-500 dark:bg-slate-800 dark:text-white dark:drop-shadow-lg flex flex-col justify-between')}>
         <div>
           <div className={'rounded-t-[4px] overflow-hidden h-[200px]'}>
-            <img src={transformImagePaths(article.thumbnail)} alt="" width="100%" />
+            {/* <Image src={transformImagePaths(article.thumbnail)} height={200} width={360} layout="responsive"/> */}
+            <img src={transformImagePaths(article.thumbnail)} alt="" width="100%" className="object-cover" />
           </div>
 
           <div className={'d-block px-[15px] py-0'}>
@@ -40,8 +41,12 @@ const ArticleCard = ({ article, path }: IProp) => {
         </div>
         <div className={combineClasses(classes.article_card_footer, "mt-4 mb-3 flex items-center px-3")}>
           <div className={classes.author}>
-            <div className={classes.author_img}>
-              {article.author.profilePic ? <img src={article.author.profilePic} alt={article.author.name} /> : <img src={generateRandomAvtar()} alt={article.author.name} />}
+            <div className={combineClasses(classes.author_img, 'flex items-center justify-center')}>
+              {
+                article.author.profilePic ?
+                  <img src={article.author.profilePic} alt={article.author.name} /> :
+                  <p className="text-center font-medium text-[14px] text-white">{article.author.name[0]}</p>
+              }
             </div>
             <p className={combineClasses(classes.author_name, 'text-sm font-medium')}>
               {article.author.name}

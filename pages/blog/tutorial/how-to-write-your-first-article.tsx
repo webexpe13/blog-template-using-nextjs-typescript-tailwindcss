@@ -78,7 +78,7 @@ const Article = () => {
                             </li>
                             <li>
                                 <b>thumbnail : </b>
-                                Save the image file in public-images folder and paste the image path.  This will be displayed in article cards on home page
+                                Save the image file in public-images folder and paste the image path. This will be displayed in article cards on home page. For thumpbails the recommended size is <b>540x300px</b>.
                             </li>
                             <li>
                                 <b>shortIntro : </b>

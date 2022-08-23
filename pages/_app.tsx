@@ -1,5 +1,4 @@
 import '../src/styles/globals.scss'
-import '../src/assets/fontCss/icofont.css'
 
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -13,6 +12,7 @@ import { CREATE_SEO_CONFIG } from '../src/utils/utils';
 import { ThemeProvider } from 'next-themes'
 
 import "@uiw/react-textarea-code-editor/dist.css";
+import 'react-medium-image-zoom/dist/styles.css';
 
 
 function MyApp({ Component, pageProps }: AppProps) {

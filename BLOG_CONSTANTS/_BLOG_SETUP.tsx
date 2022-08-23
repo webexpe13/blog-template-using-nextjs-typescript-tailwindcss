@@ -1,5 +1,6 @@
 import { LogoType, NavbarType } from "../src/shared/enums";
 import { IAuthor, iSEO } from "../src/shared/interfaces";
+import { AiFillYoutube, AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillInstagram, AiFillFacebook } from "react-icons/ai";
 
 /**
  * EXAMPLE AUTHOR
@@ -9,13 +10,13 @@ import { IAuthor, iSEO } from "../src/shared/interfaces";
     designation: "Work Designation",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     profilePic: "",
-    social: [
+     social: [
         {
-            icon: <i className="icon-2-Z font-32" />,
+            icon: <AiFillGithub />,
             link: 'https://github.com/'
         },
         {
-            icon: <i className="icon-I font-36" />,
+            icon: <AiFillLinkedin />,
             link: 'https://www.linkedin.com/'
         },
     ]
@@ -26,14 +27,14 @@ export const MAYUR: IAuthor = {
     name: "Mayur Nalwala",
     designation: "Software Engineer",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    profilePic: "https://robohash.org/1f2fb9642c825da07a83e5cac078e838?set=set3&bgset=&size=200x200",
+    profilePic: "",
     social: [
         {
-            icon: <i className="icon-2-Z font-32" />,
+            icon: <AiFillGithub />,
             link: 'https://github.com/nmayur'
         },
         {
-            icon: <i className="icon-I font-36" />,
+            icon: <AiFillLinkedin />,
             link: 'https://www.linkedin.com/in/mayur-nalwala/'
         },
     ]
@@ -43,14 +44,14 @@ export const RUPALI: IAuthor = {
     name: "Rupali Yadav",
     designation: "IT Analyst",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    profilePic: "https://gravatar.com/avatar/8fab154171e299e9b8fe24305267a8fd?s=200&d=robohash&r=r",
+    profilePic: "",
     social: [
         {
-            icon: <i className="icon-2-Z font-32" />,
+            icon: <AiFillGithub />,
             link: 'https://github.com/rupali-yadav'
         },
         {
-            icon: <i className="icon-I font-36" />,
+            icon: <AiFillLinkedin />,
             link: 'https://www.linkedin.com/in/rupali-yadav-087bb4112/'
         },
     ]
@@ -142,15 +143,15 @@ export const PRIMARY_NAV = {
     socials: [
         {
             link: 'https://www.facebook.com/',
-            icon: <i className="icon-F" />
+            icon: <AiFillFacebook />
         },
         {
             link: 'https://www.instagram.com/',
-            icon: <i className="icon-2-I" />
+            icon: <AiFillInstagram />
         },
         {
             link: 'https://twitter.com/WebExpe',
-            icon: <i className="icon-L" />
+            icon: <AiOutlineTwitter />
         },
     ]
 }

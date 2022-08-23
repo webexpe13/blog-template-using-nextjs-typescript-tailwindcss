@@ -52,7 +52,7 @@ const Centered = ({ children }: any) => {
                             {
                                 relatedArticles.map((each, i) =>
                                     <Link href={transformPath(each.path)} key={i} passHref>
-                                        <div className='md:w-1/3 w-full md:pr-3' key={each.path}>
+                                        <div className='lg:w-1/3 md:w-1/2 w-full md:pr-3' key={each.path}>
                                             <div className={combineClasses(classes.more_from_author__articles, "border border-gray-200 rounded-[8px] pl-2 dark:border-none dark:pl-0 dark:shadow bdark:g-slate-900")}>
                                                 <div className={combineClasses(classes.article_image, "h-[80px]")} style={{ background: `url(${transformImagePaths(each.preview.thumbnail)})` }}>
                                                     <img src={transformImagePaths(each.preview.thumbnail)} className="invisible" alt="each.preview.articleTitle" />

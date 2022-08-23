@@ -61,6 +61,9 @@
 
     @include tab {
         margin-top: 0px;
+        max-width: 100%;
+        padding: 0px;
+        margin-top: 50px;
     }
 }
 
@@ -122,6 +125,20 @@
 
             &:hover {
                 @apply text-blue-500;
+            }
+        }
+    }
+}
+
+.withSidebar_article_wrapper {
+    .more_from_author {
+        @include tab {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            &__articles {
+                width: 47%;
+                margin-bottom: 10px;
             }
         }
     }

@@ -6,8 +6,7 @@ import 'swiper/css';
 import 'swiper/css/bundle';
 
 import classes from './slider.module.scss';
-import Image from '../ArticleImage';
-import { ImageSize } from '../../shared/enums';
+import { transformImagePaths } from '../../utils/utils';
 
 const Slider = ({ images, className }: { images: string[], className?: string }) => {
     return (
@@ -19,11 +18,12 @@ const Slider = ({ images, className }: { images: string[], className?: string })
             pagination={{ clickable: true }}
             loop={true}
             className={className}
+            draggable={true}
         >
             {
                 images.map((each, i) => (
                     <SwiperSlide className={classes.slide} key={i}>
-                        <Image src={each} size={ImageSize.DEFAULT} />
+                        <img src={transformImagePaths(each)} width="100%" className={'block cursor-grab'} />
                     </SwiperSlide>
                 ))
             }

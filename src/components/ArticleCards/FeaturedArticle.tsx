@@ -3,6 +3,7 @@ import classes from "./ArticleCard.module.scss";
 import { combineClasses, transformImagePaths, transformPath } from "../../utils/utils";
 import LinkTo from "../LinkTo";
 import { generateRandomAvtar } from "../../constants/appConstants";
+import { useRouter } from "next/router";
 
 interface IProp {
     article: IArticleHeaderData;
@@ -11,15 +12,24 @@ interface IProp {
 
 
 const FeaturedArticle = ({ article, path }: IProp) => {
+    const router = useRouter();
+    const gotoPath = (e:any) => {
+        e.preventDefault()
+        router.push(transformPath(path))
+      }
     return (
         <>
-            <div className={combineClasses(classes.featured_article,
-                'md:border-l-[5px] border-b-[5px] md:border-b-0 border-blue-500 dark:bg-slate-800 dark:text-white dark:drop-shadow-lg')}>
-                <div className={'w-full md:w-[55%] md:px-[50px] px-[15px] md:py-[40px] py-[20px]'}>
+            <div onClick={gotoPath} className={combineClasses(classes.featured_article,
+                'md:border-l-[5px] border-b-[5px] md:border-b-0 border-blue-500 dark:bg-slate-800 dark:text-white dark:drop-shadow-lg cursor-pointer')}>
+                <div className={'w-full md:w-[55%] lg:px-[50px] px-[15px] lg:py-[40px] py-[20px]'}>
                     <div className={"mt-0 mb-[10px] flex items-center"}>
                         <div className={classes.author}>
-                            <div className={classes.author_img}>
-                                {article.author.profilePic ? <img src={article.author.profilePic} alt={article.author.name} /> : <img src={generateRandomAvtar()} alt={article.author.name} />}
+                            <div className={combineClasses(classes.author_img, 'flex items-center justify-center')}>
+                                {
+                                    article.author.profilePic ? 
+                                        <img src={article.author.profilePic} alt={article.author.name} /> : 
+                                        <p className="text-center font-medium text-[18px] text-white">{article.author.name[0]}</p>
+                                }
                             </div>
                             <p className={combineClasses(classes.author_name, 'text-[14px] md:text-[16px] my-0 font-medium')}>
                                 {article.author.name}
@@ -54,11 +64,11 @@ const FeaturedArticle = ({ article, path }: IProp) => {
                     </div>
                     <p className={combineClasses(classes.featured_article__date, "font-normal text-xs pt-3 mb-0")}>{article.date}</p>
                 </div>
-                <div className={combineClasses(classes.featured_article__image, 'rounded-sm overflow-hidden')} style={{ background: `url(${transformImagePaths(article.thumbnail)})` }} >
+                <div className={combineClasses(classes.featured_article__image, 'rounded-sm overflow-hidden')} >
                     {/* style={{ background: `url(${transformImagePaths(article.thumbnail)})` }} */}
-                    {/* <img 
+                    <img 
                         src={transformImagePaths(article.thumbnail)} alt={article.articleTitle} 
-                        className="w-full h-full" /> */}
+                        className="w-full h-full object-cover" />
                 </div>
             </div>
         </>

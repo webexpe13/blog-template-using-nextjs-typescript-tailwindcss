@@ -3,10 +3,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { combineClasses, getCategories, transformImagePaths } from "../../utils/utils";
 import { LogoType, THEMES } from "../../shared/enums";
-import { MenuIcon, SearchIcon } from '@heroicons/react/outline';
-import { MoonIcon, SunIcon } from '@heroicons/react/solid';
 import LinkTo from "../LinkTo";
 import { useTheme } from "next-themes";
+import { BiChevronDown } from 'react-icons/bi';
+import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
+import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 
 
 const SimpleNavbar = ({
@@ -29,7 +30,7 @@ const SimpleNavbar = ({
         <div
           className={combineClasses(classes.mobileBurgerToggle, "mr-5", openSidebar ? classes.mobileBurgerToggle__close : ' ')}
           onClick={() => toggleSideMenu()}>
-          <MenuIcon className="dark:text-white text-black" />
+          <AiOutlineMenu className="dark:text-white text-black text-2xl" />
         </div>
         <Link href="/" passHref>
           {
@@ -43,7 +44,7 @@ const SimpleNavbar = ({
       </div>
 
       <div className="flex items-center">
-        <div className='text-[14px] font-normal items-center md:flex hidden'>
+        <div className='text-[14px] font-normal items-center lg:flex hidden'>
           {
             navLinks.map((each: any, i: any) => (
               each.type !== 'dropdown' ? !each.newTab ?
@@ -58,7 +59,7 @@ const SimpleNavbar = ({
                     <p className='my-0'>
                       {each.label}
                     </p>
-                    <i className='icofont-caret-down'></i>
+                    <BiChevronDown className="text-[20px]" />
                   </div>
                   {
                     openDD &&
@@ -80,10 +81,10 @@ const SimpleNavbar = ({
           }
           {
             socials &&
-            <div className="ml-5">
+            <div className="ml-5 pt-1">
               {
                 socials.map((each: any, i: any) => (
-                  <a href={each.link} key={i} target="_blank" rel="noopener noreferrer" className='text-[22px] inline-block mr-4'>{each.icon}</a>
+                  <a href={each.link} key={i} target="_blank" rel="noopener noreferrer" className='text-[18px] inline-block mr-4'>{each.icon}</a>
                 ))
               }
             </div>
@@ -93,14 +94,14 @@ const SimpleNavbar = ({
 
         <div className={combineClasses(classes.search_icon_wrapper, 'ml-5 dark:text-white')} onClick={() => openSearch()}>
           <button name="search-button" aria-label="search button">
-            <SearchIcon className="dark:text-white text-black" />
+            <AiOutlineSearch className="dark:text-white text-black text-xl" />
           </button>
         </div>
 
 
         <button name="theme-switch" aria-label="theme button" className={combineClasses(classes.theme_switch, "pl-3 dark:text-white text-black")} onClick={changeTheme}>
           {
-            theme && theme === 'dark' ? <SunIcon className="w-[28px]" /> : <MoonIcon className="w-[20px]" />
+            theme && theme === 'dark' ? <BsFillSunFill className="text-2xl" /> : <BsFillMoonFill className="text-md " />
           }
         </button>
       </div>

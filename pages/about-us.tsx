@@ -18,7 +18,7 @@ const AboutUs = () => {
                     <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="block md:w-[15%] w-[50%] ">
                         <Image src="/public/images/YT Logo.png" size={ImageSize.DEFAULT} alt="webexpe.com" className="rounded-lg overflow-hidden" />
                     </a>
-                    <Text title className='mb-5 mt-10 text-blue-600'>
+                    <Text title className='mb-5 mt-10 dark:text-sky-400 text-sky-600'>
                         Hi we are WebExpe.
                     </Text>
                     <Text subtitle className='text-xl mb-5'>

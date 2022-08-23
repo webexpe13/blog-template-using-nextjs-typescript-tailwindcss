@@ -3,7 +3,7 @@ import { combineClasses } from "../../utils/utils";
 import classes from './Search.module.scss';
 import SearchArticleCard from "../ArticleCards/SearchArticleCard";
 import { SORTED_ARTICLES_BY_DATE } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST';
-import { XIcon } from '@heroicons/react/outline'
+import { MdOutlineClose } from "react-icons/md";
 
 interface ISearch {
     closeSearch: () => void
@@ -26,7 +26,7 @@ const Search = ({ closeSearch }: ISearch) => {
                     <div className='flex justify-between items-center md:pt-10 pt-5'>
                         <h1 className={'text-[45px] font-bold'}>Search</h1>
                         <button name="search-button" aria-label="search button" type="button" className={classes.search_close_icon} onClick={closeSearch}>
-                            <XIcon className='text-slate-800 dark:text-white' />
+                        <MdOutlineClose className='text-slate-800 dark:text-white text-4xl' />
                         </button>
                     </div>
                     <div className="mb-[40px] mt-3">

@@ -2,8 +2,8 @@ import { IArticleHeaderData } from "../../shared/interfaces";
 import classes from "./ArticleCard.module.scss";
 import { combineClasses, transformImagePaths, transformPath } from "../../utils/utils";
 import LinkTo from "../LinkTo";
-import { generateRandomAvtar } from "../../constants/appConstants";
 import { useRouter } from "next/router";
+import Avatar from "../Misc/Avatar";
 
 interface IProp {
     article: IArticleHeaderData;
@@ -16,21 +16,16 @@ const FeaturedArticle = ({ article, path }: IProp) => {
     const gotoPath = (e:any) => {
         e.preventDefault()
         router.push(transformPath(path))
-      }
+    }
+    
     return (
         <>
             <div onClick={gotoPath} className={combineClasses(classes.featured_article,
                 'md:border-l-[5px] border-b-[5px] md:border-b-0 border-blue-500 dark:bg-slate-800 dark:text-white dark:drop-shadow-lg cursor-pointer')}>
                 <div className={'w-full md:w-[55%] lg:px-[50px] px-[15px] lg:py-[40px] py-[20px]'}>
                     <div className={"mt-0 mb-[10px] flex items-center"}>
-                        <div className={classes.author}>
-                            <div className={combineClasses(classes.author_img, 'flex items-center justify-center')}>
-                                {
-                                    article.author.profilePic ? 
-                                        <img src={article.author.profilePic} alt={article.author.name} /> : 
-                                        <p className="text-center font-medium text-[18px] text-white">{article.author.name[0]}</p>
-                                }
-                            </div>
+                        <div className={"flex items-center"}>
+                            <Avatar author={article.author} className="w-[50px] h-[50px] mr-3 text-xl" />
                             <p className={combineClasses(classes.author_name, 'text-[14px] md:text-[16px] my-0 font-medium')}>
                                 {article.author.name}
                             </p>

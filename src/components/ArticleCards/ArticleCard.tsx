@@ -1,8 +1,8 @@
 import LinkTo from "../LinkTo";
-import { generateRandomAvtar } from "../../constants/appConstants";
 import { IArticleHeaderData } from "../../shared/interfaces";
 import { combineClasses, transformImagePaths, transformPath } from "../../utils/utils";
 import classes from "./ArticleCard.module.scss";
+import Avatar from '../Misc/Avatar'
 
 interface IProp {
   article: IArticleHeaderData;
@@ -40,14 +40,8 @@ const ArticleCard = ({ article, path }: IProp) => {
           </div>
         </div>
         <div className={combineClasses(classes.article_card_footer, "mt-4 mb-3 flex items-center px-3")}>
-          <div className={classes.author}>
-            <div className={combineClasses(classes.author_img, 'flex items-center justify-center')}>
-              {
-                article.author.profilePic ?
-                  <img src={article.author.profilePic} alt={article.author.name} /> :
-                  <p className="text-center font-medium text-[14px] text-white">{article.author.name[0]}</p>
-              }
-            </div>
+          <div className={"flex items-center"}>
+            <Avatar author={article.author} className="w-[40px] h-[40px] mr-3 text-xl" />
             <p className={combineClasses(classes.author_name, 'text-sm font-medium')}>
               {article.author.name}
             </p>

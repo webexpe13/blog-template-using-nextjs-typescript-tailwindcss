@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { generateRandomAvtar } from "../../constants/appConstants"
 import { IArticleHeaderData } from "../../shared/interfaces"
 import { combineClasses } from "../../utils/utils"
+import Avatar from "../Misc/Avatar"
 import classes from './ArticleHeader.module.scss'
 interface IProps {
     headerData: IArticleHeaderData
@@ -10,9 +10,7 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
     return (
         <div className="mb-[30px]">
             <div className="mb-[10px] flex items-center mt-[15px]">
-                <div className={classes.article_header_author_img}>
-                {headerData.author.profilePic ? <img src={headerData.author.profilePic} alt={headerData.author.name} /> : <img src={generateRandomAvtar()} alt={headerData.author.name} /> }
-                </div>
+                <Avatar author={headerData.author} className="w-[55px] h-[55px] mr-3 text-xl" />
                 <div>
                     <div className="flex text-[16px] md:text-lg items-center">
                         <p className={combineClasses(classes.article_header_author_name, 'font-medium my-0')}>

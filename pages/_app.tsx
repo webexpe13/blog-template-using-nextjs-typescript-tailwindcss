@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   let SEO_CONFIG = CREATE_SEO_CONFIG({});
 
-  if(!mounted && env === 'development') return null
+  if (!mounted && env === 'development') return null
   return (
     <>
       <NextSeo {...SEO_CONFIG} />
@@ -42,22 +42,28 @@ function MyApp({ Component, pageProps }: AppProps) {
       {
         env !== 'development' ?
           <>
-            <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${gtag.GA_ADSENSE_ID}`} crossOrigin="anonymous"></Script>
-            <Script async src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}></Script>
+            <Script async
+              strategy="afterInteractive" src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${gtag.GA_ADSENSE_ID}`} crossOrigin="anonymous"></Script>
+            {/* Google tag (gtag.js) */}
+            <Script async
+              strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}></Script>
             <Script
               id="gtag-init"
+              strategy="afterInteractive"
               dangerouslySetInnerHTML={{
                 __html: `
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', '${gtag.GA_TRACKING_ID}', {
-                      page_path: window.location.pathname,
-                    });
-                  `,
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gtag.GA_TRACKING_ID}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
               }}
             />
-          </> : null
+          </>
+
+          : null
       }
       <ThemeProvider enableSystem={true} attribute="class">
         <Component {...pageProps} />

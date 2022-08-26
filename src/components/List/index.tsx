@@ -5,7 +5,7 @@ import classes from './List.module.scss'
 const List = ({ children, type = ListType.disc, className }: {
     children?: any,
     type?: ListType,
-    className?: any
+    className?: string
 }) => {
     return (
         <ul className={combineClasses(classes.list, type, 'pl-[30px]', className)}>

@@ -1,6 +1,8 @@
 import { IArticleHeaderData } from "../../shared/interfaces"
 import { combineClasses } from "../../utils/utils";
 import LinkTo from "../LinkTo";
+import ArticleCardCategory from "../Misc/ArticleCardCategory";
+import ArticleTags from "../Misc/ArticleTags";
 import Avatar from "../Misc/Avatar";
 import classes from './ArticleCard.module.scss';
 
@@ -14,13 +16,7 @@ const SerachArticleCard = ({ article, path }: { article: IArticleHeaderData, pat
             {article.articleTitle}
           </h1>
         </LinkTo>
-        <div className={classes.article_card__tags}>
-          {
-            article.tags.split(',').map((each, i) => (
-              <span key={i} className="text-xs font-normal mr-3" >#{each}</span>
-            ))
-          }
-        </div>
+        <ArticleTags tags={article.tags} />
         <div className={"flex items-center mt-3"}>
           <div className="flex items-center">
             <Avatar author={article.author} className="w-[40px] h-[40px] mr-3 text-xl" />
@@ -28,16 +24,7 @@ const SerachArticleCard = ({ article, path }: { article: IArticleHeaderData, pat
               {article.author.name}
             </p>
           </div>
-          {
-            article.category && <>
-              <p className="text-sm px-[5px] font-normal">in</p>
-              <p className={combineClasses(classes.article_card__category, "font-medium text-sm")}>
-                <LinkTo href={"/blog?category=" + article.category} passHref={true}>
-                  {article.category}
-                </LinkTo>
-              </p>
-            </>
-          }
+          <ArticleCardCategory category={article.category} />
         </div>
       </div>
     </LinkTo>

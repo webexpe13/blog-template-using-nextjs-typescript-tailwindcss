@@ -3,6 +3,8 @@ import { IArticleHeaderData } from "../../shared/interfaces";
 import { combineClasses, transformImagePaths, transformPath } from "../../utils/utils";
 import classes from "./ArticleCard.module.scss";
 import Avatar from '../Misc/Avatar'
+import ArticleCardCategory from "../Misc/ArticleCardCategory";
+import ArticleTags from "../Misc/ArticleTags";
 
 interface IProp {
   article: IArticleHeaderData;
@@ -29,14 +31,7 @@ const ArticleCard = ({ article, path }: IProp) => {
             <p className={combineClasses(classes.article_card__intro, "text-sm font-normal mt-2 md:mt-1")}>
               {article.shortIntro.slice(0, 100)} ...
             </p>
-
-            <div className={combineClasses(classes.article_card__tags, 'md:mt-1')}>
-              {
-                article.tags.split(',').map((each, i) => (
-                  <span key={i} className="text-xs font-normal mr-3" >#{each}</span>
-                ))
-              }
-            </div>
+            <ArticleTags tags={article.tags} />
           </div>
         </div>
         <div className={combineClasses(classes.article_card_footer, "mt-4 mb-3 flex items-center px-3")}>
@@ -46,16 +41,7 @@ const ArticleCard = ({ article, path }: IProp) => {
               {article.author.name}
             </p>
           </div>
-          {
-            article.category && <>
-              <p className="text-sm px-2 font-regumal">in</p>
-              <p className={"font-medium text-sm cursor-pointer hover:text-blue-600"}>
-                <LinkTo href={"/blog?category=" + article.category} passHref={true}>
-                  {article.category}
-                </LinkTo>
-              </p>
-            </>
-          }
+          <ArticleCardCategory category={article.category} />
         </div>
       </LinkTo>
     </div>

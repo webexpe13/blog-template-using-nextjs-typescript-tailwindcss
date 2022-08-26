@@ -13,8 +13,8 @@ const Search = ({ closeSearch }: ISearch) => {
     const [searchResults, setSearchResults] = useState<any[]>([]);
     const handleSearch = () => {
         const data = [...SORTED_ARTICLES_BY_DATE];
-        const results = data.filter((article) => (article.preview.tags.split(',').join().indexOf(searchStr) >= 0
-            || article.preview.articleTitle.indexOf(searchStr) >= 0)
+        const results = data.filter((article) => (article.preview.tags.split(',').join().indexOf(searchStr.toLocaleLowerCase()) >= 0
+            || article.preview.articleTitle.indexOf(searchStr.toLocaleLowerCase()) >= 0)
         );
         setSearchResults(results)
     }

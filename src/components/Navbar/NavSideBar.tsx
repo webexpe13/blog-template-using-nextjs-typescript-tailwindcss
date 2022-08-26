@@ -4,14 +4,15 @@ import { addBodyNoScroll, combineClasses, getCategories, removeBodyNoScroll } fr
 import classes from './Navbar.module.scss';
 import { Text, LinkTo } from '../../components';
 import { useTheme } from 'next-themes';
-import { BiChevronDown } from 'react-icons/bi';
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { MdOutlineClose } from 'react-icons/md';
+import NavCatergoryDD from '../Misc/NavCategoryDD';
+import { iNavLink, iNavSetup, iNavSocials } from '../../shared/interfaces';
 
 interface IProps {
     openSidebar: boolean;
     closeNavSidebar: () => void;
-    navSetup: any;
+    navSetup: iNavSetup;
     changeTheme: () => void;
 }
 
@@ -28,8 +29,6 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
     }, [openSidebar]);
 
     const env = process.env.NODE_ENV;
-
-    const CATEGORIES = getCategories();
     const [openDD, setOpenDD] = useState(false)
 
     return (
@@ -41,12 +40,12 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
             <aside className={combineClasses(classes.nav_sidebar_wrapper, openSidebar && classes.open, 'dark:bg-slate-900 dark:text-white bg-white text-black')}>
                 <div className='flex items-center justify-between pb-3' onClick={closeNavSidebar}>
                     <p className=''>menu</p>
-                    <div className={classes.sideNavCloseIcon}><MdOutlineClose className='text-slate-800 dark:text-white text-[30px]' /></div>
+                    <div><MdOutlineClose className='text-slate-800 dark:text-white text-[25px]' /></div>
                 </div>
                 <hr />
                 <div className='my-15'>
                     {
-                        navSetup.sideNavLinks.map((each: any, i: any) => (
+                        navSetup.sideNavLinks.map((each: iNavLink, i: any) => (
                             each.type !== 'dropdown' ? !each.newTab ?
                                 <LinkTo href={each.path} key={i} passHref className='text-[16px] block my-3'>
                                     {each.label}
@@ -55,26 +54,7 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                                     {each.label}
                                 </a>
                                 :
-                                <div className={classes.sidebarCategoryDD_wrapper} key={i} >
-                                    <div className='flex justify-between items-center cursor-pointer' onClick={() => setOpenDD(!openDD)}>
-                                        <p className='text-[16px] my-0'>
-                                            {each.label}
-                                        </p>
-                                        <BiChevronDown className="text-[20px]" />
-                                    </div>
-                                    <div className={classes.sidebarCategoryDD} style={{ height: openDD ? 'auto' : '0px', padding: openDD ? '10px' : '0px' }}>
-                                        <LinkTo href={'/blog'} passHref className='block text-sm'>
-                                            All Articles
-                                        </LinkTo>
-                                        {
-                                            CATEGORIES.map(each => (
-                                                <LinkTo href={"/blog?category=" + each} key={each} passHref className='block text-sm border-t border-gray-400'>
-                                                    <span style={{ textTransform: 'capitalize' }}>{each}</span>
-                                                </LinkTo>
-                                            ))
-                                        }
-                                    </div>
-                                </div>
+                                <NavCatergoryDD label={each.label} openDD={openDD} setOpenDD={() => setOpenDD(!openDD)} />
                         ))
                     }
                     {
@@ -119,7 +99,7 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                     {
                         navSetup.socials && <>
                             <p className='font-light'>Follow us : </p> {
-                                navSetup.socials.map((each: any) => (
+                                navSetup.socials.map((each: iNavSocials) => (
                                     <a href={each.link} key={each.link} target="_blank" rel="noopener noreferrer" className='text-[28px] inline-block mr-5 mt-2'>{each.icon}</a>
                                 ))
                             }

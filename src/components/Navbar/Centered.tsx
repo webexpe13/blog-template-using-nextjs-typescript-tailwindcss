@@ -4,18 +4,14 @@ import { combineClasses, getCategories, transformImagePaths } from "../../utils/
 import { LogoType, THEMES } from "../../shared/enums";
 import LinkTo from "../LinkTo";
 import { useTheme } from "next-themes";
-import { BiChevronDown } from "react-icons/bi";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
+import NavCatergoryDD from "../Misc/NavCategoryDD";
+import { iNavLink, iNavSocials, iNavbar } from "../../shared/interfaces";
 
-const CenteredNavbar = ({
-    openSearch,
-    scrolled,
-    toggleSideMenu,
-    openSidebar = false,
-    navSetup }: any) => {
+
+const CenteredNavbar = ({openSearch, toggleSideMenu,  openSidebar = false, navSetup }: iNavbar) => {
     const { navLinks, socials, logo } = navSetup;
 
-    const CATEGORIES = getCategories();
     const [openDD, setOpenDD] = useState(false)
     const { theme, setTheme } = useTheme();
 
@@ -48,7 +44,7 @@ const CenteredNavbar = ({
                 <div className="flex justify-end" style={{ width: "120px" }}>
                     {
                         socials &&
-                        socials.map((each: any, i: any) => (
+                        socials.map((each: iNavSocials, i: any) => (
                             <a href={each.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -59,9 +55,9 @@ const CenteredNavbar = ({
                     }
                 </div>
             </div>
-            <div className='dark:font-white font-black flex justify-center items-center font-regular text-[14px] d-sm-none mt-3'>
+            <div className='flex justify-center items-center font-regular text-[14px] d-sm-none mt-3'>
                 {
-                    navLinks.map((each: any, i: any) => (
+                    navLinks.map((each: iNavLink, i: any) => (
                         each.type !== 'dropdown' ? !each.newTab ?
                             <LinkTo href={each.path} key={i} passHref={true} className='mx-2 font-normal'>
                                 {each.label}
@@ -69,29 +65,8 @@ const CenteredNavbar = ({
                             <a href={each.path} key={each.path} target="_blank" rel="noopener noreferrer" className='block mx-2 flex-wrap font-normal	'>
                                 {each.label}
                             </a>
-                            : <div className={classes.sidebarCategoryDD_wrapper} key={each.label}>
-                                <div className='flex items-center cursor-pointer mx-2' key={each.label} onClick={() => setOpenDD(!openDD)}>
-                                    <p className='my-0 font-normal	'>
-                                        {each.label}
-                                    </p>
-                                    <BiChevronDown className="text-[20px]" />
-                                </div>
-                                {
-                                    openDD &&
-                                    <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white dark:bg-slate-800 shadow-md px-1')}>
-                                        <LinkTo href={'/blog'} passHref={true} className='block text-sm p-2 font-normal'>
-                                            All Articles
-                                        </LinkTo>
-                                        {
-                                            CATEGORIES.map(each => (
-                                                <LinkTo href={"/blog?category=" + each} key={each} passHref className='block text-sm p-2 border-t border-gray-400 font-normal' >
-                                                    <span style={{ textTransform: 'capitalize' }}>{each}</span>
-                                                </LinkTo>
-                                            ))
-                                        }
-                                    </div>
-                                }
-                            </div>
+                            :
+                            <NavCatergoryDD label={each.label} openDD={openDD} setOpenDD={() => setOpenDD(!openDD)} floating />
                     ))
                 }
             </div>

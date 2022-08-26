@@ -1,7 +1,16 @@
 import Link from "next/link"
 import { combineClasses, transformPath } from "../../utils/utils"
 
-const LinkTo = ({ href, passHref = true, newTab = false, external = false, children, className }: { href: string, passHref?: boolean, newTab?: boolean, children?: any, external?: boolean, className?: string }) => {
+interface iLinkTo { 
+    href: string, 
+    passHref?: boolean, 
+    newTab?: boolean, 
+    children?: any, 
+    external?: boolean, 
+    className?: string 
+}
+
+const LinkTo = ({ href, passHref = true, newTab = false, external = false, children, className }: iLinkTo) => {
     return (
         <>
             {

@@ -2,7 +2,13 @@ import { useState } from 'react';
 import { combineClasses } from '../../utils/utils';
 import { AiFillCaretRight } from 'react-icons/ai';
 
-const Accordian = ({ title = "Accordian Title", children, keepOpen = false }: any) => {
+interface iAccordian {
+    title: string,
+    children: any,
+    keepOpen: boolean
+}
+
+const Accordian = ({ title = "Accordian Title", children, keepOpen = false }: iAccordian) => {
     const [open, setOpen] = useState(keepOpen);
 
     const openAccordian = () => {

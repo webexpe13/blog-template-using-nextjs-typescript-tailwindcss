@@ -1,6 +1,6 @@
 import { LogoType, NavbarType } from "../src/shared/enums";
-import { IAuthor, iSEO } from "../src/shared/interfaces";
-import { AiFillYoutube, AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillInstagram, AiFillFacebook } from "react-icons/ai";
+import { IAuthor, iNavSetup, iSEO } from "../src/shared/interfaces";
+import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillInstagram, AiFillFacebook } from "react-icons/ai";
 
 /**
  * EXAMPLE AUTHOR
@@ -59,14 +59,14 @@ export const RUPALI: IAuthor = {
 
 
 // This can your company name / your name etc for SEO purposes
-export const WEBSITE_NAME = 'Next Js Blog Template';
-export const WEBSITE_URL = 'https://nextjs-simple-blog-template.web.app/';
+export const WEBSITE_NAME: string = 'Next Js Blog Template';
+export const WEBSITE_URL: string = 'https://nextjs-simple-blog-template.web.app/';
 
 /**
  * This is the main navigation setup.
  * This includes the main navbar and the side drawer.
  */
-export const PRIMARY_NAV = {
+export const PRIMARY_NAV: iNavSetup = {
     type: NavbarType.DEFAULT,
     // max logo image height 40px
     // you can add logo light version if using image
@@ -86,9 +86,10 @@ export const PRIMARY_NAV = {
             path: '/'
         },
         {
-            // for categories don't add path and add type: dropdown
+            // for categories don't add path and add type: dropdown and pass path empty
             label: 'Blog',
-            type: 'dropdown'
+            type: 'dropdown',
+            path: ''
         },
         {
             label: 'About Us',
@@ -119,7 +120,8 @@ export const PRIMARY_NAV = {
         {
             // for categories dont add path and add type: dropdown
             label: 'Blog',
-            type: 'dropdown'
+            type: 'dropdown',
+            path: ''
         },
         {
             label: 'About Us',
@@ -156,7 +158,7 @@ export const PRIMARY_NAV = {
     ]
 }
 
-export const DEFAULT_SEO : iSEO = {
+export const DEFAULT_SEO: iSEO = {
     title: "Nextjs simple blog template",
     description: "A simple blog template using NextJS and Typescript.",
     keywords: "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",

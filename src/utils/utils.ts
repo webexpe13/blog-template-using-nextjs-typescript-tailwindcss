@@ -42,30 +42,6 @@ export const changeTheme = (): void => {
 };
 
 /**
- * Rerturns THEMES.LIGHT || THEMES.DARK or if state update method is passed it updated the state
- * @param setThemeState
- */
-export const getTheme = (setThemeState?: any) => {
-  const lsTheme = localStorage.getItem("theme");
-  setThemeState(lsTheme ? lsTheme : THEMES.LIGHT);
-  if (
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-
-  if (setThemeState) {
-    setThemeState(lsTheme ? lsTheme : THEMES.LIGHT);
-  } else {
-    return lsTheme ? lsTheme : THEMES.LIGHT;
-  }
-};
-
-/**
  * Returns Device Type tablet , mobile, desktop
  * @returns string
  */

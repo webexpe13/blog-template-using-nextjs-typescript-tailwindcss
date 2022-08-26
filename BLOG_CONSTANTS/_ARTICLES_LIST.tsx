@@ -86,7 +86,7 @@ const ARTICLES_LIST: iArticle[] = [
         path: '/pages/blog/layouts/home-layout.tsx',
         preview: {
             author: RUPALI,
-            date: "August 08 2022",
+            date: "August 14 2022",
             articleTitle: "Home Layout Example",
             tags: "demo, layout, home layout",
             thumbnail: "/public/imp_assets/tutorials/home-layouts.svg",
@@ -106,7 +106,7 @@ const ARTICLES_LIST: iArticle[] = [
         path: '/pages/blog/layouts/blog-with-sidebar-layout.tsx',
         preview: {
             author: MAYUR,
-            date: "August 08 2022",
+            date: "August 14 2022",
             articleTitle: "Page Layout for a article with sidebar",
             tags: "demo, with sidebar, default layout",
             thumbnail: "/public/imp_assets/tutorials/blog-with-sidebar-layout.svg",
@@ -122,7 +122,7 @@ const ARTICLES_LIST: iArticle[] = [
         path: '/pages/blog/layouts/blog-with-centered-layout.tsx',
         preview: {
             author: RUPALI,
-            date: "August 08 2022",
+            date: "August 14 2022",
             articleTitle: "Page Layout for a article with centered layout",
             tags: "demo, centered, centered layout",
             thumbnail: "/public/imp_assets/tutorials/blog-with-centered-layout.svg",

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { IArticleHeaderData } from "../../shared/interfaces"
 import { combineClasses } from "../../utils/utils"
+import ArticleTags from "../Misc/ArticleTags"
 import Avatar from "../Misc/Avatar"
 import classes from './ArticleHeader.module.scss'
 interface IProps {
@@ -33,13 +34,7 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
             <h1 className="text-2xl md:text-4xl font-semibold mt-[20px] mb-[5px]">
                 {headerData.articleTitle}
             </h1>
-            <div>
-                {
-                    headerData.tags.split(',').map((each, i) => (
-                        <span key={i} className="text-xs font-regular dark:text-gray-400 text-gray-500 mr-[10px]" >#{each}</span>
-                    ))
-                }
-            </div>
+            <ArticleTags tags={headerData.tags} />
         </div>
     )
 }

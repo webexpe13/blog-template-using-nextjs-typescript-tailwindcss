@@ -8,19 +8,12 @@ import { useTheme } from "next-themes";
 import { BiChevronDown } from 'react-icons/bi';
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
+import NavCatergoryDD from "../Misc/NavCategoryDD";
+import { iNavbar, iNavLink, iNavSocials } from "../../shared/interfaces";
 
 
-const SimpleNavbar = ({
-  openSearch,
-  scrolled = false,
-  changeTheme,
-  toggleSideMenu,
-  openSidebar = false,
-  navSetup
-}: any) => {
+const SimpleNavbar = ({ openSearch, changeTheme, toggleSideMenu, openSidebar = false, navSetup }: iNavbar) => {
   const { navLinks, socials, logo } = navSetup;
-
-  const CATEGORIES = getCategories();
   const [openDD, setOpenDD] = useState(false)
   const { theme, setTheme } = useTheme();
 
@@ -46,7 +39,7 @@ const SimpleNavbar = ({
       <div className="flex items-center">
         <div className='text-[14px] font-normal items-center lg:flex hidden'>
           {
-            navLinks.map((each: any, i: any) => (
+            navLinks.map((each: iNavLink, i: any) => (
               each.type !== 'dropdown' ? !each.newTab ?
                 <LinkTo href={each.path} key={i} passHref className='mx-2'>
                   {each.label}
@@ -54,36 +47,15 @@ const SimpleNavbar = ({
                 <a href={each.path} key={each.path + 1} target="_blank" rel="noopener noreferrer" className='d-block mx-2 flex-wrap'>
                   {each.label}
                 </a>
-                : <div className={classes.sidebarCategoryDD_wrapper} key={i}>
-                  <div className='flex items-center cursor-pointer mx-2' onClick={() => setOpenDD(!openDD)}>
-                    <p className='my-0'>
-                      {each.label}
-                    </p>
-                    <BiChevronDown className="text-[20px]" />
-                  </div>
-                  {
-                    openDD &&
-                    <div className={combineClasses(classes.sidebarCategoryDD, classes.sidebarCategoryDD__floating, 'bg-white dark:bg-slate-800 px-1')}>
-                      <LinkTo href={'/blog'} passHref className='block text-sm py-2 px-2'>
-                        All Articles
-                      </LinkTo>
-                      {
-                        CATEGORIES.map(each => (
-                          <LinkTo href={"/blog?category=" + each} key={each} passHref className='block text-sm py-2 px-2 border-t border-gray-400'>
-                            <span style={{ textTransform: 'capitalize' }}>{each}</span>
-                          </LinkTo>
-                        ))
-                      }
-                    </div>
-                  }
-                </div>
+                :
+                <NavCatergoryDD label={each.label} openDD={openDD} setOpenDD={() => setOpenDD(!openDD)} floating />
             ))
           }
           {
             socials &&
             <div className="ml-5 pt-1">
               {
-                socials.map((each: any, i: any) => (
+                socials.map((each: iNavSocials, i: any) => (
                   <a href={each.link} key={i} target="_blank" rel="noopener noreferrer" className='text-[18px] inline-block mr-4'>{each.icon}</a>
                 ))
               }

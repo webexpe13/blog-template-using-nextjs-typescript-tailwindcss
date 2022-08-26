@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { IArticleHeaderData } from "../../shared/interfaces"
 import { combineClasses } from "../../utils/utils"
+import ArticleTags from "../Misc/ArticleTags"
 import classes from './ArticleHeader.module.scss'
 interface IProps {
     headerData: IArticleHeaderData
@@ -26,13 +27,7 @@ const ArticleHeaderCenter = ({ headerData }: IProps) => {
 
                 <p className="my-0">{headerData.date}</p>
             </div>
-            <div className="text-center">
-                {
-                    headerData.tags.split(',').map((each, i) => (
-                        <span key={i} className="text-xs font-regular text-gray-400 mr-[10px]" >#{each}</span>
-                    ))
-                }
-            </div>
+            <ArticleTags tags={headerData.tags} center />
         </div>
     )
 }

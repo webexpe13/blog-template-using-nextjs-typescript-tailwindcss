@@ -4,7 +4,7 @@ import { SORTED_ARTICLES_BY_DATE } from '../../../BLOG_CONSTANTS/_ARTICLES_LIST'
 import ArticleHeader from '../../components/ArticleHeader';
 import ArticleMoreFromAuthor from '../../components/Misc/ArticleMoreFromAuthor';
 
-const WithSidebar = ({ children, ads }: any) => {
+const WithSidebar = ({ children, ads }: {children: any, ads?: string[]}) => {
     const ARTICLE_DETAILS = getArticleDetails();
     const author = ARTICLE_DETAILS.preview.author;
     const relatedArticles = SORTED_ARTICLES_BY_DATE.filter((each) => each.preview.author === author);
@@ -24,7 +24,7 @@ const WithSidebar = ({ children, ads }: any) => {
                             ads && ads.length ?
                                 <div className="flex flex-wrap">
                                     {
-                                        ads.map((each: any, i: any) => (
+                                        ads.map((each: string, i: any) => (
                                             <div dangerouslySetInnerHTML={{
                                                 __html: `${each}`
                                             }} key={i} />

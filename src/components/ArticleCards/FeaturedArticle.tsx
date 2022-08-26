@@ -4,6 +4,8 @@ import { combineClasses, transformImagePaths, transformPath } from "../../utils/
 import LinkTo from "../LinkTo";
 import { useRouter } from "next/router";
 import Avatar from "../Misc/Avatar";
+import ArticleCardCategory from "../Misc/ArticleCardCategory";
+import ArticleTags from "../Misc/ArticleTags";
 
 interface IProp {
     article: IArticleHeaderData;
@@ -13,11 +15,11 @@ interface IProp {
 
 const FeaturedArticle = ({ article, path }: IProp) => {
     const router = useRouter();
-    const gotoPath = (e:any) => {
+    const gotoPath = (e: any) => {
         e.preventDefault()
         router.push(transformPath(path))
     }
-    
+
     return (
         <>
             <div onClick={gotoPath} className={combineClasses(classes.featured_article,
@@ -30,16 +32,7 @@ const FeaturedArticle = ({ article, path }: IProp) => {
                                 {article.author.name}
                             </p>
                         </div>
-                        {
-                            article.category && <>
-                                <p className="text-[14px] md:text-[16px] px-2 font-normal">in</p>
-                                <p className={combineClasses(classes.article_card__category, "font-medium text-[14px] md:text-[16px]")}>
-                                    <LinkTo href={"/blog?category=" + article.category}>
-                                        {article.category}
-                                    </LinkTo>
-                                </p>
-                            </>
-                        }
+                        <ArticleCardCategory category={article.category} />
                     </div>
                     <LinkTo href={transformPath(path)} passHref>
                         <h1 className={combineClasses(classes.featured_article__title, "text-[24px] font-bold mt-0 mb-[10px]")} >
@@ -49,20 +42,13 @@ const FeaturedArticle = ({ article, path }: IProp) => {
                     <p className={combineClasses(classes.featured_article__intro, "text-[14px] font-regular mt-0 mb-[10px]")}>
                         {article.shortIntro.slice(0, 150)} ...
                     </p>
-
-                    <div className={classes.featured_article__tags}>
-                        {
-                            article.tags.split(',').map((each, i) => (
-                                <span key={i} className="text-xs font-normal mr-3" >#{each}</span>
-                            ))
-                        }
-                    </div>
+                    <ArticleTags tags={article.tags} />
                     <p className={combineClasses(classes.featured_article__date, "font-normal text-xs pt-3 mb-0")}>{article.date}</p>
                 </div>
                 <div className={combineClasses(classes.featured_article__image, 'rounded-sm overflow-hidden')} >
                     {/* style={{ background: `url(${transformImagePaths(article.thumbnail)})` }} */}
-                    <img 
-                        src={transformImagePaths(article.thumbnail)} alt={article.articleTitle} 
+                    <img
+                        src={transformImagePaths(article.thumbnail)} alt={article.articleTitle}
                         className="w-full h-full object-cover" />
                 </div>
             </div>

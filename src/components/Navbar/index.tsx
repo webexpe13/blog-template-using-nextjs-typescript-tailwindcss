@@ -2,7 +2,7 @@ import { NavbarType, THEMES } from "../../shared/enums";
 import SimpleNavbar from './SimpleNavbar';
 import CenteredNavbar from './Centered';
 import { useEffect, useState } from "react";
-import { addBodyNoScroll, combineClasses, getDeviceType, isMobileDevice, removeBodyNoScroll } from "../../utils/utils";
+import { addBodyNoScroll, combineClasses, getDeviceType, removeBodyNoScroll } from "../../utils/utils";
 import NavSidebar from './NavSideBar';
 import Search from "../Search";
 import { PRIMARY_NAV } from "../../../BLOG_CONSTANTS/_BLOG_SETUP"
@@ -61,11 +61,10 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={combineClasses(classes.navbar, scrolled ? classes.hideNav : " ", "bg-white  dark:bg-slate-900 dark:text-white text-black")}>
+            <nav className={combineClasses(classes.navbar, "bg-white  dark:bg-slate-900 dark:text-white text-black")}>
                 {
                     isMobile ? <SimpleNavbar
                         openSearch={openSearch}
-                        scrolled={scrolled}
                         changeTheme={changeTheme}
                         toggleSideMenu={toggleSideMenu}
                         openSidebar={openSidebar}
@@ -77,7 +76,6 @@ const Navbar = () => {
                                     return (
                                         <SimpleNavbar
                                             openSearch={openSearch}
-                                            scrolled={scrolled}
                                             changeTheme={changeTheme}
                                             toggleSideMenu={toggleSideMenu}
                                             openSidebar={openSidebar}
@@ -87,7 +85,6 @@ const Navbar = () => {
                                     return (
                                         <CenteredNavbar
                                             openSearch={openSearch}
-                                            scrolled={scrolled}
                                             changeTheme={changeTheme}
                                             toggleSideMenu={toggleSideMenu}
                                             openSidebar={openSidebar}
@@ -97,7 +94,6 @@ const Navbar = () => {
                                     return (
                                         <SimpleNavbar
                                             openSearch={openSearch}
-                                            scrolled={scrolled}
                                             changeTheme={changeTheme}
                                             toggleSideMenu={toggleSideMenu}
                                             openSidebar={openSidebar}

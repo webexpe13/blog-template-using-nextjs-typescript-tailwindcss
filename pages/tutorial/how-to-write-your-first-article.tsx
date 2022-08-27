@@ -1,8 +1,8 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
-import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../../../src/components";
-import CodeBlock from "../../../src/components/CodeBlock";
-import { Article_Entry_inList } from "../../../src/constants/codeBlocks";
+import { ImageSize, TextAlign, ListType } from "../../src/shared/enums";
+import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../../src/components";
+import CodeBlock from "../../src/components/CodeBlock";
+import { Article_Entry_inList } from "../../src/constants/codeBlocks";
 
 const Article = () => {
     return (
@@ -25,7 +25,7 @@ const Article = () => {
                     1. Creating the article file.
                 </Text>
                 <Text p>
-                    First create a file inside <b>blog</b> folder in <b>pages</b> (/pages/blog/). You can also create a sub folder inside blog folder. For SEO, the best practice is to name the file and folders in all lower case seperated by hyphen  <b>"-"</b> and end with <b>".tsx"</b>. <br /> example: <b>"blog-with-sidebar-layout.tsx"</b>. This will create a <b>tsx</b> file.
+                    First create a file inside <b>blog</b> folder in <b>pages</b> (/pages/blog/). You can also create a sub folder inside blog folder. For SEO, the best practice is to name the file and folders in all lower case seperated by hyphen  <b>"-"</b> and end with <b>".tsx"</b>. <br /> example: <b>"your-first-article.tsx"</b>. This will create a <b>tsx</b> file.
                 </Text>
                 <Seperator />
                 <Text subtitle className="mt-10">
@@ -106,8 +106,8 @@ const Article = () => {
                     3. Writing the article.
                 </Text>
                 <Text p>
-                    Now we can go to our created file <b>blog-with-sidebar-layout.tsx</b> and write our article. To write our article we will use different components as shown in
-                    <b><LinkTo href='/pages/blog/layouts/blog-with-sidebar-layout.tsx' passHref> Blog with sidebar layout</LinkTo></b> exmaple. You can also checkout all the available components to write your article in <b><LinkTo href="/all-components" passHref>All Components Demo</LinkTo></b> page.
+                    Now we can go to our created file <b>your-first-article.tsx</b> and write our article. To write our article we will use different components as shown in
+                    <b><LinkTo href='/pages/tutorial/blog-with-sidebar-layout.tsx' passHref> Blog with sidebar layout</LinkTo></b> or <b><LinkTo href='/pages/tutorial/blog-with-centered-layout.tsx' passHref> Blog with centered layout</LinkTo></b>  example. You can also checkout all the available components to write your article in <b><LinkTo href="/pages/tutorial/all-components.tsx" passHref>All Components Demo</LinkTo></b> page.
                 </Text>
 
                 <div className="px-4 py-3 dark:bg-slate-800 bg-blue-200 rounded mt-10 !text-lg leading-relaxed ">

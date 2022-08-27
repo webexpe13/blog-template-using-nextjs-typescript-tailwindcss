@@ -1,10 +1,10 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
-import { PageLayout, Text, LinkTo, Slider, Seperator, Image, List, Accordian } from "../src/components"
-import { ListType, ImageSize, TextAlign } from "../src/shared/enums"
-import { combineClasses } from "../src/utils/utils";
-import CodeBlock from "../src/components/CodeBlock";
-import { HowToUseList, HowToUseSeperator, HowToUsePageLayout, HowToUseImageCode, HowToUseTextCode, HowToUseLinkTo, HowToUseSlider, HowToUseAccordian } from "../src/constants/codeBlocks";
+import { PageLayout, Text, LinkTo, Slider, Seperator, Image, List, Accordian } from "../../src/components"
+import { ListType, ImageSize } from "../../src/shared/enums"
+import { combineClasses } from "../../src/utils/utils";
+import CodeBlock from "../../src/components/CodeBlock";
+import { HowToUseList, HowToUseSeperator, HowToUsePageLayout, HowToUseImageCode, HowToUseTextCode, HowToUseLinkTo, HowToUseSlider, HowToUseAccordian } from "../../src/constants/codeBlocks";
 
 interface iSideBtnLinks {
     component: string,
@@ -118,12 +118,12 @@ const AllComponents = () => {
                             {
                                 sideBtnsComponents()
                             }
-                            <LinkTo href="/pages/style-guide.tsx" className="md:hidden block whitespace-nowrap font-semibold">
+                            <LinkTo href="/pages/tutorial/style-guide.tsx" className="md:hidden block whitespace-nowrap font-semibold">
                                 Style Guide
                             </LinkTo>
                         </div>
                         <div className="md:rounded-lg md:p-3 bg-white dark:bg-slate-800 shadow-md overflow-auto md:text-xl text-md font-semibold whitespace-nowrap md:block hidden">
-                            <LinkTo href="/pages/style-guide.tsx">
+                            <LinkTo href="/pages/tutorial/style-guide.tsx">
                                 Style Guide
                             </LinkTo>
                         </div>
@@ -135,7 +135,7 @@ const AllComponents = () => {
                             <Text subtitle className="mb-5 pb-3 border-b md:!text-3xl font-bold">
                                 Page Layouts.
                             </Text>
-                            We have 3 page layouts <u><LinkTo href="/pages/blog/layouts/home-layout.tsx">Home</LinkTo></u>, <u><LinkTo href="/pages/blog/layouts/blog-with-sidebar-layout.tsx">Blog with sidebar</LinkTo></u> and  <u><LinkTo href="/pages/blog/layouts/blog-with-centered-layout.tsx">Blog centered</LinkTo></u>. <br />
+                            We have 3 page layouts <u><LinkTo href="/pages/tutorial/home-layout.tsx">Home</LinkTo></u>, <u><LinkTo href="/pages/tutorial/blog-with-sidebar-layout.tsx">Blog with sidebar</LinkTo></u> and  <u><LinkTo href="/pages/tutorial/blog-with-centered-layout.tsx">Blog centered</LinkTo></u>. <br />
                             <b>How to use</b>
                             <CodeBlock code={HowToUsePageLayout} />
                         </section>

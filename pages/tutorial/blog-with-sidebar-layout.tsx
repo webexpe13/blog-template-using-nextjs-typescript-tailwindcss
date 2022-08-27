@@ -1,8 +1,8 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
-import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../../../src/components";
-import CodeBlock from "../../../src/components/CodeBlock";
-import { HowToUseImageCode, HowToUseList, HowToUseSeperator, HowToUseTextCode, rightSideAdCode } from "../../../src/constants/codeBlocks";
+import { ImageSize, TextAlign, ListType } from "../../src/shared/enums";
+import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../../src/components";
+import CodeBlock from "../../src/components/CodeBlock";
+import { HowToUseImageCode, HowToUseList, HowToUseSeperator, HowToUseTextCode, rightSideAdCode } from "../../src/constants/codeBlocks";
 
 const Article = () => {
     return (
@@ -88,7 +88,7 @@ const Article = () => {
                 </li>
             </List>
             <Text p>
-                <b>note:</b> all these components are used in <u>blog-with-sidebar-layout.tsx</u> and <u>blog-with-centerd-layout.tsx</u> in <u>pages/blog/layouts</u>. You can also check <b><LinkTo href="/pages/all-components.tsx" passHref>All Components Demo</LinkTo></b>, list of all components, its types and how to use them.
+                <b>note:</b> all these components are used in <u>blog-with-sidebar-layout.tsx</u> and <u>blog-with-centerd-layout.tsx</u> in <u>pages/blog/layouts</u>. You can also check <b><LinkTo href="/pages/tutorial/all-components.tsx" passHref>All Components Demo</LinkTo></b>, list of all components, its types and how to use them.
             </Text>
             <div className="px-4 py-3 dark:bg-slate-900 bg-blue-200 rounded mt-5 !text-lg leading-relaxed">
                 For any any queries related to this project / template feel free to connect with us at <u>webexpe13@gmail.com</u>.

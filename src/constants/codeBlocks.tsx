@@ -284,22 +284,23 @@ export const Article_Entry_inList = `
     export const ARTICLES: iArticle[] = [
         ...,
         {
-            path: '/pages/blog/tutorial/how-to-setup-blog',
+            path: '/pages/blog/your-first-article.tsx',
             featureArticle: true,
             preview: {
                 // the author object you created in _BLOG_SETUP file
                 author: MAYUR,
-                date: "March 03 2022",
-                articleTitle: "How to setup this blog template",
-                tags: "demo, blog setup",
-                thumbnail: "/images/tutorials/demo-image.jpg",
-                shortIntro: "These are the steps to setup your blog",
+                date: "August 6 2022",
+                articleTitle: "Your first article",
+                shortIntro: "This is a demo file for your first article, you can copy structure of this file to create multile article.",
+                tags: "demo, your first article",
+                thumbnail: "/public/imp_assets/tutorials/how-to-write-first-article.svg",
+                category: 'tutorial'
             },
             seo: {
-                title: "These are the steps to setup your blog",
+                title: "Your first article",
                 description:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-                keywords: "demo, blog setup",
+                    "This is a demo file for your first article, you can copy structure of this file to create multile article.",
+                keywords: "demo, blog setup, first article",
                 ogImage: "/images/tutorials/demo-image.jpg",
                 twitterHandle: "@mayur_nalwala",
             }

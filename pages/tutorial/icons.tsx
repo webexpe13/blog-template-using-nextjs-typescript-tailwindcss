@@ -1,7 +1,7 @@
 /**These are necessary imports / components for the page */
-import { PageLayout, Text, LinkTo, Seperator, Image } from "../src/components";
-import CodeBlock from "../src/components/CodeBlock";
-import { iSEO } from "../src/shared/interfaces";
+import { PageLayout, Text, LinkTo, Seperator, Image } from "../../src/components";
+import CodeBlock from "../../src/components/CodeBlock";
+import { iSEO } from "../../src/shared/interfaces";
 import { AiFillYoutube, AiFillTwitterCircle } from "react-icons/ai";
 import { BiAbacus, BiAdjust } from "react-icons/bi";
 

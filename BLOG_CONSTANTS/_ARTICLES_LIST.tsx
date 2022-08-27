@@ -8,7 +8,7 @@ import { MAYUR, RUPALI } from './_BLOG_SETUP';
  * Example article object
  * 
  {
-    path: '/pages/blog/tutorial/how-to-setup-blog',
+    path: '/pages/tutorial/tutorial/how-to-setup-blog',
     featureArticle: true,
     preview: {
         // the author object you created in _BLOG_SETUP file
@@ -33,7 +33,7 @@ import { MAYUR, RUPALI } from './_BLOG_SETUP';
 // clear this article list and add your own
 const ARTICLES_LIST: iArticle[] = [
     {
-        path: '/pages/blog/tutorial/how-to-setup-blog.tsx',
+        path: '/pages/tutorial/how-to-setup-blog.tsx',
         featureArticle: true,
         preview: {
             author: MAYUR,
@@ -54,7 +54,7 @@ const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/blog/tutorial/how-to-write-your-first-article.tsx',
+        path: '/pages/tutorial/how-to-write-your-first-article.tsx',
         featureArticle: true,
         preview: {
             author: RUPALI,
@@ -70,7 +70,7 @@ const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/blog/tutorial/how-to-deploy-blog.tsx',
+        path: '/pages/tutorial/how-to-deploy-blog.tsx',
         featureArticle: true,
         preview: {
             author: RUPALI,
@@ -83,7 +83,7 @@ const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/blog/layouts/home-layout.tsx',
+        path: '/pages/tutorial/home-layout.tsx',
         preview: {
             author: RUPALI,
             date: "August 14 2022",
@@ -103,7 +103,7 @@ const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/blog/layouts/blog-with-sidebar-layout.tsx',
+        path: '/pages/tutorial/blog-with-sidebar-layout.tsx',
         preview: {
             author: MAYUR,
             date: "August 14 2022",
@@ -119,7 +119,7 @@ const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/blog/layouts/blog-with-centered-layout.tsx',
+        path: '/pages/tutorial/blog-with-centered-layout.tsx',
         preview: {
             author: RUPALI,
             date: "August 14 2022",
@@ -134,7 +134,7 @@ const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/all-components.tsx',
+        path: '/pages/tutorial/all-components.tsx',
         preview: {
             author: RUPALI,
             date: "August 08 2022",
@@ -149,7 +149,7 @@ const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/style-guide.tsx',
+        path: '/pages/tutorial/style-guide.tsx',
         preview: {
             author: MAYUR,
             date: "August 10 2022",
@@ -164,7 +164,7 @@ const ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/icons.tsx',
+        path: '/pages/tutorial/icons.tsx',
         preview: {
             author: MAYUR,
             date: "August 13 2022",
@@ -172,6 +172,21 @@ const ARTICLES_LIST: iArticle[] = [
             tags: "demo, all components, style guide, styling tutorial, icons, how to use icons in website",
             thumbnail: "/public/imp_assets/tutorials/how-to-use-icons.svg",
             shortIntro: "How to use icons in your blog website.",
+            category: 'tutorial'
+        },
+        seo: {
+            keywords: "demo, all components, style guide, styling, css, tailwind css, tailwind, webexpe, webexpe.com, styling tutorial, icons, how to use icons in website",
+        }
+    },
+    {
+        path: '/pages/blog/your-first-article.tsx',
+        preview: {
+            author: MAYUR,
+            date: "August 6 2022",
+            articleTitle: "Your first article",
+            shortIntro: "This is a demo file for your first article, you can copy structure of this file to create multile article.",
+            tags: "demo, your first article",
+            thumbnail: "/public/imp_assets/tutorials/how-to-write-first-article.svg",
             category: 'tutorial'
         },
         seo: {

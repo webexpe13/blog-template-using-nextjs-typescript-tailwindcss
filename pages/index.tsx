@@ -1,6 +1,5 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, TextAlign, ListType } from "../src/shared/enums";
-import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../src/components";
+import { PageLayout, Text, LinkTo } from "../src/components";
 import ArticleCard from '../src/components/ArticleCards/ArticleCard';
 import { SORTED_ARTICLES_BY_DATE } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
 import { DEFAULT_SEO } from "../BLOG_CONSTANTS/_BLOG_SETUP";
@@ -23,10 +22,10 @@ const Home = () => {
             <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss" target="_blank" rel="noopener noreferrer" className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
               <span className='text-xl pt-2 block'>Github</span>
             </a>
-            <LinkTo href="/about-us" passHref className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
+            <LinkTo href="/pages/about-us.tsx" passHref className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
               <span className='text-xl pt-2 block'>About</span>
             </LinkTo>
-            <LinkTo href="/all-components" passHref className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
+            <LinkTo href="/pages/tutorial/all-components.tsx" passHref className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
               <span className='text-xl pt-2 block'>Components</span>
             </LinkTo>
 

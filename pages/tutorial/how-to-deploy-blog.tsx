@@ -1,6 +1,6 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
-import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../../../src/components";
+import { ImageSize, TextAlign, ListType } from "../../src/shared/enums";
+import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../../src/components";
 
 const HowToDeployBlog = () => {
     return (

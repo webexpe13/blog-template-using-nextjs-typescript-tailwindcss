@@ -1,8 +1,8 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
-import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../../../src/components";
-import CodeBlock from "../../../src/components/CodeBlock";
-import { AuthorSetup, NavbarSetup, NavbarSetupType, NavbarSetup_NAVLINKS, NavbarSetup_Socials } from "../../../src/constants/codeBlocks";
+import { ImageSize, TextAlign, ListType } from "../../src/shared/enums";
+import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../../src/components";
+import CodeBlock from "../../src/components/CodeBlock";
+import { AuthorSetup, NavbarSetup, NavbarSetupType, NavbarSetup_NAVLINKS, NavbarSetup_Socials } from "../../src/constants/codeBlocks";
 
 const BlogSetup = () => {
     return (
@@ -125,7 +125,7 @@ const BlogSetup = () => {
                     <li>
                         <b>socials</b><br />
                         These are for your social media links. The given code block shows hows to setup social media links for your navbar. <br />
-                        You can get the icons from <b><LinkTo href="/pages/icons.tsx" passHref={true}>Icons</LinkTo></b>
+                        You can get the icons from <b><LinkTo href="/pages/tutorial/icons.tsx" passHref={true}>Icons</LinkTo></b>
                         <CodeBlock code={NavbarSetup_Socials} className="my-5" />
                     </li>
                 </List>

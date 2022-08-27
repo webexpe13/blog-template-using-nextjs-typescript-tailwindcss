@@ -3,7 +3,7 @@ import { iArticle } from "../shared/interfaces";
 
 export const MOCK_ARTICLES_LIST: iArticle[] = [
     {
-        path: '/pages/blog/tutorial/how-to-setup-blog.tsx',
+        path: '/pages/tutorial/how-to-setup-blog.tsx',
         featureArticle: true,
         preview: {
             author: MAYUR,
@@ -24,7 +24,7 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/blog/tutorial/how-to-write-your-first-article.tsx',
+        path: '/pages/tutorial/how-to-write-your-first-article.tsx',
         featureArticle: true,
         preview: {
             author: RUPALI,
@@ -40,7 +40,7 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/blog/tutorial/how-to-deploy-blog.tsx',
+        path: '/pages/tutorial/how-to-deploy-blog.tsx',
         featureArticle: true,
         preview: {
             author: RUPALI,
@@ -53,10 +53,10 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/blog/layouts/home-layout.tsx',
+        path: '/pages/tutorial/home-layout.tsx',
         preview: {
             author: RUPALI,
-            date: "August 08 2022",
+            date: "August 14 2022",
             articleTitle: "Home Layout Example",
             tags: "demo, layout, home layout",
             thumbnail: "/public/imp_assets/tutorials/home-layouts.svg",
@@ -73,10 +73,10 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/blog/layouts/blog-with-sidebar-layout.tsx',
+        path: '/pages/tutorial/blog-with-sidebar-layout.tsx',
         preview: {
             author: MAYUR,
-            date: "August 08 2022",
+            date: "August 14 2022",
             articleTitle: "Page Layout for a article with sidebar",
             tags: "demo, with sidebar, default layout",
             thumbnail: "/public/imp_assets/tutorials/blog-with-sidebar-layout.svg",
@@ -89,10 +89,10 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
         }
     },
     {
-        path: '/pages/blog/layouts/blog-with-centered-layout.tsx',
+        path: '/pages/tutorial/blog-with-centered-layout.tsx',
         preview: {
             author: RUPALI,
-            date: "August 08 2022",
+            date: "August 14 2022",
             articleTitle: "Page Layout for a article with centered layout",
             tags: "demo, centered, centered layout",
             thumbnail: "/public/imp_assets/tutorials/blog-with-centered-layout.svg",

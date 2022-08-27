@@ -1,7 +1,6 @@
 /**These are necessary imports / components for the page */
-import { ImageSize, TextAlign, ListType } from "../../../src/shared/enums";
-import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../../../src/components";
-import CodeBlock from "../../../src/components/CodeBlock";
+import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../../src/components";
+import CodeBlock from "../../src/components/CodeBlock";
 
 const HomeLayoutExample = () => {
 
@@ -17,7 +16,7 @@ const HomeLayoutExample = () => {
                     This is the layout we have used to create
                     <LinkTo href="/" passHref> Home</LinkTo>,
                     <LinkTo href="/pages/about-us.tsx" passHref> About</LinkTo>,
-                    <LinkTo href="/pages/icons.tsx" passHref> Icons</LinkTo>,
+                    <LinkTo href="/pages/tutorial/icons.tsx" passHref> Icons</LinkTo>,
                     <LinkTo href="/pages/privacy-policy.tsx" passHref> Privacy Policy</LinkTo>,
                     <LinkTo href="/pages/terms-and-condition.tsx" passHref> Terms & Conditions </LinkTo> pages.
                 </Text>

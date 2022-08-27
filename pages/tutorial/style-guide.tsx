@@ -1,6 +1,6 @@
-import { PageLayout, Text, LinkTo, Slider, Seperator, Image, List } from "../src/components"
-import { ListType, ImageSize, TextAlign } from "../src/shared/enums"
-import { combineClasses } from "../src/utils/utils"
+import { PageLayout, Text, LinkTo, Slider, Seperator, Image, List } from "../../src/components"
+import { ListType, ImageSize, TextAlign } from "../../src/shared/enums"
+import { combineClasses } from "../../src/utils/utils"
 
 const StyleGuide = () => {
     return (
@@ -14,7 +14,7 @@ const StyleGuide = () => {
                 </div>
 
                 <Text subtitle className="md:!font-bold">Styling Texts</Text>
-                <b>Text</b> component is used to add text with some default styling in your article. You can see the <LinkTo href="/pages/all-components.tsx/#text" className="underline">demo and guide here</LinkTo>. <br />
+                <b>Text</b> component is used to add text with some default styling in your article. You can see the <LinkTo href="/pages/tutorial/all-components.tsx/#text" className="underline">demo and guide here</LinkTo>. <br />
                 With tailwind css utility classes we can change font size, font weight, color, and other text manipulation utilities classes shown in <LinkTo href="https://tailwindcss.com/docs/font-size" external><b> tailwind css text docs</b></LinkTo>, by adding the classes in <b>className=""</b> attribute. <br />
                 <b>Example:</b>
                 <br /> <b>{'<Text className="text-[20px] text-blue-500 font-bold">Lorem ipsum dummy text</Text>'}</b> <br />

@@ -86,7 +86,7 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                                 <LinkTo href='/pages/tutorial/how-to-deploy-blog.tsx' passHref className='text-[16px] block my-3'>
                                     How to export the blog
                                 </LinkTo>
-                                <LinkTo href='/icons' passHref className='text-[16px] block my-3'>
+                                <LinkTo href='/pages/tutorial/icons.tsx' passHref className='text-[16px] block my-3'>
                                     Icons
                                 </LinkTo>
                             </>

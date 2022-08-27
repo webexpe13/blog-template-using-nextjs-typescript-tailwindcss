@@ -42,7 +42,7 @@ const HomeLayoutExample = () => {
                 } className="my-5" />
                 <Text p>
                     The above code block gives you a demo on how to use the layout. If you want to see this in action check this article file <br />
-                    <u>home-layout.tsx</u> in <u>pages/blog/layouts</u>.
+                    <u>home-layout.tsx</u> in <u>pages/tutorial</u>.
                 </Text>
             </section>
             <section>

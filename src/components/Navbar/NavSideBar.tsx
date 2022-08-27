@@ -62,28 +62,28 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                             <>
                                 <hr />
                                 <Text subtitle className='mt-3 !text-[18px]'>Examples and tutorials</Text>
-                                <LinkTo href='/pages/all-components.tsx' passHref className='text-[16px] block my-3'>
+                                <LinkTo href='/page/tutorial/all-components.tsx' passHref className='text-[16px] block my-3'>
                                     All Components
                                 </LinkTo>
-                                <LinkTo href='/pages/style-guide.tsx' passHref className='text-[16px] block my-3'>
+                                <LinkTo href='/pages/tutorial/style-guide.tsx' passHref className='text-[16px] block my-3'>
                                     Style Guide
                                 </LinkTo>
-                                <LinkTo href='/pages/blog/layouts/home-layout.tsx' passHref className='text-[16px] block my-3'>
+                                <LinkTo href='/pages/tutorial/home-layout.tsx' passHref className='text-[16px] block my-3'>
                                     Home Page Layout
                                 </LinkTo>
-                                <LinkTo href='/pages/blog/layouts/blog-with-sidebar-layout.tsx' passHref className='text-[16px] block my-3'>
+                                <LinkTo href='/pages/tutorial/blog-with-sidebar-layout.tsx' passHref className='text-[16px] block my-3'>
                                     Page Layout for article with sidebar
                                 </LinkTo>
-                                <LinkTo href='/pages/blog/layouts/blog-with-centered-layout.tsx' passHref className='text-[16px] block my-3'>
+                                <LinkTo href='/pages/tutorial/blog-with-centered-layout.tsx' passHref className='text-[16px] block my-3'>
                                     Page Layout for centered article
                                 </LinkTo>
-                                <LinkTo href='/pages/blog/tutorial/how-to-setup-blog.tsx' passHref className='text-[16px] block my-3'>
+                                <LinkTo href='/pages/tutorial/how-to-setup-blog.tsx' passHref className='text-[16px] block my-3'>
                                     How to setup your blog
                                 </LinkTo>
-                                <LinkTo href='/pages/blog/tutorial/how-to-write-your-first-article.tsx' passHref className='text-[16px] block my-3'>
+                                <LinkTo href='/pages/tutorial/how-to-write-your-first-article.tsx' passHref className='text-[16px] block my-3'>
                                     How to write your first article
                                 </LinkTo>
-                                <LinkTo href='/pages/blog/tutorial/how-to-deploy-blog.tsx' passHref className='text-[16px] block my-3'>
+                                <LinkTo href='/pages/tutorial/how-to-deploy-blog.tsx' passHref className='text-[16px] block my-3'>
                                     How to export the blog
                                 </LinkTo>
                                 <LinkTo href='/icons' passHref className='text-[16px] block my-3'>

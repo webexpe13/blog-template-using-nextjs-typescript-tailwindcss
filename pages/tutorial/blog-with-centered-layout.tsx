@@ -36,7 +36,7 @@ const Article = () => {
             </Text>
             <Text p>
                 If you want to explore this layout checkout the code for this article in <br />
-                <u>blog-with-centered-layout.tsx</u> file inside <u>pages/blog/layouts</u> folder.
+                <u>blog-with-centered-layout.tsx</u> file inside <u>pages/tutorial</u> folder.
             </Text>
 
             <Text subtitle className="mt-10 md:text">
@@ -55,7 +55,7 @@ const Article = () => {
                 Components Used to write this article
             </Text>
             <Text p>
-                Check <u>blog-with-sidebar-layout.tsx</u> in <u>pages/blog/layouts</u> file to see all the mentioned components in use.
+                Check <u>blog-with-sidebar-layout.tsx</u> in <u>pages/tutorial</u> file to see all the mentioned components in use.
             </Text>
             <List>
                 <li>
@@ -81,7 +81,7 @@ const Article = () => {
                 </li>
             </List>
             <Text p>
-                <b>note:</b> all these components are used in <u>blog-with-sidebar-layout.tsx</u> and <u>blog-with-centerd-layout.tsx</u> in <u>pages/blog/layouts</u>. You can also check <b><LinkTo href="/pages/tutorial/all-components.tsx" passHref>All Components Demo</LinkTo></b>, list of all components, its types and how to use them.
+                <b>note:</b> all these components are used in <u>blog-with-sidebar-layout.tsx</u> and <u>blog-with-centerd-layout.tsx</u> in <u>pages/tutorial</u>. You can also check <b><LinkTo href="/pages/tutorial/all-components.tsx" passHref>All Components Demo</LinkTo></b>, list of all components, its types and how to use them.
             </Text>
             <div className="px-4 py-3 dark:bg-slate-900 bg-blue-200 rounded mt-5 !text-lg leading-relaxed mb-0">
                 For any any queries related to this project / template feel free to connect with us at <u>webexpe13@gmail.com</u>.

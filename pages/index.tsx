@@ -2,10 +2,9 @@
 import { ImageSize, TextAlign, ListType } from "../src/shared/enums";
 import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../src/components";
 import ArticleCard from '../src/components/ArticleCards/ArticleCard';
-import FeaturedArticle from '../src/components/ArticleCards/FeaturedArticle';
 import { SORTED_ARTICLES_BY_DATE } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
 import { DEFAULT_SEO } from "../BLOG_CONSTANTS/_BLOG_SETUP";
-
+import FeaturedArticleSection from "../src/components/Misc/FeaturedArticleSection";
 
 const Home = () => {
   return (
@@ -39,17 +38,7 @@ const Home = () => {
       </section>
       <div className="container mx-auto lg:px-[15px] px-0">
         <div className={'flex flex-wrap'}>
-          <Text subtitle className="mb-5 md:!text-4xl text-3xl w-full px-3 !font-medium">
-            Featured Articles
-          </Text>
-          <hr className='border-1 mb-5 w-[98%] mx-auto' />
-          {
-            SORTED_ARTICLES_BY_DATE.map((each, i) => (
-              each.featureArticle ?
-                <FeaturedArticle article={each.preview} path={each.path} key={each.path + i} /> : null
-            ))
-          }
-          <Seperator />
+          <FeaturedArticleSection />
           <h1 className='px-3 w-full mb-5 text-xl md:text-3xl font-medium'>Checkout the below articles on how to use different layouts and components</h1>
           <hr className='border-1 mb-5 w-[98%] mx-auto' />
           {

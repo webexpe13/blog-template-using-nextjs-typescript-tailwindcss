@@ -142,7 +142,7 @@ export const transformPath = (path = ""): string => {
 /**
  * Removes /public from images path
  * @param path
- * @returns
+ * @returns string
  */
 export const transformImagePaths = (path = ""): string => {
   return path.replace("/public", "");

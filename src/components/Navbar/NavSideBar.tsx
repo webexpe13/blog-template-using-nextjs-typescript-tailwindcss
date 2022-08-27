@@ -62,7 +62,7 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                             <>
                                 <hr />
                                 <Text subtitle className='mt-3 !text-[18px]'>Examples and tutorials</Text>
-                                <LinkTo href='/page/tutorial/all-components.tsx' passHref className='text-[16px] block my-3'>
+                                <LinkTo href='/pages/tutorial/all-components.tsx' passHref className='text-[16px] block my-3'>
                                     All Components
                                 </LinkTo>
                                 <LinkTo href='/pages/tutorial/style-guide.tsx' passHref className='text-[16px] block my-3'>

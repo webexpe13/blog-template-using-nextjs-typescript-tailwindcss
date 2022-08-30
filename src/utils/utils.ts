@@ -105,15 +105,10 @@ export const removeBodyNoScroll = (): void => {
 export const getArticleDetails = (): iArticle => {
   const router = useRouter();
   const articlePath = "/pages" + router.pathname + ".tsx";
-  if (IS_DEV_MODE) {
-    return (
-      MOCK_ARTICLES_LIST.filter((each) =>
-        each.path.includes(articlePath)
-      )[0] ||
-      SORTED_ARTICLES_BY_DATE.filter((each) => each.path.includes(articlePath))[0]
-    );
-  }
-  return SORTED_ARTICLES_BY_DATE.filter((each) => each.path.includes(articlePath))[0];
+  return (
+    MOCK_ARTICLES_LIST.filter((each) => each.path.includes(articlePath))[0] ||
+    SORTED_ARTICLES_BY_DATE.filter((each) => each.path.includes(articlePath))[0]
+  );
 };
 
 /**
@@ -171,7 +166,8 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
     ? transformPath(ARTICLE_DETAILS.path)
     : router.asPath;
 
-  const meta_description = ARTICLE_DETAILS?.preview?.shortIntro || PAGE_SEO.description;
+  const meta_description =
+    ARTICLE_DETAILS?.preview?.shortIntro || PAGE_SEO.description;
 
   const keywords = PAGE_SEO?.keywords || ARTICLE_DETAILS?.preview?.tags;
   const ogUrl = `${LOCAL_URL}${LOCAL_PATH}`;
@@ -191,7 +187,7 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
 
   const title = `${
     ARTICLE_DETAILS ? ARTICLE_DETAILS?.preview?.articleTitle : PAGE_SEO?.title
-  } | ${WEBSITE_NAME} ${author ? "| " + author : null}`;  
+  } | ${WEBSITE_NAME} ${author ? "| " + author : null}`;
 
   let seo_config = {
     title: title,

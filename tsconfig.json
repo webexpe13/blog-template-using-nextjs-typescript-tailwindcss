@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,8 +17,30 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": "/",
+    "importHelpers": true,
+    "paths": {
+      "@/src/*": [
+        "/src/*"
+      ],
+    },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tailwind.config.jsm", "/src/components/index.ts", "src/components/index.ts", "src/components/CodeBlock/style.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "tailwind.config.jsm",
+    "/src/components/index.ts",
+    "src/components/index.ts",
+    "src/components/CodeBlock/style.js",
+    "pages/**/*",
+    "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src",
+  ],
+  "exclude": [
+    "node_modules"
+  ],
 }

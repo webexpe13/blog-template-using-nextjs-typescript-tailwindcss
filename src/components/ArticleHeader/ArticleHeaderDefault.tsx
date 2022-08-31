@@ -11,9 +11,9 @@ const ArticleHeaderDefault = ({ headerData }: IProps) => {
     return (
         <div className="mb-[30px]">
             <div className="mb-[10px] flex items-center mt-[15px]">
-                <Avatar author={headerData.author} className="w-[55px] h-[55px] mr-3 text-xl" />
+                <Avatar author={headerData.author} className="w-[60px] h-[60px] mr-3 text-xl" />
                 <div>
-                    <div className="flex text-[16px] md:text-lg items-center">
+                    <div className="flex text-[16px] md:text-[20px] items-center">
                         <p className={combineClasses(classes.article_header_author_name, 'font-medium my-0')}>
                             {headerData.author.name}
                         </p>

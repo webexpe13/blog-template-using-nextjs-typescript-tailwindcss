@@ -31,7 +31,7 @@ const HomeLayoutExample = () => {
     const Article = () => {
         return (
             // pass home as shown
-            <PageLayout home />
+            <PageLayout home>
                 {/* Start writing your article here */}
             </PageLayout>
         )		

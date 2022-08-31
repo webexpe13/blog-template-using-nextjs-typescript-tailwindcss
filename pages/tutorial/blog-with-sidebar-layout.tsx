@@ -22,7 +22,7 @@ const Article = () => {
     const Article = () => {
         return (
             // pass blogwithsidebar as shown
-            <PageLayout blogwithsidebar />
+            <PageLayout blogwithsidebar>
                 {/* Start writing your article here */}
             </PageLayout>
         )		
@@ -70,7 +70,7 @@ const Article = () => {
             </Text>
             <List>
                 <li>
-                    We have used the <b>{'<PageLayout blogwithsidebar/>'}</b> as shown in the above code block.
+                    We have used the <b>{'<PageLayout blogwithsidebar>'}</b> as shown in the above code block.
                 </li>
                 <li>
                     <b>{'Image'}</b> tag for displaying images. <br /> To use image we have to import <b>Image</b> from components and <b>ImageSize</b> enum from enums. The Image size will help us to set the size of the image. <br /> Available sizes: <b>ImageSize.DEFAULT, ImageSize.FULL, ImageSize.MEDIUM, ImageSize.SMALL, ImageSize.XS</b>.

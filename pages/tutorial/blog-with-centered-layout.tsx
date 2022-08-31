@@ -18,7 +18,7 @@ const Article = () => {
     const Article = () => {
         return (
             // pass blogcentered as shown
-            <PageLayout blogcentered />
+            <PageLayout blogcentered>
                 {/* Start writing your article here */}
             </PageLayout>
         )		

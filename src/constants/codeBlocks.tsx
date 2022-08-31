@@ -5,11 +5,11 @@ export const HowToUsePageLayout = `
     import { ..., PageLayout, ... } from "../../../src/components";
     const Article = () => {
         return (
-            <PageLayout home />{/* Home page layout */}</PageLayout>
+            <PageLayout home >{/* Home page layout */}</PageLayout>
             {/* or */}
-            <PageLayout blogwithsidebar />{/* Blog page with sidebar layout */}</PageLayout>
+            <PageLayout blogwithsidebar >{/* Blog page with sidebar layout */}</PageLayout>
             {/* or */}
-            <PageLayout blogcentered />{/* Blog page centered layout */}</PageLayout>
+            <PageLayout blogcentered >{/* Blog page centered layout */}</PageLayout>
         )		
     }
 
@@ -267,7 +267,7 @@ export const rightSideAdCode= `
 
         return (
             // pass blogwithsidebar as shown
-            <PageLayout blogwithsidebar ads={ads} />
+            <PageLayout blogwithsidebar ads={ads} >
                 {/* Start writing your article here */}
             </PageLayout>
         )		

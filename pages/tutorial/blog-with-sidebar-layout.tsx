@@ -5,9 +5,13 @@ import CodeBlock from "../../src/components/CodeBlock";
 import { HowToUseImageCode, HowToUseList, HowToUseSeperator, HowToUseTextCode, rightSideAdCode } from "../../src/constants/codeBlocks";
 
 const Article = () => {
+    const ads = [
+        '<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=webexpestor02-21&language=en_IN&marketplace=amazon&region=IN&placement=B09N3ZNHTY&asins=B09N3ZNHTY&linkId=4105a64f5c32e42007f83bd7a9e20fbb&show_border=true&link_opens_in_new_window=true"></iframe>',
+        '<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=webexpestor02-21&language=en_IN&marketplace=amazon&region=IN&placement=B08CHZ3ZQ7&asins=B08CHZ3ZQ7&linkId=8a8653c24dc89b1ee6a3ac2a85c7208b&show_border=true&link_opens_in_new_window=true"></iframe>'
+    ]
     return (
         // pass blogwithsidebar as show below for article page with sidebar layout
-        <PageLayout blogwithsidebar>
+        <PageLayout blogwithsidebar ads={ads}>
             <Text p>
                 This current article is made using <b>blogwithsidebar</b> layout. This layout will be used to write your blog posts or articles.
             </Text>

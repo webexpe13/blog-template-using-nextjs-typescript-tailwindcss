@@ -50,7 +50,7 @@ npm install
 ```
 3. After installation is done run npm start
 ```bash
-npm install
+npm start
 ```
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 5. Rest you can follow this article on [setting up your blog](https://nextjs-simple-blog-template.web.app/tutorial/how-to-setup-blog/).

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { iArticle, IAuthor } from "../../shared/interfaces"
 import { combineClasses, transformImagePaths, transformPath } from "../../utils/utils"
+import LinkTo from "../LinkTo"
 import Avatar from "./Avatar"
 
 const ArticleMoreFromAuthor = ({ author, relatedArticles, articleGrid = false }: { author: IAuthor, relatedArticles: iArticle[], articleGrid?: boolean }) => {
@@ -37,9 +38,9 @@ const ArticleMoreFromAuthor = ({ author, relatedArticles, articleGrid = false }:
                     <p className='border-b border-gray-300 pb-2 mb-3 font-medium w-full'>More from  Author</p>
                     <div className={articleGrid ? 'flex flex-wrap' : ''}>
                         {
-                            relatedArticles.map((each, i) =>
+                            relatedArticles.slice(0, 3).map((each, i) =>
                                 <Link href={transformPath(each.path)} key={i} passHref>
-                                    <div className={combineClasses('mb-3 cursor-pointer', articleGrid ? 'lg:w-1/3 md:w-1/2 w-full md:pr-2':'w-full')} key={each.path}>
+                                    <div className={combineClasses('mb-3 cursor-pointer', articleGrid ? 'lg:w-1/3 md:w-1/2 w-full md:pr-2' : 'w-full')} key={each.path}>
                                         <div
                                             className="
                                             rounded-[3px] dark:bg-slate-800
@@ -48,9 +49,9 @@ const ArticleMoreFromAuthor = ({ author, relatedArticles, articleGrid = false }:
                                             shadow-lg hover:shadow-md
                                         ">
                                             <div className={"object-cover shrink-0"}>
-                                                <img 
-                                                    src={transformImagePaths(each.preview.thumbnail)} 
-                                                    className="w-[120px] h-[70px] mr-2 object-cover" 
+                                                <img
+                                                    src={transformImagePaths(each.preview.thumbnail)}
+                                                    className="w-[120px] h-[70px] mr-2 object-cover"
                                                     alt={each.preview.articleTitle} />
                                             </div>
                                             <div className="pr-1 text-[16px] hover:text-blue-500 font-semibold">
@@ -60,6 +61,13 @@ const ArticleMoreFromAuthor = ({ author, relatedArticles, articleGrid = false }:
                                     </div>
                                 </Link>
                             )
+                        }
+                        {
+                            relatedArticles.length > 3 ? (
+                                <LinkTo href={"/blog?author=" + author.name } passHref className='block text-sm py-3 px-2 text-center dark:bg-slate-900 bg-blue-400 rounded text-black font-bold'>
+                                    <p>All articles from {author.name}</p>
+                                </LinkTo>
+                            ) : null
                         }
                     </div>
 

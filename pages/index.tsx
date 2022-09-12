@@ -4,6 +4,7 @@ import ArticleCard from '../src/components/ArticleCards/ArticleCard';
 import { SORTED_ARTICLES_BY_DATE } from '../BLOG_CONSTANTS/_ARTICLES_LIST';
 import { DEFAULT_SEO } from "../BLOG_CONSTANTS/_BLOG_SETUP";
 import FeaturedArticleSection from "../src/components/Misc/FeaturedArticleSection";
+import HomeNonFeatureArticles from "../src/components/Misc/HomeNonFeatureAricles";
 
 const Home = () => {
   return (
@@ -40,13 +41,14 @@ const Home = () => {
           <FeaturedArticleSection />
           <h1 className='px-3 w-full mb-5 text-xl md:text-3xl font-medium'>Checkout the below articles on how to use different layouts and components</h1>
           <hr className='border-1 mb-5 w-[98%] mx-auto' />
-          {
-            SORTED_ARTICLES_BY_DATE.map((each, i) => (
+          <HomeNonFeatureArticles />
+          {/* {
+            SORTED_ARTICLES_BY_DATE.slice(0, 10).map((each, i) => (
               !each.featureArticle ?
                 <ArticleCard article={each.preview} path={each.path} key={i} />
                 : null
             ))
-          }
+          } */}
         </div>
       </div>
     </PageLayout>

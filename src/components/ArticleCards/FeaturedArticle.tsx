@@ -28,9 +28,15 @@ const FeaturedArticle = ({ article, path }: IProp) => {
                     <div className={"mt-0 mb-[10px] flex items-center"}>
                         <div className={"flex items-center"}>
                             <Avatar author={article.author} className="w-[50px] h-[50px] mr-3 text-xl" />
-                            <p className={combineClasses(classes.author_name, 'text-[14px] md:text-[16px] my-0 font-medium')}>
+                            <LinkTo 
+                                href={"/blog?author=" + article.author.name} 
+                                passHref 
+                                className={combineClasses(classes.author_name, 'text-[14px] md:text-[16px] my-0 font-medium')}>
                                 {article.author.name}
-                            </p>
+                            </LinkTo>
+                            {/* <p className={combineClasses(classes.author_name, 'text-[14px] md:text-[16px] my-0 font-medium')}>
+                                {article.author.name}
+                            </p> */}
                         </div>
                         <ArticleCardCategory category={article.category} />
                     </div>

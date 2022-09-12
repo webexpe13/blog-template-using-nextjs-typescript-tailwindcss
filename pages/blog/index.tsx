@@ -6,17 +6,21 @@ import { combineClasses } from "../../src/utils/utils";
 
 const Categories = () => {
     const router = useRouter()
-    const { category } = router.query;
+    const { category, author } = router.query;
     const categoryArticles = SORTED_ARTICLES_BY_DATE.filter((each) => each.preview.category === category);
-    const articles = category ? categoryArticles : SORTED_ARTICLES_BY_DATE;    
+    const authorArticles = SORTED_ARTICLES_BY_DATE.filter((each) => each.preview.author.name === author);
+    const articles = category ?
+        categoryArticles :
+        author ? authorArticles :
+            SORTED_ARTICLES_BY_DATE;
 
     return (
         <PageLayout home>
             <div className={combineClasses("container mt-10 md:pt-0 px-0 md:px-3", category ? 'pt-10' : 'pt-14')}>
                 {
-                    category ?
+                    category || author ?
                         <h1 className='px-2 mb-[30px] text-[45px] font-bold' style={{ textTransform: 'capitalize' }}>
-                            {category}
+                            {category || author}
                             <hr className='mt-[10px]' />
                         </h1> : null
                 }

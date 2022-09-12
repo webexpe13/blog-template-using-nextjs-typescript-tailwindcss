@@ -20,9 +20,15 @@ const SerachArticleCard = ({ article, path }: { article: IArticleHeaderData, pat
         <div className={"flex items-center mt-3"}>
           <div className="flex items-center">
             <Avatar author={article.author} className="w-[40px] h-[40px] mr-3 text-xl" />
-            <p className={combineClasses(classes.author_name, 'text-sm font-medium')}>
+            <LinkTo
+              href={"/blog?author=" + article.author.name}
+              passHref
+              className={combineClasses(classes.author_name, 'text-sm font-medium')}>
               {article.author.name}
-            </p>
+            </LinkTo>
+            {/* <p className={combineClasses(classes.author_name, 'text-sm font-medium')}>
+              {article.author.name}
+            </p> */}
           </div>
           <ArticleCardCategory category={article.category} />
         </div>

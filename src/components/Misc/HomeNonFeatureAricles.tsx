@@ -5,7 +5,7 @@ import LinkTo from "../LinkTo";
 
 const HomeNonFeatureArticles = () => {
     const restArticles = SORTED_ARTICLES_BY_DATE.filter((article: iArticle) => !article.featureArticle);
-    const articlesToDisplay = 9;
+    const articlesToDisplay = 5;
     return (
         <>
             {
@@ -18,13 +18,17 @@ const HomeNonFeatureArticles = () => {
             {
                 restArticles.length > articlesToDisplay ?
                     (
-                        <>
+                        <div className="w-full flex items-center">
                             <LinkTo
                                 href="/pages/blog"
-                                className="w-auto text-sm py-3 px-10 text-center dark:bg-slate-800 bg-blue-500 rounded-full mx-auto text-white font-bold">
+                                className="
+                                    w-auto h-auto text-sm py-3 px-10 
+                                    text-center dark:bg-slate-800 
+                                    bg-blue-500 rounded-full mx-auto text-white font-bold 
+                                    hover:!text-blue-900 dark:hover:!text-slate-400 transition-all">
                                 View All Articles
                             </LinkTo>
-                        </>
+                        </div>
                     ) : null
             }
 

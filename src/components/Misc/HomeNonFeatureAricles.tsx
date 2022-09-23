@@ -5,7 +5,7 @@ import LinkTo from "../LinkTo";
 
 const HomeNonFeatureArticles = () => {
     const restArticles = SORTED_ARTICLES_BY_DATE.filter((article: iArticle) => !article.featureArticle);
-    const articlesToDisplay = 5;
+    const articlesToDisplay = 9;
     return (
         <>
             {

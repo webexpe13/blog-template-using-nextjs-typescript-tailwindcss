@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "christian-kohler.path-intellisense",
+        "bradlc.vscode-tailwindcss",
+        "bracketpaircolordlw.bracket-pair-color-dlw",
+    ]
+}

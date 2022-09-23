@@ -42,13 +42,6 @@ const Home = () => {
           <h1 className='px-3 w-full mb-5 text-xl md:text-3xl font-medium'>Checkout the below articles on how to use different layouts and components</h1>
           <hr className='border-1 mb-5 w-[98%] mx-auto' />
           <HomeNonFeatureArticles />
-          {/* {
-            SORTED_ARTICLES_BY_DATE.slice(0, 10).map((each, i) => (
-              !each.featureArticle ?
-                <ArticleCard article={each.preview} path={each.path} key={i} />
-                : null
-            ))
-          } */}
         </div>
       </div>
     </PageLayout>

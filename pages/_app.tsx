@@ -3,7 +3,7 @@ import '../src/styles/globals.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import { DefaultSeo, NextSeo } from "next-seo";
+import { NextSeo } from "next-seo";
 import Footer from '../src/components/Footer';
 import Script from 'next/script';
 import * as gtag from '../google';

@@ -26,7 +26,7 @@ const Categories = () => {
   const [currentItems, setCurrentItems] = useState([] || null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 1;
+  const itemsPerPage = 6;
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;

@@ -1,8 +1,10 @@
-export {default as PageLayout} from "../layouts/PageLayouts";
-export {default as Text} from "./Text";
-export {default as Image} from "./ArticleImage";
-export {default as Seperator} from "./Seperator";
-export {default as List} from "./List";
-export {default as LinkTo} from "./LinkTo";
-export {default as Slider} from "./Slider";
-export {default as Accordian} from "./Accordian";
+import dynamic from 'next/dynamic'
+
+export const PageLayout = dynamic(() => import('../layouts/PageLayouts'))
+export const Text = dynamic(() => import('./Text'))
+export const Image = dynamic(() => import('./ArticleImage'))
+export const Seperator = dynamic(() => import('./Seperator'))
+export const List = dynamic(() => import('./List'))
+export const LinkTo = dynamic(() => import('./LinkTo'))
+export const Slider = dynamic(() => import('./Slider'))
+export const Accordian = dynamic(() => import('./Accordian'))

@@ -2,7 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
-  // productionBrowserSourceMaps: true
-}
+  // productionBrowserSourceMaps: true,
+  images: {
+    loader: "akamai",
+    path: "",
+  }
+};
 
 module.exports = nextConfig

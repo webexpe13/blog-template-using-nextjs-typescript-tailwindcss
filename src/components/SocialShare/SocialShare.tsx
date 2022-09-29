@@ -3,6 +3,7 @@ import { AiFillTwitterCircle, AiFillFacebook } from "react-icons/ai";
 import { WEBSITE_URL } from "../../../BLOG_CONSTANTS/_BLOG_SETUP";
 import { combineClasses } from "../../utils/utils";
 import { useEffect, useState } from "react";
+import { GAEvent } from "../../../google";
 
 const SocialShare = () => {
   const url =
@@ -12,9 +13,21 @@ const SocialShare = () => {
   const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
   const linkedinShare = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=Check out this article!!&source=LinkedIn`;
 
+  const trackShareEvent = (social: string) => {
+    GAEvent({
+      action: "share_clicked",
+      event_category: "click",
+      label: social,
+      value: null,
+    });
+  };
+
   const copyLink = () => {
-    navigator.clipboard.writeText(url);
-    setShowCopiedAlert(true);
+    if (typeof window !== "undefined" && navigator) {
+      navigator.clipboard.writeText(url);
+      setShowCopiedAlert(true);
+    }
+    trackShareEvent("copy_clipboard_clicked");
   };
 
   const [showCopiedAlert, setShowCopiedAlert] = useState(false);
@@ -36,6 +49,7 @@ const SocialShare = () => {
           href={facebookShare}
           onClick={() => {
             window.open(facebookShare, "popup", "width=300,height=500");
+            trackShareEvent("facebook_share_clicked");
             return false;
           }}
           target="popup"
@@ -48,6 +62,7 @@ const SocialShare = () => {
           href={twitterShare}
           onClick={() => {
             window.open(twitterShare, "popup", "width=600,height=500");
+            trackShareEvent("twitter_share_clicked");
             return false;
           }}
           target="popup"
@@ -60,6 +75,7 @@ const SocialShare = () => {
           href={linkedinShare}
           onClick={() => {
             window.open(linkedinShare, "popup", "width=500,height=500");
+            trackShareEvent("linkedin_share_clicked");
             return false;
           }}
           target="popup"
@@ -78,7 +94,9 @@ const SocialShare = () => {
       <div
         className={combineClasses(
           "bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded fixed flex transition-all right-[10px]",
-          showCopiedAlert ? 'md:bottom-10 sm:bottom-[0px] opacity-100' : '-bottom-20 opacity-0'
+          showCopiedAlert
+            ? "md:bottom-10 sm:bottom-[0px] opacity-100"
+            : "-bottom-20 opacity-0"
         )}
         role="alert"
       >

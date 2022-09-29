@@ -18,7 +18,7 @@ const SocialShareModal = ({ closeModal, openShareModal = false }: any) => {
       ></div>
       <div
         className={combineClasses(
-          "bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded lg:w-1/6 relative z-10 transition-all",
+          "bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded lg:w-1/6 mx-3 w-full relative z-10 transition-all",
           openShareModal ? "top-0" : "top-10"
         )}
       >

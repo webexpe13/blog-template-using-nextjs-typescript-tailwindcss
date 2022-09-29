@@ -4,6 +4,7 @@ import { SORTED_ARTICLES_BY_DATE } from "../../BLOG_CONSTANTS/_ARTICLES_LIST";
 import { iArticle, iSEO } from "../shared/interfaces";
 import { WEBSITE_NAME, WEBSITE_URL } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
 import { MOCK_ARTICLES_LIST } from "../constants/mocks";
+import { GAEvent } from "../../google";
 
 // env
 const env = process.env.NODE_ENV;
@@ -185,9 +186,18 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
     ? ARTICLE_DETAILS?.preview.author.name
     : PAGE_SEO?.author;
 
-  const title = `${
-    ARTICLE_DETAILS ? ARTICLE_DETAILS?.preview?.articleTitle : PAGE_SEO?.title
-  } | ${WEBSITE_NAME} ${author ? "| " + author : null}`;
+  const title =
+    router.asPath === "/"
+      ? `${
+          ARTICLE_DETAILS
+            ? ARTICLE_DETAILS?.preview?.articleTitle
+            : PAGE_SEO?.title
+        } ${author ? "| " + author : null}`
+      : `${
+          ARTICLE_DETAILS
+            ? ARTICLE_DETAILS?.preview?.articleTitle
+            : PAGE_SEO?.title
+        } | ${WEBSITE_NAME} ${author ? "| " + author : null}`;
 
   let seo_config = {
     title: title,
@@ -224,4 +234,37 @@ export const CREATE_SEO_CONFIG = (PAGE_SEO: iSEO) => {
     },
   };
   return seo_config;
+};
+
+/**
+ * Share link or article method
+ * @returns false if desktop else open share window on mobile devices
+ */
+export const webShare = () => {
+  const pageTitle = document.title;
+  const url =
+    typeof window !== "undefined" ? window.location.href : WEBSITE_URL;
+
+  GAEvent({
+    action: "share_clicked",
+    event_category: "click",
+    label: url,
+    value: null,
+  });
+
+  if (isDesktopDevice()) {
+    return false;
+  } else {
+    if (navigator.share) {
+      navigator
+        .share({
+          text: pageTitle,
+          url: url,
+        })
+        .catch(console.error);
+      return true;
+    } else {
+      return false;
+    }
+  }
 };

@@ -41,6 +41,7 @@ export interface iNavbar {
   changeTheme?: () => void;
   openSidebar: boolean;
   navSetup: iNavSetup;
+  onShareClick: () => void;
 }
 
 export interface iNavSetup {

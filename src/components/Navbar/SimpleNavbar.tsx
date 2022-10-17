@@ -1,18 +1,17 @@
 import classes from "./Navbar.module.scss";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { combineClasses, getCategories, transformImagePaths } from "../../utils/utils";
+import { combineClasses, transformImagePaths } from "../../utils/utils";
 import { LogoType, THEMES } from "../../shared/enums";
 import LinkTo from "../LinkTo";
 import { useTheme } from "next-themes";
-import { BiChevronDown } from 'react-icons/bi';
-import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
+import { BsFillMoonFill, BsFillSunFill , BsFillShareFill} from "react-icons/bs";
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai";
 import NavCatergoryDD from "../Misc/NavCategoryDD";
 import { iNavbar, iNavLink, iNavSocials } from "../../shared/interfaces";
 
 
-const SimpleNavbar = ({ openSearch, changeTheme, toggleSideMenu, openSidebar = false, navSetup }: iNavbar) => {
+const SimpleNavbar = ({ openSearch, changeTheme, toggleSideMenu, openSidebar = false, navSetup, onShareClick }: iNavbar) => {
   const { navLinks, socials, logo } = navSetup;
   const [openDD, setOpenDD] = useState(false)
   const { theme, setTheme } = useTheme();
@@ -66,7 +65,13 @@ const SimpleNavbar = ({ openSearch, changeTheme, toggleSideMenu, openSidebar = f
 
         <div className={combineClasses(classes.search_icon_wrapper, 'ml-5 dark:text-white')} onClick={() => openSearch()}>
           <button name="search-button" aria-label="search button">
-            <AiOutlineSearch className="dark:text-white text-black text-xl" />
+            <AiOutlineSearch className="dark:text-white text-black text-[22px]" />
+          </button>
+        </div>
+
+        <div className="" onClick={() => onShareClick()}>
+          <button name="share" aria-label="share page">
+            <BsFillShareFill className="dark:text-white text-black text-[16px] mt-[7px] ml-2 mr-1" />
           </button>
         </div>
 

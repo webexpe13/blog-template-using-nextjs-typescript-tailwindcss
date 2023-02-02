@@ -26,9 +26,7 @@ const AboutUs = () => {
                     </Text>
 
                     <Text p className='text-lg'>
-                        The idea was to start a blog or create a template with as little investment as possible. <br />In this template we have used Next.js SSG to create static HTML files which can be hosted on firebase or any static site hosting service. <br />
-                        There is also options like vercel for hosting Next.js dynamic webistes but we wanted this template to be easy to use for any non techie person too, so we explored the option of static site generation. <br /><br />
-                        If you have a github account you can clone the project or use it as a template or else you can simply download the code from <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss" className="underline font-bold">here</a>.
+                    I am a writer and multi-media journalist based in the DC metropolitan area. I specialize in written, visual, and digital storytelling. My pieces feature a diverse range of topics within the lifestyle and entertainment realm. <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss" className="underline font-bold">here</a>.
                     </Text>
 
                     <div className="flex flex-wrap justify-between">

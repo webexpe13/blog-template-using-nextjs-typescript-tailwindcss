@@ -1,4 +1,4 @@
-import { MAYUR, RUPALI } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
+import { CARRIE, MACKENZIE } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
 import { iArticle } from "../shared/interfaces";
 
 export const MOCK_ARTICLES_LIST: iArticle[] = [
@@ -6,7 +6,7 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
         path: '/pages/tutorial/how-to-setup-blog.tsx',
         featureArticle: true,
         preview: {
-            author: MAYUR,
+            author: CARRIE,
             date: "August 08 2022",
             articleTitle: "How to setup this blog template",
             tags: "demo, blog setup",
@@ -20,14 +20,14 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
             keywords: "demo, blog setup",
             ogImage: "/public/imp_assets/tutorials/how-to-setup-blog.svg",
             twitterHandle: "@mayur_nalwala",
-            author: MAYUR.name
+            author: CARRIE.name
         }
     },
     {
         path: '/pages/tutorial/how-to-write-your-first-article.tsx',
         featureArticle: true,
         preview: {
-            author: RUPALI,
+            author: MACKENZIE,
             date: "August 08 2022",
             articleTitle: "How to write your first article",
             tags: "demo, first article",
@@ -43,7 +43,7 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
         path: '/pages/tutorial/how-to-deploy-blog.tsx',
         featureArticle: true,
         preview: {
-            author: RUPALI,
+            author: MACKENZIE,
             date: "August 08 2022",
             articleTitle: "How to Export and deploy on firebase",
             tags: "demo, deploy blog",
@@ -55,7 +55,7 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
     {
         path: '/pages/tutorial/home-layout.tsx',
         preview: {
-            author: RUPALI,
+            author: MACKENZIE,
             date: "August 14 2022",
             articleTitle: "Home Layout Example",
             tags: "demo, layout, home layout",
@@ -69,13 +69,13 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
                 "In this article we will see Default Home Layout example.",
             keywords: "next js, tailwind css, typescript, blog template, default layout, default home layout",
             ogImage: "/public/imp_assets/tutorials/home-layouts.svg",
-            author: RUPALI.name
+            author: MACKENZIE.name
         }
     },
     {
         path: '/pages/tutorial/blog-with-sidebar-layout.tsx',
         preview: {
-            author: MAYUR,
+            author: CARRIE,
             date: "August 14 2022",
             articleTitle: "Page Layout for a article with sidebar",
             tags: "demo, with sidebar, default layout",
@@ -91,7 +91,7 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
     {
         path: '/pages/tutorial/blog-with-centered-layout.tsx',
         preview: {
-            author: RUPALI,
+            author: MACKENZIE,
             date: "August 14 2022",
             articleTitle: "Page Layout for a article with centered layout",
             tags: "demo, centered, centered layout",
@@ -106,7 +106,7 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
     {
         path: '/pages/all-components.tsx',
         preview: {
-            author: RUPALI,
+            author: MACKENZIE,
             date: "August 08 2022",
             articleTitle: "All Components",
             tags: "demo, all components",
@@ -121,7 +121,7 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
     {
         path: '/pages/style-guide.tsx',
         preview: {
-            author: MAYUR,
+            author: CARRIE,
             date: "August 10 2022",
             articleTitle: "Style Guide",
             tags: "demo, all components, style guide, styling tutorial",
@@ -136,7 +136,7 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
     {
         path: '/pages/icons.tsx',
         preview: {
-            author: MAYUR,
+            author: CARRIE,
             date: "August 13 2022",
             articleTitle: "How to use icons",
             tags: "demo, all components, style guide, styling tutorial, icons, how to use icons in website",

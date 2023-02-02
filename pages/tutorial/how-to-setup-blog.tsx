@@ -9,51 +9,54 @@ const BlogSetup = () => {
         <PageLayout home>
             <div className='container px-3 pb-[20px] md:mt-[50px] pt-20 md:pt-0'>
                 <Text title className="text-3xl">
-                    Blog Setup
+                   Zac Gulbranson Interview
                 </Text>
                 <hr className="mt-5" />
                 <Text subtitle className="mt-10">
-                    1.  Installing Node, VS Code and downloading the project on your computer.
+                Natural-Born Producer Zac Gulbranson Leaves Fans in Awe with New Single
                 </Text>
-                <List type={ListType.disc} className="mt-5">
-                    <li className="">
-                        You will need <b>node js</b> installed in your computer <br />
-                        You can install node via <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/download/</a> or you can look up any tutorial to install node js on your computer.
-                    </li>
-                    <li className="">
-                        Next You will need a code editor like <b>VsCode / Sublime text</b> to write your blog articles. <br />
-                        I will suggest using <b> <a href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer"> VS Code</a></b>.
-                    </li>
+                <Text p >
+                Entrepreneur, marketing specialist, and music guru Zac Gulbranson is preparing to hit streaming platforms at full force. Diving head-first into the industry, Zac makes his presence known with his undeniable producing talent. 
+                Mixing a plethora of styles, ranging from hip-hop, alternative and electronic music, it is clear Zac knows no bounds when it comes to the labels of genres.
+                </Text>
+                <Text p >
+                His upcoming single, “The Solo One” features a mix of deep bass, hypnotic synths, and soothing hats on top of a dark melodic beat, making the track likely to loop in one’s head. Set to release early this year, the hot single intends to mesmerize people by the thousand. 
+                Although primarily focused on creating his own music, Zac continues to make beats and produce songs for others.
+                </Text>
+                <Text p >
+                “When I’m in the studio everything flows pretty naturally for me. The more I create, the more I surprise myself with my abilities. 
+                I know I started late but I feel like I have a gift. This is what I’m meant to do,” said Zac.
+                </Text>
+                <Text p >
+                While some may think Zac has been producing his entire life, his talent was only discovered a few years ago. Locked in his Arizona apartment during the pandemic, he found himself crafting his own songs. From sunrise to sundown, he experimented with new sounds, rhythms, and elements that drove him to his current style.
+                Encircled by friends who double as artists and producers, it is no surprise Zac quickly turned to the profession.
+                </Text>
+                <Text p >
+                Friends showered Zac with appraisal as each song hit their ears. Channeling his newly discovered gift, he immediately fell in love with the art of making music. 
+                In 2021, he decided to pack up all his belongings and move to the musical hub of Miami. Plunging into the scene head-first, he landed his first gig within a year of relocating.
+                </Text>
+                <Text p >
+                “I’m a firm believer in trying something to see what it could be than never trying and always wondering what could have happened. There are so many people out there that don't even know they possess a talent unless they take the chance to try it.
+                People always listen and say ‘oh I wish I could do that’ but they probably could if they just tried.”
+                </Text>
+                <Text p >
+                Stepping up to the stage in Miami, Zac was accompanying a friend for his performance. After running through a couple of tracks, his colleague stepped aside to let Zac have his moment of fame.  The jittery crowd rumbled with angst as he began rotating the knobs of the turntable. Before the end of the first song, fans from all over erupted in screams and cheers. 
+                Their explosive energy was enough to have most people wondering who this new music prodigy was.
+                </Text>
+                <Text p >
+                The impact the crowd had on Zac’s drive was astronomical. Fans were itching for more and he knew he had to deliver. Confining himself to the studio for hours on end, Zac began pumping out songs left and right. However, the praise from fans and friends are far from the root of what inspires Zac to create. Prior to creating music, Zac grappled with drug addiction for many years. 
+                Now, after being sober for seven years, music is one of his largest outlets to express his past battles and experiences. Writing about his darkest days has slowly paved way for his very bright future.
+                </Text>
+                <Text p >
+                “Coming from where I was at my worst, there’s no way I could live an average lifestyle and be an average person with an average job who has average relationships. I know that I’m here for a reason. There were a lot of moments that I shouldn’t have made it out of but I did. 
+                Now that I have peace of mind and am out of that lifestyle, I’m motivated to go even harder,” said Zac, recounting his past hardships. 
+                </Text>
+                <Text p >
+                Zac’s incredible talents almost ensure his rise in the industry as both an artist and producer. 
+                Along with his natural talent, his desire to create and maintain his craft is what sets him apart from the crowd. 
+                Gunning for the main stage, Zac hopes to build up a presence big enough to headline musical festivals in the future. Accumulating admiration from the likes of many, there is no doubt his latest music will become a hit.
+                </Text>
 
-                    <li className="">
-                        Download / clone the blog template from our github page to a folder on your computer.
-                        <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss" className="pl-2 font-semibold" target="_blank" rel="noopener noreferrer">
-                            https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss
-                        </a>
-                        <br />
-                        If you are using Git you can clone the code or click the <b>use template</b> button to generate your own repo.
-                        <Image className="mt-3" src="/public/imp_assets/tutorials/download-code.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
-                    </li>
-                    <li className="">
-                        Open the blog project in VS code. <br /> Open terminal in VS code using ther <b>Terminal button</b> on tool bar of the VS Code window or press <b>ctrl + ~</b> or <b>cmd + ~</b>.
-                    </li>
-                    <li className="mb-20">
-                        In Terminal run <b>npm install</b>. This will install all the required packages.
-                        <Image className="my-4" src="/public/imp_assets/tutorials/project-install.png" alt="nextjs-simple-blog-template" size={ImageSize.DEFAULT} />
-
-                        After the installation is done run <b>npm start</b> in the terminal, it will start your project on http://localhost:3000/.
-
-                        <br />
-                        If you are facing any difficulty, write a comment on our discussion board <b><i><a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions/6" target="_blank" rel="noopener noreferrer">LINK</a></i></b>
-
-                        <br />
-                        or write to us at <a href="mailto:webexpe13@gmail.com">webexpe13@gmail.com</a>
-                    </li>
-                    <li className="mb-20">
-                        If everything goes well you will see a demo blog with few demo articles which will walk you through simple tutorials on how to use layouts and different components to write articles.
-                    </li>
-                </List>
-                <Seperator dots />
                 <Text subtitle className="mt-10">
                     2.  Setting up authors.
                 </Text>

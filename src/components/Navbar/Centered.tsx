@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import classes from "./Navbar.module.scss";
 import { useState } from "react";
 import { combineClasses, transformImagePaths } from "../../utils/utils";

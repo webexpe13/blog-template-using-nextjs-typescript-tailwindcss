@@ -27,10 +27,10 @@ export const CARRIE: IAuthor = {
     name: "Carrie Smith",
     designation: "Journalist",
     bio: "I am a writer and multi-media journalist based in the DC metropolitan area. I specialize in written, visual, and digital storytelling. My pieces feature a diverse range of topics within the lifestyle and entertainment realm.",
-    profilePic: "/public/images/csmith.jpg",
+    profilePic: "https://media.licdn.com/dms/image/D4E03AQEuyVK8vf0UTg/profile-displayphoto-shrink_200_200/0/1672876561137?e=1681948800&v=beta&t=bm4bOYmTnSwMBaAksDDaxUazZO_vFiGirVMHOYl-zFw",
     social: [
         {
-            icon: <AiFillGithub />,
+            icon: <AiFillInstagram />,
             link: 'https://carriesmith.work/'
         },
         {
@@ -43,16 +43,16 @@ export const CARRIE: IAuthor = {
 export const MACKENZIE: IAuthor = {
     name: "Mackenzie Harwood",
     designation: "IT Analyst",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    profilePic: "",
+    bio: "I am a technologist who enjoys connecting the dots: be it ideas from different disciplines, people from different teams, or applications from different industries.",
+    profilePic: "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/frostburgsports.com/images/2017/8/22/Harwood_Mackenzie_web_head_17.jpg",
     social: [
         {
             icon: <AiFillGithub />,
-            link: 'https://github.com/rupali-yadav'
+            link: 'https://github.com/mackenzie1'
         },
         {
             icon: <AiFillLinkedin />,
-            link: 'https://www.linkedin.com/in/rupali-yadav-087bb4112/'
+            link: 'https://www.linkedin.com/in/mackenzie-harwood-a896ab199/'
         },
     ]
 }
@@ -92,13 +92,13 @@ export const PRIMARY_NAV: iNavSetup = {
             path: ''
         },
         {
-            label: 'About Us',
+            label: 'About Me',
             path: '/about-us'
         },
         {
             // to open a link in new tab pass newTab: true
-            label: 'Support Us',
-            path: 'https://www.buymeacoffee.com/webexpe13z',
+            label: 'Listen Now',
+            path: 'https://carriesmith.work/playlist',
             newTab: true
         },
         {
@@ -124,12 +124,12 @@ export const PRIMARY_NAV: iNavSetup = {
             path: ''
         },
         {
-            label: 'About Us',
+            label: 'About Me',
             path: '/about-us'
         },
         {
-            label: 'Support Us',
-            path: 'https://www.buymeacoffee.com/webexpe13z',
+            label: 'Listen Now',
+            path: 'https://carriesmith.work/playlist',
             newTab: true
         },
         {
@@ -159,11 +159,11 @@ export const PRIMARY_NAV: iNavSetup = {
 }
 
 export const DEFAULT_SEO: iSEO = {
-    title: "Nextjs simple blog template",
-    description: "A simple blog template using NextJS and Typescript.",
-    keywords: "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
+    title: "Stereo Punch!",
+    description: "A multi media music magazine",
+    keywords: "Blog, music, magazine, dmv, writter, hot, cool, trending, up and coming, 30 under 30, local, support, ",
     url: WEBSITE_URL,
     author: `${CARRIE.name}, ${MACKENZIE.name}`,
     twitterHandle: '@WebExpe',
-    ogImage: '/public/images/og-image.jpg'
+    ogImage: '/public/images/carrie.jpg'
 }

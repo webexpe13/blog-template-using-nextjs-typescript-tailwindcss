@@ -1,6 +1,6 @@
 /**These are necessary imports / components for the page */
 import { ImageSize, TextAlign, ListType } from "../src/shared/enums";
-import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider } from "../src/components";
+import { PageLayout, Text, List, Image, LinkTo, Seperator, Slider, Accordian } from "../src/components";
 import { CURRENT_YEAR } from "../src/constants/appConstants";
 import { iSEO } from "../src/shared/interfaces";
 
@@ -15,9 +15,14 @@ const AboutUs = () => {
         <PageLayout PAGE_SEO={PAGE_SEO} home>
             <section className='container px-3 md:pb-20 md:pt-10 pt-20'>
                 <div className="">
-                    <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="block md:w-[15%] w-[50%] ">
-                        <img src="/images/YT Logo.png" alt="webexpe.com" className="rounded-lg overflow-hidden" />
-                    </a>
+                   
+                <Image
+                        src="/public/images/carrie.jpg"
+                        alt="carrie smith"
+                        size={ImageSize.MEDIUM}
+                        className="mb-5"
+                        />
+                   
                     <Text title className='mb-5 mt-10 dark:text-sky-400 text-sky-600'>
                     Hi we are Stereo Punch! 
                     </Text>

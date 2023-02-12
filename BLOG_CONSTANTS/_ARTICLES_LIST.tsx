@@ -214,6 +214,24 @@ const ARTICLES_LIST: iArticle[] = [
     },
   },
   {
+    path: "/pages/blog/published_work.tsx",
+    preview: {
+      author: CARRIE,
+      date: "February 13 2023",
+      articleTitle: "Published Work",
+      shortIntro:
+        "Here you can find links to a few of my previously published articles.",
+      tags: "published work, published, past, article, blog, new, hot",
+      thumbnail: "/public/images/csmith.jpg",
+      category: "tutorial",
+    },
+    seo: {
+      keywords:
+        "published work, published, past, article, blog, new, hot, interview, producer, dmv, new, music, hot, maryland, dc, montgomery county, famous, new single",
+      ogImage: "/public/images/zac_gulbranson_interview.jpg",
+    },
+  },
+  {
     path: "/pages/blog/zac_gulbranson_interview.tsx",
     preview: {
       author: CARRIE,

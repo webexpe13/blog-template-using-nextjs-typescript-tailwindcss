@@ -23,13 +23,13 @@ const Home = () => {
 
         <div className='flex justify-center mt-5 flex-wrap '>
           <a href="https://carriesmith.work/" target="_blank" rel="noopener noreferrer" className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
-            <span className='text-xl pt-2 block'>Carrie Smith.work</span>
+            <span className='text-xl pt-2 block'>CarrieSmith.work</span>
           </a>
           <LinkTo href="/pages/about-us.tsx" passHref className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
             <span className='text-xl pt-2 block'>About</span>
           </LinkTo>
           <LinkTo href="/pages/blog" passHref className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>
-            <span className='text-xl pt-2 block'>All Articles</span>
+            <span className='text-xl pt-2 block'>Articles</span>
           </LinkTo>
 
           <a href="https://carriesmith.work/playlist" target="_blank" rel="noopener noreferrer" className='flex items-center justify-center rounded-md bg-blue-600 px-4 pb-2 text-white hover:text-white shadow-lg hover:shadow-none transition-all mb-3 md:mx-5 mx-2'>

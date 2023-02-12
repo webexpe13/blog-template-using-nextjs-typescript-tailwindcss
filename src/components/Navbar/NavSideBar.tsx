@@ -39,7 +39,7 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
 
             <aside className={combineClasses(classes.nav_sidebar_wrapper, openSidebar && classes.open, 'dark:bg-slate-900 dark:text-white bg-white text-black')}>
                 <div className='flex items-center justify-between pb-3' onClick={closeNavSidebar}>
-                    <p className=''>menu</p>
+                    <p className=''><b>Menu</b></p>
                     <div><MdOutlineClose className='text-slate-800 dark:text-white text-[25px]' /></div>
                 </div>
                 <hr />
@@ -54,6 +54,7 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                                     {each.label}
                                 </a>
                                 :
+                                // eslint-disable-next-line react/jsx-key
                                 <NavCatergoryDD label={each.label} openDD={openDD} setOpenDD={() => setOpenDD(!openDD)} />
                         ))
                     }
@@ -61,33 +62,15 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                         env === 'development' ?
                             <>
                                 <hr />
-                                <Text subtitle className='mt-3 !text-[18px]'>Examples and tutorials</Text>
-                                <LinkTo href='/pages/tutorial/all-components.tsx' passHref className='text-[16px] block my-3'>
-                                    All Components
+                                <Text subtitle className='mt-3 !text-[18px]'>Featured</Text>
+                                <LinkTo href='/pages/blog/zac_gubranson_interview.tsx' passHref className='text-[16px] block my-3'>
+                                    Zac Gulbranson Interview
                                 </LinkTo>
-                                <LinkTo href='/pages/tutorial/style-guide.tsx' passHref className='text-[16px] block my-3'>
-                                    Style Guide
+                                <LinkTo href='/pages/blog/published_work.tsx' passHref className='text-[16px] block my-3'>
+                                    Published Work
                                 </LinkTo>
-                                <LinkTo href='/pages/tutorial/home-layout.tsx' passHref className='text-[16px] block my-3'>
-                                    Home Page Layout
-                                </LinkTo>
-                                <LinkTo href='/pages/tutorial/blog-with-sidebar-layout.tsx' passHref className='text-[16px] block my-3'>
-                                    Page Layout for article with sidebar
-                                </LinkTo>
-                                <LinkTo href='/pages/tutorial/blog-with-centered-layout.tsx' passHref className='text-[16px] block my-3'>
-                                    Page Layout for centered article
-                                </LinkTo>
-                                <LinkTo href='/pages/tutorial/how-to-setup-blog.tsx' passHref className='text-[16px] block my-3'>
-                                    How to setup your blog
-                                </LinkTo>
-                                <LinkTo href='/pages/tutorial/how-to-write-your-first-article.tsx' passHref className='text-[16px] block my-3'>
-                                    How to write your first article
-                                </LinkTo>
-                                <LinkTo href='/pages/tutorial/how-to-deploy-blog.tsx' passHref className='text-[16px] block my-3'>
-                                    How to export the blog
-                                </LinkTo>
-                                <LinkTo href='/pages/tutorial/icons.tsx' passHref className='text-[16px] block my-3'>
-                                    Icons
+                                <LinkTo href='/pages/blog/unfair_rob_fair.tsx' passHref className='text-[16px] block my-3'>
+                                    Unfair for Rob Fair
                                 </LinkTo>
                             </>
                             : null
@@ -117,7 +100,7 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                 </div>
                 <hr />
                 <div className='my-5'>
-                    <p className='text-sm font-light dark:text-gray-400 text-gray-500 mb-1'>Copyright © 2022</p>
+                    <p className='text-sm font-light dark:text-gray-400 text-gray-500 mb-1'>Copyright © Stereo Punch 2023</p>
                     <LinkTo href="/privacy-policy" passHref className='text-sm font-light dark:text-gray-400 text-gray-500 pr-3'>
                         Privacy Policy
                     </LinkTo>

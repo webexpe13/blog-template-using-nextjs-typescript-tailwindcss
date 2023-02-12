@@ -214,6 +214,24 @@ const ARTICLES_LIST: iArticle[] = [
     },
   },
   {
+    path: "/pages/blog/unfair_rob_fair.tsx",
+    preview: {
+      author: CARRIE,
+      date: "February 14 2023",
+      articleTitle: "Unfair for Rob Fair - Longform Narrative",
+      shortIntro:
+        "I wanted to write about Rob’s story in hopes of connecting my readers to his experience, with the intent of humanizing the issue of homelessness.",
+      tags: "homelessness,  activist, housing, housing crisis, compassion",
+      thumbnail: "/public/images/published/homeless.jpg",
+      category: "tutorial",
+    },
+    seo: {
+      keywords:
+        "homelessness,  activist, housing, housing crisis, single family, struggle, food, insecurity, aide",
+      ogImage: "/public/images/carrie.jpg",
+    },
+  },
+  {
     path: "/pages/blog/published_work.tsx",
     preview: {
       author: CARRIE,

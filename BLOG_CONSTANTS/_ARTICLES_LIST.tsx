@@ -213,6 +213,24 @@ const ARTICLES_LIST: iArticle[] = [
       ogImage: "/public/imp_assets/tutorials/how-to-write-first-article.svg",
     },
   },
+  {
+    path: "/pages/blog/zac_gulbranson_interview.tsx",
+    preview: {
+      author: CARRIE,
+      date: "February 12 2023",
+      articleTitle: "Zac Gulbranson Interview",
+      shortIntro:
+        "Natural-Born Producer Zac Gulbranson Leaves Fans in Awe with New Single.",
+      tags: "zac gulbranson, interview, producer, dmv, music, new, hot",
+      thumbnail: "/public/images/zac_gulbranson_interview.jpg",
+      category: "tutorial",
+    },
+    seo: {
+      keywords:
+        "zac gulbranson, interview, producer, dmv, new, music, hot, maryland, dc, montgomery county, famous, new single",
+      ogImage: "/public/images/zac_gulbranson_interview.jpg",
+    },
+  },
 ];
 
 export const SORTED_ARTICLES_BY_DATE = ARTICLES_LIST.sort((a, b) =>

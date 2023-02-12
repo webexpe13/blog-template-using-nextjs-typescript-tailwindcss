@@ -7,8 +7,8 @@ import { iSEO } from "../src/shared/interfaces";
 const AboutUs = () => {
     const PAGE_SEO: iSEO = {
         title: 'About Us',
-        description: `Hi we are WebExpe. This is an open source blog template which can help you start a simple static blog.`,
-        keywords: 'webexpx, contact us, webexpe13@gmail.com, next js blog template',
+        description: `Hi we are Stereo Punch! This is an open source music magazine/blog.`,
+        keywords: 'stereo, punch, music, magazine, blog, dmv, fresh, carrie smith, wiriter, photo, audio, visual, media, journalist',
         author: 'Mayur Nalwala, Rupali Yadav'
     }
     return (
@@ -19,81 +19,61 @@ const AboutUs = () => {
                         <img src="/images/YT Logo.png" alt="webexpe.com" className="rounded-lg overflow-hidden" />
                     </a>
                     <Text title className='mb-5 mt-10 dark:text-sky-400 text-sky-600'>
-                        Hi we are WebExpe.
+                    Hi we are Stereo Punch! 
                     </Text>
                     <Text subtitle className='text-xl mb-5'>
-                        This is an open source blog template which can help you start a simple static blog.
+                    This is an open source music magazine/blog
                     </Text>
 
                     <Text p className='text-lg'>
-                    I am a writer and multi-media journalist based in the DC metropolitan area. I specialize in written, visual, and digital storytelling. My pieces feature a diverse range of topics within the lifestyle and entertainment realm. <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss" className="underline font-bold">here</a>.
+                    I am a writer and multi-media journalist based in the DC metropolitan area. I specialize in written, visual, and digital storytelling. My pieces feature a diverse range of topics within the lifestyle and entertainment realm. <a href="https://carriesmith.work/" className="underline font-bold">here</a>.
                     </Text>
 
                     <div className="flex flex-wrap justify-between">
                         <div className="md:w-auto w-full my-5">
                             <Text subtitle className='text-3xl font-medium'>
-                                Features
+                                Written
                             </Text>
                             <List type={ListType.disc}>
-                                <li>Minimilist Template</li>
-                                <li>Light and Dark theme</li>
-                                <li>Default and Centered Layout</li>
-                                <li>Maximize lighthouse score</li>
-                                <li>Privacy Policy, Terms and Conditions page template</li>
-                                <li>Integrate with <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind CSS </a></li>
-                                <li>Type checking TypeScript</li>
-                                <li>SEO metadata, Open Graph tags with Next SEO</li>
+                                <li>Interview</li>
+                                <li>Blog</li>
+                                <li>Longform Narrative</li>
+                                <li>Essay</li>
                             </List>
                         </div>
 
                         <div className="md:w-auto w-full my-5">
                             <Text subtitle className='text-3xl font-medium'>
-                                Philosophy
+                                Visual
                             </Text>
                             <List type={ListType.disc}>
-                                <li>Minimal code</li>
-                                <li>SEO-friendly</li>
-                                <li>Production-ready</li>
-                                <li>Easy to use</li>
-                                <li>Sould be faster than Wordpress or any other CMS</li>
-                            </List>
-                        </div>
-
-                        <div className="md:w-auto w-full my-5">
-                            <Text subtitle className='text-3xl font-medium'>
-                                Requirements
-                            </Text>
-                            <List type={ListType.disc}>
-                                <li>Node.js</li>
-                                <li>NPM</li>
-                                <li>Firebase for hosting</li>
-                                <li>VS Code for editing</li>
-                                <li>Imp VS Code plugins: <br /> <a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense" target="_blank" rel="noopener noreferrer">Path Intellisense</a> , <br /> <a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss" target="_blank" rel="noopener noreferrer">Tailwind CSS IntelliSense</a> </li>
+                                <li>Photograpghy</li>
+                                <li>Videography</li>
+                                <li>Multimedia Productions</li>
                             </List>
                         </div>
                     </div>
                     <Seperator />
-                    <Text subtitle className='text-3xl font-medium'>
-                        License
-                    </Text>
                     <Text p className='text-lg'>
-                        Licensed under the MIT License, Copyright © {CURRENT_YEAR}
+                        Created by <LinkTo href="https://www.linkedin.com/in/carrie-smith-89b389198/" external className="font-semibold">Carrie Smith</LinkTo> and <LinkTo href="https://www.linkedin.com/in/mackenzie-harwood-a896ab199/" external className="font-semibold">Mackenzie Harwood</LinkTo>  with ♥
                     </Text>
-                    <Text p className='text-lg'>
-                        This is an open source project everyone is welcome to contribute. Feel free to open an issue, if you have any questions or incase you find a bug. Create your versions of this template and help the community, also if you are using our template a little credit will be much appreciated.
-                    </Text>
-                    <Seperator />
-                    <Text p className='text-lg'>
-                        Created by <LinkTo href="https://www.linkedin.com/in/rupali-yadav-087bb4112/" external className="font-semibold">Rupali Yadav</LinkTo> and <LinkTo href="https://www.linkedin.com/in/mayur-nalwala/" external className="font-semibold">Mayur Nalwala</LinkTo> from <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="font-medium tracking-widest">WebExpe</a> with ♥
-                    </Text>
-                    <a href="https://www.buymeacoffee.com/webexpe13z" target="_blank" rel="noopener noreferrer">
-                        <img src="/images/bmc.png" className="ml-0" alt="webexpe.com" />
+                    <a href="https://www.linkedin.com/in/carrie-smith-89b389198/" target="_blank" rel="noopener noreferrer">
+                    <Image
+                        src="/public/images/csmith.jpg"
+                        alt="carrie smith"
+                        size={ImageSize.SMALL}
+                        className="mb-5"
+                        />
                     </a>
                     <div className="px-4 py-3 dark:bg-slate-800 bg-blue-200 rounded my-5">
-                        <Text p className="!text-lg leading-relaxed mb-0">
-                            For any any queries related to this project / template feel free to connect with us at <u>webexpe13@gmail.com</u>.
-                            You can also post any comments on our <a href="https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss/discussions" target="_blank" rel="noopener noreferrer"><u><i>github discussions</i></u></a>.
-                        </Text>
+                    <Text subtitle className="md:!text-5xl text-4xl !font-light">
+                    Work with me . . .
+                </Text>
+                <Text p className="!text-lg leading-relaxed mt-5 px-1">
+                I am a writer and multi-media journalist based in the DC metropolitan area. I specialize in written, visual, and digital storytelling. My pieces feature a diverse range of topics within the lifestyle and entertainment realm.
+                Diving headfirst into the entertainment industry, I am currently pursuing my dream of writing about up-and-coming music artists. I have produced a wide array of content, ranging from written pieces, to photo and video journalism. My main passion is to tell the hidden stories of people across the globe, in whatever way that may be. I look forward to sharpening my storytelling skills through the creation of my blog, Stereo Punch, which highlights the journeys of rising musicians.
+
+                </Text>
                     </div>
                 </div>
             </section>

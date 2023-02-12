@@ -26,16 +26,16 @@ import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillInstagram, AiFill
 export const CARRIE: IAuthor = {
     name: "Carrie Smith",
     designation: "Journalist",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    profilePic: "",
+    bio: "I am a writer and multi-media journalist based in the DC metropolitan area. I specialize in written, visual, and digital storytelling. My pieces feature a diverse range of topics within the lifestyle and entertainment realm.",
+    profilePic: "/public/images/csmith.jpg",
     social: [
         {
             icon: <AiFillGithub />,
-            link: 'https://github.com/nmayur'
+            link: 'https://carriesmith.work/'
         },
         {
             icon: <AiFillLinkedin />,
-            link: 'https://www.linkedin.com/in/mayur-nalwala/'
+            link: 'https://www.linkedin.com/in/carrie-smith-89b389198/'
         },
     ]
 }
@@ -59,7 +59,7 @@ export const MACKENZIE: IAuthor = {
 
 
 // This can your company name / your name etc for SEO purposes
-export const WEBSITE_NAME: string = 'Next Js Blog Template';
+export const WEBSITE_NAME: string = 'Stereo Punch!';
 export const WEBSITE_URL: string = 'https://nextjs-simple-blog-template.web.app/';
 
 /**

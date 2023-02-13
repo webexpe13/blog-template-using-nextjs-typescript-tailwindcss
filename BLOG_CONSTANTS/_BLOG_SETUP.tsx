@@ -102,9 +102,8 @@ export const PRIMARY_NAV: iNavSetup = {
             newTab: true
         },
         {
-            label: 'Github Repo',
-            path: 'https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss',
-            newTab: true
+            label: 'Gallery',
+            path: '/gallery'
         },
         {
             label: 'Contact Us',
@@ -133,9 +132,8 @@ export const PRIMARY_NAV: iNavSetup = {
             newTab: true
         },
         {
-            label: 'Github Repo',
-            path: 'https://github.com/webexpe13/blog-template-using-nextjs-typescript-tailwindcss',
-            newTab: true
+            label: 'Gallery',
+            path: '/gallery'
         },
         {
             label: 'Contact Us',

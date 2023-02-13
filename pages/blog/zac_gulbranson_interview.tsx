@@ -8,9 +8,6 @@ const Article = () => {
     return (
         // pass blogcentered as show below for article page centered layout
         <PageLayout blogcentered>
-            <Text p>
-                This current article is made using <b>blogcentered</b> layout. This layout will be used to write your blog posts or articles.
-            </Text>
             <Text subtitle className="mt-10 md:text">
             Natural-Born Producer Zac Gulbranson Leaves Fans in Awe with New Single
             </Text>

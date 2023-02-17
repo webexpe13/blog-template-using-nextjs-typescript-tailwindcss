@@ -12,7 +12,9 @@ import image from "next/image";
 const Home = () => {
   return (
     <PageLayout home PAGE_SEO={DEFAULT_SEO}>
-      <section className='w-full md:pt-[100px] md:pb-[70px] pt-[130px] pb-20 mb-10 dark:bg-slate-800 bg-slate-200'>
+      <section className='w-full md:pt-[100px] md:pb-[70px] pt-[130px] pb-20 mb-10 dark:bg-slate-800 bg-slate-200' >
+
+      <section id="intro" className="section scrollspy full-height">
       {/* // eslint-disable-next-line react/no-unknown-property */}
       <div className="container text-center px-3" >
         <Text title className='text-3xl'>
@@ -40,8 +42,11 @@ const Home = () => {
         </div>
                       
       
-    </div>
-    </section><div className="container mx-auto lg:px-[15px] px-0">
+      </div>
+      </section>
+    </section>
+
+    <div className="container mx-auto lg:px-[15px] px-0">
         <div className={'flex flex-wrap'}>
           <FeaturedArticleSection />
           <h1 className='px-3 w-full mb-5 text-xl md:text-3xl font-medium'>Checkout some of my past work!</h1>

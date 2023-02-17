@@ -14,6 +14,7 @@ body {
   height: 100%;
   font-family: "Open Sans", sans-serif;
 }
+  
 
 a {
   color: inherit;
@@ -23,6 +24,11 @@ a {
     @apply text-blue-600;
   }
 }
+
+#intro.section {
+  background: url(/public/images/carrie.jpg) ;
+    position: relative;
+  }
 
 * {
   box-sizing: border-box;

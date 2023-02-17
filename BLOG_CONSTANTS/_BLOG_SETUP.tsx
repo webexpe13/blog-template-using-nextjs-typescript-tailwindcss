@@ -92,7 +92,7 @@ export const PRIMARY_NAV: iNavSetup = {
             path: ''
         },
         {
-            label: 'About Me',
+            label: 'About Us',
             path: '/about-us'
         },
         {
@@ -123,7 +123,7 @@ export const PRIMARY_NAV: iNavSetup = {
             path: ''
         },
         {
-            label: 'About Me',
+            label: 'About Us',
             path: '/about-us'
         },
         {

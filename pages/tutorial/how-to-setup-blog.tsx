@@ -19,6 +19,7 @@ const BlogSetup = () => {
                 Entrepreneur, marketing specialist, and music guru Zac Gulbranson is preparing to hit streaming platforms at full force. Diving head-first into the industry, Zac makes his presence known with his undeniable producing talent. 
                 Mixing a plethora of styles, ranging from hip-hop, alternative and electronic music, it is clear Zac knows no bounds when it comes to the labels of genres.
                 </Text>
+                
                 <Text p >
                 His upcoming single, “The Solo One” features a mix of deep bass, hypnotic synths, and soothing hats on top of a dark melodic beat, making the track likely to loop in one’s head. Set to release early this year, the hot single intends to mesmerize people by the thousand. 
                 Although primarily focused on creating his own music, Zac continues to make beats and produce songs for others.

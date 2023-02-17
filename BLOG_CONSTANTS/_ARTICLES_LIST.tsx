@@ -87,6 +87,7 @@ const ARTICLES_LIST: iArticle[] = [
       ogImage: "/public/images/zac_gulbranson_interview.jpg",
     },
   },
+
 ];
 
 export const SORTED_ARTICLES_BY_DATE = ARTICLES_LIST.sort((a, b) =>

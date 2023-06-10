@@ -1,4 +1,4 @@
-import { MAYUR, RUPALI, Thiel } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
+import { RUPALI, Thiel } from "../../BLOG_CONSTANTS/_BLOG_SETUP";
 import { iArticle } from "../shared/interfaces";
 
 export const MOCK_ARTICLES_LIST: iArticle[] = [
@@ -27,7 +27,7 @@ export const MOCK_ARTICLES_LIST: iArticle[] = [
         path: '/pages/tutorial/how-to-write-your-first-article.tsx',
         featureArticle: true,
         preview: {
-            author: RUPALI,
+            author: Thiel,
             date: "August 08 2022",
             articleTitle: "How to write your first article",
             tags: "demo, first article",

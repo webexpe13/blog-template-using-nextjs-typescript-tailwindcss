@@ -1,7 +1,7 @@
 import { iArticle } from "../src/shared/interfaces";
 
 // Import author profiles, just type the name you have set in _BLOG_SETUP inside the curly brackets
-import { MAYUR, RUPALI, Thiel } from "./_BLOG_SETUP";
+import { RUPALI, Thiel } from "./_BLOG_SETUP";
 
 // main article list to display all atricles
 /**
@@ -80,7 +80,7 @@ const ARTICLES_LIST: iArticle[] = [
     path: "/pages/tutorial/how-to-write-your-first-article.tsx",
     featureArticle: false,
     preview: {
-      author: MAYUR,
+      author: Thiel,
       date: "August 08 2022",
       articleTitle: "How to write your first article",
       tags: "demo, first article",

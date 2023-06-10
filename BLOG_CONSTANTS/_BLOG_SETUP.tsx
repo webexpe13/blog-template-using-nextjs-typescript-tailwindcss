@@ -40,23 +40,6 @@ export const Thiel: IAuthor = {
     ]
 }
 
-export const MAYUR: IAuthor = {
-    name: "MAYUR",
-    designation: "IT Expert",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    profilePic: "",
-    social: [
-        {
-            icon: <AiFillGithub />,
-            link: 'https://github.com/nmayur'
-        },
-        {
-            icon: <AiFillLinkedin />,
-            link: 'https://www.linkedin.com/in/mayur-nalwala/'
-        },
-    ]
-}
-
 export const RUPALI: IAuthor = {
     name: "Rupali Yadav",
     designation: "IT Analyst",
@@ -180,7 +163,7 @@ export const DEFAULT_SEO: iSEO = {
     description: "A simple blog template using NextJS and Typescript.",
     keywords: "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
     url: WEBSITE_URL,
-    author: `${Thiel.name}, ${RUPALI.name}, ${MAYUR.name} `,
+    author: `${Thiel.name}, ${RUPALI.name}`,
     twitterHandle: '@WebExpe',
     ogImage: '/public/images/og-image.jpg'
 }

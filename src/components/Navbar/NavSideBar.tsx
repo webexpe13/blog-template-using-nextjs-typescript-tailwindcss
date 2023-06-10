@@ -54,7 +54,7 @@ const NavSidebar = ({ openSidebar = false, closeNavSidebar, navSetup, changeThem
                                     {each.label}
                                 </a>
                                 :
-                                <NavCatergoryDD label={each.label} openDD={openDD} setOpenDD={() => setOpenDD(!openDD)} />
+                                <NavCatergoryDD label={each.label} key={i} openDD={openDD} setOpenDD={() => setOpenDD(!openDD)} />
                         ))
                     }
                     {

@@ -47,7 +47,7 @@ const SimpleNavbar = ({ openSearch, changeTheme, toggleSideMenu, openSidebar = f
                   {each.label}
                 </a>
                 :
-                <NavCatergoryDD label={each.label} openDD={openDD} setOpenDD={() => setOpenDD(!openDD)} floating />
+                <NavCatergoryDD label={each.label} key={i} openDD={openDD} setOpenDD={() => setOpenDD(!openDD)} floating />
             ))
           }
           {

@@ -5,7 +5,7 @@ import { RUPALI, Thiel } from "./_BLOG_SETUP";
 
 // main article list to display all atricles
 /**
- * Example article object
+ * Example article object 1
  * 
  {
     path: '/pages/tutorial/tutorial/how-to-setup-blog',

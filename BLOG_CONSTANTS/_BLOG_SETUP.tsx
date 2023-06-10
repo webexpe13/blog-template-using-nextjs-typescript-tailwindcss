@@ -23,9 +23,9 @@ import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillInstagram, AiFill
 }
  */
 
-export const MAYUR: IAuthor = {
-    name: "Mayur Nalwala",
-    designation: "Software Engineer",
+export const Thiel: IAuthor = {
+    name: "T. Thiel",
+    designation: "Marketing Manager",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     profilePic: "",
     social: [
@@ -163,7 +163,7 @@ export const DEFAULT_SEO: iSEO = {
     description: "A simple blog template using NextJS and Typescript.",
     keywords: "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
     url: WEBSITE_URL,
-    author: `${MAYUR.name}, ${RUPALI.name}`,
+    author: `${Thiel.name}, ${RUPALI.name}`,
     twitterHandle: '@WebExpe',
     ogImage: '/public/images/og-image.jpg'
 }

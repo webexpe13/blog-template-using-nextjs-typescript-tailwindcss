@@ -1,7 +1,7 @@
 import { iArticle } from "../src/shared/interfaces";
 
 // Import author profiles, just type the name you have set in _BLOG_SETUP inside the curly brackets
-import { MAYUR, RUPALI } from "./_BLOG_SETUP";
+import { MAYUR, RUPALI, Thiel } from "./_BLOG_SETUP";
 
 // main article list to display all atricles
 /**
@@ -32,11 +32,12 @@ import { MAYUR, RUPALI } from "./_BLOG_SETUP";
 
 // clear this article list and add your own
 const ARTICLES_LIST: iArticle[] = [
+  
   {
     path: "/pages/tutorial/how-to-setup-blog.tsx",
-    featureArticle: true,
+    featureArticle: false,
     preview: {
-      author: MAYUR,
+      author: Thiel,
       date: "August 08 2022",
       articleTitle: "How to setup this blog template",
       tags: "demo, blog setup",
@@ -50,12 +51,34 @@ const ARTICLES_LIST: iArticle[] = [
       keywords: "demo, blog setup",
       ogImage: "/public/imp_assets/tutorials/how-to-setup-blog.svg",
       twitterHandle: "@mayur_nalwala",
-      author: MAYUR.name,
+      author: Thiel.name,
     },
   },
   {
-    path: "/pages/tutorial/how-to-write-your-first-article.tsx",
+    path: '/pages/blog/First-Website.tsx',
     featureArticle: true,
+    preview: {
+        // the author object you created in _BLOG_SETUP file
+        author: Thiel,
+        date: "Juni 10 2023",
+        articleTitle: "Beginners Blog: Website-Programmierung | Schritt-für-Schritt",
+        shortIntro: "Das ist ein Beginnerkurs für Website-Entwicklung, indem du Schritt für Schritt deine eigene Website programmierst.",
+        tags: "programmieren, Website, Code, Beginners Blog",
+        thumbnail: "/public/imp_assets/tutorials/how-to-write-first-article.svg",
+        category: 'tutorial'
+    },
+    seo: {
+        title: "How to Code a Website",
+        description:
+            "Das ist ein Beginnerkurs für Website-Entwicklung, indem du Schritt für Schritt deine eigene Website programmierst.",
+        keywords: "demo, blog setup, first article",
+        ogImage: "/images/tutorials/demo-image.jpg",
+        twitterHandle: "@mayur_nalwala",
+    }
+},
+  {
+    path: "/pages/tutorial/how-to-write-your-first-article.tsx",
+    featureArticle: false,
     preview: {
       author: RUPALI,
       date: "August 08 2022",
@@ -74,7 +97,7 @@ const ARTICLES_LIST: iArticle[] = [
   },
   {
     path: "/pages/tutorial/how-to-deploy-blog.tsx",
-    featureArticle: true,
+    featureArticle: false,
     preview: {
       author: RUPALI,
       date: "August 08 2022",
@@ -112,7 +135,7 @@ const ARTICLES_LIST: iArticle[] = [
   {
     path: "/pages/tutorial/blog-with-sidebar-layout.tsx",
     preview: {
-      author: MAYUR,
+      author: Thiel,
       date: "August 14 2022",
       articleTitle: "Page Layout for a article with sidebar",
       tags: "demo, with sidebar, default layout",
@@ -164,7 +187,7 @@ const ARTICLES_LIST: iArticle[] = [
   {
     path: "/pages/tutorial/style-guide.tsx",
     preview: {
-      author: MAYUR,
+      author: Thiel,
       date: "August 10 2022",
       articleTitle: "Style Guide",
       tags: "demo, all components, style guide, styling tutorial",
@@ -181,7 +204,7 @@ const ARTICLES_LIST: iArticle[] = [
   {
     path: "/pages/tutorial/icons.tsx",
     preview: {
-      author: MAYUR,
+      author: Thiel,
       date: "August 13 2022",
       articleTitle: "How to use icons",
       tags: "demo, all components, style guide, styling tutorial, icons, how to use icons in website",
@@ -198,7 +221,7 @@ const ARTICLES_LIST: iArticle[] = [
   {
     path: "/pages/blog/your-first-article.tsx",
     preview: {
-      author: MAYUR,
+      author: Thiel,
       date: "August 6 2022",
       articleTitle: "Your first article",
       shortIntro:

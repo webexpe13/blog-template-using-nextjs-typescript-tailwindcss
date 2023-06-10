@@ -80,7 +80,7 @@ const ARTICLES_LIST: iArticle[] = [
     path: "/pages/tutorial/how-to-write-your-first-article.tsx",
     featureArticle: false,
     preview: {
-      author: RUPALI,
+      author: MAYUR,
       date: "August 08 2022",
       articleTitle: "How to write your first article",
       tags: "demo, first article",

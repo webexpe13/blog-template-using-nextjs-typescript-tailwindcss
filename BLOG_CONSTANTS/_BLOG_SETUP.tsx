@@ -41,8 +41,8 @@ export const Thiel: IAuthor = {
 }
 
 export const MAYUR: IAuthor = {
-    name: "T. Thiel",
-    designation: "Marketing Manager",
+    name: "MAYUR",
+    designation: "IT Expert",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     profilePic: "",
     social: [

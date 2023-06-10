@@ -119,6 +119,7 @@ const CenteredNavbar = ({
           ) : (
             <NavCatergoryDD
               label={each.label}
+              key={i}
               openDD={openDD}
               setOpenDD={() => setOpenDD(!openDD)}
               floating

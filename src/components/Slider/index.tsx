@@ -23,7 +23,7 @@ const Slider = ({ images, className }: { images: string[], className?: string })
             {
                 images.map((each, i) => (
                     <SwiperSlide className={classes.slide} key={i}>
-                        <img src={transformImagePaths(each)} width="100%" className={'block cursor-grab'} />
+                        <img src={transformImagePaths(each)} alt="Beschreibung des Bildes" width="100%" className={'block cursor-grab'} />
                     </SwiperSlide>
                 ))
             }

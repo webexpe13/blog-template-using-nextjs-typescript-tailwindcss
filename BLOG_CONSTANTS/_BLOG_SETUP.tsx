@@ -180,7 +180,7 @@ export const DEFAULT_SEO: iSEO = {
     description: "A simple blog template using NextJS and Typescript.",
     keywords: "Blog, next js, template, next js blog, blog setup, typescript, nextjs typescript, react js blog template, responsive blog template",
     url: WEBSITE_URL,
-    author: `${Thiel.name}, ${RUPALI.name}`,
+    author: `${Thiel.name}, ${RUPALI.name}, ${MAYUR.name} `,
     twitterHandle: '@WebExpe',
     ogImage: '/public/images/og-image.jpg'
 }

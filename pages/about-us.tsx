@@ -16,7 +16,7 @@ const AboutUs = () => {
             <section className='container px-3 md:pb-20 md:pt-10 pt-20'>
                 <div className="">
                     <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="block md:w-[15%] w-[50%] ">
-                        <Image src="/public/images/YT Logo.png" size={ImageSize.DEFAULT} alt="webexpe.com" className="rounded-lg overflow-hidden" />
+                        <img src="/images/YT Logo.png" alt="webexpe.com" className="rounded-lg overflow-hidden" />
                     </a>
                     <Text title className='mb-5 mt-10 dark:text-sky-400 text-sky-600'>
                         Hi we are WebExpe.
@@ -89,7 +89,7 @@ const AboutUs = () => {
                         Created by <LinkTo href="https://www.linkedin.com/in/rupali-yadav-087bb4112/" external className="font-semibold">Rupali Yadav</LinkTo> and <LinkTo href="https://www.linkedin.com/in/mayur-nalwala/" external className="font-semibold">Mayur Nalwala</LinkTo> from <a href="https://webexpe.com/" target="_blank" rel="noopener noreferrer" className="font-medium tracking-widest">WebExpe</a> with ♥
                     </Text>
                     <a href="https://www.buymeacoffee.com/webexpe13z" target="_blank" rel="noopener noreferrer">
-                        <Image src="/public/images/bmc.png" size={ImageSize.XS} className="ml-0" alt="webexpe.com" />
+                        <img src="/images/bmc.png" className="ml-0" alt="webexpe.com" />
                     </a>
                     <div className="px-4 py-3 dark:bg-slate-800 bg-blue-200 rounded my-5">
                         <Text p className="!text-lg leading-relaxed mb-0">

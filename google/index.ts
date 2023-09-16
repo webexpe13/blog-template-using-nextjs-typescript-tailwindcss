@@ -15,14 +15,15 @@ export const pageview = (url: any) => {
 };
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
-export const event = ({ action, category, label, value }: any) => {
-  window.gtag("event", action, {
-    event_category: category,
-    event_label: label,
-    value: value,
-  });
+export const GAEvent = ({ action, category, label, value }: any) => {
+  if (typeof window.gtag !== "undefined") {
+    window.gtag("event", action, {
+      event_category: category,
+      event_label: label,
+      value: value,
+    });
+  }
 };
-
 
 // adsense
 export const GA_ADSENSE_ID = process.env.GA_ADSENSE_ID;

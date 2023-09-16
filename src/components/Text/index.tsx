@@ -1,6 +1,6 @@
 import { TextAlign } from "../../shared/enums";
 import { combineClasses } from "../../utils/utils";
-import classes from './text.module.scss'
+import classes from './text.module.scss';
 
 interface IProps {
     children?: any;
